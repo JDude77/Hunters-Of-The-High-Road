@@ -33,6 +33,8 @@ public class PlayerStateRunning : PlayerState
         {
             playerController.SimpleMove(Vector3.ClampMagnitude(movement, 1) * movementSpeed);
 
+            playerAnimator.SetFloat("MovementBlend", Vector3.ClampMagnitude(movement, 1).magnitude);
+
             Quaternion rotateTo = Quaternion.LookRotation(movement, Vector3.up);
             playerTransform.rotation = Quaternion.RotateTowards(playerTransform.rotation, rotateTo, 720 * Time.deltaTime);
         }//End if

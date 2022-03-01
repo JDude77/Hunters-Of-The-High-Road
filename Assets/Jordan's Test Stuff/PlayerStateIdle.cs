@@ -10,6 +10,15 @@ public class PlayerStateIdle : PlayerState
         stateID = Player.State.Idle;
     }//End Awake
 
+    public override bool EnterState()
+    {
+        base.EnterState();
+
+        playerAnimator.SetFloat("MovementBlend", 0.0f);
+
+        return true;
+    }//End EnterState
+
     public override void UpdateState()
     {
         base.UpdateState();
