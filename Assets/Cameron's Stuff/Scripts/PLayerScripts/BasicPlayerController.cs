@@ -59,6 +59,7 @@ public class BasicPlayerController : MonoBehaviour
             }
 
             ani.SetBool("isAiming", isAiming);
+            gun.SetAiming(isAiming);
             GunInputs();
 
             if (Input.GetMouseButton(1))
@@ -66,7 +67,6 @@ public class BasicPlayerController : MonoBehaviour
                 isAiming = true;
                 Aiming();
                 advancedAni.setIsUsingGun(true, 0);
-                gun.drawLines();
             }
             else
             {
