@@ -196,7 +196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6588245090730865635}
   m_Layer: 0
-  m_Name: GunPos
+  m_Name: Rifle Away/Right Hand Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -397,14 +397,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9a9b62660610547bb074e6fba60cad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeaponHoister: {fileID: 6588245092522471857}
-  RightHand: {fileID: 6588245090730865635}
+  weaponHolster: {fileID: 6588245092522471857}
+  rightHand: {fileID: 6588245090730865635}
   leftHandPos: {fileID: 6588245092194663084}
-  Gun: {fileID: 6693650301502458822}
+  rifle: {fileID: 6693650301502458822}
   weaponGrip: {fileID: 6588245092291907010}
   swordSheath: {fileID: 6588245091755220520}
-  SwordPos: {fileID: 6588245091825651237}
-  Sword: {fileID: 6693650303186579693}
+  swordPos: {fileID: 6588245091825651237}
+  sword: {fileID: 6693650303186579693}
   leftHandRig: {fileID: 6588245092678174305}
   aimRig: {fileID: 6588245091739380907}
 --- !u!114 &6430124964131112758
@@ -456,6 +456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f56e6002fec52c4cb8d905de14852b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  staminaCost: 20
   rollTime: 1.2
   rollingSpeedBoost: 12
   rollCurve:
@@ -505,6 +506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 985a932d6280b7c40a9c642184087100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  staminaCost: 40
 --- !u!114 &3795970951479840161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -810,7 +812,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6588245091825651237}
   m_Layer: 0
-  m_Name: SwordPos
+  m_Name: Sword Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -840,7 +842,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6588245092194663084}
   m_Layer: 0
-  m_Name: LeftHandPos
+  m_Name: Left Hand Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6022,7 +6024,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6588245092522471857}
   m_Layer: 0
-  m_Name: holster
+  m_Name: Weapon Holster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6432,7 +6434,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b02085fb9c4f61c4683d56de1835f168, type: 3}
       propertyPath: m_Name
-      value: T-Pose (4)
+      value: Player Model
       objectReference: {fileID: 0}
     - target: {fileID: 1330755669629619180, guid: b02085fb9c4f61c4683d56de1835f168, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6716,6 +6718,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &371378521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6318356559961290386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5c74537e132a30469de3efff05a7b9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6588245091938594546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6734,18 +6748,6 @@ MonoBehaviour:
   - m_Rig: {fileID: 6588245091739380907}
     m_Active: 1
   m_Effectors: []
---- !u!114 &371378521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6318356559961290386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5c74537e132a30469de3efff05a7b9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &6588245092388105261
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6811,7 +6813,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8d11d1f8f06a6a0479a6e2a28d3c5c21, type: 3}
       propertyPath: m_Name
-      value: MartiniRifle
+      value: Martini Rifle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d11d1f8f06a6a0479a6e2a28d3c5c21, type: 3}
@@ -6960,6 +6962,8 @@ MonoBehaviour:
   aimedShotDamage: 15
   maxRange: 100
   shotHeight: 9
+  shotRadius: 0.5
+  reloadTime: 1
 --- !u!1001 &6588245092610918941
 PrefabInstance:
   m_ObjectHideFlags: 0
