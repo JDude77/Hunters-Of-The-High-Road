@@ -13,6 +13,8 @@ public class CameraTransition : MonoBehaviour
     [SerializeField]
     private Quaternion rotateTo;
 
+    [SerializeField]
+    private float PanSpeed;
 
     private bool hasGameStarted = false, hasTransitioned = false;
 
@@ -32,7 +34,7 @@ public class CameraTransition : MonoBehaviour
     {
         if(hasGameStarted && !hasTransitioned)
         {
-            timer += 0.1f * Time.deltaTime;
+            timer += PanSpeed * Time.deltaTime;
 
             transform.localPosition = Vector3.Lerp(startPos, Vector3.zero, timer);
             transform.localRotation = Quaternion.Lerp(startRot, rotateTo, timer);

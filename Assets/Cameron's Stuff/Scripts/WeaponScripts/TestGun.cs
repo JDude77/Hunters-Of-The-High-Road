@@ -17,6 +17,9 @@ public class TestGun : MonoBehaviour
     private Transform player;
 
     [SerializeField]
+    private DeadshotReticle Reticle;
+
+    [SerializeField]
     private float shootHeight;
 
     [SerializeField]
@@ -38,7 +41,7 @@ public class TestGun : MonoBehaviour
 
     private bool isReloaded = true;
 
-    private bool isAiming = false, hasAnimated = false, canDeadshot = false;
+    private bool isAiming = false, canDeadshot = false;
 
     // Start is called before the first frame update
     void Start()
@@ -47,21 +50,20 @@ public class TestGun : MonoBehaviour
         playerController = GetComponentInParent<BasicPlayerController>();
         ani = GetComponent<Animator>();
         partSystem = GetComponentInChildren<ParticleSystem>();
+
+        Reticle.GetGunInfo(aimLine, ani, aimLineColor);
     }
 
     private void Update()
     {
-        if(isAiming)
+        if(isAiming && isReloaded)
         {
             SetAimingPos(getShootPos());
-            aimLine.startColor = aimLineColor;
-            aimLine.endColor = aimLineColor;
-
-            if (!hasAnimated)
-            {
-                ani.Play("Aiming");
-                hasAnimated = true;
-            }
+            Reticle.DeadShot();
+        }
+        else
+        {
+            Reticle.DeactivateReticle();
         }
     }
 
@@ -74,18 +76,6 @@ public class TestGun : MonoBehaviour
     public void SetAiming(bool isaiming)
     {
         isAiming = isaiming;
-
-        if(isAiming == false)
-        {
-            hasAnimated = false;
-            ani.Play("Default");
-            aimLineColor.a = 0;
-
-            aimLine.startColor = aimLineColor;
-            aimLine.endColor = aimLineColor;
-
-            SetCanDeadshot(false);
-        }
     }
 
     public void Shoot()
@@ -194,23 +184,5 @@ public class TestGun : MonoBehaviour
     public float getAimHeight()
     {
         return shootHeight;
-    }
-
-    //stupid animator events can't use booleans so I've had to make this version
-    public void SetCanDeadshot(int candeadshot)
-    {
-        if(candeadshot == 0)
-        {
-            canDeadshot = false;
-        }
-        else
-        {
-            canDeadshot = true;
-        }
-    }
-
-    public void SetCanDeadshot(bool candeadshot)
-    {
-        canDeadshot = candeadshot;
     }
 }
