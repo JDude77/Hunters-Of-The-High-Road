@@ -24,7 +24,7 @@ public class PlayerStateExecutionerSwordAttack : PlayerState
         base.EnterState();
 
         playerAnimator.Play("SwordAttack");
-        playerAdvancedAnimations.setIsUsingSword(true);
+        playerAdvancedAnimations.SetIsUsingSword(true);
 
         return true;
     }//End EnterState
@@ -33,6 +33,7 @@ public class PlayerStateExecutionerSwordAttack : PlayerState
     {
         base.ExitState();
 
+        playerAdvancedAnimations.SetIsUsingSword(false);
         animationDone = false;
 
         return true;

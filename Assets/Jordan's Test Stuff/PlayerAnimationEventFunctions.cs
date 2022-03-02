@@ -37,7 +37,7 @@ public class PlayerAnimationEventFunctions : MonoBehaviour
     public void ToggleAimRig(int toggle)
     {
         isAiming = toggle >= 1;
-        advancedAnimations.setAimingRig(isAiming);
+        advancedAnimations.SetAimingRig(isAiming);
     }//End ToggleAimRig
 
     //Used for shaking the camera during the roll animation

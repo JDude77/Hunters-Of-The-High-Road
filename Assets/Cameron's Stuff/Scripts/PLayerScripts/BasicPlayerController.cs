@@ -55,7 +55,7 @@ public class BasicPlayerController : MonoBehaviour
         {
             if (Input.GetMouseButtonUp(1))
             {
-                advancedAni.setIsUsingGun(true, 1);
+                advancedAni.SetIsUsingGun(true, 1);
             }
 
             ani.SetBool("isAiming", isAiming);
@@ -65,7 +65,7 @@ public class BasicPlayerController : MonoBehaviour
             {
                 isAiming = true;
                 Aiming();
-                advancedAni.setIsUsingGun(true, 0);
+                advancedAni.SetIsUsingGun(true, 0);
                 gun.drawLines();
             }
             else
@@ -110,7 +110,7 @@ public class BasicPlayerController : MonoBehaviour
         {
             ani.Play("SwordAttack");
             isFrozen = true;
-            advancedAni.setIsUsingSword(true);
+            advancedAni.SetIsUsingSword(true);
         }
     }
 
@@ -118,7 +118,7 @@ public class BasicPlayerController : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
-            advancedAni.setIsUsingGun(true, 1);
+            advancedAni.SetIsUsingGun(true, 1);
             ani.Play("HipFiring");
             gun.Shoot();
         }
@@ -182,7 +182,7 @@ public class BasicPlayerController : MonoBehaviour
     public void removeStatic()
     {
         isFrozen = false;
-        advancedAni.setIsUsingSword(false);
+        advancedAni.SetIsUsingSword(false);
     }
 
     public void startGame()

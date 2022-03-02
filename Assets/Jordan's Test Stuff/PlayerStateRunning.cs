@@ -72,7 +72,18 @@ public class PlayerStateRunning : PlayerState
         //There's definitely a better way to do this
         if (Input.GetMouseButtonDown(0) && playerReference.HasItem(typeof(Rifle)))
         {
-            playerReference.GetItem(typeof(Rifle)).Use();
+            //Get a reference to the rifle on the player
+            //Should probably be cached earlier but that's an optimisation thing for later
+            Rifle rifle = (Rifle)playerReference.GetItem(typeof(Rifle));
+
+            //Checking if the rifle is reloaded here prevents animation jank
+            if (rifle.GetIsReloaded())
+            {
+                playerAdvancedAnimations.SetIsUsingGun(true, 1);
+                playerAnimator.Play("HipFiring");
+
+                rifle.Use();
+            }//End if
         }//End if
     }//End UpdateStateInputs
 }

@@ -27,15 +27,12 @@ public class Rifle : Weapon
 
     private bool isReloaded = true;
 
-    private Animator gunAnimator;
-
     protected override void Awake()
     {
         base.Awake();
 
         isEquipped = true;
         weaponType = WeaponType.Ranged;
-        gunAnimator = GetComponentInChildren<Animator>();
     }//End Awake
 
     protected void Start()
@@ -45,32 +42,29 @@ public class Rifle : Weapon
 
     public override void Use()
     {
-        if(isReloaded)
+        Collider[] shotHits = Physics.OverlapSphere(GetShotLocation(), shotRadius);
+
+        foreach (Collider hit in shotHits)
         {
-            Collider[] shotHits = Physics.OverlapSphere(GetShotLocation(), shotRadius);
-
-            foreach (Collider hit in shotHits)
+            switch (hit.tag)
             {
-                switch (hit.tag)
-                {
-                    case "Chain":
-                        hit.GetComponentInParent<ChainDoorScript>().openDoor();
-                        hit.gameObject.SetActive(false);
-                        break;
+                case "Chain":
+                    hit.GetComponentInParent<ChainDoorScript>().openDoor();
+                    hit.gameObject.SetActive(false);
+                    break;
 
-                    case "Tombstone":
-                        hit.GetComponentInParent<DestructibleTombstone>().destroyTombstone();
-                        break;
+                case "Tombstone":
+                    hit.GetComponentInParent<DestructibleTombstone>().destroyTombstone();
+                    break;
 
-                    case "Bottle":
-                        hit.GetComponentInParent<TutorialBottle>().shootBottle();
-                        break;
-                }//End switch
-            }//End foreach
+                case "Bottle":
+                    hit.GetComponentInParent<TutorialBottle>().shootBottle();
+                    break;
+            }//End switch
+        }//End foreach
 
-            isReloaded = false;
-            StartCoroutine(ReloadGun());
-        }//End if
+        isReloaded = false;
+        StartCoroutine(ReloadGun());
     }//End Use
 
     private Vector3 GetShotLocation()
@@ -107,4 +101,9 @@ public class Rifle : Weapon
         yield return new WaitForSeconds(reloadTime);
         isReloaded = true;
     }//End ReloadGun
+
+    public bool GetIsReloaded()
+    {
+        return isReloaded;
+    }//End GetIsReloaded
 }

@@ -6,7 +6,7 @@ using UnityEngine.Animations.Rigging;
 public class PlayerAdvancedAnimations : MonoBehaviour
 {
     [SerializeField]
-    private Transform WeaponHoister, RightHand, leftHandPos, Gun, weaponGrip, swordSheath, SwordPos, Sword;
+    private Transform weaponHolster, rightHand, leftHandPos, rifle, weaponGrip, swordSheath, swordPos, sword;
 
     [SerializeField]
     private Rig leftHandRig;
@@ -34,30 +34,30 @@ public class PlayerAdvancedAnimations : MonoBehaviour
 
         if(isUsingGun)
         {
-            setWeaponPosition(Gun, RightHand);
+            SetWeaponPosition(rifle, rightHand);
             leftHandRig.weight = 1;
 
-            gunTimer();
+            GunTimer();
         }
         else
         {
-            setWeaponPosition(Gun, WeaponHoister);
+            SetWeaponPosition(rifle, weaponHolster);
             ani.SetLayerWeight(1, 0);
             leftHandRig.weight = 0;
         }
 
         if(isUsingSword)
         {
-            setWeaponPosition(Sword, SwordPos);
+            SetWeaponPosition(sword, swordPos);
             gunTime = 5;
         }
         else
         {
-            setWeaponPosition(Sword, swordSheath);
+            SetWeaponPosition(sword, swordSheath);
         }
     }
 
-    private void gunTimer()
+    private void GunTimer()
     {
         gunTime += Time.deltaTime;
 
@@ -67,26 +67,26 @@ public class PlayerAdvancedAnimations : MonoBehaviour
         }
     }
 
-    private void setWeaponPosition(Transform weapon, Transform toGo)
+    private void SetWeaponPosition(Transform weapon, Transform toGo)
     {
         weapon.transform.parent = toGo;
         weapon.transform.localEulerAngles = Vector3.zero;
         weapon.transform.localPosition = Vector3.zero;
     }
 
-    public void setIsUsingGun(bool isusing, float weight)
+    public void SetIsUsingGun(bool isUsingGun, float weight)
     {
-        isUsingGun = isusing;
+        this.isUsingGun = isUsingGun;
 
         ani.SetLayerWeight(1, weight);
 
-        if (isusing == true)
+        if (isUsingGun == true)
         {
             gunTime = 0;
         }
     }
 
-    public void setAimingRig(bool isaiming)
+    public void SetAimingRig(bool isaiming)
     {
         if(isaiming)
         {
@@ -98,8 +98,8 @@ public class PlayerAdvancedAnimations : MonoBehaviour
         }
     }
 
-    public void setIsUsingSword(bool isusingsword)
+    public void SetIsUsingSword(bool isUsingSword)
     {
-        isUsingSword = isusingsword;
+        this.isUsingSword = isUsingSword;
     }
 }
