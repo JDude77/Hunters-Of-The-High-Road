@@ -186,6 +186,18 @@ public class Player : Character
         return states.Contains(state);
     }//End HasState
 
+    //Returns state if present in states list
+    public PlayerState GetState(State state)
+    {
+        if(states.Contains(state))
+        {
+            return (PlayerState) GetComponentInChildren(PlayerState.stateDictionary[state]);
+        }//End if
+
+        Debug.LogError("Tried to return state of type " + state.ToString() + " but it was not found on the player.");
+        return null;
+    }//Ebd GetState
+
     public bool ChangeState(State stateToChangeTo)
     {
         if(states.Contains(stateToChangeTo))

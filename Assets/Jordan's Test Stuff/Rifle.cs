@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Rifle : Weapon
@@ -16,6 +17,16 @@ public class Rifle : Weapon
     [Tooltip("The height at which all shots should fire.")]
     private float shotHeight;
 
+    [SerializeField]
+    [Tooltip("The radius of impact for an individual shot.")]
+    private float shotRadius;
+
+    [SerializeField]
+    [Tooltip("The time taken to reload the gun in seconds.")]
+    private float reloadTime;
+
+    private bool isReloaded = true;
+
     protected override void Awake()
     {
         base.Awake();
@@ -31,6 +42,33 @@ public class Rifle : Weapon
 
     public override void Use()
     {
+        Collider[] shotHits = Physics.OverlapSphere(GetShotLocation(), shotRadius);
+
+        foreach (Collider hit in shotHits)
+        {
+            switch (hit.tag)
+            {
+                case "Chain":
+                    hit.GetComponentInParent<ChainDoorScript>().openDoor();
+                    hit.gameObject.SetActive(false);
+                    break;
+
+                case "Tombstone":
+                    hit.GetComponentInParent<DestructibleTombstone>().destroyTombstone();
+                    break;
+
+                case "Bottle":
+                    hit.GetComponentInParent<TutorialBottle>().shootBottle();
+                    break;
+            }//End switch
+        }//End foreach
+
+        isReloaded = false;
+        StartCoroutine(ReloadGun());
+    }//End Use
+
+    private Vector3 GetShotLocation()
+    {
         //Currently just Cameron's code copied and pasted in with variables renamed
         Vector3 shotLocation = Vector3.zero;
 
@@ -38,7 +76,7 @@ public class Rifle : Weapon
         Ray hitRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         Physics.Raycast(hitRay, out hitLocation);
 
-        if(hitLocation.transform != null)
+        if (hitLocation.transform != null)
         {
             shotLocation = hitLocation.point;
         }//End if
@@ -54,5 +92,18 @@ public class Rifle : Weapon
             shotLocation = hitLocation.point;
             shotLocation.y = shotHeight;
         }//End if
-    }//End Shoot
+
+        return shotLocation;
+    }//End GetShotLocation
+
+    private IEnumerator ReloadGun()
+    {
+        yield return new WaitForSeconds(reloadTime);
+        isReloaded = true;
+    }//End ReloadGun
+
+    public bool GetIsReloaded()
+    {
+        return isReloaded;
+    }//End GetIsReloaded
 }

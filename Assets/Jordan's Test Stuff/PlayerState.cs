@@ -17,6 +17,12 @@ public class PlayerState : MonoBehaviour
 
     //All states reference the same player
     protected static Player playerReference;
+
+    //Reference to the player's animator
+    protected static Animator playerAnimator;
+
+    //Reference to advanced animation handler script
+    protected static PlayerAdvancedAnimations playerAdvancedAnimations;
     #endregion
 
     protected Player.State stateID;
@@ -24,6 +30,8 @@ public class PlayerState : MonoBehaviour
     protected virtual void Awake()
     {
         playerReference = FindObjectOfType<Player>();
+        playerAnimator = playerReference.GetComponentInChildren<Animator>();
+        playerAdvancedAnimations = playerReference.GetComponentInChildren<PlayerAdvancedAnimations>();
     }//End Awake
 
     public Player.State GetStateID()
