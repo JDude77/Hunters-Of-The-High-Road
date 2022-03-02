@@ -7,6 +7,10 @@ public class PlayerStateDodging : PlayerState
     private Transform playerTransform;
     private Vector3 movement;
 
+    [SerializeField]
+    private float staminaCost;
+    public float GetStaminaCost() { return staminaCost; }
+
     private bool isRolling;
     [SerializeField]
     private float rollTime;
@@ -15,6 +19,12 @@ public class PlayerStateDodging : PlayerState
 
     [SerializeField]
     private AnimationCurve rollCurve;
+
+    [Header("Roll Camera Shake Settings")]
+    [SerializeField]
+    private float shakeIntensity;
+    [SerializeField]
+    private float shakeTime;
 
     protected override void Awake()
     {
@@ -30,9 +40,16 @@ public class PlayerStateDodging : PlayerState
         isRolling = false;
     }//End Start
 
+    public void ShakeCamera()
+    {
+        CameraShakeScript.Instance.ShakeCamera(shakeIntensity, shakeTime);
+    }//End ShakeCamera
+
     public override bool EnterState()
     {
         base.EnterState();
+
+        playerReference.ReduceStaminaByAmount(staminaCost);
 
         movement.x = Input.GetAxis("Horizontal");
         movement.z = Input.GetAxis("Vertical");
@@ -42,6 +59,8 @@ public class PlayerStateDodging : PlayerState
             Quaternion rotateTo = Quaternion.LookRotation(movement, Vector3.up);
             playerTransform.rotation = rotateTo;
         }//End if
+
+        playerAnimator.Play("Rolling");
 
         StartCoroutine(RollDodge());
         isRolling = true;
@@ -82,5 +101,5 @@ public class PlayerStateDodging : PlayerState
     public bool GetIsRolling()
     {
         return isRolling;
-    }
+    }//End GetIsRolling
 }

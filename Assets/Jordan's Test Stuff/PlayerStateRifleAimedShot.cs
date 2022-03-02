@@ -25,5 +25,25 @@ public class PlayerStateRifleAimedShot : PlayerState
     protected override void UpdateStateInputs()
     {
         base.UpdateStateInputs();
+
+        //Dodging overrides aiming
+        if(Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            playerReference.ChangeState(Player.State.Dodging);
+        }//End if
+
+        //When the aim to shoot button is released
+        if (Input.GetMouseButtonUp(1))
+        {
+            Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
+            if (movement != Vector3.zero)
+            {
+                playerReference.ChangeState(Player.State.Running);
+            }//End if
+            else
+            {
+                playerReference.ChangeState(Player.State.Idle);
+            }//End else
+        }//End if
     }//End UpdateStateInputs
 }

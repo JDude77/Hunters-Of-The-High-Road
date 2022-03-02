@@ -33,6 +33,8 @@ public class PlayerStateRunning : PlayerState
         {
             playerController.SimpleMove(Vector3.ClampMagnitude(movement, 1) * movementSpeed);
 
+            playerAnimator.SetFloat("MovementBlend", Vector3.ClampMagnitude(movement, 1).magnitude);
+
             Quaternion rotateTo = Quaternion.LookRotation(movement, Vector3.up);
             playerTransform.rotation = Quaternion.RotateTowards(playerTransform.rotation, rotateTo, 720 * Time.deltaTime);
         }//End if
@@ -49,14 +51,29 @@ public class PlayerStateRunning : PlayerState
         //Dodging
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            playerReference.ChangeState(Player.State.Dodging);
+            if (playerReference.HasState(Player.State.Dodging))
+            {
+                PlayerStateDodging dodging = (PlayerStateDodging)playerReference.GetState(Player.State.Dodging);
+                if (playerReference.GetStamina() >= dodging.GetStaminaCost())
+                {
+                    playerReference.ChangeState(Player.State.Dodging);
+                }//End if
+            }//End if
         }//End if
 
         //Sword Attack
         //There's definitely a better way to do this
-        if (Input.GetKeyDown(KeyCode.E) && playerReference.HasItem(typeof(ExecutionerSword)) && playerReference.HasState(Player.State.ExecutionerSwordAttack))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            playerReference.ChangeState(Player.State.ExecutionerSwordAttack);
+            //If both sword and sword attack state are on the player
+            if(playerReference.HasItem(typeof(ExecutionerSword)) && playerReference.HasState(Player.State.ExecutionerSwordAttack))
+            {
+                PlayerStateExecutionerSwordAttack swordAttack = (PlayerStateExecutionerSwordAttack)playerReference.GetState(Player.State.ExecutionerSwordAttack);
+                if (playerReference.GetStamina() >= swordAttack.GetStaminaCost())
+                {
+                    playerReference.ChangeState(Player.State.ExecutionerSwordAttack);
+                }//End if
+            }//End if
         }//End if
 
         //Aimed Shot
@@ -70,7 +87,18 @@ public class PlayerStateRunning : PlayerState
         //There's definitely a better way to do this
         if (Input.GetMouseButtonDown(0) && playerReference.HasItem(typeof(Rifle)))
         {
-            playerReference.GetItem(typeof(Rifle)).Use();
+            //Get a reference to the rifle on the player
+            //Should probably be cached earlier but that's an optimisation thing for later
+            Rifle rifle = (Rifle)playerReference.GetItem(typeof(Rifle));
+
+            //Checking if the rifle is reloaded here prevents animation jank
+            if (rifle.GetIsReloaded())
+            {
+                playerAdvancedAnimations.SetIsUsingGun(true, 1);
+                playerAnimator.Play("HipFiring");
+
+                rifle.Use();
+            }//End if
         }//End if
     }//End UpdateStateInputs
 }

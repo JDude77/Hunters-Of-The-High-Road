@@ -24,11 +24,11 @@ public class AnimatorRedirector : MonoBehaviour
     {
         if(isAiming)
         {
-            advAni.setAimingRig(true);
+            advAni.SetAimingRig(true);
         }
         else
         {
-            advAni.setAimingRig(false);
+            advAni.SetAimingRig(false);
         }
     }
 
