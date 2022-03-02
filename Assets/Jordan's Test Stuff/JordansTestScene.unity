@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!4 &444015386 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4817596831383335947, guid: 2651cf7e204ccc74eb9fa3f23495f557, type: 3}
-  m_PrefabInstance: {fileID: 1418408644}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &778112363
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,6 +645,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1751596697220758066, guid: 2651cf7e204ccc74eb9fa3f23495f557, type: 3}
+      propertyPath: staminaCost
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831958134231935418, guid: 2651cf7e204ccc74eb9fa3f23495f557, type: 3}
+      propertyPath: staminaCost
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 6318356559362380156, guid: 2651cf7e204ccc74eb9fa3f23495f557, type: 3}
       propertyPath: m_Name
       value: Martini Rifle
@@ -660,7 +663,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6588245090730865634, guid: 2651cf7e204ccc74eb9fa3f23495f557, type: 3}
       propertyPath: m_Name
-      value: Rifle Away Position
+      value: Rifle Away/Right Hand Position
       objectReference: {fileID: 0}
     - target: {fileID: 6588245090983104080, guid: 2651cf7e204ccc74eb9fa3f23495f557, type: 3}
       propertyPath: m_Name
@@ -681,7 +684,7 @@ PrefabInstance:
     - target: {fileID: 6588245090983104084, guid: 2651cf7e204ccc74eb9fa3f23495f557, type: 3}
       propertyPath: rightHand
       value: 
-      objectReference: {fileID: 444015386}
+      objectReference: {fileID: 1959015631}
     - target: {fileID: 6588245090983104084, guid: 2651cf7e204ccc74eb9fa3f23495f557, type: 3}
       propertyPath: weaponHolster
       value: 
@@ -732,7 +735,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6588245091825651236, guid: 2651cf7e204ccc74eb9fa3f23495f557, type: 3}
       propertyPath: m_Name
-      value: Sword Sheathed Position
+      value: Sword Position
+      objectReference: {fileID: 0}
+    - target: {fileID: 6588245092194663087, guid: 2651cf7e204ccc74eb9fa3f23495f557, type: 3}
+      propertyPath: m_Name
+      value: Left Hand Position
       objectReference: {fileID: 0}
     - target: {fileID: 6588245092522471856, guid: 2651cf7e204ccc74eb9fa3f23495f557, type: 3}
       propertyPath: m_Name
@@ -756,6 +763,11 @@ Transform:
 --- !u!4 &1612664869 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6693650303186579693, guid: 2651cf7e204ccc74eb9fa3f23495f557, type: 3}
+  m_PrefabInstance: {fileID: 1418408644}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1959015631 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6588245090730865635, guid: 2651cf7e204ccc74eb9fa3f23495f557, type: 3}
   m_PrefabInstance: {fileID: 1418408644}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &2136924818 stripped

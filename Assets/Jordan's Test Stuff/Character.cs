@@ -22,6 +22,18 @@ public class Character : MonoBehaviour
         else if (this.health > maxHealth) this.health = maxHealth;
     }//End SetHealth
 
+    //Shortcut function, equivalent to SetHealth(health - x)
+    public void ReduceHealthByAmount(float health)
+    {
+        SetHealth(this.health - Mathf.Abs(health));
+    }//End ReduceHealthByAmount
+
+    //Shortcut function, equivalent to SetHealth(health + x)
+    public void IncreaseHealthByAmount(float health)
+    {
+        SetStamina(this.health + Mathf.Abs(health));
+    }//End IncreaseHealthByAmount
+
     public float GetHealth()
     {
         return health;
@@ -73,6 +85,18 @@ public class Character : MonoBehaviour
         //Stop stamina from going above max stamina
         else if (this.stamina > maxStamina) this.stamina = maxStamina;
     }//End SetStamina
+
+    //Shortcut function, equivalent to SetStamina(stamina - x)
+    public void ReduceStaminaByAmount(float stamina)
+    {
+        SetStamina(this.stamina - Mathf.Abs(stamina));
+    }//End ReduceStaminaByAmount
+
+    //Shortcut function, equivalent to SetStamina(stamina + x)
+    public void IncreaseStaminaByAmount(float stamina)
+    {
+        SetStamina(this.stamina + Mathf.Abs(stamina));
+    }//End IncreaseStaminaByAmount
 
     public float GetStamina()
     {

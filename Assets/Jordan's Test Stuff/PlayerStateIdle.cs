@@ -31,14 +31,29 @@ public class PlayerStateIdle : PlayerState
         //Dodging
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            playerReference.ChangeState(Player.State.Dodging);
+            if (playerReference.HasState(Player.State.Dodging))
+            {
+                PlayerStateDodging dodging = (PlayerStateDodging)playerReference.GetState(Player.State.Dodging);
+                if (playerReference.GetStamina() >= dodging.GetStaminaCost())
+                {
+                    playerReference.ChangeState(Player.State.Dodging);
+                }//End if
+            }//End if
         }//End if
 
         //Sword Attack
         //There's definitely a better way to do this
-        if (Input.GetKeyDown(KeyCode.E) && playerReference.HasItem(typeof(ExecutionerSword)) && playerReference.HasState(Player.State.ExecutionerSwordAttack))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            playerReference.ChangeState(Player.State.ExecutionerSwordAttack);
+            //If both sword and sword attack state are on the player
+            if (playerReference.HasItem(typeof(ExecutionerSword)) && playerReference.HasState(Player.State.ExecutionerSwordAttack))
+            {
+                PlayerStateExecutionerSwordAttack swordAttack = (PlayerStateExecutionerSwordAttack)playerReference.GetState(Player.State.ExecutionerSwordAttack);
+                if (playerReference.GetStamina() >= swordAttack.GetStaminaCost())
+                {
+                    playerReference.ChangeState(Player.State.ExecutionerSwordAttack);
+                }//End if
+            }//End if
         }//End if
 
         //Aimed Shot

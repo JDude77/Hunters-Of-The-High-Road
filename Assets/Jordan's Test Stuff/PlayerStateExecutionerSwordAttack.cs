@@ -8,6 +8,10 @@ public class PlayerStateExecutionerSwordAttack : PlayerState
 
     private bool animationDone = false;
 
+    [SerializeField]
+    private float staminaCost;
+    public float GetStaminaCost() { return staminaCost; }
+
     public void SetAnimationDone()
     {
         animationDone = true;
@@ -22,6 +26,8 @@ public class PlayerStateExecutionerSwordAttack : PlayerState
     public override bool EnterState()
     {
         base.EnterState();
+
+        playerReference.ReduceStaminaByAmount(staminaCost);
 
         playerAnimator.Play("SwordAttack");
         playerAdvancedAnimations.SetIsUsingSword(true);

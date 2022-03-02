@@ -7,6 +7,10 @@ public class PlayerStateDodging : PlayerState
     private Transform playerTransform;
     private Vector3 movement;
 
+    [SerializeField]
+    private float staminaCost;
+    public float GetStaminaCost() { return staminaCost; }
+
     private bool isRolling;
     [SerializeField]
     private float rollTime;
@@ -44,6 +48,8 @@ public class PlayerStateDodging : PlayerState
     public override bool EnterState()
     {
         base.EnterState();
+
+        playerReference.ReduceStaminaByAmount(staminaCost);
 
         movement.x = Input.GetAxis("Horizontal");
         movement.z = Input.GetAxis("Vertical");
