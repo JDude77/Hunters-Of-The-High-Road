@@ -17,10 +17,13 @@ public class TestGun : MonoBehaviour
     private Transform player;
 
     [SerializeField]
+    private DeadshotReticle Reticle;
+
+    [SerializeField]
     private float shootHeight;
 
     [SerializeField]
-    private Color normalColor, flashingColor;
+    private Color aimLineColor;
 
     [SerializeField]
     private GameObject flash;
@@ -28,7 +31,7 @@ public class TestGun : MonoBehaviour
     private LineRenderer Line;
 
     [SerializeField]
-    private LineRenderer leftLine, rightLine;
+    private LineRenderer aimLine;
 
     private BasicPlayerController playerController;
 
@@ -38,6 +41,8 @@ public class TestGun : MonoBehaviour
 
     private bool isReloaded = true;
 
+    private bool isAiming = false, canDeadshot = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,46 +50,32 @@ public class TestGun : MonoBehaviour
         playerController = GetComponentInParent<BasicPlayerController>();
         ani = GetComponent<Animator>();
         partSystem = GetComponentInChildren<ParticleSystem>();
+
+        Reticle.GetGunInfo(aimLine, ani, aimLineColor);
     }
 
-    public void drawLines()
+    private void Update()
     {
-        ani.Play("closeAimAngle");
-
-        leftLine.SetPosition(0, leftLine.transform.position);
-        rightLine.SetPosition(0, rightLine.transform.position);
-
-        //left line stuff
-        Ray leftray = new Ray(leftLine.transform.position, leftLine.transform.forward);
-        RaycastHit hit;
-
-        if(Physics.Raycast(leftray, out hit, 100))
+        if(isAiming && isReloaded)
         {
-            Vector3 positionWithOffset = hit.point;
-            positionWithOffset.y = getAimHeight();
-
-            leftLine.SetPosition(1, positionWithOffset);
+            SetAimingPos(getShootPos());
+            Reticle.DeadShot();
         }
         else
         {
-            leftLine.SetPosition(1, leftLine.transform.TransformDirection(Vector3.forward) * 1000);
+            Reticle.DeactivateReticle();
         }
+    }
 
-        //right line stuff
-        Ray rightray = new Ray(rightLine.transform.position, rightLine.transform.forward);
-        RaycastHit hit2;
+    private void SetAimingPos(Vector3 position)
+    {
+        aimLine.SetPosition(0, muzzle.position);
+        aimLine.SetPosition(1, position);
+    }
 
-        if (Physics.Raycast(rightray, out hit2, 100))
-        {
-            Vector3 positionWithOffset = hit2.point;
-            positionWithOffset.y = getAimHeight();
-
-            rightLine.SetPosition(1, positionWithOffset);
-        }
-        else
-        {
-            rightLine.SetPosition(1, rightLine.transform.TransformDirection(Vector3.forward) * 1000);
-        }
+    public void SetAiming(bool isaiming)
+    {
+        isAiming = isaiming;
     }
 
     public void Shoot()
@@ -97,31 +88,48 @@ public class TestGun : MonoBehaviour
 
             partSystem.Play();
             StartCoroutine(flashMuzzle());
-            CameraShakeScript.Instance.ShakeCamera(shakeIntensity, shakeTime);
+
+            if(canDeadshot)
+            {
+                CameraShakeScript.Instance.ShakeCamera(shakeIntensity * 2, shakeTime);
+            }
+            else
+            {
+                CameraShakeScript.Instance.ShakeCamera(shakeIntensity, shakeTime);
+            }
 
             Collider[] hits = Physics.OverlapSphere(getShootPos(), 0.5f);
-
-            foreach (var hit in hits)
-            {
-                if (hit.tag == "Chain")
-                {
-                    hit.GetComponentInParent<ChainDoorScript>().openDoor();
-                    hit.gameObject.SetActive(false);
-                }
-
-                if(hit.tag == "Tombstone")
-                {
-                    hit.GetComponentInParent<DestructibleTombstone>().destroyTombstone();
-                }
-
-                if (hit.tag == "Bottle")
-                {
-                    hit.GetComponentInParent<TutorialBottle>().shootBottle();
-                }
-            }
+            hitCheck(hits);
 
             isReloaded = false;
             StartCoroutine(reloadGun());
+        }
+
+        if (isAiming)
+        {
+            SetAiming(false);
+        }
+    }
+
+    private static void hitCheck(Collider[] hits)
+    {
+        foreach (var hit in hits)
+        {
+            if (hit.tag == "Chain")
+            {
+                hit.GetComponentInParent<ChainDoorScript>().openDoor();
+                hit.gameObject.SetActive(false);
+            }
+
+            if (hit.tag == "Tombstone")
+            {
+                hit.GetComponentInParent<DestructibleTombstone>().destroyTombstone();
+            }
+
+            if (hit.tag == "Bottle")
+            {
+                hit.GetComponentInParent<TutorialBottle>().shootBottle();
+            }
         }
     }
 
@@ -168,31 +176,13 @@ public class TestGun : MonoBehaviour
         return shootHere;
     }
 
+    public void SetAimLineColor(Color color)
+    {
+        aimLineColor = color;
+    }
+
     public float getAimHeight()
     {
         return shootHeight;
-    }
-
-    public void setWhiteLine()
-    {
-        leftLine.endColor = normalColor;
-        leftLine.startColor = normalColor;
-
-        rightLine.endColor = normalColor;
-        rightLine.startColor = normalColor;
-    }
-
-    public void setRedLine()
-    {
-        leftLine.endColor = flashingColor;
-        leftLine.startColor = flashingColor;
-
-        rightLine.endColor = flashingColor;
-        rightLine.startColor = flashingColor;
-    }
-
-    public void activateCanDeadshot()
-    {
-
     }
 }

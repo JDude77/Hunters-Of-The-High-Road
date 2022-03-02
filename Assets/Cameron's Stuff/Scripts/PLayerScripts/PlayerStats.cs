@@ -18,9 +18,12 @@ public class PlayerStats : MonoBehaviour
     private float rollingCost;
 
     private float currentHealth, currentStamina, currentFaith;
+
     // Start is called before the first frame update
     void Start()
     {
+        BossEventsHandler.current.OnHitPlayer += TakeDamage;
+
         currentHealth = MaxHealth;
         currentFaith = 0;
     }
@@ -33,6 +36,12 @@ public class PlayerStats : MonoBehaviour
 
         faithBar.fillAmount = getImageValue(MaxFaith, currentFaith);
         faithTimer();
+    }
+
+    private void TakeDamage(int Damage)
+    {
+        currentHealth -= Damage;
+        Debug.Log("Ouchie, my health is " + currentHealth);
     }
 
     private float getImageValue(float maxValue, float currentValue)
