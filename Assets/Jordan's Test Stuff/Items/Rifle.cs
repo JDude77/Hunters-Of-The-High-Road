@@ -31,6 +31,8 @@ public class Rifle : Weapon
     public DeadshotManager GetDeadshotManager() { return deadshot; }//End GetDeadshotManager
 
     private bool isReloaded = true;
+    private bool isBeingAimed = false;
+    public void SetIsBeingAimed(bool isBeingAimed) { this.isBeingAimed = isBeingAimed; }//End SetIsBeingAimed
 
     private Animator gunAnimator;
     public Animator GetGunAnimator() { return gunAnimator; }//End GetGunAnimator
@@ -49,6 +51,7 @@ public class Rifle : Weapon
     [SerializeField]
     [Tooltip("The delay before the shot line starts to fade out in seconds.")]
     private float shotLineFadeDelay;
+    private IEnumerator fadeFunctionCopy;
 
     private ParticleSystem shotParticleSystem;
 
@@ -78,6 +81,16 @@ public class Rifle : Weapon
         if (deadshot) SetDeadshotValues();
     }//End Start
 
+    //Not ideal to use this here, but it'll fix an issue with aiming after shooting until I can refactor it elsewhere
+    private void Update()
+    {
+        if (isBeingAimed && fadeFunctionCopy != null)
+        {
+            StopCoroutine(fadeFunctionCopy);
+            fadeFunctionCopy = null;
+        }//End if
+    }//End Update
+
     public void DeactivateDeadshot()
     {
         deadshot.DeactivateDeadshot();
@@ -97,9 +110,10 @@ public class Rifle : Weapon
         //Prevents the program from stopping if line renderer isn't set
         if(shotPathLineRenderer)
         {
-            StopCoroutine(FadeShotLine());
+            if (fadeFunctionCopy != null) StopCoroutine(fadeFunctionCopy);
             StartCoroutine(UpdateShotLineRenderer(shotHitLocation));
-            StartCoroutine(FadeShotLine());
+            fadeFunctionCopy = FadeShotLine();
+            StartCoroutine(fadeFunctionCopy);
         }//End if
 
         //As above, but for the particle system 
@@ -111,8 +125,10 @@ public class Rifle : Weapon
         //Again, for the muzzle flash
         if(muzzleFlashObject)
         {
-            MuzzleFlash();
+            StartCoroutine(MuzzleFlash());
         }//End if
+
+        bool hitEnemy = false;
 
         foreach (Collider hit in shotHits)
         {
@@ -130,12 +146,47 @@ public class Rifle : Weapon
                 case "Bottle":
                     hit.GetComponentInParent<TutorialBottle>().shootBottle();
                     break;
+
+                case "Enemy":
+                    hitEnemy = true;
+                    //Call do damage action
+                    break;
             }//End switch
         }//End foreach
+        Deadshot(hitEnemy);
 
         isReloaded = false;
         StartCoroutine(ReloadGun());
     }//End Use
+
+    private void Deadshot(bool enemy)
+    {
+        //Deadshot functionality only works on enemies
+        if (deadshot)
+        {
+            bool tokenisable = isBeingAimed && deadshot.DeadshotSkillCheckPassed();
+            if (enemy)
+            {
+                if (tokenisable && deadshot.CanStagger())
+                {
+                    //Call stagger action here
+                    deadshot.ResetTokens();
+                }//End if
+                else if (tokenisable && !deadshot.CanStagger())
+                {
+                    deadshot.AddToken();
+                }//End else if
+            }//End if
+            else
+            {
+                if (tokenisable)
+                {
+                    deadshot.RemoveToken();
+                }//End if
+            }//End else
+
+        }//End if
+    }
 
     //Could be updated to take in start and end line colour
     //Made a coroutine to delay line appearance by a frame, making it align with muzzle better
@@ -198,6 +249,7 @@ public class Rifle : Weapon
 
     private IEnumerator FadeShotLine()
     {
+        shotPathLineRenderer.colorGradient =  shotLineDefaultColour;
         yield return new WaitForSeconds(shotLineFadeDelay);
 
         Color oldStartColour = shotPathLineRenderer.startColor;

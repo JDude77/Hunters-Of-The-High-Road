@@ -28,6 +28,12 @@ public class DeadshotManager : MonoBehaviour
     private Gradient deadshotLineColour;
     private Animator gunAnimator;
 
+    [Header("Stagger Shot Settings")]
+    [SerializeField]
+    private int deadshotTokensRequiredToStagger;
+    private int currentDeadshotTokens = 0;
+    private bool deadshotSkillCheckPassed = false;
+
     private void Awake()
     {
         mainCamera = Camera.main;
@@ -86,9 +92,9 @@ public class DeadshotManager : MonoBehaviour
 
     private void DeadshotSkillCheck()
     {
-        bool checkPassed = currentReticleRotation.y >= minSuccessAngle && currentReticleRotation.y <= maxSuccessAngle;
+        deadshotSkillCheckPassed = currentReticleRotation.y >= minSuccessAngle && currentReticleRotation.y <= maxSuccessAngle;
 
-        if(checkPassed)
+        if(deadshotSkillCheckPassed)
         {
             shotLineRenderer.colorGradient = deadshotLineColour;
         }//End if
@@ -130,4 +136,32 @@ public class DeadshotManager : MonoBehaviour
     {
         this.gunAnimator = gunAnimator;
     }//End SetGunAnimator
+
+    public bool DeadshotSkillCheckPassed()
+    {
+        bool checkPassed = deadshotSkillCheckPassed;
+        deadshotSkillCheckPassed = false;
+        return checkPassed;
+    }//End DeadshotSkillCheckPassed
+
+    public bool CanStagger()
+    {
+        return deadshotSkillCheckPassed && (currentDeadshotTokens == deadshotTokensRequiredToStagger);
+    }//End CanStagger
+
+    public void ResetTokens()
+    {
+        currentDeadshotTokens = 0;
+    }//End ResetTokens
+
+    public void AddToken()
+    {
+        currentDeadshotTokens++;
+    }//End AddToken
+
+    public void RemoveToken()
+    {
+        currentDeadshotTokens -= 1;
+        if (currentDeadshotTokens < 0) currentDeadshotTokens = 0;
+    }//End RemoveToken
 }

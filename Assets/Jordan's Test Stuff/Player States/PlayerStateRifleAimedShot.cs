@@ -20,6 +20,7 @@ public class PlayerStateRifleAimedShot : PlayerState
     public override bool EnterState()
     {
         playerAdvancedAnimations.SetIsUsingGun(true, 0);
+        rifle.SetIsBeingAimed(true);
 
         rifle.Deadshot();
 
@@ -29,6 +30,7 @@ public class PlayerStateRifleAimedShot : PlayerState
     public override bool ExitState()
     {
         rifle.DeactivateDeadshot();
+        rifle.SetIsBeingAimed(false);
 
         return true;
     }//End ExitState
@@ -68,6 +70,7 @@ public class PlayerStateRifleAimedShot : PlayerState
         if(Input.GetMouseButtonDown(0))
         {
             //Shoot
+            rifle.Use();
 
             //Then change state
             ChangePlayerStateToIdleOrRun();
