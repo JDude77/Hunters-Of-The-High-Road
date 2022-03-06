@@ -8,7 +8,10 @@ public class BossParticlesSystems : MonoBehaviour
 
     private ParticleSystem stompParticles;
 
+    private ParticleSystem burrowingParticles;
+
     private CameraShakeScript camShake;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +29,11 @@ public class BossParticlesSystems : MonoBehaviour
         stompParticles = stomp; 
     }
 
+    public void SetBurrowParticles(ParticleSystem burrow)
+    {
+        burrowingParticles = burrow;
+    }
+
     //Used by animators, they can't use booleans :|
     public void SetClawLines(int isActive)
     {
@@ -40,5 +48,11 @@ public class BossParticlesSystems : MonoBehaviour
     {
         stompParticles.Play();
         camShake.ShakeCamera(1, 0.5f);
+    }
+
+    public void PlayBurrowParticles()
+    {
+        burrowingParticles.Play();
+        camShake.ShakeCamera(2, 0.5f);
     }
 }

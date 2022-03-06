@@ -9,10 +9,13 @@ public class TestAnimator : MonoBehaviour
 
     [Header("Particles")]
     [SerializeField]
-    private GameObject ClawParticles;
+    private GameObject clawParticles;
 
     [SerializeField]
     private GameObject stompParticles;
+
+    [SerializeField]
+    private GameObject burrowParticles;
 
     [Header("Claw particles will be applied to these transforms")]
     [SerializeField]
@@ -21,6 +24,10 @@ public class TestAnimator : MonoBehaviour
     [Header("Foot for stomping")]
     [SerializeField]
     private Transform foot;
+
+    [Header("Burrowing Particles location")]
+    [SerializeField]
+    private Transform burrowParticleLocation;
 
     private Animator ani;
     private bool switchCam = true;
@@ -36,20 +43,25 @@ public class TestAnimator : MonoBehaviour
         //creates a Claw Particle at each claw and assigns its parent
         foreach (var claw in claws)
         {
-            GameObject particles = Instantiate(ClawParticles);
+            GameObject particles = Instantiate(clawParticles);
 
             SetAndResetParent(claw, particles.transform);
 
             bossparticles.AddClawLines(particles);
         }
 
-        //creates the stomp particle and adds it to the foot
+        //creates the stomp particle and adds it to the foot transform
         GameObject stompPart = Instantiate(stompParticles);
         SetAndResetParent(foot, stompPart.transform);
         bossparticles.SetStompParticles(stompPart.GetComponent<ParticleSystem>());
 
+        //creates the burrow particle and adds it to the burrowing position (probably its hands idk)
+        GameObject burrowPart = Instantiate(burrowParticles);
+        SetAndResetParent(burrowParticleLocation, burrowPart.transform);
+        bossparticles.SetBurrowParticles(burrowPart.GetComponent<ParticleSystem>());
     }
 
+    //takes in a parent transform and adds an object to its hierachy 
     private void SetAndResetParent(Transform parent, Transform toAdd)
     {
         toAdd.transform.parent = parent;
