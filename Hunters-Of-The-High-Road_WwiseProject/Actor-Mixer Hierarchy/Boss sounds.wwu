@@ -1,0 +1,1314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{C3AC2395-7B99-4FCD-94D9-F32A0986180C}" SchemaVersion="103">
+	<AudioObjects>
+		<WorkUnit Name="Boss sounds" ID="{C3AC2395-7B99-4FCD-94D9-F32A0986180C}" PersistMode="Standalone">
+			<ChildrenList>
+				<BlendContainer Name="baskic swing attack" ID="{91E3AE14-E6E8-4803-9FD0-6FCBEF0CB966}" ShortID="174764347">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-5</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<RandomSequenceContainer Name="Basic Attack" ID="{70C69719-15AE-47E9-95B6-052CE8909BD0}" ShortID="474366597">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{E7048FD9-3507-4CE0-8DCF-64FC43C889B9}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="200"/>
+													<Property Name="Min" Type="Real64" Value="-200"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="sfx_boss_attack__01" ID="{42707F4E-FE9A-40FC-B16D-47258D5C679C}" ShortID="277053380">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_boss_attack__01" ID="{9AB7E6A4-D7DA-423E-ACCC-52DD44B5F240}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0967109826589594"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="1.36860693641618"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>sfx_boss_attack__01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="874802181"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_boss_attack__01" ID="{9AB7E6A4-D7DA-423E-ACCC-52DD44B5F240}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_boss_attack__03" ID="{F889EE44-CB0D-4D6C-9C75-F751EC6FFBEA}" ShortID="1060719875">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_boss_attack__03" ID="{0ACAE5BB-25F2-442D-9C41-40567D6D912C}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0719364161849712"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="1.62046242774566"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>sfx_boss_attack__03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="131001721"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_boss_attack__03" ID="{0ACAE5BB-25F2-442D-9C41-40567D6D912C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_boss_attack__04" ID="{8CB037C4-E79E-4654-86EA-F2B3C25DB5C6}" ShortID="720262874">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_boss_attack__04" ID="{77BB96A9-C116-4B9C-9142-938F52E63050}">
+											<PropertyList>
+												<Property Name="LoopBegin" Type="Real64" Value="0.974011560693641"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.974011560693641"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>sfx_boss_attack__04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="538157863"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_boss_attack__04" ID="{77BB96A9-C116-4B9C-9142-938F52E63050}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_boss_attack__05" ID="{618E95C6-E35B-46F9-9780-7B798778E7DA}" ShortID="932075781">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_boss_attack__05" ID="{390DD93D-E243-4EEF-8907-25D3FF825F64}">
+											<PropertyList>
+												<Property Name="LoopBegin" Type="Real64" Value="0.987864161849711"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.987864161849711"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>sfx_boss_attack__05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="49360364"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_boss_attack__05" ID="{390DD93D-E243-4EEF-8907-25D3FF825F64}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_boss_attack__02" ID="{6CC3B13B-8B7C-4C24-BAC5-2C58533C0285}" ShortID="745587765">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_boss_attack__02" ID="{AC9927E7-35ED-4738-A021-6773B0FBDEEB}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.129942196531792"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="1.58529479768786"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>sfx_boss_attack__02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="619175511"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_boss_attack__02" ID="{AC9927E7-35ED-4738-A021-6773B0FBDEEB}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Swing attack" ID="{ECBDD667-49BC-4245-A2F9-C1291D4265AE}" ShortID="165591487">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{27A7054A-E4D4-4705-B11C-70FFDC3E1264}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="500"/>
+													<Property Name="Min" Type="Real64" Value="-500"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="sfx_boss_attack_swing_01" ID="{12389FD7-9886-40AA-8A35-C0179A3A3070}" ShortID="211250538">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_boss_attack_swing_01" ID="{AC329E64-6DC2-4950-B5D2-88729329CD21}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.361071321050097"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>sfx_boss_attack_swing_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="109734831"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_boss_attack_swing_01" ID="{AC329E64-6DC2-4950-B5D2-88729329CD21}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_boss_attack_swing_02" ID="{14139794-B90D-408D-BA7B-CEF9D14C9E5E}" ShortID="845566588">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_boss_attack_swing_02" ID="{A63C9034-864E-4448-95F8-4EFEB9DF9E21}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.28340879395472"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>sfx_boss_attack_swing_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="101982553"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_boss_attack_swing_02" ID="{A63C9034-864E-4448-95F8-4EFEB9DF9E21}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_boss_attack_swing_03" ID="{7E583328-39A7-41A5-90F6-EB653EE4C801}" ShortID="211145221">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_boss_attack_swing_03" ID="{42740EF8-4019-45B9-BEB2-FA777908E049}">
+											<PropertyList>
+												<Property Name="LoopBegin" Type="Real64" Value="0.230474379816956"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.230474379816956"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>sfx_boss_attack_swing_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="693164142"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_boss_attack_swing_03" ID="{42740EF8-4019-45B9-BEB2-FA777908E049}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_boss_attack_swing_04" ID="{8CA2052C-43E8-4E03-8711-40B2995304F6}" ShortID="246142010">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_boss_attack_swing_04" ID="{BDF29F3B-637D-41CC-B34A-0D4C8D82E14D}">
+											<PropertyList>
+												<Property Name="LoopBegin" Type="Real64" Value="0.222464414739884"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.222464414739884"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>sfx_boss_attack_swing_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="433508468"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_boss_attack_swing_04" ID="{BDF29F3B-637D-41CC-B34A-0D4C8D82E14D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+					</ChildrenList>
+					<ObjectLists/>
+				</BlendContainer>
+				<BlendContainer Name="boss movement" ID="{95C800DA-760D-49D5-A9D0-CC19DF1F4E96}" ShortID="430942868">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<SwitchContainer Name="footsteps Switch Container" ID="{6551C99E-16AA-435D-882C-BAAF6A1C18D4}" ShortID="973662610">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+								</Reference>
+								<Reference Name="DefaultSwitchOrState">
+									<ObjectRef Name="dirt" ID="{AB97A551-E4C9-4635-A887-4FDD3A97BD17}" WorkUnitID="{43A480E0-7EE8-49D4-8761-5CCBDDAAEE16}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+								</Reference>
+								<Reference Name="SwitchGroupOrStateGroup">
+									<ObjectRef Name="footsteps" ID="{75660003-1E15-42AB-9D4C-BE72C4B3A161}" WorkUnitID="{43A480E0-7EE8-49D4-8761-5CCBDDAAEE16}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<RandomSequenceContainer Name="dirt" ID="{2049F5D6-5A9A-41BA-B59F-F2A64E986FC0}" ShortID="294723504">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>-10</Value>
+											</ValueList>
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{16B76F7A-91DF-43D2-A021-B0CD72E61646}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="70"/>
+															<Property Name="Min" Type="Real64" Value="-70"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<RandomSequenceContainer Name="heel" ID="{0D9A8EC8-C82C-45C2-95C5-394BF9CA4690}" ShortID="1012019323">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="sfx_footstep_heel_hoofsdirt_01" ID="{CCD3740D-6CE1-4335-843A-11E2285C875E}" ShortID="349079858">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footstep_heel_hoofsdirt_01" ID="{AD77E1AC-5596-47A0-8535-C1E36F44C81D}">
+															<PropertyList>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.0331791907514451"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.0776878612716764"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>sfx_footstep_heel_hoofsdirt_01.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="727258973"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footstep_heel_hoofsdirt_01" ID="{AD77E1AC-5596-47A0-8535-C1E36F44C81D}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footstep_heel_hoofsdirt_02" ID="{52D666F4-5C2B-4C35-9B86-C286BE88E686}" ShortID="804693812">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footstep_heel_hoofsdirt_02" ID="{B2D4E519-6881-4971-A2DC-7A959887C5CE}">
+															<PropertyList>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.0291864161849711"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.0930317015895953"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>sfx_footstep_heel_hoofsdirt_02.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="686681099"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footstep_heel_hoofsdirt_02" ID="{B2D4E519-6881-4971-A2DC-7A959887C5CE}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footstep_heel_hoofsdirt_03" ID="{B8B33088-0AE1-4686-A26C-AF1909C804C4}" ShortID="850789898">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footstep_heel_hoofsdirt_03" ID="{B1BDD5C9-66B1-45B0-B19B-AD6DFF66021C}">
+															<PropertyList>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.0301530888728324"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.104530708092485"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>sfx_footstep_heel_hoofsdirt_03.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="552707256"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footstep_heel_hoofsdirt_03" ID="{B1BDD5C9-66B1-45B0-B19B-AD6DFF66021C}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footstep_heel_hoofsdirt_04" ID="{79FC5F4B-B888-4AEB-85C8-B665606D51ED}" ShortID="645559911">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footstep_heel_hoofsdirt_04" ID="{9971215F-F0D6-4DAC-95D0-C7F6AB6E72CC}">
+															<PropertyList>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.0195086705202312"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.060476878612717"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>sfx_footstep_heel_hoofsdirt_04.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="62105963"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footstep_heel_hoofsdirt_04" ID="{9971215F-F0D6-4DAC-95D0-C7F6AB6E72CC}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footstep_heel_hoofsdirt_05" ID="{42151A21-25E6-4511-931E-A4B49B939184}" ShortID="770645911">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footstep_heel_hoofsdirt_05" ID="{953A1D97-07F2-4902-9087-C2CF2A081C4A}">
+															<PropertyList>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.0259940992292871"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.0938047928709057"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>sfx_footstep_heel_hoofsdirt_05.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="942729810"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footstep_heel_hoofsdirt_05" ID="{953A1D97-07F2-4902-9087-C2CF2A081C4A}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footstep_heel_hoofsdirt_06" ID="{3B4E827F-E59A-4AC3-909D-88E851B53D9A}" ShortID="678230036">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footstep_heel_hoofsdirt_06" ID="{D9DE8ABF-3733-4DB4-B862-7BC97D2ADFA2}">
+															<PropertyList>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.0276403239402698"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.119224680876686"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>sfx_footstep_heel_hoofsdirt_06.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="976664943"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footstep_heel_hoofsdirt_06" ID="{D9DE8ABF-3733-4DB4-B862-7BC97D2ADFA2}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<ObjectLists/>
+										</RandomSequenceContainer>
+										<RandomSequenceContainer Name="toe" ID="{56EABAE2-C586-444B-BEC1-7D99E2D302D4}" ShortID="47992347">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="sfx_footstep_heel_hoofsdirt_02" ID="{E419CF50-063D-4304-8276-51A34B8CC59E}" ShortID="681418586">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footstep_heel_hoofsdirt_02" ID="{0CFC1348-D5FF-4461-9423-582739F252A3}">
+															<PropertyList>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.0291864161849711"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimBegin" Type="Real64" Value="0.0899914499036609"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>sfx_footstep_heel_hoofsdirt_02.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="51742120"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footstep_heel_hoofsdirt_02" ID="{0CFC1348-D5FF-4461-9423-582739F252A3}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footstep_heel_hoofsdirt_06" ID="{9EB9AC3E-D2FA-4260-8EC0-0A4AD685E36C}" ShortID="276587931">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footstep_heel_hoofsdirt_06" ID="{4D0D8155-167F-4236-A7CE-287DD50F1AB5}">
+															<PropertyList>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.0276403239402698"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimBegin" Type="Real64" Value="0.12004976517341"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>sfx_footstep_heel_hoofsdirt_06.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="428089676"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footstep_heel_hoofsdirt_06" ID="{4D0D8155-167F-4236-A7CE-287DD50F1AB5}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footstep_heel_hoofsdirt_01" ID="{C641F63B-F684-404D-866A-4578BD76BE65}" ShortID="517517314">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footstep_heel_hoofsdirt_01" ID="{40DDE07D-332A-4928-85A7-81670E10CB6E}">
+															<PropertyList>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.0331791907514451"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimBegin" Type="Real64" Value="0.0793063583815029"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>sfx_footstep_heel_hoofsdirt_01.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="217997662"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footstep_heel_hoofsdirt_01" ID="{40DDE07D-332A-4928-85A7-81670E10CB6E}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footstep_heel_hoofsdirt_03" ID="{5147FF2F-46BD-48AA-9F8A-A9A48DC97025}" ShortID="251355370">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footstep_heel_hoofsdirt_03" ID="{7FEAF17A-A44F-4D2F-9E36-3EA9107A81FF}">
+															<PropertyList>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.0301530888728324"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimBegin" Type="Real64" Value="0.103860639450867"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>sfx_footstep_heel_hoofsdirt_03.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="670958212"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footstep_heel_hoofsdirt_03" ID="{7FEAF17A-A44F-4D2F-9E36-3EA9107A81FF}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footstep_heel_hoofsdirt_05" ID="{AEF6F262-E283-44BC-9031-67FD42C308AA}" ShortID="664408610">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footstep_heel_hoofsdirt_05" ID="{4F703028-4FD0-48AB-A729-CDDBBA1C1145}">
+															<PropertyList>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.0259940992292871"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimBegin" Type="Real64" Value="0.0921095255298651"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>sfx_footstep_heel_hoofsdirt_05.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="490012333"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footstep_heel_hoofsdirt_05" ID="{4F703028-4FD0-48AB-A729-CDDBBA1C1145}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footstep_heel_hoofsdirt_04" ID="{BEC76B32-78D8-40CC-A04A-81AC4C2AB462}" ShortID="209519936">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footstep_heel_hoofsdirt_04" ID="{40C5D171-2F96-4AED-9F28-8D040423AB31}">
+															<PropertyList>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.0195086705202312"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimBegin" Type="Real64" Value="0.0608670520231214"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>sfx_footstep_heel_hoofsdirt_04.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="534701636"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footstep_heel_hoofsdirt_04" ID="{40C5D171-2F96-4AED-9F28-8D040423AB31}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<ObjectLists/>
+										</RandomSequenceContainer>
+									</ChildrenList>
+									<ObjectLists/>
+									<Playlist>
+										<ItemRef Name="heel" ID="{0D9A8EC8-C82C-45C2-95C5-394BF9CA4690}"/>
+										<ItemRef Name="toe" ID="{56EABAE2-C586-444B-BEC1-7D99E2D302D4}"/>
+									</Playlist>
+								</RandomSequenceContainer>
+							</ChildrenList>
+							<ObjectLists/>
+							<GroupingInfo>
+								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="dirt" ID="{2049F5D6-5A9A-41BA-B59F-F2A64E986FC0}"/>
+									</GroupingBehavior>
+								</GroupingBehaviorList>
+								<GroupingList>
+									<Grouping>
+										<SwitchRef Name="dirt" ID="{AB97A551-E4C9-4635-A887-4FDD3A97BD17}"/>
+										<ItemList>
+											<ItemRef Name="dirt" ID="{2049F5D6-5A9A-41BA-B59F-F2A64E986FC0}"/>
+										</ItemList>
+									</Grouping>
+								</GroupingList>
+							</GroupingInfo>
+						</SwitchContainer>
+						<RandomSequenceContainer Name="cloth" ID="{FB48B723-DD06-4DFE-BCA8-0A98AFBCF034}" ShortID="973456644">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{3A38B6D5-B586-4D67-BC50-60952D80A016}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="70"/>
+													<Property Name="Min" Type="Real64" Value="-70"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{AAC929C0-98BA-4271-8D89-7E867A623144}">
+												<PropertyList>
+													<Property Name="Max" Type="Real64" Value="70"/>
+													<Property Name="Min" Type="Real64" Value="-70"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="63759-Wig_big_clown_hair_adjust_on_head-BLASTWAVEFX-02183" ID="{A71E46CB-8299-408E-AB4A-F561351D151A}" ShortID="776170762">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="63759-Wig_big_clown_hair_adjust_on_head-BLASTWAVEFX-02183" ID="{F6C07C33-D9B5-4EF2-A8DD-66E8A544D56E}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.0575526909263023"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.315897133419842"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.530832592356076"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>63759-Wig_big_clown_hair_adjust_on_head-BLASTWAVEFX-02183.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="787252066"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="63759-Wig_big_clown_hair_adjust_on_head-BLASTWAVEFX-02183" ID="{F6C07C33-D9B5-4EF2-A8DD-66E8A544D56E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="76891-Wig_big_clown_hair_handle_movement-BLASTWAVEFX-12899" ID="{BD1289C5-FD51-456B-BC6F-B2173F5A9FC3}" ShortID="48308311">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="76891-Wig_big_clown_hair_handle_movement-BLASTWAVEFX-12899" ID="{71CE63E6-3B36-4BA9-A088-F745CCA33F90}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.133929456175534"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.396828018297878"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.739092184079799"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>76891-Wig_big_clown_hair_handle_movement-BLASTWAVEFX-12899.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="587608525"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="76891-Wig_big_clown_hair_handle_movement-BLASTWAVEFX-12899" ID="{71CE63E6-3B36-4BA9-A088-F745CCA33F90}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="63759-Wig_big_clown_hair_adjust_on_head-BLASTWAVEFX-02183_01" ID="{64A672BC-4DF9-4906-A0F5-BCF1CBE6F438}" ShortID="1048632230">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="63759-Wig_big_clown_hair_adjust_on_head-BLASTWAVEFX-02183" ID="{48DA0028-FE29-43FB-9339-EA8714859B7F}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.0575526909263023"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.316539800094663"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>63759-Wig_big_clown_hair_adjust_on_head-BLASTWAVEFX-02183.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="31148998"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="63759-Wig_big_clown_hair_adjust_on_head-BLASTWAVEFX-02183" ID="{48DA0028-FE29-43FB-9339-EA8714859B7F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="76891-Wig_big_clown_hair_handle_movement-BLASTWAVEFX-12899_01" ID="{7E96078A-32E7-443B-9CA2-E7F475CD34DB}" ShortID="803146711">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="76891-Wig_big_clown_hair_handle_movement-BLASTWAVEFX-12899" ID="{171EE4C0-66A8-40E1-A655-32001499237F}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.133929456175534"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="1.53770857090428"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.93949693943088"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>76891-Wig_big_clown_hair_handle_movement-BLASTWAVEFX-12899.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="65470196"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="76891-Wig_big_clown_hair_handle_movement-BLASTWAVEFX-12899" ID="{171EE4C0-66A8-40E1-A655-32001499237F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+					</ChildrenList>
+					<ObjectLists/>
+				</BlendContainer>
+				<BlendContainer Name="scream" ID="{C622C187-EE8A-41F9-8951-DF5837B94FC1}" ShortID="1015760427">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<RandomSequenceContainer Name="Scream" ID="{27CF264B-9F8E-4F3B-9B64-25F2AF69CE57}" ShortID="48557717">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{D9AA4771-DB0E-4ED9-98B2-7BC4F4D3067D}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="200"/>
+													<Property Name="Min" Type="Real64" Value="-200"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="sfx_boss_attack_scream_01" ID="{339A3323-E958-4647-9F3E-596C476C4BD5}" ShortID="820061009">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_boss_attack_scream_01" ID="{05864AE7-A9A7-48F1-B515-3AEDC9716126}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.152079614119251"/>
+												<Property Name="TrimEnd" Type="Real64" Value="3.47685462624356"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>sfx_boss_attack_scream_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="461171482"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_boss_attack_scream_01" ID="{05864AE7-A9A7-48F1-B515-3AEDC9716126}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_boss_attack_scream_02" ID="{75761856-5537-4393-8A20-391C11A7FE87}" ShortID="1033234045">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_boss_attack_scream_02" ID="{65E54444-EA3F-4B34-A6A4-7B408C9943D7}">
+											<PropertyList>
+												<Property Name="LoopBegin" Type="Real64" Value="0"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="3.32301561086862"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>sfx_boss_attack_scream_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="354529564"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_boss_attack_scream_02" ID="{65E54444-EA3F-4B34-A6A4-7B408C9943D7}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_boss_attack_scream_03" ID="{F1DCF91A-2819-41BB-AEC4-4808CFFB7199}" ShortID="128745757">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_boss_attack_scream_03" ID="{8FF09CBB-100F-47CB-931E-E7AE17E3E729}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.724766951096431"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="2.39938375735651"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>sfx_boss_attack_scream_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="704304611"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_boss_attack_scream_03" ID="{8FF09CBB-100F-47CB-931E-E7AE17E3E729}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="New Random Container" ID="{40AC3F7D-DE7D-45C3-ADCB-117E8F083C56}" ShortID="124076009">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="462378-ANIMAL_FARM_Pig-Baby-Scream-Shrill-City_Street_01" ID="{4C71B1B1-3522-4BFC-A6DA-E31DA639C56B}" ShortID="264105857">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>-630</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-5</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="462378-ANIMAL_FARM_Pig-Baby-Scream-Shrill-City_Street_01" ID="{43EC2812-0153-4053-BB6F-9105687B2682}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.537865802625241"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.318263788535646"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.26097630659923"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>462378-ANIMAL_FARM_Pig-Baby-Scream-Shrill-City_Street_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="711033090"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="462378-ANIMAL_FARM_Pig-Baby-Scream-Shrill-City_Street_01" ID="{43EC2812-0153-4053-BB6F-9105687B2682}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="506834-Small-Creature-Vocal-Mad-Scream-Curse-Dammed" ID="{0AADB5D1-B57E-41CE-829A-C9C615E88C56}" ShortID="461455931">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>-860</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-10</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="506834-Small-Creature-Vocal-Mad-Scream-Curse-Dammed" ID="{BE10654F-0B51-4F50-8D54-4AB51511DC83}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.302119460500963"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.46859344894027"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="1.14065510597303"/>
+												<Property Name="TrimEnd" Type="Real64" Value="3.10134874759153"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>506834-Small-Creature-Vocal-Mad-Scream-Curse-Dammed.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="450421673"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="506834-Small-Creature-Vocal-Mad-Scream-Curse-Dammed" ID="{BE10654F-0B51-4F50-8D54-4AB51511DC83}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+					</ChildrenList>
+					<ObjectLists/>
+				</BlendContainer>
+				<RandomSequenceContainer Name="Boss damage" ID="{C17F777E-C3FD-42D8-875F-209E9361AF27}" ShortID="335693845">
+					<PropertyList>
+						<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{DB1944FB-D8F0-4B71-AEA6-75FCA10A2361}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Min" Type="Real64" Value="-400"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="sfx_boss_impact_damage_01" ID="{A56E5274-32BF-41E6-9B89-08641ED28B84}" ShortID="230974259">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_boss_impact_damage_01" ID="{95894008-D8E8-4B76-8CE6-A300A66C735F}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_boss_impact_damage_01.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="676038459"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_boss_impact_damage_01" ID="{95894008-D8E8-4B76-8CE6-A300A66C735F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_boss_impact_damage_02" ID="{3CEE3EE1-0E00-4482-96ED-D87F07754429}" ShortID="851972213">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_boss_impact_damage_02" ID="{FDB3BE51-80F7-4F02-AD4D-F85C79705FC1}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_boss_impact_damage_02.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="172322772"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_boss_impact_damage_02" ID="{FDB3BE51-80F7-4F02-AD4D-F85C79705FC1}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_boss_impact_damage_03" ID="{1E4252DE-8F63-4BCC-8E66-684D11C0C830}" ShortID="315445955">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_boss_impact_damage_03" ID="{FAC52B5C-4B27-4BCF-BBF9-1D64CDCC0C5E}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_boss_impact_damage_03.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="801393723"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_boss_impact_damage_03" ID="{FAC52B5C-4B27-4BCF-BBF9-1D64CDCC0C5E}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_boss_impact_damage_04" ID="{22C0ACBD-A8FA-436A-B4CE-C2D0C3FE113E}" ShortID="1044999012">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_boss_impact_damage_04" ID="{38F51DC0-9760-4AFD-820A-8F6715303E8B}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_boss_impact_damage_04.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="298544106"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_boss_impact_damage_04" ID="{38F51DC0-9760-4AFD-820A-8F6715303E8B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<ObjectLists/>
+				</RandomSequenceContainer>
+				<Sound Name="sfx_boss_impact_death_01" ID="{BF8BE297-08B4-457E-9183-6D17D41E1098}" ShortID="1016454056">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="sfx_boss_impact_death_01" ID="{DF1AA1C8-DF8F-438D-9EB5-EDE7E5E90DEC}">
+							<Language>SFX</Language>
+							<AudioFile>sfx_boss_impact_death_01.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="497545512"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="sfx_boss_impact_death_01" ID="{DF1AA1C8-DF8F-438D-9EB5-EDE7E5E90DEC}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

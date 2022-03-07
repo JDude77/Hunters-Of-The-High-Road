@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{178A8A63-E7F5-42E9-A001-BF3928FE72A4}" SchemaVersion="103">
+	<AudioObjects>
+		<WorkUnit Name="Player sounds" ID="{178A8A63-E7F5-42E9-A001-BF3928FE72A4}" PersistMode="Standalone">
+			<ChildrenList>
+				<WorkUnit Name="Player Footstep" ID="{24EB3147-0D66-48F2-BC09-377B3B125AB2}" PersistMode="Reference"/>
+				<WorkUnit Name="Player Damage" ID="{CAB2D4F9-9D4D-4E12-BB09-D2A3C422B7A8}" PersistMode="Reference"/>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

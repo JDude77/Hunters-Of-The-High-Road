@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{0656ACAB-EEB3-429C-A07D-AFAD298F7E65}" SchemaVersion="103">
+	<AudioObjects>
+		<WorkUnit Name="Player weapons" ID="{0656ACAB-EEB3-429C-A07D-AFAD298F7E65}" PersistMode="Standalone">
+			<ChildrenList>
+				<WorkUnit Name="Rifle" ID="{36524834-A5D3-4081-8390-A3FE7E1D7ADB}" PersistMode="Reference"/>
+				<WorkUnit Name="Sword" ID="{89004378-CD5C-4ED3-AA20-E73F232471D1}" PersistMode="Reference"/>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>
