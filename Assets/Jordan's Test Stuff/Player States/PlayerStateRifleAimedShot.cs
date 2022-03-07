@@ -19,8 +19,11 @@ public class PlayerStateRifleAimedShot : PlayerState
 
     public override bool EnterState()
     {
+
         playerAdvancedAnimations.SetIsUsingGun(true, 0);
         rifle.SetIsBeingAimed(true);
+        playerAnimator.SetBool("isAiming", true);
+        playerAnimator.SetLayerWeight(1, 0);
 
         rifle.Deadshot();
 
@@ -31,6 +34,8 @@ public class PlayerStateRifleAimedShot : PlayerState
     {
         rifle.DeactivateDeadshot();
         rifle.SetIsBeingAimed(false);
+        playerAnimator.SetBool("isAiming", false);
+        playerAnimator.SetLayerWeight(1, 1);
 
         return true;
     }//End ExitState
@@ -38,6 +43,7 @@ public class PlayerStateRifleAimedShot : PlayerState
     public override void UpdateState()
     {
         base.UpdateState();
+        Debug.Log("is the player aiming: " + playerAnimator.GetBool("isAiming"));
 
         MakePlayerLookAtAimLocation();
         rifle.UpdateLinePosition();
