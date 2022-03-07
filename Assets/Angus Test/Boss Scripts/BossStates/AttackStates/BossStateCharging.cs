@@ -21,6 +21,7 @@ public class BossStateCharging : AttackState
     [SerializeField] private float inRangeDistance;
     [Tooltip("An offset from the charge's end point so that the boss does not go the full distance. Preferably set to half the radius of the swipe attack circle")]
     [SerializeField] private float stopDistance;
+    [SerializeField]  public float runSpeed;
     [Space(5)]
     [SerializeField] private float windUpTime;
     [SerializeField] private float consecutiveWindUpTime;
@@ -81,7 +82,7 @@ public class BossStateCharging : AttackState
             Vector3 targetPosition = player.transform.position;
             targetPosition.y = transform.position.y;
             //Set the boss's speed
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, boss.runSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, runSpeed * Time.deltaTime);
             //Get the vector from the boss to the player
             distanceToPlayer = player.transform.position - transform.position;
             yield return null;

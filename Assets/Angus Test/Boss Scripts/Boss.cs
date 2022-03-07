@@ -17,14 +17,17 @@ public class Boss : Character
         Slashing
     }
 
-    public float runSpeed;
-
     public State state;
-    public Rigidbody body = null;
-    private BossState currentState = null;
-    private CapsuleCollider capsuleCollider = null;
-    public BossEventsHandler eventsHandler;
     public LayerMask attackLayer;
+
+    public Rigidbody body;
+    private CapsuleCollider capsuleCollider;
+
+    public BossEventsHandler eventsHandler;
+
+    private BossStateMachine stateMachine;
+    private BossState currentState;
+
     //Start is called before the first frame update
     protected override void Start()
     {
@@ -35,13 +38,19 @@ public class Boss : Character
         if (capsuleCollider == null) capsuleCollider = gameObject.AddComponent<CapsuleCollider>();
         //Get the current state
         currentState = GetComponent<BossStateIdle>();
-        if(currentState == null) currentState = gameObject.AddComponent<BossStateIdle>();
+        if (currentState == null) currentState = gameObject.AddComponent<BossStateIdle>();
+
         if (!GetComponent<BossStateCharging>()) gameObject.AddComponent<BossStateCharging>();
+
         if (!GetComponent<BossStateLandsRoots>()) gameObject.AddComponent<BossStateLandsRoots>();
+
         if (!GetComponent<BossStateUproot>()) gameObject.AddComponent<BossStateUproot>();
+
         if (!GetComponent<BossStateCircleSwipe>()) gameObject.AddComponent<BossStateCircleSwipe>();
+
         if (!GetComponent<BossStateStunned>()) gameObject.AddComponent<BossStateStunned>();
 
+        if (!GetComponent<BossEventsHandler>()) Debug.LogWarning("WARNING: No BossEventsHandler detected.");
         //Get the rigidbody
         body = GetComponent<Rigidbody>();
         if (body == null)
@@ -59,12 +68,6 @@ public class Boss : Character
     {
         //Runs the current state's update
         currentState.Run();
-        
-        //TESTING
-        if (Input.GetKeyDown("space"))
-        {
-            
-        }
     } //End Update
 
     private void FixedUpdate()

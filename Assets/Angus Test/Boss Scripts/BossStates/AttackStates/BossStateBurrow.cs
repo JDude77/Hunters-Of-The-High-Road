@@ -4,33 +4,52 @@ using UnityEngine;
 
 public class BossStateBurrow : AttackState
 {
-    [SerializeField] float goundedYPosition;
-    [SerializeField] float burrowYPosition;
-    [SerializeField] float maxRotationSpeed;
-    [SerializeField] float burrowSpeed;
+    [SerializeField] private float goundedYPosition;
+    [SerializeField] private float burrowYPosition;
+    [SerializeField] private float particleYPosition;
+    [SerializeField] private float maxRotationSpeed;
+    [SerializeField] private float burrowSpeed;
+    [SerializeField] private GameObject particles;
+
+    public void Awake()
+    {
+        BossAnimationEventsHandler.current.OnBurrowDownFinished += BeginBurrowCoroutine;
+    }
 
     public void Start()
     {
         base.Start();
-    }
+    }//End Start
 
     public override void OnEnter()
     {
         base.OnEnter();
-    }
+        //Start animation 
+        StartCoroutine(StartBurrow());
+    } //End OnEnter
 
     public override void OnExit()
     {
         base.OnExit(); 
-    }
+    } //End OnExit
 
     public override void FixedRun()
     {
         base.FixedRun();
     }
 
+    private void BeginBurrowCoroutine()
+    {
+        StartCoroutine(StartBurrow());
+    }
+
     IEnumerator StartBurrow()
     {
-       yield return null;
+        yield return new WaitForSeconds(1f);
+        Vector3 newPosition = transform.position;
+        newPosition.y = burrowYPosition;
+        transform.position = newPosition;
+        newPosition.y = particleYPosition;
+        Instantiate(particles, newPosition, Quaternion.identity);
     }
 }

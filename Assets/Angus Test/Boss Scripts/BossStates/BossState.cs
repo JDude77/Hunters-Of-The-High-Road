@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BossState : MonoBehaviour
 {
-    protected static Boss boss = null;
-    protected static GameObject player = null;
+    protected static Boss boss;
+    protected static GameObject player;
 
     protected void Start()
     {
@@ -26,16 +26,16 @@ public class BossState : MonoBehaviour
 
     public virtual void OnEnter() 
     {
-        enabled = true;
+        //enabled = true;
     }
-    public virtual void OnExit() 
-    {  
+    public virtual void OnExit()
+    {
+        //enabled = false;
     }
     public virtual void Run() 
     {
     }
     public virtual void FixedRun()
     {
-        enabled = false;
     }
 }
