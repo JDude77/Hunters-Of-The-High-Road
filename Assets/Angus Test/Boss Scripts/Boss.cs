@@ -39,6 +39,8 @@ public class Boss : Character
         if (!GetComponent<BossStateCharging>()) gameObject.AddComponent<BossStateCharging>();
         if (!GetComponent<BossStateLandsRoots>()) gameObject.AddComponent<BossStateLandsRoots>();
         if (!GetComponent<BossStateUproot>()) gameObject.AddComponent<BossStateUproot>();
+        if (!GetComponent<BossStateCircleSwipe>()) gameObject.AddComponent<BossStateCircleSwipe>();
+        if (!GetComponent<BossStateStunned>()) gameObject.AddComponent<BossStateStunned>();
 
         //Get the rigidbody
         body = GetComponent<Rigidbody>();
@@ -48,6 +50,7 @@ public class Boss : Character
             body = gameObject.AddComponent<Rigidbody>();
             //Add rotation constraints
             body.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+            body.isKinematic = true;
         }
     } //End Start
 
@@ -75,12 +78,13 @@ public class Boss : Character
     {
         //Exits the current state
         currentState.OnExit();
-
+        Debug.Log("Exiting: " + state.ToString());
         //Get the type of the state
         Type type = Type.GetType("BossState" + state_.ToString());
         //Add that state as a component
         currentState = (BossState)GetComponent(type);
         state = state_;
+        Debug.Log("Entering: " + state.ToString());
         //Enter the new state
         currentState.OnEnter();
 

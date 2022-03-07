@@ -10,7 +10,6 @@ public class BossStateIdle : BossState
     public override void OnEnter()
     {
         base.OnEnter();
-        Debug.Log("Idle State Enter");
         boss.ChangeState(Boss.State.DecisionPrototype);
     }
 
@@ -26,6 +25,5 @@ public class BossStateIdle : BossState
     public override void OnExit()
     {
         base.OnExit();
-        Debug.Log("Idle State Exit");
     }
 }

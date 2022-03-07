@@ -10,6 +10,10 @@ public class BossEventsHandler : MonoBehaviour
     {
         current = this;
     }
+
+    public event Action OnBossStunned;
+    public void BossStunned() { OnBossStunned?.Invoke(); }
+
     #region Charge Attack Events
     public event Action OnChargeStart;
     public void ChargeStart() { OnChargeStart?.Invoke(); }

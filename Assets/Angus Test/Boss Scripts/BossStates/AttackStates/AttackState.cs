@@ -9,11 +9,25 @@ public class AttackState : BossState
     [SerializeField] private bool randomizeDamage;
     [SerializeField] private int maxDamage;
     [SerializeField] private int minDamage;
+    [SerializeField] private bool checkForStunEvent;
+
+    private void Awake()
+    {
+        if(checkForStunEvent)
+            BossEventsHandler.current.OnBossStunned += StunnedResponse;
+    }
+
     protected int GetDamageValue()
     {
         if (randomizeDamage)
             return Random.Range(minDamage, maxDamage);
 
         return minDamage;
+    }
+
+    private void StunnedResponse()
+    {
+        //Change the boss's state
+        boss.ChangeState(Boss.State.Stunned);
     }
 }
