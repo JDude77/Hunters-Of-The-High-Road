@@ -14,6 +14,7 @@ public class Boss : Character
         CircleSwipe,
         DecisionPrototype,
         Stunned,
+        Burrow,
         Slashing
     }
 
@@ -57,10 +58,12 @@ public class Boss : Character
         {
             //Add the component
             body = gameObject.AddComponent<Rigidbody>();
-            //Add rotation constraints
-            body.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
-            body.isKinematic = true;
         }
+
+        //Add rotation constraints
+        body.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+        body.isKinematic = true;
+
     } //End Start
 
     //Update is called once per frame
