@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{0DB39DF2-E13D-4A9B-B858-5DB4572C3287}" SchemaVersion="103">
 	<SoundBanks>
-		<WorkUnit Name="Default Work Unit" ID="{0DB39DF2-E13D-4A9B-B858-5DB4572C3287}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{0DB39DF2-E13D-4A9B-B858-5DB4572C3287}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="Player" ID="{60D10E6D-FC15-4DED-9BB7-70595284826E}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Play_Foot_steps_Blend_Container" ID="{B7CB5942-D572-43B7-AE14-09200A366A08}" WorkUnitID="{FEBC0DFB-5402-497C-AFBE-650CCE855735}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+				<SoundBank Name="environment" ID="{7C2EEACE-B409-4463-81F5-36B47D7CBB94}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Play_forrest_or_grave" ID="{AFC14BEE-D4B4-411E-8D04-3FBA2B7F1F45}" WorkUnitID="{FEBC0DFB-5402-497C-AFBE-650CCE855735}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+				<SoundBank Name="Weapons" ID="{3CFE0723-F45B-4F16-A345-E8A403948A93}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Play_sward_full" ID="{2C9B4E03-8BD5-4D18-AACB-209FAE502C16}" WorkUnitID="{FEBC0DFB-5402-497C-AFBE-650CCE855735}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundBanks>
 </WwiseDocument>

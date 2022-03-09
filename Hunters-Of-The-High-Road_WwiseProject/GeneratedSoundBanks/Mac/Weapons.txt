@@ -1,0 +1,13 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2602512053	Play_sward_full			\Default Work Unit\Play_sward_full	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	243304111	sfx_weapon_sword_windup_01	D:\unity Projects\Hunters-Of-The-High-Road\Hunters-Of-The-High-Road_WwiseProject\.cache\Mac\SFX\sward pull_10C4C929.wem		\Actor-Mixer Hierarchy\Player weapons\Sword\sward full\sfx_weapon_sword_windup_01		577106
+	282849044	sfx_weapon_sword_metal_01	D:\unity Projects\Hunters-Of-The-High-Road\Hunters-Of-The-High-Road_WwiseProject\.cache\Mac\SFX\sfx_weapon_sword_metal_01_10C4C929.wem		\Actor-Mixer Hierarchy\Player weapons\Sword\sward full\sword Blend Container_01\metal clang\sfx_weapon_sword_metal_01		67264
+	284620773	sfx_weapon_sword_metal_03	D:\unity Projects\Hunters-Of-The-High-Road\Hunters-Of-The-High-Road_WwiseProject\.cache\Mac\SFX\sfx_weapon_sword_metal_03_10C4C929.wem		\Actor-Mixer Hierarchy\Player weapons\Sword\sward full\sword Blend Container_01\metal clang\sfx_weapon_sword_metal_03		57890
+	342281756	sfx_weapon_sword_slash_01	D:\unity Projects\Hunters-Of-The-High-Road\Hunters-Of-The-High-Road_WwiseProject\.cache\Mac\SFX\sfx_weapon_sword_slash_01_10C4C929.wem		\Actor-Mixer Hierarchy\Player weapons\Sword\sward full\sword Blend Container_01\slash\sfx_weapon_sword_slash_01		113548
+	356225369	sfx_weapon_sword_slash_02	D:\unity Projects\Hunters-Of-The-High-Road\Hunters-Of-The-High-Road_WwiseProject\.cache\Mac\SFX\sfx_weapon_sword_slash_02_10C4C929.wem		\Actor-Mixer Hierarchy\Player weapons\Sword\sward full\sword Blend Container_01\slash\sfx_weapon_sword_slash_02		307784
+	547661489	sfx_weapon_sword_metal_02	D:\unity Projects\Hunters-Of-The-High-Road\Hunters-Of-The-High-Road_WwiseProject\.cache\Mac\SFX\sfx_weapon_sword_metal_02_10C4C929.wem		\Actor-Mixer Hierarchy\Player weapons\Sword\sward full\sword Blend Container_01\metal clang\sfx_weapon_sword_metal_02		76864
+	658589117	sfx_weapon_sword_blessedmetal_01	D:\unity Projects\Hunters-Of-The-High-Road\Hunters-Of-The-High-Road_WwiseProject\.cache\Mac\SFX\sfx_weapon_sword_blessedmetal_01_40300E98.wem		\Actor-Mixer Hierarchy\Player weapons\Sword\sward full\sword Blend Container_01\sfx_weapon_sword_blessedmetal_01		270400
+	956961059	sfx_weapon_sword_metal_04	D:\unity Projects\Hunters-Of-The-High-Road\Hunters-Of-The-High-Road_WwiseProject\.cache\Mac\SFX\sfx_weapon_sword_metal_04_10C4C929.wem		\Actor-Mixer Hierarchy\Player weapons\Sword\sward full\sword Blend Container_01\metal clang\sfx_weapon_sword_metal_04		67124
+

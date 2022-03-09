@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{FEBC0DFB-5402-497C-AFBE-650CCE855735}" SchemaVersion="103">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{FEBC0DFB-5402-497C-AFBE-650CCE855735}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{FEBC0DFB-5402-497C-AFBE-650CCE855735}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_Foot_steps_Blend_Container" ID="{B7CB5942-D572-43B7-AE14-09200A366A08}">
+					<ChildrenList>
+						<Action Name="" ID="{3E24B8C3-FF93-4823-9A55-6D585F99F5D4}" ShortID="377682546">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Foot steps Blend Container" ID="{6BDF16E0-73AC-470C-96BE-B840A958DF5C}" WorkUnitID="{24EB3147-0D66-48F2-BC09-377B3B125AB2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_forrest_or_grave" ID="{AFC14BEE-D4B4-411E-8D04-3FBA2B7F1F45}">
+					<ChildrenList>
+						<Action Name="" ID="{BBA826C0-CA5D-4671-A0D4-40598164FBF0}" ShortID="1004784719">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="forrest or grave" ID="{B1FBAF52-7524-4033-B4E2-E1374B6A9F44}" WorkUnitID="{CC64EC57-E9ED-4D98-AE09-BB92447C17D8}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_sward_full" ID="{2C9B4E03-8BD5-4D18-AACB-209FAE502C16}">
+					<ChildrenList>
+						<Action Name="" ID="{BAB81A50-D4E4-4ACB-9F66-9C9620CFC82D}" ShortID="758152544">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sward full" ID="{40E19F7A-CC39-4DC5-8521-D54267DF3707}" WorkUnitID="{89004378-CD5C-4ED3-AA20-E73F232471D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>
