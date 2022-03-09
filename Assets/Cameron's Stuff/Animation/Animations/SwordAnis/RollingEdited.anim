@@ -73384,14 +73384,14 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: ToggleAimRig
+    functionName: deactivateAimRig
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 0.53333336
-    functionName: RollCameraShake
+    functionName: shakeCamera
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
