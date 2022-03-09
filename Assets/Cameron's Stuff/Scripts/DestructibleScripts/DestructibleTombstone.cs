@@ -11,18 +11,19 @@ public class DestructibleTombstone : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        FindObjectOfType<PlayerEventsHandler>().OnHit += DestroyTombstone;
+        FindObjectOfType<PlayerEventsHandler>().OnHitGravestone += DestroyTombstone;
         normalVersion = gameObject;
     }
 
-    public void DestroyTombstone(string tag)
+    public void DestroyTombstone(GameObject instance)
     {
-        if(tag == "Tombstone")
+        if(instance == gameObject)
         {
             DestroyedVersion.transform.parent = null;
             DestroyedVersion.SetActive(true);
 
             normalVersion.SetActive(false);
+            FindObjectOfType<PlayerEventsHandler>().OnHitGravestone -= DestroyTombstone;
         }//End if
     }//End DestroyTombstone
 }

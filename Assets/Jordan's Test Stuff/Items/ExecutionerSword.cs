@@ -38,7 +38,21 @@ public class ExecutionerSword : Weapon
 
         foreach(Collider objectHit in objectsHitBySword)
         {
-            PlayerEventsHandler.current.Hit(objectHit.tag);
+            switch(objectHit.tag)
+            {
+                case "Chain":
+                    PlayerEventsHandler.current.HitChain(objectHit.gameObject);
+                    break;
+                case "Tombstone":
+                    PlayerEventsHandler.current.HitGravestone(objectHit.gameObject);
+                    break;
+                case "Bottle":
+                    PlayerEventsHandler.current.HitBottle(objectHit.gameObject);
+                    break;
+                case "Enemy":
+
+                    break;
+            }//End switch
         }//End foreach
     }//End Use
 }

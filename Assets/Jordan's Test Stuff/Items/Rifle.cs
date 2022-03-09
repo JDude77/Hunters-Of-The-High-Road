@@ -132,14 +132,24 @@ public class Rifle : Weapon
 
         foreach (Collider hit in shotHits)
         {
-            PlayerEventsHandler.current.Hit(hit.tag);
-            switch (hit.tag)
+            if (hit.gameObject != null)
             {
-                case "Enemy":
-                    hitEnemy = true;
-                    //Call do damage action
-                    break;
-            }//End switch
+                switch (hit.tag)
+                {
+                    case "Chain":
+                        PlayerEventsHandler.current.HitChain(hit.gameObject);
+                        break;
+                    case "Tombstone":
+                        PlayerEventsHandler.current.HitGravestone(hit.gameObject);
+                        break;
+                    case "Bottle":
+                        PlayerEventsHandler.current.HitBottle(hit.gameObject);
+                        break;
+                    case "Enemy":
+                        hitEnemy = true;
+                        break;
+                }//End switch
+            }//End if
         }//End foreach
         Deadshot(hitEnemy);
 
@@ -209,7 +219,7 @@ public class Rifle : Weapon
 
         Vector3 playerLookAtLocation = shotLocation - playerReference.transform.position;
         playerLookAtLocation.y = 0;
-        playerReference.transform.rotation = Quaternion.LookRotation(playerLookAtLocation);
+        playerTransform.rotation = Quaternion.LookRotation(playerLookAtLocation);
 
         Ray shotRay = new Ray(muzzle.position, shotLocation - muzzle.position);
 

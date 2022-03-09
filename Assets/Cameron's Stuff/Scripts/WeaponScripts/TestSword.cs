@@ -23,7 +23,7 @@ public class TestSword : MonoBehaviour
         {
             if(hit.tag == "Chain")
             {
-                hit.GetComponentInParent<ChainDoorScript>().OpenDoor(hit.tag);
+                hit.GetComponentInParent<ChainDoorScript>().OpenDoor(hit.gameObject);
                 hit.gameObject.SetActive(false);
             }
         }

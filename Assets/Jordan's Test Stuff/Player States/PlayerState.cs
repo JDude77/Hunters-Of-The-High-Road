@@ -12,7 +12,8 @@ public class PlayerState : MonoBehaviour
         { Player.State.Running, typeof(PlayerStateRunning) },
         { Player.State.Dodging, typeof(PlayerStateDodging) },
         { Player.State.ExecutionerSwordAttack, typeof(PlayerStateExecutionerSwordAttack) },
-        { Player.State.RifleAimedShot, typeof(PlayerStateRifleAimedShot) }
+        { Player.State.RifleAimedShot, typeof(PlayerStateRifleAimedShot) },
+        { Player.State.GameStart, typeof(PlayerStateGameStart) }
     };
 
     //All states reference the same player

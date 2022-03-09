@@ -4,14 +4,15 @@ public class TutorialBottle : MonoBehaviour
 {
     private void Start()
     {
-        FindObjectOfType<PlayerEventsHandler>().OnHit += ShootBottle;
+        FindObjectOfType<PlayerEventsHandler>().OnHitBottle += ShootBottle;
     }//End Start
 
-    public void ShootBottle(string tag)
+    public void ShootBottle(GameObject instance)
     {
-        if(tag == "Bottle")
+        if(instance == gameObject)
         {
             Destroy(gameObject);
+            FindObjectOfType<PlayerEventsHandler>().OnHitBottle -= ShootBottle;
         }//End if
     }//End ShootBottle
 }

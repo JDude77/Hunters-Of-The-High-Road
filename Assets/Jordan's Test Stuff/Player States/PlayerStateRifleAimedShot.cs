@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerStateRifleAimedShot : PlayerState
 {
     private Rifle rifle;
+    private Transform playerTransform;
 
     protected override void Awake()
     {
@@ -15,6 +16,7 @@ public class PlayerStateRifleAimedShot : PlayerState
     private void Start()
     {
         rifle = playerReference.GetComponentInChildren<Rifle>();
+        playerTransform = playerReference.GetComponentInChildren<Animator>().transform;
     }//End Start
 
     public override bool EnterState()
@@ -65,7 +67,7 @@ public class PlayerStateRifleAimedShot : PlayerState
 
         Vector3 lookAt = shotLocation - playerReference.transform.position;
         lookAt.y = 0;
-        playerReference.transform.rotation = Quaternion.LookRotation(lookAt);
+        playerTransform.rotation = Quaternion.LookRotation(lookAt);
     }//End MakePlayerLookAtAimLocation
 
     protected override void UpdateStateInputs()
