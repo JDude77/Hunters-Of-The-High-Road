@@ -9,11 +9,16 @@ public class ChainDoorScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ani = GetComponent<Animator>();    
+        FindObjectOfType<PlayerEventsHandler>().OnHit += OpenDoor;
+        ani = GetComponent<Animator>();
     }
 
-    public void openDoor()
+    public void OpenDoor(string tag)
     {
-        ani.Play("OpenDoor");
-    }
+        if (tag == "Chain")
+        {
+            ani.Play("OpenDoor");
+            gameObject.SetActive(false);
+        }//End if
+    }//End OpenDoor
 }

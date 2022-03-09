@@ -1,11 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TutorialBottle : MonoBehaviour
 {
-    public void shootBottle()
+    private void Start()
     {
-        Destroy(gameObject);
-    }
+        FindObjectOfType<PlayerEventsHandler>().OnHit += ShootBottle;
+    }//End Start
+
+    public void ShootBottle(string tag)
+    {
+        if(tag == "Bottle")
+        {
+            Destroy(gameObject);
+        }//End if
+    }//End ShootBottle
 }

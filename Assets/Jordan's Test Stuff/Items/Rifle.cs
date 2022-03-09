@@ -132,21 +132,9 @@ public class Rifle : Weapon
 
         foreach (Collider hit in shotHits)
         {
+            PlayerEventsHandler.current.Hit(hit.tag);
             switch (hit.tag)
             {
-                case "Chain":
-                    hit.GetComponentInParent<ChainDoorScript>().openDoor();
-                    hit.gameObject.SetActive(false);
-                    break;
-
-                case "Tombstone":
-                    hit.GetComponentInParent<DestructibleTombstone>().destroyTombstone();
-                    break;
-
-                case "Bottle":
-                    hit.GetComponentInParent<TutorialBottle>().shootBottle();
-                    break;
-
                 case "Enemy":
                     hitEnemy = true;
                     //Call do damage action
