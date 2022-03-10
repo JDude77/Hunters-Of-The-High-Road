@@ -2,17 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+
 public class BossEventsHandler : MonoBehaviour
 {
     public static BossEventsHandler current;
 
+    public Dictionary<string, Action> actionToString; 
+
     private void Awake()
     {
         current = this;
+        current.InitDictionary();        
     }
 
+    #region Boss Stunned
     public event Action OnBossStunned;
-    public void BossStunned() { OnBossStunned?.Invoke(); }
+    public void BossStunned() { actionToString["OnBossStunned"]?.Invoke(); }
+    public event Action OnBossStunnedEnd;
+    public void BossStunnedEnd() { OnBossStunnedEnd?.Invoke(); }
+    #endregion
 
     #region Charge Attack Events
     public event Action OnChargeStart;
@@ -27,6 +35,13 @@ public class BossEventsHandler : MonoBehaviour
     public void ChargeSwipe() { OnChargeWindDown?.Invoke(); }
     #endregion
 
-    public event Action<int> OnHitPlayer;
-    public void HitPlayer(int damageValue) { OnHitPlayer?.Invoke(damageValue); }
+    public event Action<float> OnHitPlayer;
+    public void HitPlayer(float damageValue) { OnHitPlayer?.Invoke(damageValue); }
+
+    public void InitDictionary()
+    {
+        actionToString = new Dictionary<string, Action>() {
+            { nameof(OnBossStunned), OnBossStunned }
+        };        
+    }
 }

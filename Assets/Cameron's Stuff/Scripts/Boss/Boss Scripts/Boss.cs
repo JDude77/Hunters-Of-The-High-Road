@@ -48,10 +48,12 @@ public class Boss : Character
         if (!GetComponent<BossStateUproot>()) gameObject.AddComponent<BossStateUproot>();
 
         if (!GetComponent<BossStateCircleSwipe>()) gameObject.AddComponent<BossStateCircleSwipe>();
+        if (!GetComponent<BossStateBurrow>()) gameObject.AddComponent<BossStateBurrow>();
 
         if (!GetComponent<BossStateStunned>()) gameObject.AddComponent<BossStateStunned>();
 
-        if (!GetComponent<BossEventsHandler>()) Debug.LogWarning("WARNING: No BossEventsHandler detected.");
+        if (!GetComponent<BossEventsHandler>()) gameObject.AddComponent<BossEventsHandler>();
+        if (!GetComponent<BossEventResponses>()) gameObject.AddComponent<BossEventResponses>();
         //Get the rigidbody
         body = GetComponent<Rigidbody>();
         if (body == null)
@@ -71,6 +73,13 @@ public class Boss : Character
     {
         //Runs the current state's update
         currentState.Run();
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            BossEventsHandler.current.BossStunned();
+            Debug.Log("Input detected");
+        }
+
     } //End Update
 
     private void FixedUpdate()

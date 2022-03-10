@@ -7,8 +7,8 @@ public class AttackState : BossState
     [Header("Damage settings")]
     [Tooltip("If false, min damage is used")]
     [SerializeField] private bool randomizeDamage;
-    [SerializeField] private int maxDamage;
-    [SerializeField] private int minDamage;
+    [SerializeField] private float maxDamage;
+    [SerializeField] private float minDamage;
     [SerializeField] private bool checkForStunEvent;
 
     private void Awake()
@@ -17,7 +17,7 @@ public class AttackState : BossState
             BossEventsHandler.current.OnBossStunned += StunnedResponse;
     }
 
-    protected int GetDamageValue()
+    protected float GetDamageValue()
     {
         if (randomizeDamage)
             return Random.Range(minDamage, maxDamage);

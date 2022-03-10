@@ -56,9 +56,4 @@ public class BurrowMovement : MonoBehaviour
     {
         targetPosition = position;
     }
-
-    public void Done()
-    {
-        Destroy(this);
-    }
 }

@@ -7533,7 +7533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2605033bb763b7d4a915dafcaa4ad5a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boss: {fileID: 1438839325}
+  boss: {fileID: 1438839328}
 --- !u!1 &459418254
 GameObject:
   m_ObjectHideFlags: 0
@@ -14143,7 +14143,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1065067082}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.45, y: 8.000004, z: -1.9}
+  m_LocalPosition: {x: 17.75, y: 8.000004, z: 153.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2129962970}
@@ -24942,12 +24942,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1438839329}
   - component: {fileID: 1438839326}
+  - component: {fileID: 1438839327}
   - component: {fileID: 1438839325}
+  - component: {fileID: 1438839328}
   - component: {fileID: 1438839324}
-  - component: {fileID: 1438839323}
   - component: {fileID: 1438839322}
   - component: {fileID: 1438839321}
   - component: {fileID: 1438839320}
+  - component: {fileID: 1438839323}
   - component: {fileID: 1438839319}
   - component: {fileID: 1438839318}
   m_Layer: 0
@@ -24966,9 +24968,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1438839317}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2be6a43255700774f8242f7247a9eced, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e99130b6aafa4744959ddcd03cb306f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stunnedTimeInSeconds: 0
 --- !u!114 &1438839319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24984,6 +24987,7 @@ MonoBehaviour:
   randomizeDamage: 0
   maxDamage: 0
   minDamage: 10
+  checkForStunEvent: 0
   radius: 19.96
   windUpTime: 0
   windDownTime: 0
@@ -25002,6 +25006,7 @@ MonoBehaviour:
   randomizeDamage: 0
   maxDamage: 0
   minDamage: 10
+  checkForStunEvent: 0
   pillar: {fileID: 868277590454778659, guid: 1e14d765cacb20b4eaa34fb1b25858a5, type: 3}
   pillarCount: 5
   stopAttackOnHit: 0
@@ -25028,6 +25033,7 @@ MonoBehaviour:
   randomizeDamage: 0
   maxDamage: 0
   minDamage: 10
+  checkForStunEvent: 0
   pillar: {fileID: 868277590454778659, guid: 1e14d765cacb20b4eaa34fb1b25858a5, type: 3}
   pillarCount: 10
   stopAttackOnHit: 0
@@ -25050,9 +25056,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1438839317}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41c5259656b710744a61a0cefb829431, type: 3}
+  m_Script: {fileID: 11500000, guid: 7bb6160e0ca8c774685fe76bcac4a92d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  randomizeDamage: 0
+  maxDamage: 0
+  minDamage: 0
+  checkForStunEvent: 0
+  inRangeDistance: 0
+  stopDistance: 0
+  runSpeed: 0
+  windUpTime: 0
+  consecutiveWindUpTime: 0
+  chargeSpeed: 0
+  totalConsecutiveCharges: 0
+  swipeRadius: 0
+  damageCheckOnAnimation: 0
 --- !u!114 &1438839323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25062,20 +25081,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1438839317}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a002a15414450e34899603524bbdef9a, type: 3}
+  m_Script: {fileID: 11500000, guid: 987180ba4e0f2074a971b3669f85fc08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   randomizeDamage: 0
   maxDamage: 0
-  minDamage: 10
-  inRangeDistance: 30
-  stopDistance: 3
-  windUpTime: 1
-  consecutiveWindUpTime: 0
-  chargeSpeed: 40
-  totalConsecutiveCharges: 0
-  swipeRadius: 5
-  damageCheckOnAnimation: 0
+  minDamage: 0
+  checkForStunEvent: 0
+  particlesPrefab: {fileID: 4523277421124392479, guid: 702070ee8107ec34193436b314ee5ffb, type: 3}
+  goundedYPosition: 9
+  burrowYPosition: 0
+  particleYPosition: 8
+  maxRotationSpeed: 10
+  burrowSpeed: 20
+  inRangeDistance: 1
 --- !u!114 &1438839324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25088,7 +25107,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bf8e1f2cdef9124fac04a821d019b83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  desiredStates: 01000000020000000300000004000000
+  decisionTime: 0
+  desiredStates: 07000000
 --- !u!114 &1438839325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25098,22 +25118,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1438839317}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50590079269841741b91620e4a618655, type: 3}
+  m_Script: {fileID: 11500000, guid: 35122165825a3b3418347417d8e2ed13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  maxHealth: 100
-  stamina: 0
-  maxStamina: 100
-  staminaRegenerationRate: 1
-  regenerateStamina: 1
-  runSpeed: 10
-  state: 0
-  body: {fileID: 0}
-  eventsHandler: {fileID: 0}
-  attackLayer:
-    serializedVersion: 2
-    m_Bits: 8
 --- !u!136 &1438839326
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -25128,6 +25135,43 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1438839327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438839317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6356f2d674d8784589034d991233822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleEvents: []
+--- !u!114 &1438839328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438839317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2416bd1a1833cd4890ce572be6be5c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  maxHealth: 100
+  stamina: 0
+  maxStamina: 100
+  staminaRegenerationRate: 1
+  regenerateStamina: 1
+  state: 0
+  attackLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  body: {fileID: 0}
+  eventsHandler: {fileID: 0}
 --- !u!4 &1438839329
 Transform:
   m_ObjectHideFlags: 0
@@ -28885,7 +28929,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1808594446}
   m_LocalRotation: {x: 0.5, y: 0, z: 0, w: 0.8660254}
-  m_LocalPosition: {x: 7.45, y: 24.000004, z: -10.28}
+  m_LocalPosition: {x: 17.75, y: 24.000004, z: 145.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 767952913}

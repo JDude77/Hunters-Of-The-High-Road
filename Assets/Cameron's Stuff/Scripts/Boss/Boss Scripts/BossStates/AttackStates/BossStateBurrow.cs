@@ -85,12 +85,12 @@ public class BossStateBurrow : AttackState
             particles.SetPlayerPosition(targetPosition);
             yield return null;
         }
+        Vector3 particlePos = particles.transform.position;
+        Destroy(particles.gameObject);
+
+        yield return new WaitForSeconds(0.5f);
         //Reset the boss position
-        transform.position = new Vector3(particles.transform.position.x, goundedYPosition, particles.transform.position.z);
-
-        if (particlesPrefab)
-            Destroy(particlesPrefab.gameObject);
-
+        transform.position = new Vector3(particlePos.x, goundedYPosition, particlePos.z);
         //TODO PLAY ANIMATION
         boss.ChangeState(Boss.State.Idle);
     }
