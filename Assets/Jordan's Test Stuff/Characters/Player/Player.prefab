@@ -104,7 +104,7 @@ MonoBehaviour:
   shakeIntensity: 1
   shakeTime: 0.5
   attackCentrePoint: {fileID: 6588245091745400903}
-  attackRadius: 1
+  attackRadius: 1.5
 --- !u!1 &6588245090630581474
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,9 +437,9 @@ MonoBehaviour:
   maxStamina: 100
   staminaRegenerationRate: 1
   regenerateStamina: 1
-  currentState: 0
+  currentState: 5
   currentStateScript: {fileID: 0}
-  states: 0000000001000000020000000300000004000000
+  states: 050000000000000001000000020000000300000004000000
   items:
   - {fileID: 8853730488035434460}
   - {fileID: 8222388916313748077}
