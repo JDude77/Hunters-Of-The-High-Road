@@ -28,10 +28,4 @@ public class TestSword : MonoBehaviour
             }
         }
     }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(checkPos.position, hitSize);
-    }
 }
