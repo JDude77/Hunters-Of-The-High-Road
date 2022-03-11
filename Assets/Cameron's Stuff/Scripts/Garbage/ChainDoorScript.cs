@@ -5,15 +5,23 @@ using UnityEngine;
 public class ChainDoorScript : MonoBehaviour
 {
     private Animator ani;
+    [SerializeField]
+    private GameObject chain;
 
     // Start is called before the first frame update
     void Start()
     {
-        ani = GetComponent<Animator>();    
+        FindObjectOfType<PlayerEventsHandler>().OnHitChain += OpenDoor;
+        ani = GetComponent<Animator>();
     }
 
-    public void openDoor()
+    public void OpenDoor(GameObject instance)
     {
-        ani.Play("OpenDoor");
-    }
+        if (instance == chain)
+        {
+            ani.Play("OpenDoor");
+            chain.SetActive(false);
+            FindObjectOfType<PlayerEventsHandler>().OnHitChain -= OpenDoor;
+        }//End if
+    }//End OpenDoor
 }

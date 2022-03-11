@@ -23,6 +23,6 @@ public class BossEventsHandler : MonoBehaviour
     public void ChargeSwipe() { OnChargeWindDown?.Invoke(); }
     #endregion
 
-    public event Action<int> OnHitPlayer;
-    public void HitPlayer(int damageValue) { OnHitPlayer?.Invoke(damageValue); }
+    public event Action<float> OnHitPlayer;
+    public void HitPlayer(float damageValue) { OnHitPlayer?.Invoke(damageValue); }
 }

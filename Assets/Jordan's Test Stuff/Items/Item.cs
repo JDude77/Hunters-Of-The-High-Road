@@ -9,6 +9,8 @@ public class Item : MonoBehaviour
 
     protected static Player playerReference;
 
+    protected static Transform playerTransform;
+
     protected delegate void ItemActionDelegate();
 
     protected List<ItemActionDelegate> actionDelegates;
@@ -17,6 +19,7 @@ public class Item : MonoBehaviour
     {
         actionDelegates = new List<ItemActionDelegate>();
         playerReference = FindObjectOfType<Player>();
+        playerTransform = playerReference.GetComponentInChildren<Animator>().transform;
     }//End Awake
 
     public virtual void Use()

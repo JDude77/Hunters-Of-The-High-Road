@@ -11,7 +11,8 @@ public class Player : Character
         Running,
         Dodging,
         RifleAimedShot,
-        ExecutionerSwordAttack
+        ExecutionerSwordAttack,
+        GameStart
     }//End States
 
     [Header("State Options")]
@@ -46,6 +47,9 @@ public class Player : Character
 
         //Set up items based on what's on the player
         InitializePlayerItems();
+
+        //Allow the boss to hit the player
+        BossEventsHandler.current.OnHitPlayer += ReduceHealthByAmount;
     }//End Start
 
     protected override void Update()
@@ -215,6 +219,12 @@ public class Player : Character
             Debug.LogError("Tried to change state to " + stateToChangeTo.ToString() + ", but it is not on the player.");
             return false;
         }//End else
+    }//End ChangeState
+
+    //A workaround I despise needing for the sake of start button on-click events hating non-void return types
+    public void StartGame()
+    {
+        ChangeState(State.Idle);
     }//End ChangeState
     #endregion
 

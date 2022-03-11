@@ -117,18 +117,18 @@ public class TestGun : MonoBehaviour
         {
             if (hit.tag == "Chain")
             {
-                hit.GetComponentInParent<ChainDoorScript>().openDoor();
+                hit.GetComponentInParent<ChainDoorScript>().OpenDoor(hit.gameObject);
                 hit.gameObject.SetActive(false);
             }
 
             if (hit.tag == "Tombstone")
             {
-                hit.GetComponentInParent<DestructibleTombstone>().destroyTombstone();
+                hit.GetComponentInParent<DestructibleTombstone>().DestroyTombstone(hit.gameObject);
             }
 
             if (hit.tag == "Bottle")
             {
-                hit.GetComponentInParent<TutorialBottle>().shootBottle();
+                hit.GetComponentInParent<TutorialBottle>().ShootBottle(hit.gameObject);
             }
         }
     }
