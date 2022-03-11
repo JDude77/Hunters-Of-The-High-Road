@@ -6,7 +6,7 @@ using UnityEngine.Animations.Rigging;
 public class PlayerAdvancedAnimations : MonoBehaviour
 {
     [SerializeField]
-    private Transform weaponHolster, rightHand, leftHandPos, rifle, weaponGrip, swordSheath, swordPos, sword;
+    private Transform weaponHolster, gunHandPos, leftHandIKPos, rifle, weaponGrip, swordSheath, swordHandPos, sword;
 
     [SerializeField]
     private Rig leftHandRig;
@@ -29,12 +29,12 @@ public class PlayerAdvancedAnimations : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        leftHandPos.position = weaponGrip.position;
-        leftHandPos.rotation = weaponGrip.rotation;
+        leftHandIKPos.position = weaponGrip.position;
+        leftHandIKPos.rotation = weaponGrip.rotation;
 
         if(isUsingGun)
         {
-            SetWeaponPosition(rifle, rightHand);
+            SetWeaponPosition(rifle, gunHandPos);
             leftHandRig.weight = 1;
 
             GunTimer();
@@ -48,7 +48,7 @@ public class PlayerAdvancedAnimations : MonoBehaviour
 
         if(isUsingSword)
         {
-            SetWeaponPosition(sword, swordPos);
+            SetWeaponPosition(sword, swordHandPos);
             gunTime = 5;
         }
         else
