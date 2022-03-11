@@ -16860,14 +16860,14 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: ToggleAimRig
+    functionName: activateAimRig
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 1
     messageOptions: 0
   - time: 0.8666667
-    functionName: ToggleAimRig
+    functionName: deactivateAimRig
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
