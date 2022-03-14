@@ -7,17 +7,14 @@ public class BossEventsHandler : MonoBehaviour
 {
     public static BossEventsHandler current;
 
-    public Dictionary<string, Action> actionToString; 
-
     private void Awake()
     {
-        current = this;
-        current.InitDictionary();        
+        current = this;        
     }
 
     #region Boss Stunned
     public event Action OnBossStunned;
-    public void BossStunned() { actionToString["OnBossStunned"]?.Invoke(); }
+    //public void BossStunned() { actionToString["OnBossStunned"]?.Invoke(); }
     public event Action OnBossStunnedEnd;
     public void BossStunnedEnd() { OnBossStunnedEnd?.Invoke(); }
     #endregion
@@ -32,16 +29,9 @@ public class BossEventsHandler : MonoBehaviour
     public event Action OnChargeWindDown;
     public void ChargeWindDown() { OnChargeWindDown?.Invoke(); }
     public event Action OnChargeSwipe;
-    public void ChargeSwipe() { OnChargeWindDown?.Invoke(); }
+    public void ChargeSwipe() { OnChargeSwipe?.Invoke(); }
     #endregion
 
     public event Action<float> OnHitPlayer;
     public void HitPlayer(float damageValue) { OnHitPlayer?.Invoke(damageValue); }
-
-    public void InitDictionary()
-    {
-        actionToString = new Dictionary<string, Action>() {
-            { nameof(OnBossStunned), OnBossStunned }
-        };        
-    }
 }

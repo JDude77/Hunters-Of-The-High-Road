@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+
 [Serializable]
 public struct Particle
 {
@@ -11,63 +12,64 @@ public struct Particle
 }
 
 [Serializable]
-public struct ParticleOnEvent
+public struct BossEventResponse : IEventResponse
 {
-    public string actionName;
-    public List<Particle> particles;
-    public List<GameObject> soundEffects;
-    public List<GameObject> animations;
+    public BossEvents eventName;
+    public string nameAsString { get { return eventName.ToString(); } }
 
-    public void function()
+    public List<Particle> particles;
+    public List<AudioClip> soundEffects;
+    public List<string> animationNames;
+
+    private Animator animator;
+    private AudioSource audio;
+
+    public void Init(Animator a, AudioSource s)
+    {
+        this.animator = a;
+        this.audio = s;
+    }
+
+    public void Activate()
     {
         foreach (Particle particle in particles)
         {
             MonoBehaviour.Instantiate(particle.particleObject, particle.spawnTransform.position, particle.spawnTransform.rotation);
         }
 
-        foreach (GameObject sound in soundEffects)
+        foreach (AudioClip sound in soundEffects)
         {
-            //Play sounds
+            audio.clip = sound;
+            audio.Play();
         }
 
-        foreach (GameObject animation in animations)
+        foreach (string animation in animationNames)
         {
-            //Play animation
+            animator.Play(animation);
         }
     }
 }
 
-public class BossEventResponses : MonoBehaviour
+public class BossEventResponses : EventResponder
 {
-    [SerializeField] public List<ParticleOnEvent> particleEvents;
-    private List<Action> actions;
-    public static BossEventResponses current;
 
-    private void Awake()
-    {
-        current = this;        
-    }
+    [SerializeField] public List<BossEventResponse> responses;
 
     private void Start()
     {
-        foreach (ParticleOnEvent obj in particleEvents)
+        foreach (BossEventResponse obj in responses)
         {
-            if (BossEventsHandler.current.actionToString.TryGetValue(obj.actionName, out Action action))
-            {
-                Debug.Log("Adding action");
-                BossEventsHandler.current.actionToString[obj.actionName] += obj.function;
-            }
+            obj.Init(animator, audioSource);
+            eventDictionary.Add(obj.nameAsString, obj.Activate);
         }
     }
 
     private void OnDestroy()
     {
-        foreach (ParticleOnEvent obj in particleEvents)
+        foreach (BossEventResponse obj in responses)
         {
-            if (BossEventsHandler.current.actionToString.TryGetValue(obj.actionName, out Action action))
-            {
-                BossEventsHandler.current.actionToString[obj.actionName] -= obj.function;
-            }
+            eventDictionary[obj.nameAsString] -= obj.Activate;
+            eventDictionary.Remove(obj.nameAsString);
         }
     }
 }
