@@ -19450,6 +19450,7 @@ MonoBehaviour:
   maxDamage: 0
   minDamage: 10
   checkForStunEvent: 0
+  eventResponses: []
   radius: 19.96
   windUpTime: 0
   windDownTime: 0
@@ -23240,7 +23241,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1838490565
 MonoBehaviour:
   m_ObjectHideFlags: 0
