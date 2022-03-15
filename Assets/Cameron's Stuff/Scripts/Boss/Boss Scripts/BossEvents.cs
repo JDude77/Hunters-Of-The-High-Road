@@ -26,4 +26,9 @@ public class BossEvent
         Attack,
         WindDown
     }
+
+    public enum CircleSwipe
+    {
+        Attack
+    }
 }

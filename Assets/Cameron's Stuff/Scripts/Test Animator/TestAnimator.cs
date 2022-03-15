@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class TestAnimator : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject CamMain, CamSecond;
-
     [Header("Particles")]
     [SerializeField]
     private GameObject clawParticles;
@@ -30,7 +27,6 @@ public class TestAnimator : MonoBehaviour
     private Transform burrowParticleLocation;
 
     private Animator ani;
-    private bool switchCam = true;
 
     private BossParticlesSystems bossparticles;
 
@@ -73,14 +69,5 @@ public class TestAnimator : MonoBehaviour
     public void PlayAnimation(string animationID)
     {
         ani.Play(animationID);
-    }
-
-    //toggles the active camera
-    public void ToggleCameraPos()
-    {
-        switchCam = !switchCam;
-
-        CamMain.SetActive(switchCam);
-        CamSecond.SetActive(!switchCam);
     }
 }

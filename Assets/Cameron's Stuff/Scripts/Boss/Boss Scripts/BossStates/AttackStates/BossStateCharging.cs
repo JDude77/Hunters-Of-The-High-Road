@@ -19,7 +19,7 @@ public class BossStateCharging : AttackState
 {
     [Space(10)]
     [SerializeField] public List<ChargeEventResponse> eventResponses;
-
+    [Space(10)]
     [Header("Charge settings")]
     [Tooltip("The distance to the player that the boss will run to and start winding up")]
     [SerializeField] private float inRangeDistance;
@@ -40,13 +40,9 @@ public class BossStateCharging : AttackState
     private Coroutine currentCoroutine;
     private int chargesCompleted;
 
-    private void Awake()
+    public void Start()
     {
-
-    }
-
-    private void Start()
-    {
+        base.Start();
         //Add all the event responses to the response dictionary
         boss.eventResponder.InitResponses(eventResponses);
     }

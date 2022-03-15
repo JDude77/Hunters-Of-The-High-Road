@@ -30,7 +30,6 @@ public class EventResponder : MonoBehaviour
         {
             r.InitDependencies(ref animator, ref audioSource);
             eventDictionary.Add(r.GetEventName(), r.Activate);
-            Debug.LogError(r.GetEventName() + "is the event name");
         }
     }
     public void Respond(string s)
