@@ -4,6 +4,63 @@ using System;
 
 public class Player : Character
 {
+    #region Faith
+    [Header("Faith Options")]
+    [SerializeField]
+    protected float faith;
+
+    [SerializeField]
+    protected float maxFaith = 10.0f;
+
+    public void SetFaith(float faith)
+    {
+        this.faith = faith;
+
+        //Stop faith going below zero
+        if (this.faith < 0.0f) this.faith = 0.0f;
+
+        //Stop faith going above max faith
+        else if (this.faith > maxFaith) this.faith = maxFaith;
+    }//End SetFaith
+
+    //Shortcut function, equivalent to SetFaith(faith - x)
+    public void ReduceFaithByAmount(float faith)
+    {
+        SetFaith(this.faith - Mathf.Abs(faith));
+    }//End ReduceFaithByAmount
+
+    //Shortcut function, equivalent to SetFaith(faith + x)
+    public void IncreaseFaithByAmount(float faith)
+    {
+        SetFaith(this.faith + Mathf.Abs(faith));
+    }//End IncreaseFaithByAmount
+
+    public float GetFaith()
+    {
+        return faith;
+    }//End GetFaith
+
+    //Shortcut function, equivalent to "SetFaith(maxFaith)"
+    [ContextMenu("Restore Faith Fully", false, 1)]
+    public void RestoreAllFaith()
+    {
+        faith = maxFaith;
+    }//End RestoreAllFaith
+
+    //Shortcut function, equivalent to "SetFaith(0)"
+    [ContextMenu("Drain All Faith", false, 3)]
+    public void DrainAllFaith()
+    {
+        faith = 0.0f;
+    }//End DrainAllFaith
+
+    //Shortcut function, gets the normalized faith value
+    public float GetNormalizedFaith()
+    {
+        return faith / maxFaith;
+    }//End GetNormalizedFaith
+    #endregion
+
     #region States
     public enum State
     {
@@ -38,6 +95,9 @@ public class Player : Character
     {
         //Sets the health and stamina to max
         base.Start();
+
+        //Set faith to 0
+        DrainAllFaith();
 
         //Make sure all player states in the state list are initialized on game start
         InitializePlayerStates();

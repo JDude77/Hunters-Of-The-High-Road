@@ -31,7 +31,7 @@ public class Character : MonoBehaviour
     //Shortcut function, equivalent to SetHealth(health + x)
     public void IncreaseHealthByAmount(float health)
     {
-        SetStamina(this.health + Mathf.Abs(health));
+        SetHealth(this.health + Mathf.Abs(health));
     }//End IncreaseHealthByAmount
 
     public float GetHealth()
@@ -80,7 +80,7 @@ public class Character : MonoBehaviour
         this.stamina = stamina;
 
         //Stop stamina from going below zero
-        if (this.stamina < 0.0f) stamina = 0.0f;
+        if (this.stamina < 0.0f) this.stamina = 0.0f;
 
         //Stop stamina from going above max stamina
         else if (this.stamina > maxStamina) this.stamina = maxStamina;

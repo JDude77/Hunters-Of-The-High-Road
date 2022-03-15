@@ -28,4 +28,16 @@ public class PlayerEventsHandler : MonoBehaviour
     {
         OnHitGravestone?.Invoke(instance);
     }//End HitGravestone
+
+    public event Action<GameObject> OnHitEnemy;
+    public void HitEnemy(GameObject instance)
+    {
+        OnHitEnemy?.Invoke(instance);
+    }//End HitEnemy
+
+    public event Action<GameObject> OnStaggerEnemy;
+    public void StaggerEnemy(GameObject instance)
+    {
+        OnStaggerEnemy?.Invoke(instance);
+    }//End StaggerEnemy
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerStateRifleAimedShot : PlayerState
@@ -21,7 +19,6 @@ public class PlayerStateRifleAimedShot : PlayerState
 
     public override bool EnterState()
     {
-
         playerAdvancedAnimations.SetIsUsingGun(true, 0);
         rifle.SetIsBeingAimed(true);
         playerAnimator.SetBool("isAiming", true);
@@ -45,7 +42,6 @@ public class PlayerStateRifleAimedShot : PlayerState
     public override void UpdateState()
     {
         base.UpdateState();
-        Debug.Log("is the player aiming: " + playerAnimator.GetBool("isAiming"));
 
         MakePlayerLookAtAimLocation();
         rifle.UpdateLinePosition();

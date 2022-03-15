@@ -129,6 +129,7 @@ public class Rifle : Weapon
         }//End if
 
         bool hitEnemy = false;
+        GameObject enemyInstance = null;
 
         foreach (Collider hit in shotHits)
         {
@@ -146,45 +147,49 @@ public class Rifle : Weapon
                         PlayerEventsHandler.current.HitBottle(hit.gameObject);
                         break;
                     case "Enemy":
+                        PlayerEventsHandler.current.HitEnemy(hit.gameObject);
                         hitEnemy = true;
+                        enemyInstance = hit.gameObject;
                         break;
                 }//End switch
             }//End if
         }//End foreach
-        Deadshot(hitEnemy);
+        Deadshot(hitEnemy, enemyInstance);
 
         isReloaded = false;
         StartCoroutine(ReloadGun());
     }//End Use
 
-    private void Deadshot(bool enemy)
+    private void Deadshot(bool hitWasEnemy, GameObject enemyInstance)
     {
         //Deadshot functionality only works on enemies
         if (deadshot)
         {
             bool tokenisable = isBeingAimed && deadshot.DeadshotSkillCheckPassed();
-            if (enemy)
+            //If the hit is actually a deadshot hit
+            if(tokenisable)
             {
-                if (tokenisable && deadshot.CanStagger())
+                //If the deadshot hit an enemy
+                if (hitWasEnemy)
                 {
-                    //Call stagger action here
-                    deadshot.ResetTokens();
+                    if (deadshot.CanStagger())
+                    {
+                        PlayerEventsHandler.current.StaggerEnemy(enemyInstance);
+                        deadshot.ResetTokens();
+                    }//End if
+                    else if (!deadshot.CanStagger())
+                    {
+                        deadshot.AddToken();
+                    }//End else if
                 }//End if
-                else if (tokenisable && !deadshot.CanStagger())
-                {
-                    deadshot.AddToken();
-                }//End else if
-            }//End if
-            else
-            {
-                if (tokenisable)
+                //If the deadshot didn't hit an enemy
+                else
                 {
                     deadshot.RemoveToken();
-                }//End if
-            }//End else
-
+                }//End else
+            }//End if
         }//End if
-    }
+    }//End Deadshot
 
     //Could be updated to take in start and end line colour
     //Made a coroutine to delay line appearance by a frame, making it align with muzzle better

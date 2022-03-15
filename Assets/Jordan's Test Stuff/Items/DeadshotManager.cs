@@ -146,7 +146,7 @@ public class DeadshotManager : MonoBehaviour
 
     public bool CanStagger()
     {
-        return deadshotSkillCheckPassed && (currentDeadshotTokens == deadshotTokensRequiredToStagger);
+        return currentDeadshotTokens == deadshotTokensRequiredToStagger;
     }//End CanStagger
 
     public void ResetTokens()
