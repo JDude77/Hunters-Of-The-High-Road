@@ -38,6 +38,7 @@ public class MonsterTomePages : MonoBehaviour
         leftMonsterDescTMP.text = LeftMonsterDesc;
         rightMonsterDescTMP.text = RightMonsterDesc;
 
+        //sets the monsters images
         leftMonsterPic.sprite = LeftMonsterImg;
         rightMonsterPic.sprite = RightMonsterImg;
     }

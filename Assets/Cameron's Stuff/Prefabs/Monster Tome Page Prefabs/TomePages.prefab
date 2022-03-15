@@ -97,12 +97,12 @@ MonoBehaviour:
   RightMonsterDesc: She is like a fairy but acts more like a vampire. Eats men and
     does evil stuff
   RightMonsterImg: {fileID: 21300000, guid: 4b19e308fa1b768408280128e782d91d, type: 3}
-  leftMonsterNameTMP: {fileID: 1145914344718338044}
-  leftMonsterDescTMP: {fileID: 1145914342987412698}
-  rightMonsterNameTMP: {fileID: 1145914343082678819}
-  rightMonsterDescTMP: {fileID: 1145914343524139006}
-  leftMonsterPic: {fileID: 1145914343853207668}
-  rightMonsterPic: {fileID: 1145914343944462003}
+  leftMonsterNameTMP: {fileID: 1145914343082678819}
+  leftMonsterDescTMP: {fileID: 1145914343524139006}
+  rightMonsterNameTMP: {fileID: 1145914344718338044}
+  rightMonsterDescTMP: {fileID: 1145914342987412698}
+  leftMonsterPic: {fileID: 1145914343944462003}
+  rightMonsterPic: {fileID: 1145914343853207668}
 --- !u!1 &1145914342987412700
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,9 +198,9 @@ MonoBehaviour:
   m_fontSize: 20
   m_fontSizeBase: 20
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 0
+  m_fontSizeMax: 20
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -331,11 +331,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 45
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 0
   m_fontSizeMax: 72
   m_fontStyle: 4
   m_HorizontalAlignment: 2
@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 1145914343205273883}
   - component: {fileID: 1145914343205273884}
   m_Layer: 5
-  m_Name: LeftPage
+  m_Name: RightPage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -546,9 +546,9 @@ MonoBehaviour:
   m_fontSize: 20
   m_fontSizeBase: 20
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 0
+  m_fontSizeMax: 20
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -747,7 +747,7 @@ GameObject:
   - component: {fileID: 1145914344391861848}
   - component: {fileID: 1145914344391861849}
   m_Layer: 5
-  m_Name: RightPage
+  m_Name: LeftPage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -905,11 +905,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 45
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 0
   m_fontSizeMax: 72
   m_fontStyle: 4
   m_HorizontalAlignment: 2
