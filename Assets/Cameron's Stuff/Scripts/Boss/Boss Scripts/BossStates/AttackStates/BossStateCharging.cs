@@ -3,18 +3,22 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 
+[Serializable]
+public class ChargeEventResponse : EventResponse
+{
+    public BossEvent.ChargeEvents eventName;
+
+    public override string GetEventName()
+    {
+        Debug.Log(eventName.ToString());
+        return eventName.ToString();
+    }
+}
+
 public class BossStateCharging : AttackState
 {
-    enum SubState
-    {
-        GettingInRange,
-        WindUp,
-        Charging,
-        Swiping,
-        WindDown
-    }
-
-    SubState state;
+    [Space(10)]
+    [SerializeField] public List<ChargeEventResponse> eventResponses;
 
     [Header("Charge settings")]
     [Tooltip("The distance to the player that the boss will run to and start winding up")]
@@ -36,7 +40,16 @@ public class BossStateCharging : AttackState
     private Coroutine currentCoroutine;
     private int chargesCompleted;
 
-    //TODO: Change the substate switching to animation events
+    private void Awake()
+    {
+
+    }
+
+    private void Start()
+    {
+        //Add all the event responses to the response dictionary
+        boss.eventResponder.InitResponses(eventResponses);
+    }
 
     public override void OnEnter()
     {
@@ -68,9 +81,6 @@ public class BossStateCharging : AttackState
     //Moves the boss closer to the player
     IEnumerator GetInRange()
     {
-        BossEventsHandler.current.GetInRange();
-
-        state = SubState.GettingInRange;
 
         Vector3 distanceToPlayer = player.transform.position - transform.position;
 
@@ -94,8 +104,6 @@ public class BossStateCharging : AttackState
     //Selects the position to charge to and waits for X seconds
     IEnumerator WindUp(float windTime)
     {
-        state = SubState.WindUp;
-        BossEventsHandler.current.ChargeWindUp();
 
         transform.LookAt(player.transform.position);
 
@@ -111,7 +119,7 @@ public class BossStateCharging : AttackState
     //Moves to the selected position
     IEnumerator Charge()
     {
-        BossEventsHandler.current.ChargeStart();
+        boss.eventResponder.Respond(BossEvent.ChargeEvents.ChargeStart.ToString());
 
         Debug.Log("Charging");
         //Convert the stopping distance to a percentage of the distance to cover
@@ -132,9 +140,7 @@ public class BossStateCharging : AttackState
     //Checks if the player is within range of the attack
     IEnumerator Swipe()
     {
-        BossEventsHandler.current.ChargeSwipe();
         chargesCompleted++;
-        state = SubState.Swiping;
 
         //Check if the boss has hit the player
         if (DoSphereCast())
@@ -155,8 +161,6 @@ public class BossStateCharging : AttackState
 
     IEnumerator WindDown()
     {
-        state = SubState.WindDown;
-        BossEventsHandler.current.ChargeWindDown();
         yield return new WaitForSeconds(1.0f);
         boss.ChangeState(Boss.State.Idle);
     } //End WindDown

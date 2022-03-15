@@ -24886,7 +24886,6 @@ GameObject:
   - component: {fileID: 1438839329}
   - component: {fileID: 1438839326}
   - component: {fileID: 1438839325}
-  - component: {fileID: 1438839327}
   - component: {fileID: 1438839328}
   - component: {fileID: 1438839324}
   - component: {fileID: 1438839322}
@@ -25006,6 +25005,14 @@ MonoBehaviour:
   maxDamage: 0
   minDamage: 0
   checkForStunEvent: 0
+  eventResponses:
+  - particles:
+    - particleObject: {fileID: 8805323484485381436, guid: a1c716126be52624e99b419270945085, type: 3}
+      spawnTransform: {fileID: 1065067085}
+    soundEffects:
+    - {fileID: 8300000, guid: 6920d06cb8c7bdd4a9fefad7fdc36038, type: 3}
+    animationNames: []
+    eventName: 0
   inRangeDistance: 0
   stopDistance: 0
   runSpeed: 0
@@ -25051,7 +25058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   decisionTime: 0
-  desiredStates: 
+  desiredStates: 01000000
 --- !u!114 &1438839325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25078,21 +25085,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1438839327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1438839317}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a27b159fd916fc74c82b3de78ecebb41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  audioSource: {fileID: 0}
-  responses: []
 --- !u!114 &1438839328
 MonoBehaviour:
   m_ObjectHideFlags: 0

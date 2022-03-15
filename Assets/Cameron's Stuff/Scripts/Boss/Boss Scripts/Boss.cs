@@ -25,7 +25,7 @@ public class Boss : Character
     private CapsuleCollider capsuleCollider;
 
     public BossEventsHandler eventsHandler;
-    public BossEventResponses eventResponder;
+    public EventResponder eventResponder;
     private BossStateMachine stateMachine;
     private BossState currentState;
     //Start is called before the first frame update
@@ -47,14 +47,15 @@ public class Boss : Character
         if (!GetComponent<BossStateUproot>()) gameObject.AddComponent<BossStateUproot>();
 
         if (!GetComponent<BossStateCircleSwipe>()) gameObject.AddComponent<BossStateCircleSwipe>();
+
         if (!GetComponent<BossStateBurrow>()) gameObject.AddComponent<BossStateBurrow>();
 
         if (!GetComponent<BossStateStunned>()) gameObject.AddComponent<BossStateStunned>();
 
         if (!GetComponent<BossEventsHandler>()) gameObject.AddComponent<BossEventsHandler>();
 
-        eventResponder = GetComponent<BossEventResponses>();
-        if (eventResponder == null) gameObject.AddComponent<BossEventResponses>();
+        eventResponder = GetComponent<EventResponder>();
+        if (eventResponder == null) eventResponder = gameObject.AddComponent<EventResponder>();
 
         //Get the rigidbody
         body = GetComponent<Rigidbody>();
@@ -74,7 +75,7 @@ public class Boss : Character
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            eventResponder.eventDictionary[BossEvents.OnBossStunned.ToString()]?.Invoke();
+            eventResponder.Respond(BossEvent.ChargeEvents.ChargeStart.ToString());
             Debug.Log("Input detected");
         }
 

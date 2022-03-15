@@ -14,22 +14,7 @@ public class BossEventsHandler : MonoBehaviour
 
     #region Boss Stunned
     public event Action OnBossStunned;
-    //public void BossStunned() { actionToString["OnBossStunned"]?.Invoke(); }
-    public event Action OnBossStunnedEnd;
-    public void BossStunnedEnd() { OnBossStunnedEnd?.Invoke(); }
-    #endregion
-
-    #region Charge Attack Events
-    public event Action OnChargeStart;
-    public void ChargeStart() { OnChargeStart?.Invoke(); }
-    public event Action OnGetInRange;
-    public void GetInRange() { OnGetInRange?.Invoke(); }
-    public event Action OnChargeWindUp;
-    public void ChargeWindUp() { OnChargeWindUp?.Invoke(); }
-    public event Action OnChargeWindDown;
-    public void ChargeWindDown() { OnChargeWindDown?.Invoke(); }
-    public event Action OnChargeSwipe;
-    public void ChargeSwipe() { OnChargeSwipe?.Invoke(); }
+    public void BossStunned() { OnBossStunned?.Invoke(); }
     #endregion
 
     public event Action<float> OnHitPlayer;

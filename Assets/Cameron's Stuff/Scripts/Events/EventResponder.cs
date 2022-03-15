@@ -5,7 +5,7 @@ using System;
 
 public class EventResponder : MonoBehaviour
 {
-    public Dictionary<string, Action> eventDictionary;
+    private Dictionary<string, Action> eventDictionary;
 
     public Animator animator;
 
@@ -24,4 +24,18 @@ public class EventResponder : MonoBehaviour
             audioSource = gameObject.AddComponent<AudioSource>();        
         }
     }
+    public void InitResponses<T>(List<T> responses) where T : EventResponse
+    {
+        foreach (EventResponse r in responses)
+        {
+            r.InitDependencies(ref animator, ref audioSource);
+            eventDictionary.Add(r.GetEventName(), r.Activate);
+            Debug.LogError(r.GetEventName() + "is the event name");
+        }
+    }
+    public void Respond(string s)
+    {
+        eventDictionary[s]?.Invoke();
+    }
+    
 }
