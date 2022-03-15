@@ -29,10 +29,9 @@ public class Boss : Character
     private BossStateMachine stateMachine;
     private BossState currentState;
     //Start is called before the first frame update
-    protected override void Start()
-    {
-        base.Start();
 
+    void Awake()
+    {
         //Get the collider if it exists
         capsuleCollider = GetComponent<CapsuleCollider>();
         if (capsuleCollider == null) capsuleCollider = gameObject.AddComponent<CapsuleCollider>();
@@ -64,6 +63,11 @@ public class Boss : Character
         //Add rotation constraints
         body.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
         body.isKinematic = true;
+    }
+
+    protected override void Start()
+    {
+        base.Start();     
 
     } //End Start
 

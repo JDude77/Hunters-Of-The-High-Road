@@ -24,15 +24,15 @@ public class BossStateDecisionPrototype : BossState
         StopAllCoroutines();
     }
 
-    Boss.State ChooseAttack()
-    {
-        int rand = Random.Range(0, desiredStates.Count);
-        return desiredStates[rand];
-    }
-
     IEnumerator Decide()
     {
         yield return new WaitForSeconds(decisionTime);
         boss.ChangeState(ChooseAttack());
+    }
+
+    Boss.State ChooseAttack()
+    {
+        int rand = Random.Range(0, desiredStates.Count);
+        return desiredStates[rand];
     }
 }

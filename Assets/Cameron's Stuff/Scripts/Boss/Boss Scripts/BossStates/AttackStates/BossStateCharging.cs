@@ -10,7 +10,6 @@ public class ChargeEventResponse : EventResponse
 
     public override string GetEventName()
     {
-        Debug.Log(eventName.ToString());
         return eventName.ToString();
     }
 }
