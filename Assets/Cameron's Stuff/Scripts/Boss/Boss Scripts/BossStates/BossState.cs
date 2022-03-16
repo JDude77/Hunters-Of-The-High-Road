@@ -1,12 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+
+[Serializable]
+public class BossEventResponse : EventResponse
+{
+    public BossEvent eventName;
+    public override string GetEventName() { return eventName.ToString(); }
+}//End BurrowEventResponse
 
 public class BossState : MonoBehaviour
 {
     protected static Boss boss;
     protected static GameObject player;
-
+    [SerializeField] private List<BossEventResponse> eventResponses;
     protected void Start()
     {
         //Gets the Boss component
@@ -22,20 +30,31 @@ public class BossState : MonoBehaviour
         {
             Debug.LogError("Error: No object of type Player found");
         }
-    }
+
+        Debug.Log(GetType().ToString());
+        boss.eventResponder.InitResponses(eventResponses, GetType());
+        
+    }//End Start
+
+    public virtual void InvokeEvent(BossEvent e)
+    {
+        Debug.Log("Invoking: " + GetType() + e.ToString());
+        boss.eventResponder.Respond(GetType().ToString() + e.ToString());
+    }//End InvokeEvent
 
     public virtual void OnEnter() 
     {
-        //enabled = true;
-    }
+        InvokeEvent(BossEvent.StateEnter);
+    }//End OnEnter
     public virtual void OnExit()
     {
-        //enabled = false;
-    }
+        InvokeEvent(BossEvent.StateExit);
+    }//End OnExit
     public virtual void Run() 
     {
     }
     public virtual void FixedRun()
     {
+
     }
 }

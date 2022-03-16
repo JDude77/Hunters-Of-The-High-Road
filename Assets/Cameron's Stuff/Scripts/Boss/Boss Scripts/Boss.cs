@@ -49,7 +49,7 @@ public class Boss : Character
 
         if (!GetComponent<BossStateBurrow>()) gameObject.AddComponent<BossStateBurrow>();
 
-        if (!GetComponent<BossStateStunned>()) gameObject.AddComponent<BossStateStunned>();
+        //if (!GetComponent<BossStateStunned>()) gameObject.AddComponent<BossStateStunned>();
 
         if (!GetComponent<BossEventsHandler>()) gameObject.AddComponent<BossEventsHandler>();
 
@@ -79,8 +79,7 @@ public class Boss : Character
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            eventResponder.Respond(BossEvent.ChargeEvents.ChargeStart.ToString());
-            Debug.Log("Input detected");
+            //Debug.Log("Input detected");
         }
 
     } //End Update

@@ -3,21 +3,8 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 
-[Serializable]
-public class ChargeEventResponse : EventResponse
-{
-    public BossEvent.ChargeEvents eventName;
-
-    public override string GetEventName()
-    {
-        return eventName.ToString();
-    }
-}
-
 public class BossStateCharging : AttackState
 {
-    [Space(10)]
-    [SerializeField] public List<ChargeEventResponse> eventResponses;
     [Space(10)]
     [Header("Charge settings")]
     [Tooltip("The distance to the player that the boss will run to and start winding up")]
@@ -42,8 +29,6 @@ public class BossStateCharging : AttackState
     public void Start()
     {
         base.Start();
-        //Add all the event responses to the response dictionary
-        boss.eventResponder.InitResponses(eventResponses);
     }
 
     public override void OnEnter()
@@ -76,7 +61,6 @@ public class BossStateCharging : AttackState
     //Moves the boss closer to the player
     IEnumerator GetInRange()
     {
-
         Vector3 distanceToPlayer = player.transform.position - transform.position;
 
         //While we're out of range
@@ -114,8 +98,6 @@ public class BossStateCharging : AttackState
     //Moves to the selected position
     IEnumerator Charge()
     {
-        boss.eventResponder.Respond(BossEvent.ChargeEvents.ChargeStart.ToString());
-
         Debug.Log("Charging");
         //Convert the stopping distance to a percentage of the distance to cover
         float chargeDistanceOffsetPercent = stopDistance / (chargePoint - transform.position).magnitude;

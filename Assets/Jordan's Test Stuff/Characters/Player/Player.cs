@@ -271,7 +271,7 @@ public class Player : Character
             currentState = stateToChangeTo;
             currentStateScript = (PlayerState)GetComponent(PlayerState.stateDictionary[currentState]);
             currentStateScript.EnterState();
-            Debug.Log("Changed to " + currentState.ToString() + " successfully.");
+            //Debug.Log("Changed to " + currentState.ToString() + " successfully.");
             return true;
         }//End if
         else

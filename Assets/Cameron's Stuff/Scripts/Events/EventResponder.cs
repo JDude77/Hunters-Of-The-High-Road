@@ -24,22 +24,34 @@ public class EventResponder : MonoBehaviour
         if (audioSource == null) { audioSource = gameObject.AddComponent<AudioSource>(); }
     }
 
-    //Adds a list of event responses to the dictionary
-    public void InitResponses<T>(List<T> responses) where T : EventResponse
+    //Adds the events to the event dictionary
+    //Pass in the list of event responses. Must be of type EventResponse
+    //Pass GetType() into the type parameter to give each event a unique identifier
+    public void InitResponses<T>(List<T> responses, Type type) where T : EventResponse
     {
         foreach (EventResponse r in responses)
         {
-            //Gives each response a reference to the animator and audiosource
-            r.InitDependencies(ref animator, ref audioSource);
-            //Add it to the dictionary
-            eventDictionary.Add(r.GetEventName(), r.Activate);
+            //Create a new key that is the type of class calling the events, and the event names
+            string uniqueIdentifier = type.ToString() + r.GetEventName();
+            //If the event does not already exist
+            if (!eventDictionary.ContainsKey(uniqueIdentifier))
+            {
+                Debug.Log(uniqueIdentifier);
+                //Gives each response a reference to the animator and audiosource
+                r.InitDependencies(ref animator, ref audioSource);
+                //Add it to the dictionary
+                eventDictionary.Add(uniqueIdentifier, r.Activate);
+            }
         }
-    }
+    }//End InitResponses
 
     //Invokes the action of a given event
     public void Respond(string s)
     {
-        eventDictionary[s]?.Invoke();
-    }
+        if (eventDictionary.ContainsKey(s))
+        {
+            eventDictionary[s]?.Invoke();
+        }
+    }//End Respond
     
 }

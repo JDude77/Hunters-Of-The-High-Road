@@ -13,6 +13,8 @@ public struct Particle
 [Serializable]
 public class EventResponse
 {
+    [HideInInspector] public string x = "EventResponse";
+    [HideInInspector] public string uniqueIdentifier;
     //List of things that should activate on the specific event
     public List<Particle> particles;
     public List<AudioClip> soundEffects;

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class BossStateBurrow : AttackState
 {
@@ -19,7 +20,7 @@ public class BossStateBurrow : AttackState
     [SerializeField] private float burrowSpeed;
     [Tooltip("The distance to the player that the particles must be to activate the dig up animation")]
     [SerializeField] private float inRangeDistance;
-
+    [SerializeField] private float digUpDelay;
     public void Awake()
     {
         //BossAnimationEventsHandler.current.OnBurrowDownFinished += BeginBurrowCoroutine;
@@ -35,16 +36,14 @@ public class BossStateBurrow : AttackState
         base.OnEnter();
         //Look at the player's XZ position
         Vector3 newPosition = player.transform.position;
-        newPosition.y = transform.position.y;
-        //transform.LookAt(newPosition);
-        //Start animation 
+        newPosition.y = transform.position.y; 
         StartCoroutine(StartBurrow());
+        //Start animation 
     } //End OnEnter
 
     public override void OnExit()
     {
         base.OnExit();
-
         StopAllCoroutines();
     } //End OnExit
 
@@ -55,24 +54,31 @@ public class BossStateBurrow : AttackState
 
     IEnumerator StartBurrow()
     {
+        InvokeEvent(BossEvent.WindUp);
         yield return new WaitForSeconds(1f);
+        InvokeEvent(BossEvent.AttackStart);
+
         //Set the y position of the boss after the animation plays
         Vector3 pos = transform.position;
         pos.y = burrowYPosition;
         transform.position = pos;
+
         //Set the y position to the particle y position
         pos.y = particleYPosition;
+
         //Spawn particles
-        BurrowMovement particles = Instantiate(particlesPrefab, pos, transform.rotation);
+        BurrowMovement burrower = Instantiate(particlesPrefab, pos, transform.rotation);
         
         //Set the target position to the player with the same y position as the particles
         Vector3 targetPosition = player.transform.position;
         targetPosition.y = particleYPosition;
 
-        float distance = (particles.transform.position - targetPosition).magnitude;
+        //Initialise the distance to the player
+        float distance = (burrower.transform.position - targetPosition).magnitude;
+        //Give the particle object the rotation speed and movement speed
+        burrower.Init(maxRotationSpeed, burrowSpeed);
 
-        particles.Init(maxRotationSpeed, burrowSpeed);
-
+        //Update the target position while out of range
         while (distance > inRangeDistance)
         {
             //Update the target position
@@ -80,15 +86,19 @@ public class BossStateBurrow : AttackState
             targetPosition.z = player.transform.position.z;
             
             //Update the distance
-            distance = (particles.transform.position - targetPosition).magnitude;
+            distance = (burrower.transform.position - targetPosition).magnitude;
             //Update the target position on the particle object
-            particles.SetPlayerPosition(targetPosition);
+            burrower.SetPlayerPosition(targetPosition);
             yield return null;
         }
-        Vector3 particlePos = particles.transform.position;
-        Destroy(particles.gameObject);
 
-        yield return new WaitForSeconds(0.5f);
+        Vector3 particlePos = burrower.transform.position;
+        Destroy(burrower.gameObject);
+
+        InvokeEvent(BossEvent.AttackEnd);
+        yield return new WaitForSeconds(digUpDelay);
+        InvokeEvent(BossEvent.WindDown);
+
         //Reset the boss position
         transform.position = new Vector3(particlePos.x, goundedYPosition, particlePos.z);
         //TODO PLAY ANIMATION
