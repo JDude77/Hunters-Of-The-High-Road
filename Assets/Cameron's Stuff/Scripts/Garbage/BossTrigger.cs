@@ -1,23 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 public class BossTrigger : MonoBehaviour
 {
-    [SerializeField]
-    private Boss boss;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    public Action TriggerActivated;
+    // Start is called before the first frame update    
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
-            boss.ActivateBoss();
+            TriggerActivated?.Invoke();
             GetComponent<Collider>().enabled = false;
         }
     }

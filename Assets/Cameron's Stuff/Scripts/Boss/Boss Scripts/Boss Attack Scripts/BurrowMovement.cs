@@ -6,10 +6,8 @@ using System;
 public class BurrowMovement : MonoBehaviour
 {
     private Rigidbody body;
-
     private float rotationSpeed;
     private float speed;
-
     private Vector3 targetPosition;
 
     // Start is called before the first frame update
@@ -31,7 +29,7 @@ public class BurrowMovement : MonoBehaviour
         body.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
         body.useGravity = false;
         body.isKinematic = false;
-    }
+    }//End Start
 
     // Update is called once per frame
     void FixedUpdate()
@@ -43,17 +41,17 @@ public class BurrowMovement : MonoBehaviour
         //Rotate around the y axis by the rotation amount * rotation speed
         body.angularVelocity = new Vector3(0, -rotationAmount * rotationSpeed, 0);
         body.velocity = transform.forward * speed;
-    }
+    }//End FixedUpdate
 
     public void Init(float rotationSpeed, float speed)
     {
         this.rotationSpeed = rotationSpeed;
         this.speed = speed;
-    }
+    }//End Init
 
     //Called every frame in the boss's burrow state script
     public void SetPlayerPosition(Vector3 position)
     {
         targetPosition = position;
-    }
+    }//End SetPlayerPosition
 }
