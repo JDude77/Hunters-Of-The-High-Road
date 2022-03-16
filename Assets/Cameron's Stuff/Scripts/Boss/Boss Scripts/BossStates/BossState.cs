@@ -8,7 +8,7 @@ public class BossEventResponse : EventResponse
 {
     public BossEvent eventName;
     public override string GetEventName() { return eventName.ToString(); }
-}//End BurrowEventResponse
+}//End BossEventResponse
 
 public class BossState : MonoBehaviour
 {
@@ -31,12 +31,10 @@ public class BossState : MonoBehaviour
             Debug.LogError("Error: No object of type Player found");
         }
 
-        Debug.Log(GetType().ToString());
-        boss.eventResponder.InitResponses(eventResponses, GetType());
-        
+        boss.eventResponder.InitResponses(eventResponses, GetType());        
     }//End Start
 
-    public virtual void InvokeEvent(BossEvent e)
+    public virtual void InvokeEvent<T>(T e)
     {
         Debug.Log("Invoking: " + GetType() + e.ToString());
         boss.eventResponder.Respond(GetType().ToString() + e.ToString());

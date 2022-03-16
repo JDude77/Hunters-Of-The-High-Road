@@ -56,7 +56,7 @@ public class BossStateBurrow : AttackState
     {
         InvokeEvent(BossEvent.WindUp);
         yield return new WaitForSeconds(1f);
-        InvokeEvent(BossEvent.AttackStart);
+        InvokeEvent(BossEvent.PrimaryAttackStart);
 
         //Set the y position of the boss after the animation plays
         Vector3 pos = transform.position;
@@ -95,7 +95,7 @@ public class BossStateBurrow : AttackState
         Vector3 particlePos = burrower.transform.position;
         Destroy(burrower.gameObject);
 
-        InvokeEvent(BossEvent.AttackEnd);
+        InvokeEvent(BossEvent.PrimaryAttackEnd);
         yield return new WaitForSeconds(digUpDelay);
         InvokeEvent(BossEvent.WindDown);
 

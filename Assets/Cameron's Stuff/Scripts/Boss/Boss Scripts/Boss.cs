@@ -67,8 +67,8 @@ public class Boss : Character
 
     protected override void Start()
     {
-        base.Start();     
-
+        base.Start();
+        FindObjectOfType<BossTrigger>().TriggerActivated += ActivateBoss;
     } //End Start
 
     //Update is called once per frame

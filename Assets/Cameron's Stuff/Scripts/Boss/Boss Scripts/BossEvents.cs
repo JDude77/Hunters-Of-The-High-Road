@@ -1,2 +1,11 @@
 
-public enum BossEvent { StateEnter, WindUp, AttackStart, AttackEnd, WindDown, StateExit }
+public enum BossEvent { 
+    StateEnter, 
+    WindUp, 
+    PrimaryAttackStart, 
+    PrimaryAttackEnd, 
+    SecondAttackStart, 
+    SecondAttackEnd, 
+    WindDown, 
+    StateExit  
+}

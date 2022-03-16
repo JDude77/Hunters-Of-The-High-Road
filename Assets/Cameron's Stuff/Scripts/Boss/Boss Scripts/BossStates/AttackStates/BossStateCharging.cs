@@ -83,7 +83,7 @@ public class BossStateCharging : AttackState
     //Selects the position to charge to and waits for X seconds
     IEnumerator WindUp(float windTime)
     {
-
+        InvokeEvent(BossEvent.WindUp);
         transform.LookAt(player.transform.position);
 
         //Set the point that the boss should charge to
@@ -98,6 +98,7 @@ public class BossStateCharging : AttackState
     //Moves to the selected position
     IEnumerator Charge()
     {
+        InvokeEvent(BossEvent.PrimaryAttackStart);
         Debug.Log("Charging");
         //Convert the stopping distance to a percentage of the distance to cover
         float chargeDistanceOffsetPercent = stopDistance / (chargePoint - transform.position).magnitude;
@@ -110,13 +111,24 @@ public class BossStateCharging : AttackState
             transform.position = Vector3.MoveTowards(transform.position, chargePoint, chargeSpeed * Time.deltaTime);
             yield return null;
         }
-        
-        ChangeCoroutineTo(Swipe());
+
+        InvokeEvent(BossEvent.PrimaryAttackEnd);
+        Swipe();
+
     } //End Charge
 
-    //Checks if the player is within range of the attack
-    IEnumerator Swipe()
+    IEnumerator WindDown()
     {
+        InvokeEvent(BossEvent.WindDown);
+        yield return new WaitForSeconds(1.0f);
+        boss.ChangeState(Boss.State.Idle);
+    } //End WindDown
+
+
+    //Checks if the player is within range of the attack
+    void Swipe()
+    {
+        InvokeEvent(BossEvent.SecondAttackStart);
         chargesCompleted++;
 
         //Check if the boss has hit the player
@@ -124,23 +136,17 @@ public class BossStateCharging : AttackState
         {
             BossEventsHandler.current.HitPlayer(GetDamageValue());
         }
-        else if(chargesCompleted < totalConsecutiveCharges)
-        { 
+        else if (chargesCompleted < totalConsecutiveCharges)
+        {
             //charge again
             ChangeCoroutineTo(WindUp(consecutiveWindUpTime));
         }//End else if
 
-        yield return new WaitForSeconds(1.0f);
+        InvokeEvent(BossEvent.SecondAttackEnd);
 
         ChangeCoroutineTo(WindDown());
 
     } //End Swipe
-
-    IEnumerator WindDown()
-    {
-        yield return new WaitForSeconds(1.0f);
-        boss.ChangeState(Boss.State.Idle);
-    } //End WindDown
 
     public bool DoSphereCast()
     {
