@@ -147,7 +147,8 @@ public class Rifle : Weapon
                         PlayerEventsHandler.current.HitBottle(hit.gameObject);
                         break;
                     case "Enemy":
-                        PlayerEventsHandler.current.HitEnemy(hit.gameObject);
+                        PlayerEventsHandler.current.HitEnemy(hit.gameObject, damage);
+                        //Below pieces for deadshot
                         hitEnemy = true;
                         enemyInstance = hit.gameObject;
                         break;
