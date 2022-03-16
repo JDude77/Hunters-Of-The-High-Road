@@ -9,7 +9,8 @@ public class BossEventsHandler : MonoBehaviour
 
     private void Awake()
     {
-        current = this;        
+        if (current == null) current = this;
+        else Destroy(this);
     }
 
     #region Boss Stunned
