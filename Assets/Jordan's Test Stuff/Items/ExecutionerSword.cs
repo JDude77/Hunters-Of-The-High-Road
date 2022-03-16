@@ -50,6 +50,7 @@ public class ExecutionerSword : Weapon
                     PlayerEventsHandler.current.HitBottle(objectHit.gameObject);
                     break;
                 case "Enemy":
+                case "Boss":
                     PlayerEventsHandler.current.HitEnemy(objectHit.gameObject, damage);
                     break;
             }//End switch
