@@ -9,13 +9,14 @@ public class PauseMenuScript : MonoBehaviour
 
     [SerializeField]
     private GameObject[] AdditionalMenus;
+    private GameObject CurrentMenu;
 
     private bool isOnPauseMenu = false, initialPause = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        //Deactivate the canvases
+        //Deactivate the menus
         DeactivateMenus();
     }
 
@@ -27,14 +28,29 @@ public class PauseMenuScript : MonoBehaviour
             if(initialPause == false)
             {
                 PauseGame();
+                //sets CurrentMenu to the pause menu gameobject. This is needed for checking if the current menu has a "ReturnToMenu" component
+                CurrentMenu = gameObject;
             }
             else
             {
-                UnPauseGame();
+                CheckEscInput();
             }
         }
     }
 
+    private void CheckEscInput()
+    {
+        //if the current menu has a ReturnToMenu component, activate the menu attached to the script
+        if(CurrentMenu.GetComponent<ReturnToMenu>() == true)
+        {
+            ActivateMenu(CurrentMenu.GetComponent<ReturnToMenu>().getReturnMenu());
+        }
+        else
+        {
+            UnPauseGame();
+        }
+        
+    }
     private void PauseGame()
     {
         PauseCanvas.SetActive(true);
@@ -47,8 +63,10 @@ public class PauseMenuScript : MonoBehaviour
     {
         DeactivateMenus();
         menu.SetActive(true);
+        CurrentMenu = menu;
     }
 
+    //Used by the "Resume" button
     public void UnPauseGame()
     {
         DeactivateMenus();
@@ -56,6 +74,7 @@ public class PauseMenuScript : MonoBehaviour
         initialPause = false;
     }
 
+    //deactivates all menus
     private void DeactivateMenus()
     {
         PauseCanvas.SetActive(false);
