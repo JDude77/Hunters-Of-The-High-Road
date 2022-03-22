@@ -113,6 +113,7 @@ public class BossStateCharging : AttackState
         }
 
         InvokeEvent(BossEvent.PrimaryAttackEnd);
+        
         Swipe();
 
     } //End Charge

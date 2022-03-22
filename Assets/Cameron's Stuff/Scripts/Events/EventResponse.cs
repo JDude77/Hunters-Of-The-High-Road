@@ -22,17 +22,28 @@ public class EventResponse
     public List<AudioClip> soundEffects;
     [Space(5)]
     public string animationToPlay;
+    public bool IsTrigger;
     [Space(10)]
 
     //Dependencies
     protected Animator animator;
     protected AudioSource audio;
 
+    private Action<string> doAnimation;
+
     //Provides the event response with a reference to the audio source and animator
     public virtual void InitDependencies(ref Animator a, ref AudioSource s)
     {
         this.animator = a;
         this.audio = s;
+
+        if (animator != null)
+        {
+            if (IsTrigger)
+                doAnimation = animator.SetTrigger;
+            else
+                doAnimation = animator.Play;
+        }
     }//End InitDependencies
 
     //Loops through each list, instantiates particles, plays sounds, and starts animations
@@ -50,10 +61,7 @@ public class EventResponse
             }//End foreach
         }//End if
 
-        if (animator != null)
-        {
-            animator.Play(animationToPlay);
-        }//End if
+        doAnimation?.Invoke(animationToPlay);
     }// End Activate
 
     //Throws error if function is not overriden 

@@ -13176,6 +13176,78 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossOBJ
       objectReference: {fileID: 0}
+    - target: {fileID: 6402485141369007497, guid: 79e0358afd9596648bf0f6f3f8e591b9, type: 3}
+      propertyPath: eventResponses.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402485141369007497, guid: 79e0358afd9596648bf0f6f3f8e591b9, type: 3}
+      propertyPath: eventResponses.Array.data[0].Label
+      value: Swipe
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402485141369007497, guid: 79e0358afd9596648bf0f6f3f8e591b9, type: 3}
+      propertyPath: eventResponses.Array.data[1].Label
+      value: Running
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402485141369007497, guid: 79e0358afd9596648bf0f6f3f8e591b9, type: 3}
+      propertyPath: eventResponses.Array.data[0].IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402485141369007497, guid: 79e0358afd9596648bf0f6f3f8e591b9, type: 3}
+      propertyPath: eventResponses.Array.data[0].eventName
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402485141369007497, guid: 79e0358afd9596648bf0f6f3f8e591b9, type: 3}
+      propertyPath: eventResponses.Array.data[1].IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402485141369007497, guid: 79e0358afd9596648bf0f6f3f8e591b9, type: 3}
+      propertyPath: eventResponses.Array.data[1].eventName
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402485141369007497, guid: 79e0358afd9596648bf0f6f3f8e591b9, type: 3}
+      propertyPath: eventResponses.Array.data[0].animationToPlay
+      value: DoSlash
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402485141369007497, guid: 79e0358afd9596648bf0f6f3f8e591b9, type: 3}
+      propertyPath: eventResponses.Array.data[1].animationToPlay
+      value: Boss_Running
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402485141369007497, guid: 79e0358afd9596648bf0f6f3f8e591b9, type: 3}
+      propertyPath: eventResponses.Array.data[1].soundEffects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402485141369007497, guid: 79e0358afd9596648bf0f6f3f8e591b9, type: 3}
+      propertyPath: eventResponses.Array.data[1].soundEffects.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6920d06cb8c7bdd4a9fefad7fdc36038, type: 3}
+    - target: {fileID: 6402485141369007502, guid: 79e0358afd9596648bf0f6f3f8e591b9, type: 3}
+      propertyPath: attackDistance
+      value: 9.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402485141369007502, guid: 79e0358afd9596648bf0f6f3f8e591b9, type: 3}
+      propertyPath: attackStartOffset
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402485141369007509, guid: 79e0358afd9596648bf0f6f3f8e591b9, type: 3}
+      propertyPath: desiredStates.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402485141369007509, guid: 79e0358afd9596648bf0f6f3f8e591b9, type: 3}
+      propertyPath: eventResponses.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402485141369007509, guid: 79e0358afd9596648bf0f6f3f8e591b9, type: 3}
+      propertyPath: desiredStates.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402485141369007509, guid: 79e0358afd9596648bf0f6f3f8e591b9, type: 3}
+      propertyPath: desiredStates.Array.data[1]
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402485141369007509, guid: 79e0358afd9596648bf0f6f3f8e591b9, type: 3}
+      propertyPath: desiredStates.Array.data[2]
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79e0358afd9596648bf0f6f3f8e591b9, type: 3}
 --- !u!1001 &1036701995
