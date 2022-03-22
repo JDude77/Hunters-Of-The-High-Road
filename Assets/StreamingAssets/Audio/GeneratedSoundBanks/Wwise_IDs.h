@@ -14,7 +14,9 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID PLAY_FOOT_STEPS_BLEND_CONTAINER = 3655442102U;
-        static const AkUniqueID PLAY_FORREST_OR_GRAVE = 651132581U;
+        static const AkUniqueID PLAY_MAIN_FOREST_BLEND_CONTAINER = 185960795U;
+        static const AkUniqueID PLAY_RIFLE_BLEND_CONTAINER = 1620154736U;
+        static const AkUniqueID PLAY_SFX_ENVIRONMENT_TREES_01 = 2569274399U;
         static const AkUniqueID PLAY_SWARD_FULL = 2602512053U;
     } // namespace EVENTS
 

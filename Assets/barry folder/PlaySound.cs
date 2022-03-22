@@ -6,7 +6,7 @@ public class PlaySound : MonoBehaviour
 {
 
     private AK.Wwise.Event Sound;
-    public AK.Wwise.Event footsteps, Sword;
+    public AK.Wwise.Event footsteps, Sword, Hipfire, Roll;
 
     public void SelectSound(string id)
     {
@@ -22,6 +22,17 @@ public class PlaySound : MonoBehaviour
             Playsound();
         }
 
+        if (id == "hipfire")
+        {
+            Sound = Hipfire;
+            Playsound();
+        }
+
+        if (id == "roll")
+        {
+            Sound = Roll;
+            Playsound();
+        }
     }
     private void Playsound()
     {

@@ -14,23 +14,67 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_forrest_or_grave" ID="{AFC14BEE-D4B4-411E-8D04-3FBA2B7F1F45}">
-					<ChildrenList>
-						<Action Name="" ID="{BBA826C0-CA5D-4671-A0D4-40598164FBF0}" ShortID="1004784719">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="forrest or grave" ID="{B1FBAF52-7524-4033-B4E2-E1374B6A9F44}" WorkUnitID="{CC64EC57-E9ED-4D98-AE09-BB92447C17D8}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
 				<Event Name="Play_sward_full" ID="{2C9B4E03-8BD5-4D18-AACB-209FAE502C16}">
 					<ChildrenList>
 						<Action Name="" ID="{BAB81A50-D4E4-4ACB-9F66-9C9620CFC82D}" ShortID="758152544">
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="sward full" ID="{40E19F7A-CC39-4DC5-8521-D54267DF3707}" WorkUnitID="{89004378-CD5C-4ED3-AA20-E73F232471D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Rifle_Blend_Container" ID="{BC4E901C-BA52-4B01-A2C2-9968EE0F761B}">
+					<ChildrenList>
+						<Action Name="" ID="{8663F3B9-76A3-4E6F-8AA2-42ED60BF4E34}" ShortID="1023978115">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Rifle Blend Container" ID="{EA658E3E-001F-4389-855E-52DFC2FC01D5}" WorkUnitID="{36524834-A5D3-4081-8390-A3FE7E1D7ADB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_main_forest_Blend_Container" ID="{690A8197-BB4C-432B-9563-51C4067E92FF}">
+					<ChildrenList>
+						<Action Name="" ID="{5DA6DB57-7F5B-4506-9701-9EBFD742216C}" ShortID="679095700">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="main forest Blend Container" ID="{30AE2F2D-36CD-442C-931F-1A57F8AF2F8B}" WorkUnitID="{CC64EC57-E9ED-4D98-AE09-BB92447C17D8}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_sfx_environment_trees_01" ID="{02AC183C-9EAE-498F-8BE0-BD117B96BE72}">
+					<ChildrenList>
+						<Action Name="" ID="{4546748F-4A03-4F1D-AFD9-1FF9288A535A}" ShortID="362633161">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sfx_environment_trees_01" ID="{960EFBD5-B4CC-4EA4-821F-52A87685CE24}" WorkUnitID="{CC64EC57-E9ED-4D98-AE09-BB92447C17D8}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Roll_Blend_Container" ID="{EA29CD3D-06D8-4F4D-95F3-E1C86DC937B7}">
+					<ChildrenList>
+						<Action Name="" ID="{0D8F4B7D-23F2-4D59-B353-53379207D458}" ShortID="582079350">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Roll Blend Container" ID="{C02FDF54-A375-4958-A2A1-4C681EF49E3B}" WorkUnitID="{24EB3147-0D66-48F2-BC09-377B3B125AB2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Padlock_Brake" ID="{5A754E94-4E69-45BC-9252-FE12D2A45F73}">
+					<ChildrenList>
+						<Action Name="" ID="{90BB116D-BD32-4DA5-832F-D5C23426A958}" ShortID="204497728">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Padlock Brake" ID="{BC280D40-6560-4E49-B406-D5854CC35FB4}" WorkUnitID="{CC64EC57-E9ED-4D98-AE09-BB92447C17D8}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

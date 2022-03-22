@@ -1,0 +1,23 @@
+{
+ "PluginInfo": {
+  "Project": "Hunters-Of-The-High-Road_WwiseProject",
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "Plugins": [
+   {
+    "Name": "System",
+    "ID": "11403271"
+   },
+   {
+    "Name": "No Output",
+    "ID": "11862023"
+   },
+   {
+    "Name": "Wwise Motion",
+    "ID": "33226759",
+    "DLL": "AkMotion",
+    "StaticLib": "AkMotionSink"
+   }
+  ]
+ }
+}

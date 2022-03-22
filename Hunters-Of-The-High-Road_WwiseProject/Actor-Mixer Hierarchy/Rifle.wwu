@@ -3,7 +3,7 @@
 	<AudioObjects>
 		<WorkUnit Name="Rifle" ID="{36524834-A5D3-4081-8390-A3FE7E1D7ADB}" OwnerID="{0656ACAB-EEB3-429C-A07D-AFAD298F7E65}" PersistMode="Nested">
 			<ChildrenList>
-				<BlendContainer Name="New Blend Container" ID="{EA658E3E-001F-4389-855E-52DFC2FC01D5}" ShortID="1044485233">
+				<BlendContainer Name="Rifle Blend Container" ID="{EA658E3E-001F-4389-855E-52DFC2FC01D5}" ShortID="1044485233">
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
@@ -79,6 +79,13 @@
 							</ReferenceList>
 							<ChildrenList>
 								<RandomSequenceContainer Name="shootong" ID="{D3D7DDF7-E7C3-43DD-AC4E-6182C1B5DC54}" ShortID="429410259">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>5</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
@@ -200,6 +207,13 @@
 									<ObjectLists/>
 								</RandomSequenceContainer>
 								<Sound Name="sfx_weapon_rifle_reloadclick_01" ID="{6082576A-E733-46D1-A172-DDECABC77A67}" ShortID="201766240">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>5</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
@@ -231,9 +245,14 @@
 						</RandomSequenceContainer>
 						<Sound Name="sfx_weapon_sword_blessedmetal_01" ID="{05DA31E1-829F-4113-A2EB-468408121645}" ShortID="131497742">
 							<PropertyList>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>2</Value>
+										<Value>-5</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>

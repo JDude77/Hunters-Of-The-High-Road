@@ -1,19 +1,17 @@
 Event	ID	Name			Wwise Object Path	Notes
-	651132581	Play_forrest_or_grave			\Default Work Unit\Play_forrest_or_grave	
-
-Switch Group	ID	Name			Wwise Object Path	Notes
-	1229948536	environment			\Default Work Unit\environment	
-
-Switch	ID	Name	Switch Group			Notes
-	1300150859	normal_woods	environment			
-	1905655063	Grave_yard	environment			
+	185960795	Play_main_forest_Blend_Container			\Default Work Unit\Play_main_forest_Blend_Container	
+	2569274399	Play_sfx_environment_trees_01			\Default Work Unit\Play_sfx_environment_trees_01	
+	3390075432	Play_Padlock_Brake			\Default Work Unit\Play_Padlock_Brake	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	59818597	sfx_environment_owl_02	D:\unity Projects\Hunters-Of-The-High-Road\Hunters-Of-The-High-Road_WwiseProject\.cache\Windows\SFX\sfx_environment_owl_02_10C4C929.wem		\Actor-Mixer Hierarchy\environment\forrest or grave\owl\sfx_environment_owl_02		192064
-	97940187	sfx_environment_owl_03	D:\unity Projects\Hunters-Of-The-High-Road\Hunters-Of-The-High-Road_WwiseProject\.cache\Windows\SFX\sfx_environment_owl_03_10C4C929.wem		\Actor-Mixer Hierarchy\environment\forrest or grave\owl\sfx_environment_owl_03		153664
-	382204857	sfx_environment_birds_01	D:\unity Projects\Hunters-Of-The-High-Road\Hunters-Of-The-High-Road_WwiseProject\.cache\Windows\SFX\sfx_environment_birds_01_10C4C929.wem		\Actor-Mixer Hierarchy\environment\forrest or grave\sfx_environment_birds_01		17280064
-	559624516	sfx_environment_owl_05	D:\unity Projects\Hunters-Of-The-High-Road\Hunters-Of-The-High-Road_WwiseProject\.cache\Windows\SFX\sfx_environment_owl_05_10C4C929.wem		\Actor-Mixer Hierarchy\environment\forrest or grave\owl\sfx_environment_owl_05		163264
-	763286601	sfx_environment_trees_01	D:\unity Projects\Hunters-Of-The-High-Road\Hunters-Of-The-High-Road_WwiseProject\.cache\Windows\SFX\sfx_environment_trees_01_10C4C929.wem		\Actor-Mixer Hierarchy\environment\forrest or grave\sfx_environment_trees_01		11520064
-	798562294	sfx_environment_owl_04	D:\unity Projects\Hunters-Of-The-High-Road\Hunters-Of-The-High-Road_WwiseProject\.cache\Windows\SFX\sfx_environment_owl_04_10C4C929.wem		\Actor-Mixer Hierarchy\environment\forrest or grave\owl\sfx_environment_owl_04		96064
-	861427743	sfx_environment_owl_01	D:\unity Projects\Hunters-Of-The-High-Road\Hunters-Of-The-High-Road_WwiseProject\.cache\Windows\SFX\sfx_environment_owl_01_10C4C929.wem		\Actor-Mixer Hierarchy\environment\forrest or grave\owl\sfx_environment_owl_01		142304
+	59818597	sfx_environment_owl_02	D:\unity Projects\Hunters-Of-The-High-Road\Hunters-Of-The-High-Road_WwiseProject\.cache\Windows\SFX\sfx_environment_owl_02_10C4C929.wem		\Actor-Mixer Hierarchy\environment\Forrest sounds\main forest Blend Container\owl\sfx_environment_owl_02		192064
+	84890005	sfx_environment_brake_padlock_03	D:\unity Projects\Hunters-Of-The-High-Road\Hunters-Of-The-High-Road_WwiseProject\.cache\Windows\SFX\sfx_environment_brake_padlock_03_6E6211C1.wem		\Actor-Mixer Hierarchy\environment\Padlock\Padlock Brake\sfx_environment_brake_padlock_03		89432
+	97940187	sfx_environment_owl_03	D:\unity Projects\Hunters-Of-The-High-Road\Hunters-Of-The-High-Road_WwiseProject\.cache\Windows\SFX\sfx_environment_owl_03_10C4C929.wem		\Actor-Mixer Hierarchy\environment\Forrest sounds\main forest Blend Container\owl\sfx_environment_owl_03		153664
+	309760380	sfx_environment_brake_padlock_02	D:\unity Projects\Hunters-Of-The-High-Road\Hunters-Of-The-High-Road_WwiseProject\.cache\Windows\SFX\sfx_environment_brake_padlock_02_E5CC1439.wem		\Actor-Mixer Hierarchy\environment\Padlock\Padlock Brake\sfx_environment_brake_padlock_02		89060
+	349766689	sfx_environment_brake_padlock_01	D:\unity Projects\Hunters-Of-The-High-Road\Hunters-Of-The-High-Road_WwiseProject\.cache\Windows\SFX\sfx_environment_brake_padlock_01_7C318BA2.wem		\Actor-Mixer Hierarchy\environment\Padlock\Padlock Brake\sfx_environment_brake_padlock_01		88868
+	382204857	sfx_environment_birds_01	D:\unity Projects\Hunters-Of-The-High-Road\Hunters-Of-The-High-Road_WwiseProject\.cache\Windows\SFX\sfx_environment_birds_01_D79FB2B7.wem		\Actor-Mixer Hierarchy\environment\Forrest sounds\main forest Blend Container\sfx_environment_birds_01		17280064
+	559624516	sfx_environment_owl_05	D:\unity Projects\Hunters-Of-The-High-Road\Hunters-Of-The-High-Road_WwiseProject\.cache\Windows\SFX\sfx_environment_owl_05_10C4C929.wem		\Actor-Mixer Hierarchy\environment\Forrest sounds\main forest Blend Container\owl\sfx_environment_owl_05		163264
+	763286601	sfx_environment_trees_01	D:\unity Projects\Hunters-Of-The-High-Road\Hunters-Of-The-High-Road_WwiseProject\.cache\Windows\SFX\sfx_environment_trees_01_D79FB2B7.wem		\Actor-Mixer Hierarchy\environment\Forrest sounds\sfx_environment_trees_01		11520064
+	798562294	sfx_environment_owl_04	D:\unity Projects\Hunters-Of-The-High-Road\Hunters-Of-The-High-Road_WwiseProject\.cache\Windows\SFX\sfx_environment_owl_04_10C4C929.wem		\Actor-Mixer Hierarchy\environment\Forrest sounds\main forest Blend Container\owl\sfx_environment_owl_04		96064
+	861427743	sfx_environment_owl_01	D:\unity Projects\Hunters-Of-The-High-Road\Hunters-Of-The-High-Road_WwiseProject\.cache\Windows\SFX\sfx_environment_owl_01_10C4C929.wem		\Actor-Mixer Hierarchy\environment\Forrest sounds\main forest Blend Container\owl\sfx_environment_owl_01		142304
 

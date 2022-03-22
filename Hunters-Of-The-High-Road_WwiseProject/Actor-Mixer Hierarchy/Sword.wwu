@@ -45,6 +45,11 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="sward pull" ID="{167BF816-9B06-4734-AFB7-EE5A90CEE383}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="1.7111824723025"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="3.35287530105972"/>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>sward pull.wav</AudioFile>
 									<MediaIDList>

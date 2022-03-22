@@ -2,6 +2,10 @@
 <WwiseDocument Type="WorkUnit" ID="{C3AC2395-7B99-4FCD-94D9-F32A0986180C}" SchemaVersion="103">
 	<AudioObjects>
 		<WorkUnit Name="Boss sounds" ID="{C3AC2395-7B99-4FCD-94D9-F32A0986180C}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="10"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
 			<ChildrenList>
 				<BlendContainer Name="baskic swing attack" ID="{91E3AE14-E6E8-4803-9FD0-6FCBEF0CB966}" ShortID="174764347">
 					<PropertyList>

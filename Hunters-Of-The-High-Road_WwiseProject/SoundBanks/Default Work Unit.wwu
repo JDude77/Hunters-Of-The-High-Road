@@ -6,19 +6,23 @@
 				<SoundBank Name="Player" ID="{60D10E6D-FC15-4DED-9BB7-70595284826E}">
 					<ObjectInclusionList>
 						<ObjectRef Name="Play_Foot_steps_Blend_Container" ID="{B7CB5942-D572-43B7-AE14-09200A366A08}" WorkUnitID="{FEBC0DFB-5402-497C-AFBE-650CCE855735}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Roll_Blend_Container" ID="{EA29CD3D-06D8-4F4D-95F3-E1C86DC937B7}" WorkUnitID="{FEBC0DFB-5402-497C-AFBE-650CCE855735}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
 				</SoundBank>
 				<SoundBank Name="environment" ID="{7C2EEACE-B409-4463-81F5-36B47D7CBB94}">
 					<ObjectInclusionList>
-						<ObjectRef Name="Play_forrest_or_grave" ID="{AFC14BEE-D4B4-411E-8D04-3FBA2B7F1F45}" WorkUnitID="{FEBC0DFB-5402-497C-AFBE-650CCE855735}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_main_forest_Blend_Container" ID="{690A8197-BB4C-432B-9563-51C4067E92FF}" WorkUnitID="{FEBC0DFB-5402-497C-AFBE-650CCE855735}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Padlock_Brake" ID="{5A754E94-4E69-45BC-9252-FE12D2A45F73}" WorkUnitID="{FEBC0DFB-5402-497C-AFBE-650CCE855735}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_sfx_environment_trees_01" ID="{02AC183C-9EAE-498F-8BE0-BD117B96BE72}" WorkUnitID="{FEBC0DFB-5402-497C-AFBE-650CCE855735}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
 				</SoundBank>
 				<SoundBank Name="Weapons" ID="{3CFE0723-F45B-4F16-A345-E8A403948A93}">
 					<ObjectInclusionList>
+						<ObjectRef Name="Play_Rifle_Blend_Container" ID="{BC4E901C-BA52-4B01-A2C2-9968EE0F761B}" WorkUnitID="{FEBC0DFB-5402-497C-AFBE-650CCE855735}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_sward_full" ID="{2C9B4E03-8BD5-4D18-AACB-209FAE502C16}" WorkUnitID="{FEBC0DFB-5402-497C-AFBE-650CCE855735}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>

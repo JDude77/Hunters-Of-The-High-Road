@@ -4,6 +4,13 @@
 		<WorkUnit Name="Player Footstep" ID="{24EB3147-0D66-48F2-BC09-377B3B125AB2}" OwnerID="{178A8A63-E7F5-42E9-A001-BF3928FE72A4}" PersistMode="Nested">
 			<ChildrenList>
 				<BlendContainer Name="Foot steps Blend Container" ID="{6BDF16E0-73AC-470C-96BE-B840A958DF5C}" ShortID="824280062">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-10</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
@@ -1400,136 +1407,6 @@
 										<ItemRef Name="toe" ID="{FF6CC0B5-0213-450A-82A3-9A00FC92B84D}"/>
 									</Playlist>
 								</RandomSequenceContainer>
-								<RandomSequenceContainer Name="roll" ID="{1AFA9981-6122-4C4D-989E-56847E93018A}" ShortID="789074180">
-									<PropertyList>
-										<Property Name="Pitch" Type="int32">
-											<ModifierList>
-												<ModifierInfo>
-													<Modifier Name="" ID="{113797AA-D000-425A-99BF-66C59B8D9B71}">
-														<PropertyList>
-															<Property Name="Enabled" Type="bool" Value="True"/>
-															<Property Name="Max" Type="Real64" Value="300"/>
-															<Property Name="Min" Type="Real64" Value="-300"/>
-														</PropertyList>
-													</Modifier>
-												</ModifierInfo>
-											</ModifierList>
-										</Property>
-										<Property Name="Volume" Type="Real64">
-											<ValueList>
-												<Value>-6</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<Sound Name="sfx_movement_roll_player_01" ID="{B8E25A77-12D0-4EF0-B43D-8767FBB65B7A}" ShortID="144769962">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="sfx_movement_roll_player_01" ID="{3C9CEDB0-C183-4172-808B-445834A0F92D}">
-													<PropertyList>
-														<Property Name="FadeOutDuration" Type="Real64" Value="0.40668978805395"/>
-														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-													</PropertyList>
-													<Language>SFX</Language>
-													<AudioFile>sfx_movement_roll_player_01.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="1057947403"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ObjectLists/>
-											<ActiveSourceList>
-												<ActiveSource Name="sfx_movement_roll_player_01" ID="{3C9CEDB0-C183-4172-808B-445834A0F92D}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="sfx_movement_roll_player_02" ID="{74ABCD36-44C9-42B0-BA5D-8D4EA19A56C7}" ShortID="7488596">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="sfx_movement_roll_player_02" ID="{0EE1C7CB-E32B-4B00-A1AF-7F53813713B3}">
-													<PropertyList>
-														<Property Name="FadeInDuration" Type="Real64" Value="0.238005780346821"/>
-														<Property Name="FadeOutDuration" Type="Real64" Value="0.479913294797688"/>
-														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-													</PropertyList>
-													<Language>SFX</Language>
-													<AudioFile>sfx_movement_roll_player_02.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="699554060"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ObjectLists/>
-											<ActiveSourceList>
-												<ActiveSource Name="sfx_movement_roll_player_02" ID="{0EE1C7CB-E32B-4B00-A1AF-7F53813713B3}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="sfx_movement_roll_player_03" ID="{B5376F20-8E4B-40A5-A578-CE232FD8B843}" ShortID="225763271">
-											<PropertyList>
-												<Property Name="Pitch" Type="int32">
-													<ModifierList>
-														<ModifierInfo>
-															<Modifier Name="" ID="{2A7A7A29-03DA-4F2B-8A6E-F6269AFEB0E5}">
-																<PropertyList>
-																	<Property Name="Max" Type="Real64" Value="200"/>
-																	<Property Name="Min" Type="Real64" Value="-200"/>
-																</PropertyList>
-															</Modifier>
-														</ModifierInfo>
-													</ModifierList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="sfx_movement_roll_player_03" ID="{5616B285-F985-41EC-86AD-18F50A613FEF}">
-													<PropertyList>
-														<Property Name="FadeInDuration" Type="Real64" Value="0.224271134393064"/>
-														<Property Name="FadeOutDuration" Type="Real64" Value="0.229063252649326"/>
-														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-													</PropertyList>
-													<Language>SFX</Language>
-													<AudioFile>sfx_movement_roll_player_03.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="926559169"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ObjectLists/>
-											<ActiveSourceList>
-												<ActiveSource Name="sfx_movement_roll_player_03" ID="{5616B285-F985-41EC-86AD-18F50A613FEF}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-									</ChildrenList>
-									<ObjectLists/>
-								</RandomSequenceContainer>
 							</ChildrenList>
 							<ObjectLists/>
 							<GroupingInfo>
@@ -1539,9 +1416,6 @@
 									</GroupingBehavior>
 									<GroupingBehavior>
 										<ItemRef Name="gravel" ID="{1EE91577-DCF3-4B09-AAF7-D86E526EA27F}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="roll" ID="{1AFA9981-6122-4C4D-989E-56847E93018A}"/>
 									</GroupingBehavior>
 									<GroupingBehavior>
 										<ItemRef Name="dirt" ID="{80C421A5-943D-441A-BBFC-505CBA79451F}"/>
@@ -1566,15 +1440,519 @@
 											<ItemRef Name="dirt" ID="{80C421A5-943D-441A-BBFC-505CBA79451F}"/>
 										</ItemList>
 									</Grouping>
-									<Grouping>
-										<SwitchRef Name="roll" ID="{A03A62F6-A7FE-43AF-8ED4-CBA3C608944F}"/>
-										<ItemList>
-											<ItemRef Name="roll" ID="{1AFA9981-6122-4C4D-989E-56847E93018A}"/>
-										</ItemList>
-									</Grouping>
 								</GroupingList>
 							</GroupingInfo>
 						</SwitchContainer>
+					</ChildrenList>
+					<ObjectLists/>
+				</BlendContainer>
+				<BlendContainer Name="Roll Blend Container" ID="{C02FDF54-A375-4958-A2A1-4C681EF49E3B}" ShortID="740575511">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-10</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<RandomSequenceContainer Name="roll" ID="{1AFA9981-6122-4C4D-989E-56847E93018A}" ShortID="789074180">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{113797AA-D000-425A-99BF-66C59B8D9B71}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="300"/>
+													<Property Name="Min" Type="Real64" Value="-300"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="sfx_movement_roll_player_01" ID="{B8E25A77-12D0-4EF0-B43D-8767FBB65B7A}" ShortID="144769962">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_movement_roll_player_01" ID="{3C9CEDB0-C183-4172-808B-445834A0F92D}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.591167630057803"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>sfx_movement_roll_player_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1057947403"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_movement_roll_player_01" ID="{3C9CEDB0-C183-4172-808B-445834A0F92D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_movement_roll_player_02" ID="{74ABCD36-44C9-42B0-BA5D-8D4EA19A56C7}" ShortID="7488596">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_movement_roll_player_02" ID="{0EE1C7CB-E32B-4B00-A1AF-7F53813713B3}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.238005780346821"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.611271676300578"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>sfx_movement_roll_player_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="699554060"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_movement_roll_player_02" ID="{0EE1C7CB-E32B-4B00-A1AF-7F53813713B3}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_movement_roll_player_03" ID="{B5376F20-8E4B-40A5-A578-CE232FD8B843}" ShortID="225763271">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{2A7A7A29-03DA-4F2B-8A6E-F6269AFEB0E5}">
+														<PropertyList>
+															<Property Name="Max" Type="Real64" Value="200"/>
+															<Property Name="Min" Type="Real64" Value="-200"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_movement_roll_player_03" ID="{5616B285-F985-41EC-86AD-18F50A613FEF}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.224271134393064"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.324905617774567"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>sfx_movement_roll_player_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="926559169"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_movement_roll_player_03" ID="{5616B285-F985-41EC-86AD-18F50A613FEF}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="gear" ID="{809F5244-F2B2-42CA-8E4C-D4495FCA52A4}" ShortID="849742814">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{CF9D8863-21BC-4236-9922-084BBF6A396D}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="100"/>
+													<Property Name="Min" Type="Real64" Value="-100"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{BD829FA1-D123-42E9-A0BA-4A1D5F1E1D1A}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-10"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="sfx_movement_impact_gear_01" ID="{3EED7228-0960-4544-A987-379F26044F0E}" ShortID="737954178">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_movement_impact_gear_01" ID="{2CD1C563-5FCD-4703-89E4-1EDA65D92CC4}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.104367052023121"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.206559790462428"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.312013999277457"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>sfx_movement_impact_gear_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="901022272"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_movement_impact_gear_01" ID="{2CD1C563-5FCD-4703-89E4-1EDA65D92CC4}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_movement_impact_gear_02" ID="{0CE5BAB6-0A24-43EA-9421-EEC75533A690}" ShortID="333241600">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_movement_impact_gear_02" ID="{AF5D0785-F525-4B58-8891-701E5A99F889}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.105954299132948"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.216836705202312"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.10266889450867"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.436137463872833"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>sfx_movement_impact_gear_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="508255165"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_movement_impact_gear_02" ID="{AF5D0785-F525-4B58-8891-701E5A99F889}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_movement_impact_gear_03" ID="{CDC54CD9-68C6-4511-B378-77C673FEC6A5}" ShortID="127812810">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_movement_impact_gear_03" ID="{BDD50AA4-B080-494D-8A6D-FBD8241744F7}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0854926541425818"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.216489462909441"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.337833875240848"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>sfx_movement_impact_gear_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="179099409"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_movement_impact_gear_03" ID="{BDD50AA4-B080-494D-8A6D-FBD8241744F7}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_movement_impact_gear_04" ID="{C7C04630-AC49-4A91-A56D-F46B37AE99F1}" ShortID="750791484">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_movement_impact_gear_04" ID="{1FDEE20D-F74D-453F-9282-0A5BEC2DEDF2}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0533891799132948"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.0815786669075144"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.0751719653179191"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>sfx_movement_impact_gear_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="79295484"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_movement_impact_gear_04" ID="{1FDEE20D-F74D-453F-9282-0A5BEC2DEDF2}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="cloth" ID="{B483D57A-C76E-406F-BCF2-CCE714B96289}" ShortID="972859528">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{7BF08DFA-E836-4AE2-AE9F-0FDBB15141A2}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="200"/>
+													<Property Name="Min" Type="Real64" Value="-500"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{B66F9EBF-96C5-446F-BA9F-152224E24D68}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-15"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="sfx_movement_impact_cloth_01" ID="{BD7A7652-EFCF-40DE-B8EF-31E3F116B274}" ShortID="269949096">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_movement_impact_cloth_01" ID="{4B5FE71C-48AE-4522-9AFC-8CEB7E23522F}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0693093075380442"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.102959478589123"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>sfx_movement_impact_cloth_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="629102556"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_movement_impact_cloth_01" ID="{4B5FE71C-48AE-4522-9AFC-8CEB7E23522F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_movement_impact_cloth_02" ID="{6684B136-B021-4C5F-844E-2627D9493CA3}" ShortID="394498874">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_movement_impact_cloth_02" ID="{3ED9F5F5-8730-450D-A144-2D6CF55E7AF7}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0824727039177907"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.108140229116695"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>sfx_movement_impact_cloth_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="998645187"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_movement_impact_cloth_02" ID="{3ED9F5F5-8730-450D-A144-2D6CF55E7AF7}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_movement_impact_cloth_03" ID="{273E6925-915E-4AAE-9614-C9943FFB87B1}" ShortID="627380210">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_movement_impact_cloth_03" ID="{B2A7ADDF-C911-4702-B67B-E3FC48D32D02}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0954449294168534"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.160265817309583"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>sfx_movement_impact_cloth_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="991683098"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_movement_impact_cloth_03" ID="{B2A7ADDF-C911-4702-B67B-E3FC48D32D02}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_movement_impact_cloth_04" ID="{95140571-33C7-485D-9805-F93940DAAA47}" ShortID="965220618">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_movement_impact_cloth_04" ID="{86235835-97F9-4ED9-8E89-E3DD5A132C69}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0829578074004168"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.11223703354174"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>sfx_movement_impact_cloth_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="43852155"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_movement_impact_cloth_04" ID="{86235835-97F9-4ED9-8E89-E3DD5A132C69}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_movement_impact_cloth_05" ID="{213B09DC-0006-476F-9A28-53DC60D32E16}" ShortID="1044425045">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_movement_impact_cloth_05" ID="{DE97B09A-C8BB-4956-A249-1D269C0BDA85}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.104046242774566"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.101445086705202"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>sfx_movement_impact_cloth_05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="624879225"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_movement_impact_cloth_05" ID="{DE97B09A-C8BB-4956-A249-1D269C0BDA85}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_movement_impact_cloth_06" ID="{358B9D4B-687C-4549-A56A-A3411FCEE6A5}" ShortID="21647815">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{71C6886F-32B4-4713-B4C1-84857D571EBC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2542CA67-CE64-46F7-A6B2-643343EF226C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_movement_impact_cloth_06" ID="{922758DD-082D-4B00-9284-37B55C49570B}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0404379169779665"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.0656162426434928"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>sfx_movement_impact_cloth_06.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="853849588"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_movement_impact_cloth_06" ID="{922758DD-082D-4B00-9284-37B55C49570B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
 					</ChildrenList>
 					<ObjectLists/>
 				</BlendContainer>
