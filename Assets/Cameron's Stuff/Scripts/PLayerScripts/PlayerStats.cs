@@ -38,7 +38,7 @@ public class PlayerStats : MonoBehaviour
         faithTimer();
     }
 
-    private void TakeDamage(float Damage)
+    private void TakeDamage(GameObject iuhkudfghyb, float Damage)
     {
         currentHealth -= Damage;
         Debug.Log("Ouchie, my health is " + currentHealth);

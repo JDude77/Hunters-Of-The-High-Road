@@ -18,6 +18,6 @@ public class BossEventsHandler : MonoBehaviour
     public void BossStunned() { OnBossStunned?.Invoke(); }
     #endregion
 
-    public event Action<float> OnHitPlayer;
-    public void HitPlayer(float damageValue) { OnHitPlayer?.Invoke(damageValue); }
+    public event Action<GameObject, float> OnHitPlayer;
+    public void HitPlayer(float damageValue) { OnHitPlayer?.Invoke(gameObject, damageValue); }
 }

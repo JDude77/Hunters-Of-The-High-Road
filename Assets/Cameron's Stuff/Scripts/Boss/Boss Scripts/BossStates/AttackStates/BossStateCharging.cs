@@ -156,7 +156,7 @@ public class BossStateCharging : AttackState
         //Store the intersections with the 'Player' layer
         Collider[] collisions = Physics.OverlapSphere(sphereCenter, swipeRadius, boss.attackLayer);
         //Check if there was a collision
-        if (collisions.Length > 0)
+        if (collisions.Length > 0)        
             return true;
         
         return false;

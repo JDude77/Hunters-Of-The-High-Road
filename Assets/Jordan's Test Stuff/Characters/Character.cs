@@ -23,7 +23,7 @@ public class Character : MonoBehaviour
     }//End SetHealth
 
     //Shortcut function, equivalent to SetHealth(health - x)
-    public void ReduceHealthByAmount(float health)
+    public void ReduceHealthByAmount(GameObject self, float health)
     {
         SetHealth(this.health - Mathf.Abs(health));
     }//End ReduceHealthByAmount

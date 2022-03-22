@@ -32,6 +32,8 @@ public class Boss : Character
 
     void Awake()
     {
+        eventResponder = GetComponent<EventResponder>();
+
         //Get the collider if it exists
         capsuleCollider = GetComponent<CapsuleCollider>();
         if (capsuleCollider == null) capsuleCollider = gameObject.AddComponent<CapsuleCollider>();
@@ -49,12 +51,7 @@ public class Boss : Character
 
         if (!GetComponent<BossStateBurrow>()) gameObject.AddComponent<BossStateBurrow>();
 
-        //if (!GetComponent<BossStateStunned>()) gameObject.AddComponent<BossStateStunned>();
-
         if (!GetComponent<BossEventsHandler>()) gameObject.AddComponent<BossEventsHandler>();
-
-        eventResponder = GetComponent<EventResponder>();
-        if (eventResponder == null) eventResponder = gameObject.AddComponent<EventResponder>();
 
         //Get the rigidbody
         body = GetComponent<Rigidbody>();
@@ -63,6 +60,8 @@ public class Boss : Character
         //Add rotation constraints
         body.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
         body.isKinematic = true;
+
+        PlayerEventsHandler.current.OnHitEnemy += ReduceHealthByAmount;
     }
 
     protected override void Start()
