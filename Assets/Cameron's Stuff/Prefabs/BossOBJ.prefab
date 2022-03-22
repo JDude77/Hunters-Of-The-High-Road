@@ -263,6 +263,7 @@ GameObject:
   - component: {fileID: 7728676942186654122}
   - component: {fileID: 7728676942186654123}
   - component: {fileID: 7728676942186654100}
+  - component: {fileID: 6945931021089966647}
   - component: {fileID: 7728676942186654102}
   - component: {fileID: 7728676942186654103}
   - component: {fileID: 7728676942186654096}
@@ -332,6 +333,18 @@ MonoBehaviour:
   - {fileID: 7728676943422383542}
   foot: {fileID: 7728676943631094781}
   burrowParticleLocation: {fileID: 7728676943824856153}
+--- !u!114 &6945931021089966647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7728676942186654104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db3bb9148292fe4ca49cfaa704a6e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7728676942186654102
 MonoBehaviour:
   m_ObjectHideFlags: 0

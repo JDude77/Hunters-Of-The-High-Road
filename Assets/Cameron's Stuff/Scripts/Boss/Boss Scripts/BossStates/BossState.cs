@@ -36,7 +36,6 @@ public class BossState : MonoBehaviour
 
     public virtual void InvokeEvent<T>(T e)
     {
-        Debug.Log("Invoking: " + GetType() + e.ToString());
         boss.eventResponder.Respond(GetType().ToString() + e.ToString());
     }//End InvokeEvent
 
