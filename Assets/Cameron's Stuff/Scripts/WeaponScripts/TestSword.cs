@@ -23,15 +23,9 @@ public class TestSword : MonoBehaviour
         {
             if(hit.tag == "Chain")
             {
-                hit.GetComponentInParent<ChainDoorScript>().openDoor();
+                hit.GetComponentInParent<ChainDoorScript>().OpenDoor(hit.gameObject);
                 hit.gameObject.SetActive(false);
             }
         }
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(checkPos.position, hitSize);
     }
 }

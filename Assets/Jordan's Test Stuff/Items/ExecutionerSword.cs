@@ -38,11 +38,22 @@ public class ExecutionerSword : Weapon
 
         foreach(Collider objectHit in objectsHitBySword)
         {
-            if(objectHit.CompareTag("Chain"))
+            switch(objectHit.tag)
             {
-                objectHit.GetComponentInParent<ChainDoorScript>().openDoor();
-                objectHit.gameObject.SetActive(false);
-            }//End if
+                case "Chain":
+                    PlayerEventsHandler.current.HitChain(objectHit.gameObject);
+                    break;
+                case "Tombstone":
+                    PlayerEventsHandler.current.HitGravestone(objectHit.gameObject);
+                    break;
+                case "Bottle":
+                    PlayerEventsHandler.current.HitBottle(objectHit.gameObject);
+                    break;
+                case "Enemy":
+                case "Boss":
+                    PlayerEventsHandler.current.HitEnemy(objectHit.gameObject, damage);
+                    break;
+            }//End switch
         }//End foreach
     }//End Use
 }

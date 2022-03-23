@@ -129,64 +129,69 @@ public class Rifle : Weapon
         }//End if
 
         bool hitEnemy = false;
+        GameObject enemyInstance = null;
 
         foreach (Collider hit in shotHits)
         {
-            switch (hit.tag)
+            if (hit.gameObject != null)
             {
-                case "Chain":
-                    hit.GetComponentInParent<ChainDoorScript>().openDoor();
-                    hit.gameObject.SetActive(false);
-                    break;
-
-                case "Tombstone":
-                    hit.GetComponentInParent<DestructibleTombstone>().destroyTombstone();
-                    break;
-
-                case "Bottle":
-                    hit.GetComponentInParent<TutorialBottle>().shootBottle();
-                    break;
-
-                case "Enemy":
-                    hitEnemy = true;
-                    //Call do damage action
-                    break;
-            }//End switch
+                switch (hit.tag)
+                {
+                    case "Chain":
+                        PlayerEventsHandler.current.HitChain(hit.gameObject);
+                        break;
+                    case "Tombstone":
+                        PlayerEventsHandler.current.HitGravestone(hit.gameObject);
+                        break;
+                    case "Bottle":
+                        PlayerEventsHandler.current.HitBottle(hit.gameObject);
+                        break;
+                    case "Enemy":
+                    case "Boss":
+                        PlayerEventsHandler.current.HitEnemy(hit.gameObject, damage);
+                        //Below pieces for deadshot
+                        hitEnemy = true;
+                        enemyInstance = hit.gameObject;
+                        break;
+                }//End switch
+            }//End if
         }//End foreach
-        Deadshot(hitEnemy);
+        Deadshot(hitEnemy, enemyInstance);
 
         isReloaded = false;
         StartCoroutine(ReloadGun());
     }//End Use
 
-    private void Deadshot(bool enemy)
+    private void Deadshot(bool hitWasEnemy, GameObject enemyInstance)
     {
         //Deadshot functionality only works on enemies
         if (deadshot)
         {
             bool tokenisable = isBeingAimed && deadshot.DeadshotSkillCheckPassed();
-            if (enemy)
+            //If the hit is actually a deadshot hit
+            if(tokenisable)
             {
-                if (tokenisable && deadshot.CanStagger())
+                //If the deadshot hit an enemy
+                if (hitWasEnemy)
                 {
-                    //Call stagger action here
-                    deadshot.ResetTokens();
+                    if (deadshot.CanStagger())
+                    {
+                        PlayerEventsHandler.current.StaggerEnemy(enemyInstance);
+                        deadshot.ResetTokens();
+                    }//End if
+                    else if (!deadshot.CanStagger())
+                    {
+                        deadshot.AddToken();
+                    }//End else if
                 }//End if
-                else if (tokenisable && !deadshot.CanStagger())
-                {
-                    deadshot.AddToken();
-                }//End else if
-            }//End if
-            else
-            {
-                if (tokenisable)
+                //If the deadshot didn't hit an enemy
+                else
                 {
                     deadshot.RemoveToken();
-                }//End if
-            }//End else
-
+                }//End else
+            }//End if
         }//End if
-    }
+    }//End Deadshot
 
     //Could be updated to take in start and end line colour
     //Made a coroutine to delay line appearance by a frame, making it align with muzzle better
@@ -221,7 +226,7 @@ public class Rifle : Weapon
 
         Vector3 playerLookAtLocation = shotLocation - playerReference.transform.position;
         playerLookAtLocation.y = 0;
-        playerReference.transform.rotation = Quaternion.LookRotation(playerLookAtLocation);
+        playerTransform.rotation = Quaternion.LookRotation(playerLookAtLocation);
 
         Ray shotRay = new Ray(muzzle.position, shotLocation - muzzle.position);
 

@@ -35,7 +35,7 @@ public class PlayerStateDodging : PlayerState
     private void Start()
     {
         playerController = playerReference.GetComponent<CharacterController>() ? playerReference.GetComponent<CharacterController>() : playerReference.gameObject.AddComponent<CharacterController>();
-        playerTransform = playerReference.transform;
+        playerTransform = playerReference.GetComponentInChildren<Animator>().transform;
 
         isRolling = false;
     }//End Start

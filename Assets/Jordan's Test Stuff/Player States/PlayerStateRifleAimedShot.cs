@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerStateRifleAimedShot : PlayerState
 {
     private Rifle rifle;
+    private Transform playerTransform;
 
     protected override void Awake()
     {
@@ -15,12 +14,15 @@ public class PlayerStateRifleAimedShot : PlayerState
     private void Start()
     {
         rifle = playerReference.GetComponentInChildren<Rifle>();
+        playerTransform = playerReference.GetComponentInChildren<Animator>().transform;
     }//End Start
 
     public override bool EnterState()
     {
         playerAdvancedAnimations.SetIsUsingGun(true, 0);
         rifle.SetIsBeingAimed(true);
+        playerAnimator.SetBool("isAiming", true);
+        playerAnimator.SetLayerWeight(1, 0);
 
         rifle.Deadshot();
 
@@ -31,6 +33,8 @@ public class PlayerStateRifleAimedShot : PlayerState
     {
         rifle.DeactivateDeadshot();
         rifle.SetIsBeingAimed(false);
+        playerAnimator.SetBool("isAiming", false);
+        playerAnimator.SetLayerWeight(1, 1);
 
         return true;
     }//End ExitState
@@ -59,7 +63,7 @@ public class PlayerStateRifleAimedShot : PlayerState
 
         Vector3 lookAt = shotLocation - playerReference.transform.position;
         lookAt.y = 0;
-        playerReference.transform.rotation = Quaternion.LookRotation(lookAt);
+        playerTransform.rotation = Quaternion.LookRotation(lookAt);
     }//End MakePlayerLookAtAimLocation
 
     protected override void UpdateStateInputs()
