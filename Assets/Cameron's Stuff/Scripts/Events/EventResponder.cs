@@ -9,7 +9,7 @@ public class EventResponder : MonoBehaviour
     private Dictionary<string, Action> eventDictionary;
 
     private Animator animator;
-    private AudioSource audioSource;
+    private GameObject soundTarget;
 
     private void Awake()
     {
@@ -20,8 +20,7 @@ public class EventResponder : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         if (animator == null) Debug.LogWarning("No Animator detected");
 
-        audioSource = GetComponent<AudioSource>();
-        if (audioSource == null) { audioSource = gameObject.AddComponent<AudioSource>(); }
+        soundTarget = gameObject;
     }
 
     //Adds the events to the event dictionary
@@ -38,7 +37,7 @@ public class EventResponder : MonoBehaviour
             {
                 Debug.Log(uniqueIdentifier);
                 //Gives each response a reference to the animator and audiosource
-                r.InitDependencies(ref animator, ref audioSource);
+                r.InitDependencies(ref animator, ref soundTarget);
                 //Add it to the dictionary
                 eventDictionary.Add(uniqueIdentifier, r.Activate);
             }
