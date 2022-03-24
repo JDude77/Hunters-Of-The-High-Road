@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="12" SoundbankVersion="140">
+	<RootPaths>
+		<ProjectRoot>D:\unity Projects\Hunters-Of-The-High-Road\Assets\Hunters-Of-The-High-Road_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>D:\unity Projects\Hunters-Of-The-High-Road\Assets\Hunters-Of-The-High-Road_WwiseProject\.cache\Mac\</SourceFilesRoot>
+		<SoundBanksRoot>D:\unity Projects\Hunters-Of-The-High-Road\Assets\Hunters-Of-The-High-Road_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>D:\unity Projects\Hunters-Of-The-High-Road\Assets\Hunters-Of-The-High-Road_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<SoundBanks>
+		<SoundBank Id="1229948536" Language="SFX" Hash="3433444082">
+			<ObjectPath>\SoundBanks\Default Work Unit\environment</ObjectPath>
+			<ShortName>environment</ShortName>
+			<Path>environment.bnk</Path>
+			<IncludedEvents>
+				<Event Id="185960795" Name="Play_main_forest_Blend_Container" ObjectPath="\Events\Default Work Unit\Play_main_forest_Blend_Container" MaxAttenuation="150.">
+					<IncludedMemoryFiles>
+						<File Id="59818597" Language="SFX">
+							<ShortName>sfx_environment_owl_02.wav</ShortName>
+							<Path>SFX\sfx_environment_owl_02_10C4C929.wem</Path>
+						</File>
+						<File Id="97940187" Language="SFX">
+							<ShortName>sfx_environment_owl_03.wav</ShortName>
+							<Path>SFX\sfx_environment_owl_03_10C4C929.wem</Path>
+						</File>
+						<File Id="382204857" Language="SFX">
+							<ShortName>sfx_environment_birds_01.wav</ShortName>
+							<Path>SFX\sfx_environment_birds_01_D79FB2B7.wem</Path>
+						</File>
+						<File Id="559624516" Language="SFX">
+							<ShortName>sfx_environment_owl_05.wav</ShortName>
+							<Path>SFX\sfx_environment_owl_05_10C4C929.wem</Path>
+						</File>
+						<File Id="798562294" Language="SFX">
+							<ShortName>sfx_environment_owl_04.wav</ShortName>
+							<Path>SFX\sfx_environment_owl_04_10C4C929.wem</Path>
+						</File>
+						<File Id="861427743" Language="SFX">
+							<ShortName>sfx_environment_owl_01.wav</ShortName>
+							<Path>SFX\sfx_environment_owl_01_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3390075432" Name="Play_Padlock_Brake" ObjectPath="\Events\Default Work Unit\Play_Padlock_Brake">
+					<IncludedMemoryFiles>
+						<File Id="84890005" Language="SFX">
+							<ShortName>sfx_environment_brake_padlock_03.wav</ShortName>
+							<Path>SFX\sfx_environment_brake_padlock_03_029A284A.wem</Path>
+						</File>
+						<File Id="309760380" Language="SFX">
+							<ShortName>sfx_environment_brake_padlock_02.wav</ShortName>
+							<Path>SFX\sfx_environment_brake_padlock_02_7B48F3BF.wem</Path>
+						</File>
+						<File Id="349766689" Language="SFX">
+							<ShortName>sfx_environment_brake_padlock_01.wav</ShortName>
+							<Path>SFX\sfx_environment_brake_padlock_01_BC28169D.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2569274399" Name="Play_sfx_environment_trees_01" ObjectPath="\Events\Default Work Unit\Play_sfx_environment_trees_01" MaxAttenuation="40.">
+					<IncludedMemoryFiles>
+						<File Id="763286601" Language="SFX">
+							<ShortName>sfx_environment_trees_01.wav</ShortName>
+							<Path>SFX\sfx_environment_trees_01_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

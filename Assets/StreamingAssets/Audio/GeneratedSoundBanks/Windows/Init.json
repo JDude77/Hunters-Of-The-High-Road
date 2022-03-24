@@ -1,0 +1,25 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "12",
+  "SoundbankVersion": "140",
+  "RootPaths": {
+   "ProjectRoot": "D:\\unity Projects\\Hunters-Of-The-High-Road\\Assets\\Hunters-Of-The-High-Road_WwiseProject\\",
+   "SourceFilesRoot": "D:\\unity Projects\\Hunters-Of-The-High-Road\\Assets\\Hunters-Of-The-High-Road_WwiseProject\\.cache\\Windows\\",
+   "SoundBanksRoot": "D:\\unity Projects\\Hunters-Of-The-High-Road\\Assets\\Hunters-Of-The-High-Road_WwiseProject\\GeneratedSoundBanks\\Windows\\",
+   "ExternalSourcesInputFile": "",
+   "ExternalSourcesOutputRoot": "D:\\unity Projects\\Hunters-Of-The-High-Road\\Assets\\Hunters-Of-The-High-Road_WwiseProject\\GeneratedSoundBanks\\Windows"
+  },
+  "SoundBanks": [
+   {
+    "Id": "1355168291",
+    "Language": "SFX",
+    "Hash": "1958929096",
+    "ObjectPath": "Init",
+    "ShortName": "Init",
+    "Path": "Init.bnk"
+   }
+  ]
+ }
+}
