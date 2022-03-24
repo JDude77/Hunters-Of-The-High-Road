@@ -16,6 +16,8 @@ public class BasicPlayerController : MonoBehaviour
     [SerializeField]
     private TestGun gun;
 
+   
+
     private CharacterController controller;
     private Vector3 moveVector;
 
@@ -190,4 +192,8 @@ public class BasicPlayerController : MonoBehaviour
         hasGameStarted = true;
         ani.Play("StandUp");
     }
+
+    
+
+
 }
