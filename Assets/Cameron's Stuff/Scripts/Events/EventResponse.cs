@@ -19,7 +19,7 @@ public class EventResponse
     //List of things that should activate on the specific event
     public List<Particle> particles;
     [Space(10)]
-    public List<AudioClip> soundEffects;
+    public List<AK.Wwise.Event> soundEffects;
     [Space(5)]
     public string animationToPlay;
     public bool IsTrigger;
@@ -28,14 +28,16 @@ public class EventResponse
     //Dependencies
     protected Animator animator;
     protected AudioSource audio;
+    protected GameObject soundTarget;
 
     private Action<string> doAnimation;
 
     //Provides the event response with a reference to the audio source and animator
-    public virtual void InitDependencies(ref Animator a, ref AudioSource s)
+    public virtual void InitDependencies(ref Animator a, ref AudioSource s, ref GameObject g)
     {
         this.animator = a;
         this.audio = s;
+        this.soundTarget = g;
 
         if (animator != null)
         {
@@ -53,11 +55,9 @@ public class EventResponse
 
         if (audio != null)
         {
-            foreach (AudioClip sound in soundEffects)
+            foreach (AK.Wwise.Event sound in soundEffects)
             {
-                audio.clip = sound;
-                if (!audio.isPlaying)
-                    audio.Play();
+                sound.Post(soundTarget);
             }//End foreach
         }//End if
 
