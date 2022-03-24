@@ -31,7 +31,7 @@ public class BossState : MonoBehaviour
             Debug.LogError("Error: No object of type Player found");
         }
 
-        boss.eventResponder.InitResponses(eventResponses, GetType(), gameObject);        
+        boss.eventResponder.InitResponses(eventResponses, GetType());        
     }//End Start
 
     public virtual void InvokeEvent<T>(T e)

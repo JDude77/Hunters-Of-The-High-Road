@@ -27,7 +27,7 @@ public class EventResponder : MonoBehaviour
     //Adds the events to the event dictionary
     //Pass in the list of event responses. Must be of type EventResponse
     //Pass GetType() into the type parameter to give each event a unique identifier
-    public void InitResponses<T>(List<T> responses, Type type, GameObject soundTarget) where T : EventResponse
+    public void InitResponses<T>(List<T> responses, Type type) where T : EventResponse
     {
         foreach (EventResponse r in responses)
         {
@@ -38,7 +38,7 @@ public class EventResponder : MonoBehaviour
             {
                 Debug.Log(uniqueIdentifier);
                 //Gives each response a reference to the animator and audiosource
-                r.InitDependencies(ref animator, ref audioSource, ref soundTarget);
+                r.InitDependencies(ref animator, ref audioSource);
                 //Add it to the dictionary
                 eventDictionary.Add(uniqueIdentifier, r.Activate);
             }
