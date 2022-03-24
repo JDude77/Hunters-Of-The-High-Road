@@ -25,15 +25,12 @@ public class Boss : Character
     private CapsuleCollider capsuleCollider;
 
     public BossEventsHandler eventsHandler;
-    public EventResponder eventResponder;
     private BossStateMachine stateMachine;
     private BossState currentState;
     //Start is called before the first frame update
 
     void Awake()
     {
-        eventResponder = GetComponent<EventResponder>();
-
         //Get the collider if it exists
         capsuleCollider = GetComponent<CapsuleCollider>();
         if (capsuleCollider == null) capsuleCollider = gameObject.AddComponent<CapsuleCollider>();

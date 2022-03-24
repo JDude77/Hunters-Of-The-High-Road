@@ -83,7 +83,6 @@ public class BossStateCharging : AttackState
     //Selects the position to charge to and waits for X seconds
     IEnumerator WindUp(float windTime)
     {
-        InvokeEvent(BossEvent.WindUp);
         transform.LookAt(player.transform.position);
 
         //Set the point that the boss should charge to
@@ -98,7 +97,6 @@ public class BossStateCharging : AttackState
     //Moves to the selected position
     IEnumerator Charge()
     {
-        InvokeEvent(BossEvent.PrimaryAttackStart);
         Debug.Log("Charging");
         //Convert the stopping distance to a percentage of the distance to cover
         float chargeDistanceOffsetPercent = stopDistance / (chargePoint - transform.position).magnitude;
@@ -111,8 +109,6 @@ public class BossStateCharging : AttackState
             transform.position = Vector3.MoveTowards(transform.position, chargePoint, chargeSpeed * Time.deltaTime);
             yield return null;
         }
-
-        InvokeEvent(BossEvent.PrimaryAttackEnd);
         
         Swipe();
 
@@ -120,7 +116,6 @@ public class BossStateCharging : AttackState
 
     IEnumerator WindDown()
     {
-        InvokeEvent(BossEvent.WindDown);
         yield return new WaitForSeconds(1.0f);
         boss.ChangeState(Boss.State.Idle);
     } //End WindDown
@@ -129,7 +124,6 @@ public class BossStateCharging : AttackState
     //Checks if the player is within range of the attack
     void Swipe()
     {
-        InvokeEvent(BossEvent.SecondAttackStart);
         chargesCompleted++;
 
         //Check if the boss has hit the player
@@ -142,8 +136,6 @@ public class BossStateCharging : AttackState
             //charge again
             ChangeCoroutineTo(WindUp(consecutiveWindUpTime));
         }//End else if
-
-        InvokeEvent(BossEvent.SecondAttackEnd);
 
         ChangeCoroutineTo(WindDown());
 

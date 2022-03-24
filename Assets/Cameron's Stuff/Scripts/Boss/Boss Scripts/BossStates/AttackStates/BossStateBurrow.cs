@@ -9,6 +9,10 @@ public class BossStateBurrow : AttackState
     [SerializeField] private BurrowMovement particlesPrefab;
     [Space(10)]
 
+    [SerializeField]
+    private AK.Wwise.Event sound;
+    [SerializeField]
+    private GameObject peepee;
     [Header("Attack Settings")]
     [Tooltip("This should be the y position of the boss when it plays its dig up and dig down animations")]
     [SerializeField] private float goundedYPosition;
@@ -21,14 +25,15 @@ public class BossStateBurrow : AttackState
     [Tooltip("The distance to the player that the particles must be to activate the dig up animation")]
     [SerializeField] private float inRangeDistance;
     [SerializeField] private float digUpDelay;
-    public void Awake()
-    {
-        //BossAnimationEventsHandler.current.OnBurrowDownFinished += BeginBurrowCoroutine;
-    }
-
+    
     public void Start()
     {
         base.Start();
+        if (eventResponder != null)
+        {
+            eventResponder.AddSoundEffect("sound1", sound, gameObject);
+            eventResponder.AddInstantiateObject("sound1", peepee, gameObject.transform.position, Quaternion.identity);
+        }
     }//End Start
 
     public override void OnEnter()
@@ -54,9 +59,8 @@ public class BossStateBurrow : AttackState
 
     IEnumerator StartBurrow()
     {
-        InvokeEvent(BossEvent.WindUp);
         yield return new WaitForSeconds(1f);
-        InvokeEvent(BossEvent.PrimaryAttackStart);
+        eventResponder.Activate("sound1");
 
         //Set the y position of the boss after the animation plays
         Vector3 pos = transform.position;
@@ -95,9 +99,7 @@ public class BossStateBurrow : AttackState
         Vector3 particlePos = burrower.transform.position;
         Destroy(burrower.gameObject);
 
-        InvokeEvent(BossEvent.PrimaryAttackEnd);
         yield return new WaitForSeconds(digUpDelay);
-        InvokeEvent(BossEvent.WindDown);
 
         //Reset the boss position
         transform.position = new Vector3(particlePos.x, goundedYPosition, particlePos.z);
