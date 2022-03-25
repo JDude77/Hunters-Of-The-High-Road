@@ -37,11 +37,11 @@ public class BossState : MonoBehaviour
 
     public virtual void OnEnter() 
     {
-
+        enabled = true;
     }//End OnEnter
     public virtual void OnExit()
     {
-
+        enabled = false;
     }//End OnExit
     public virtual void Run() 
     {

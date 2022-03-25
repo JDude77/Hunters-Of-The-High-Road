@@ -7,6 +7,18 @@ public class BossStateUproot : BossStatePillarAttack
     [Header("Uproot settings")]
     [SerializeField] private float attackDistance;
     [SerializeField] private float attackStartOffset;
+
+    [HideInInspector] public float rangeEnd { 
+        get { 
+            return attackDistance; 
+        } 
+    }
+    [HideInInspector] public float rangeStart { 
+        get { 
+            return attackStartOffset; 
+        } 
+    }
+
     private Vector3 startPosition;
     // Start is called before the first frame update
     void Start()

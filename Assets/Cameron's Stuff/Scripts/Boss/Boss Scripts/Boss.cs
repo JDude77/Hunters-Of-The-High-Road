@@ -12,7 +12,7 @@ public class Boss : Character
         LandsRoots,
         Uproot,
         CircleSwipe,
-        DecisionPrototype,
+        Decision,
         Stunned,
         Burrow,
         Slashing
@@ -27,6 +27,9 @@ public class Boss : Character
     public BossEventsHandler eventsHandler;
     private BossStateMachine stateMachine;
     private BossState currentState;
+
+    private BoxCollider rightHand;
+    private BoxCollider leftHand; 
     //Start is called before the first frame update
 
     void Awake()
@@ -109,7 +112,7 @@ public class Boss : Character
     {
         if (currentState is BossStateIdle)
         {
-            ChangeState(State.DecisionPrototype);
+            ChangeState(State.Decision);
         }
     }
 }

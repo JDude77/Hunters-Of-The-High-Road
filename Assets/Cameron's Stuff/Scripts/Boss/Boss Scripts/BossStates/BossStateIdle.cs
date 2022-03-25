@@ -10,7 +10,7 @@ public class BossStateIdle : BossState
     public override void OnEnter()
     {
         base.OnEnter();
-        boss.ChangeState(Boss.State.DecisionPrototype);
+        //boss.ChangeState(Boss.State.Decision);
     }
 
     public override void Run()

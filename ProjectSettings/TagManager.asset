@@ -8,6 +8,8 @@ TagManager:
   - Tombstone
   - Bottle
   - Enemy
+  - Boss
+  - EnemyHurtBox
   layers:
   - Default
   - TransparentFX
