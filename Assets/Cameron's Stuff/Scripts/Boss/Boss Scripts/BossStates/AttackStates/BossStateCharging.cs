@@ -175,11 +175,6 @@ public class BossStateCharging : AttackState
         Gizmos.DrawWireSphere(sphereCenter, swipeRadius);
     }
 
-    void playswipesound()
-    {
-        //play sound
-    }
-
     [ContextMenu("Fill default values")]
     public override void SetDefaultValues()
     {

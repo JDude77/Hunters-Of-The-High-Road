@@ -81277,7 +81277,7 @@ AnimationClip:
   m_Events:
   - time: 0.93333334
     functionName: ActivateEvent
-    data: sound
+    data: SlashNoise
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
