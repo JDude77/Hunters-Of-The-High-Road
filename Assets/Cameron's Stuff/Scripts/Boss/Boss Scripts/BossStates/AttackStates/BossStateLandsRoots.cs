@@ -12,7 +12,11 @@ public class BossStateLandsRoots : BossStatePillarAttack
     [SerializeField] private AK.Wwise.Event windUp;
     [SerializeField] private AK.Wwise.Event handInGround;
     [SerializeField] private AK.Wwise.Event pillarSound;
-
+    [Space(10)]
+    [Header("Animation Names")]
+    [SerializeField] private string startAnimation;
+    [SerializeField] private string loopAnimation;
+    [SerializeField] private string exitAnimation;
     public void Start()
     {
         base.Start();
