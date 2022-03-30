@@ -8,12 +8,8 @@ public class BossStateBurrow : AttackState
     [Header("Particle Prefab")]
     [SerializeField] private BurrowMovement particlesPrefab;
     [Space(10)]
-
-    [SerializeField] private AK.Wwise.Event digDownSound;
-    [SerializeField] private AK.Wwise.Event digToPlayerSound;
-    [SerializeField] private AK.Wwise.Event digUpSound;
-
     [Header("Attack Settings")]
+    [SerializeField] private float windUpTime;
     [Tooltip("This should be the y position of the boss when it plays its dig up and dig down animations")]
     [SerializeField] private float goundedYPosition;
     [Tooltip("The position of the boss as the particles are moving")]
@@ -25,16 +21,27 @@ public class BossStateBurrow : AttackState
     [Tooltip("The distance to the player that the particles must be to activate the dig up animation")]
     [SerializeField] private float inRangeDistance;
     [SerializeField] private float digUpDelay;
-    
+    [Space(10)]
+    [Header("Sounds")]
+    [SerializeField] private AK.Wwise.Event digDownSound;
+    [SerializeField] private AK.Wwise.Event digToPlayerSound;
+    [SerializeField] private AK.Wwise.Event digUpSound;
+    [Header("Animation Names")]
+    [SerializeField] private string digUpAnimation;
+    [SerializeField] private string digDownAnimation;
+
     public void Start()
     {
         base.Start();
-        if (eventResponder != null)
-        {
-            eventResponder.AddSoundEffect("DigDownSound", digDownSound, gameObject);
-            eventResponder.AddSoundEffect("DigToPlayerSound", digToPlayerSound, gameObject);
-            eventResponder.AddSoundEffect("DigUpSound", digUpSound, gameObject);
-        }
+        eventResponder.AddSoundEffect("DigToPlayerSound", digToPlayerSound, gameObject);
+
+        eventResponder.AddAnimation("DigUpAnimation", digUpAnimation, gameObject);        
+        eventResponder.AddAnimation("DigDownAnimation", digDownAnimation, gameObject);
+
+        //Animation events
+        eventResponder.AddSoundEffect("DigDownSound", digDownSound, gameObject);
+        eventResponder.AddSoundEffect("DigUpSound", digUpSound, gameObject);
+
     }//End Start
 
     public override void OnEnter()
@@ -44,7 +51,6 @@ public class BossStateBurrow : AttackState
         Vector3 newPosition = player.transform.position;
         newPosition.y = transform.position.y; 
         StartCoroutine(StartBurrow());
-        //Start animation 
     } //End OnEnter
 
     public override void OnExit()
@@ -53,15 +59,10 @@ public class BossStateBurrow : AttackState
         StopAllCoroutines();
     } //End OnExit
 
-    private void BeginBurrowCoroutine()
-    {
-        StartCoroutine(StartBurrow());
-    }
-
     IEnumerator StartBurrow()
     {
-        yield return new WaitForSeconds(1f);
-        eventResponder.Activate("sound1");
+        yield return new WaitForSeconds(windUpTime);
+        eventResponder.ActivateAll("DigDown");
 
         //Set the y position of the boss after the animation plays
         Vector3 pos = transform.position;
@@ -104,7 +105,6 @@ public class BossStateBurrow : AttackState
 
         //Reset the boss position
         transform.position = new Vector3(particlePos.x, goundedYPosition, particlePos.z);
-        //TODO PLAY ANIMATION
-        boss.ReturnToMainState();
+        eventResponder.ActivateAll("DigUp");
     }
 }

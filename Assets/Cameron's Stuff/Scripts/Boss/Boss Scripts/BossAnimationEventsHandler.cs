@@ -7,6 +7,6 @@ public class BossAnimationEventsHandler : MonoBehaviour
 {    
     public void ActivateEvent(string eventName)
     {
-        GetComponentInParent<Boss>().currentState.eventResponder.Activate(eventName);
+        GetComponentInParent<Boss>().currentState.eventResponder.ActivateAll(eventName);
     }
 }

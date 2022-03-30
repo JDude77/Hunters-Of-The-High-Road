@@ -4,24 +4,33 @@ using UnityEngine;
 
 public class BossStateStunned : BossState
 {
-    [SerializeField] float stunnedTimeInSeconds;
+    [Header("Sounds")]
+    [SerializeField] private AK.Wwise.Event stunned;
+    [Header("Animation Names")]
+    [SerializeField] private string stunnedAnimation;
+
+    private void Start()
+    {
+        base.Start();
+        eventResponder.AddSoundEffect("StateEnter", stunned, gameObject);
+        eventResponder.AddAnimation("StateEnter", stunnedAnimation, false);
+        //Animation event
+        eventResponder.AddAction("AnimationEnd", boss.ReturnToMainState);
+    }
+
     public override void OnEnter()
     {
         base.OnEnter();
-        //Call anim event
-        //Do particle effects or something
-        StartCoroutine(StunnedTimer());
-    }
+        eventResponder.ActivateAll("StateEnter");
+    }//End OnEnter
 
     public override void OnExit()
     {
         base.OnExit();
-        StopCoroutine(StunnedTimer());
-    }
+    }//End OnExit
 
-    IEnumerator StunnedTimer()
+    public override void SetDefaultValues()
     {
-        yield return new WaitForSeconds(stunnedTimeInSeconds);
-        boss.ReturnToMainState();
-    }
+        stunnedAnimation = "Boss_Stunned";
+    }//End SetDefaultValues
 }

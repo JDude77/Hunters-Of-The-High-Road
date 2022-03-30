@@ -8,6 +8,7 @@ public class BossStateLandsRoots : BossStatePillarAttack
     private Vector3 previousPosition;
     private Vector3 playerVelocity;
     [Space(10)]
+    [Header("Sounds")]
     [SerializeField] private AK.Wwise.Event windUp;
     [SerializeField] private AK.Wwise.Event handInGround;
     [SerializeField] private AK.Wwise.Event pillarSound;
@@ -18,8 +19,10 @@ public class BossStateLandsRoots : BossStatePillarAttack
         previousPosition = player.transform.position;
         playerVelocity = Vector3.zero;
 
+        //Animation event
         eventResponder.AddSoundEffect("WindUpSound", windUp, gameObject);
         eventResponder.AddAction("StartAttack", () => { StartCoroutine(DoAttack()); });
+        //Script events
         eventResponder.AddAnimation("LandsRootsStart", "Boss_Lands_Roots", false);
         eventResponder.AddAnimation("LandsRootsLoop", "Boss_Lands_Roots_Loop", false);
         eventResponder.AddAnimation("LandsRootsExit", "Boss_Lands_Roots_Exiting", false);
@@ -38,7 +41,8 @@ public class BossStateLandsRoots : BossStatePillarAttack
     {
         base.OnEnter();
         previousPosition = player.transform.position;
-        eventResponder.Activate("WindUpSound");
+        eventResponder.ActivateAll("WindUpSound");
+        eventResponder.ActivateAll("LandsRootsStart");
     }//End OnEnter
 
 
@@ -52,6 +56,7 @@ public class BossStateLandsRoots : BossStatePillarAttack
 
     IEnumerator DoAttack()
     {
+        eventResponder.ActivateAll("LandsRootsLoop");
         //Spawn a new pillar if we're under the cound
         while (spawnedPillars < pillarCount)
         {
@@ -59,6 +64,7 @@ public class BossStateLandsRoots : BossStatePillarAttack
             SpawnPillar(predictedPosition);
             yield return new WaitForSeconds(delayBetweenPillars);
         }
+        eventResponder.ActivateAll("LandsRootsExit");
         //Change state back to idle
         boss.ReturnToMainState();
     }//End DoAttack

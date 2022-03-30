@@ -11,20 +11,22 @@ public class BossStateScream: AttackState
     [Space(10)]
     [SerializeField] private float windUpTime;
     [SerializeField] private float windDownTime;
-    [SerializeField] private AK.Wwise.Event slashNoise;
+    [Space(10)]
+    [Header("Sounds")]
+    [SerializeField] private AK.Wwise.Event screamNoise;
 
     public void Start()
     {
         base.Start();
         eventResponder.AddAnimation("Animation", "Boss_Slash", false);
-        eventResponder.AddSoundEffect("SlashNoise", slashNoise, gameObject);
+        eventResponder.AddSoundEffect("SlashNoise", screamNoise, gameObject);
         eventResponder.AddAction("AttackEnd", boss.ReturnToMainState);
     }
 
     public override void OnEnter()
     {
         base.OnEnter();
-        eventResponder.Activate("Animation");
+        eventResponder.ActivateAll("Animation");
     }//End OnEnter
 
     public override void OnExit()

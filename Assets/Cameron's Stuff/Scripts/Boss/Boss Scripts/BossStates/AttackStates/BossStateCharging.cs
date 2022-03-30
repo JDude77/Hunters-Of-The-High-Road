@@ -22,7 +22,7 @@ public class BossStateCharging : AttackState
     [SerializeField] private float swipeRadius;
     [Tooltip("If this is checked, the damage check for the player will only be done on the animation event")]
     [SerializeField] private bool damageCheckOnAnimation;
-
+    [Space(10)]
     [Header("Sounds")]
     [SerializeField] private AK.Wwise.Event windUpSound;
     [SerializeField] private AK.Wwise.Event lightFootstepSound;
@@ -96,7 +96,7 @@ public class BossStateCharging : AttackState
     //Selects the position to charge to and waits for X seconds
     IEnumerator WindUp(float windTime)
     {
-        eventResponder.Activate("WindUpSound");
+        eventResponder.ActivateAll("WindUpSound");
         transform.LookAt(player.transform.position);
 
         //Set the point that the boss should charge to

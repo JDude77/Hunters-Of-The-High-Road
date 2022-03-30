@@ -8,6 +8,9 @@ public class BossStateUproot : BossStatePillarAttack
     [SerializeField] private float attackDistance;
     [SerializeField] private float attackStartOffset;
 
+    [SerializeField] private AK.Wwise.Event stomp;
+    [SerializeField] private string stompAnimation;
+
     [HideInInspector] public float rangeEnd { 
         get { 
             return attackDistance; 

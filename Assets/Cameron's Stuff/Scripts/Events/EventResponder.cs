@@ -5,12 +5,12 @@ using System;
 public class EventResponder<T>
 {
     //Stores sound, and sound target
-    public struct SoundEffect
+    public struct SoundEffectInfo
     {
         public AK.Wwise.Event sound { get; private set; }
         public GameObject target { get; private set; }
 
-        public SoundEffect(AK.Wwise.Event sound, GameObject target)
+        public SoundEffectInfo(AK.Wwise.Event sound, GameObject target)
         {
             this.sound = sound;
             this.target = target;
@@ -33,12 +33,12 @@ public class EventResponder<T>
     }//End ObjectInfo
 
     //Stores animation name and if it is a trigger
-    public struct Animation
+    public struct AnimationInfo
     {
         public string name { get; private set; }
         public bool isTrigger { get; private set; }
 
-        public Animation(string name, bool isTrigger)
+        public AnimationInfo(string name, bool isTrigger)
         {
             this.name = name;
             this.isTrigger = isTrigger;
@@ -47,8 +47,8 @@ public class EventResponder<T>
 
     //Initialise with a type to use for the dictionary key
     private Dictionary<T, ObjectInfo> objectDictionary = new Dictionary<T, ObjectInfo>();
-    private Dictionary<T, SoundEffect> soundDictionary = new Dictionary<T, SoundEffect>();
-    private Dictionary<T, Animation> animationDictionary = new Dictionary<T, Animation>();
+    private Dictionary<T, SoundEffectInfo> soundDictionary = new Dictionary<T, SoundEffectInfo>();
+    private Dictionary<T, AnimationInfo> animationDictionary = new Dictionary<T, AnimationInfo>();
     private Dictionary<T, Action> actionDictionary = new Dictionary<T, Action>();
 
     private Animator animator;
@@ -58,6 +58,7 @@ public class EventResponder<T>
         this.animator = animator;
     }//End Constructor
 
+    #region Add to dictionary
     //Adds a particle effect to the particle dictionary
     public void AddInstantiateObject(T key, GameObject objectToAdd, Vector3 spawnPosition, Quaternion rotation)
     {
@@ -72,7 +73,7 @@ public class EventResponder<T>
     //Adds a sound to the sound dictionary
     public void AddSoundEffect(T key, AK.Wwise.Event soundEffect, GameObject target)
     {
-        SoundEffect sound = new SoundEffect(soundEffect, target);
+        SoundEffectInfo sound = new SoundEffectInfo(soundEffect, target);
 
         if (!soundDictionary.ContainsKey(key))
         {
@@ -83,13 +84,13 @@ public class EventResponder<T>
     //Adds an animation to the animation dictionary
     public void AddAnimation(T key, string animationName, bool isTrigger)
     {
-        Animation animation = new Animation(animationName, isTrigger);
+        AnimationInfo animation = new AnimationInfo(animationName, isTrigger);
             
         if (!animationDictionary.ContainsKey(key))
         {
             animationDictionary.Add(key, animation);
         }
-    }//End AddSAnimation
+    }//End AddAnimation
 
     //Adds an action to the action dictionary
     public void AddAction(T key, Action action)
@@ -98,15 +99,62 @@ public class EventResponder<T>
         {
             actionDictionary.Add(key, action);
         }//End if
-    }//End AddSAnimation
+    }//End AddAction
+    #endregion
 
-    //Invoke a key 
-    public void Activate(T key)
+    #region Activate
+    public void ActivateSound(T key)
     {
         if (soundDictionary.ContainsKey(key))
         {
-            SoundEffect s = soundDictionary[key];
-            s.sound.Post(s.target);
+            SoundEffectInfo s = soundDictionary[key];
+            if (!(s.sound.PlayingId == s.sound.ID))
+                s.sound.Post(s.target);
+        }//End if
+    }//End ActivateSound
+
+    public void ActivateAnimation(T key)
+    {
+        if (animationDictionary.ContainsKey(key) && animator)
+        {
+            AnimationInfo a = animationDictionary[key];
+            if (a.isTrigger)
+            {
+                animator.SetTrigger(a.name);
+            }
+            else
+            {
+                animator.Play(a.name);
+            }
+        }//End if
+    }//End ActivateAnimation
+
+    public void ActivateAction(T key)
+    {
+        //Invoke the action
+        if (actionDictionary.ContainsKey(key))
+        {
+            actionDictionary[key]?.Invoke();
+        }//End if
+    }//End ActivateAction
+
+    public void ActivateInstantiate(T key)
+    {
+        if (objectDictionary.ContainsKey(key))
+        {
+            ObjectInfo p = objectDictionary[key];
+            MonoBehaviour.Instantiate(p.effect, p.position, p.rotation);
+        }//End if
+    }//End ActivateInstantiate
+
+    //Invoke a key 
+    public void ActivateAll(T key)
+    {
+        if (soundDictionary.ContainsKey(key))
+        {
+            SoundEffectInfo s = soundDictionary[key];
+            if (s.sound.PlayingId == s.sound.ID) 
+                s.sound.Post(s.target);
         }//End if
 
         if (objectDictionary.ContainsKey(key))
@@ -117,7 +165,7 @@ public class EventResponder<T>
 
         if (animationDictionary.ContainsKey(key) && animator)
         {
-            Animation a = animationDictionary[key];
+            AnimationInfo a = animationDictionary[key];
             if (a.isTrigger)
             {
                 animator.SetTrigger(a.name);
@@ -134,4 +182,5 @@ public class EventResponder<T>
             actionDictionary[key]?.Invoke();
         }//End if
     }//End Activate
+    #endregion
 }
