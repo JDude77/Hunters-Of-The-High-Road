@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class EventResponder<T>
 {
@@ -45,17 +46,15 @@ public class EventResponder<T>
     }//End Animation
 
     //Initialise with a type to use for the dictionary key
-    private Dictionary<T, ObjectInfo> objectDictionary;
-    private Dictionary<T, SoundEffect> soundDictionary;
-    private Dictionary<T, Animation> animationDictionary;
+    private Dictionary<T, ObjectInfo> objectDictionary = new Dictionary<T, ObjectInfo>();
+    private Dictionary<T, SoundEffect> soundDictionary = new Dictionary<T, SoundEffect>();
+    private Dictionary<T, Animation> animationDictionary = new Dictionary<T, Animation>();
+    private Dictionary<T, Action> actionDictionary = new Dictionary<T, Action>();
 
     private Animator animator;
 
     public EventResponder(Animator animator)
     {
-        objectDictionary = new Dictionary<T, ObjectInfo>();
-        soundDictionary = new Dictionary<T, SoundEffect>();
-        animationDictionary = new Dictionary<T, Animation>();
         this.animator = animator;
     }//End Constructor
 
@@ -92,6 +91,15 @@ public class EventResponder<T>
         }
     }//End AddSAnimation
 
+    //Adds an action to the action dictionary
+    public void AddAction(T key, Action action)
+    {
+        if (!actionDictionary.ContainsKey(key))
+        {
+            actionDictionary.Add(key, action);
+        }//End if
+    }//End AddSAnimation
+
     //Invoke a key 
     public void Activate(T key)
     {
@@ -118,6 +126,12 @@ public class EventResponder<T>
             {
                 animator.Play(a.name);
             }
+        }//End if
+
+        //Invoke the action
+        if (actionDictionary.ContainsKey(key))
+        {
+            actionDictionary[key]?.Invoke();
         }//End if
     }//End Activate
 }

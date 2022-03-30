@@ -33,6 +33,6 @@ public class AttackState : BossState
     private void StunnedResponse()
     {
         //Change the boss's state
-        boss.ChangeState(Boss.State.Stunned);
+        boss.ReturnToMainState();
     }
 }

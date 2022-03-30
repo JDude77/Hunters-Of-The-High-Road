@@ -4,42 +4,9 @@ using UnityEngine;
 using System;
 
 public class BossAnimationEventsHandler : MonoBehaviour
-{
-    public static BossAnimationEventsHandler current;
-
-    private void Awake()
+{    
+    public void ActivateEvent(string eventName)
     {
-        current = this;
+        GetComponentInParent<Boss>().currentState.eventResponder.Activate(eventName);
     }
-
-
-    //TODO
-
-    //Circular Swipe
-
-    //Running
-
-    //Charge wind up
-
-    //Charge
-
-    //Charge wind down / swipe
-
-    //Lands roots wind up
-
-    //Lands roots wind down
-
-    //Uproot wind up
-
-    //Uproot
-
-    //Uproot wind down
-
-    //Burrow down finished
-    public event Action OnBurrowDownFinished;
-    public void BurrowDownFinished() { OnBurrowDownFinished?.Invoke(); }
-    //Burrow up finished
-    public event Action OnBurrowUpFinished;
-    public void BurrowUpFinished() { OnBurrowUpFinished?.Invoke(); }
-
 }

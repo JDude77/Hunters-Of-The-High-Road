@@ -11,16 +11,20 @@ public class BossStateCircleSwipe : AttackState
     [Space(10)]
     [SerializeField] private float windUpTime;
     [SerializeField] private float windDownTime;
+    [SerializeField] private AK.Wwise.Event slashNoise;
 
     public void Start()
     {
         base.Start();
+        eventResponder.AddAnimation("Animation", "Boss_Slash", false);
+        eventResponder.AddSoundEffect("SlashNoise", slashNoise, gameObject);
+        eventResponder.AddAction("AttackEnd", () => boss.ReturnToMainState());
     }
 
     public override void OnEnter()
     {
         base.OnEnter();
-        boss.ChangeState(Boss.State.Idle);
+        eventResponder.Activate("Animation");
     }//End OnEnter
 
     public override void OnExit()

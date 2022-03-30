@@ -117,7 +117,7 @@ public class BossStateCharging : AttackState
     IEnumerator WindDown()
     {
         yield return new WaitForSeconds(1.0f);
-        boss.ChangeState(Boss.State.Idle);
+        boss.ReturnToMainState();
     } //End WindDown
 
 
@@ -159,5 +159,10 @@ public class BossStateCharging : AttackState
         Vector3 sphereCenter = transform.forward * swipeRadius + transform.position;
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(sphereCenter, swipeRadius);
+    }
+
+    void playswipesound()
+    {
+        //play sound
     }
 } 

@@ -52,7 +52,7 @@ public class BossStateLandsRoots : BossStatePillarAttack
             yield return new WaitForSeconds(delayBetweenPillars);
         }
         //Change state back to idle
-        boss.ChangeState(Boss.State.Idle);
+        boss.ReturnToMainState();
     }//End DoAttack
 
 }

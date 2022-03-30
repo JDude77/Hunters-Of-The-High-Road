@@ -10,7 +10,6 @@ public class BossStateIdle : BossState
     public override void OnEnter()
     {
         base.OnEnter();
-        //boss.ChangeState(Boss.State.Decision);
     }
 
     public override void Run()
@@ -20,7 +19,7 @@ public class BossStateIdle : BossState
     public override void FixedRun()
     {
 
-    }
+    }   
 
     public override void OnExit()
     {

@@ -1062,7 +1062,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8064124413780865719}
-  - component: {fileID: 8064124413780865713}
+  - component: {fileID: 2937793041704210764}
+  - component: {fileID: 3276291697889100473}
   - component: {fileID: 8064124413780865718}
   m_Layer: 0
   m_Name: T-Posed Boss
@@ -1090,7 +1091,7 @@ Transform:
   m_Father: {fileID: 8064124414703253919}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8064124413780865713
+--- !u!114 &2937793041704210764
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1100,6 +1101,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9d505ba9513df840a82c9528a55aa6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3276291697889100473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8064124413780865716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0090fc0d7a795b45ad0db170c226ae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!95 &8064124413780865718
@@ -2404,6 +2417,7 @@ GameObject:
   - component: {fileID: 8064124414703253917}
   - component: {fileID: 8064124414703253891}
   - component: {fileID: 8064124414703253888}
+  - component: {fileID: 8656058542681569657}
   - component: {fileID: -5852033245582335066}
   - component: {fileID: 8064124414703253894}
   - component: {fileID: 8064124414703253895}
@@ -2507,6 +2521,20 @@ MonoBehaviour:
     m_Bits: 8
   body: {fileID: 0}
   eventsHandler: {fileID: 0}
+--- !u!114 &8656058542681569657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8064124414703253897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bf8e1f2cdef9124fac04a821d019b83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  decisionTime: 0
+  desiredStates: 04000000
 --- !u!114 &-5852033245582335066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2567,11 +2595,18 @@ MonoBehaviour:
   minDamage: 0
   checkForStunEvent: 0
   particlesPrefab: {fileID: 4600948011345183027, guid: 702070ee8107ec34193436b314ee5ffb, type: 3}
-  sound:
+  digDown:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 4ea10210b1f88774fab28a45112c5b18, type: 2}
-  peepee: {fileID: 8667274205551579743, guid: 82b8defafd9aca248afa6477dfbcb648, type: 3}
+    WwiseObjectReference: {fileID: 0}
+  digToPlayer:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  digUp:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
   goundedYPosition: 9
   burrowYPosition: 1
   particleYPosition: 8
@@ -2623,6 +2658,10 @@ MonoBehaviour:
   radius: 1.95
   windUpTime: 0
   windDownTime: 0
+  slashNoise:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!114 &8064124414703253899
 MonoBehaviour:
   m_ObjectHideFlags: 0

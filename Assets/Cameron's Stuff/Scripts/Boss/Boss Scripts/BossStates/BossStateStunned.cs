@@ -22,6 +22,6 @@ public class BossStateStunned : BossState
     IEnumerator StunnedTimer()
     {
         yield return new WaitForSeconds(stunnedTimeInSeconds);
-        boss.ChangeState(Boss.State.Idle);
+        boss.ReturnToMainState();
     }
 }

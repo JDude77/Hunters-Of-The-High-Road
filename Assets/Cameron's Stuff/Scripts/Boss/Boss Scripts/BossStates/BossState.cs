@@ -7,7 +7,7 @@ public class BossState : MonoBehaviour
 {
     protected static Boss boss;
     protected static GameObject player;
-    protected EventResponder<string> eventResponder;
+    public EventResponder<string> eventResponder { get; private set; }
 
     public void Awake()
     {       

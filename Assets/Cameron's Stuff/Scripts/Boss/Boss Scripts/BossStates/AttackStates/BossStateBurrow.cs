@@ -9,10 +9,10 @@ public class BossStateBurrow : AttackState
     [SerializeField] private BurrowMovement particlesPrefab;
     [Space(10)]
 
-    [SerializeField]
-    private AK.Wwise.Event sound;
-    [SerializeField]
-    private GameObject peepee;
+    [SerializeField] private AK.Wwise.Event digDown;
+    [SerializeField] private AK.Wwise.Event digToPlayer;
+    [SerializeField] private AK.Wwise.Event digUp;
+
     [Header("Attack Settings")]
     [Tooltip("This should be the y position of the boss when it plays its dig up and dig down animations")]
     [SerializeField] private float goundedYPosition;
@@ -31,8 +31,9 @@ public class BossStateBurrow : AttackState
         base.Start();
         if (eventResponder != null)
         {
-            eventResponder.AddSoundEffect("sound1", sound, gameObject);
-            eventResponder.AddInstantiateObject("sound1", peepee, gameObject.transform.position, Quaternion.identity);
+            eventResponder.AddSoundEffect("DigDown", digDown, gameObject);
+            eventResponder.AddSoundEffect("DigToPlayer", digToPlayer, gameObject);
+            eventResponder.AddSoundEffect("DigUp", digUp, gameObject);
         }
     }//End Start
 
@@ -104,6 +105,6 @@ public class BossStateBurrow : AttackState
         //Reset the boss position
         transform.position = new Vector3(particlePos.x, goundedYPosition, particlePos.z);
         //TODO PLAY ANIMATION
-        boss.ChangeState(Boss.State.Idle);
+        boss.ReturnToMainState();
     }
 }
