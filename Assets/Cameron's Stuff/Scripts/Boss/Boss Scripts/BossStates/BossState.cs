@@ -50,4 +50,8 @@ public class BossState : MonoBehaviour
     {
 
     }
+
+    public virtual void SetDefaultValues()
+    {
+    }
 }

@@ -8,6 +8,13 @@ public class Pillar : MonoBehaviour
     private Vector3 startPos, endPos;
     public event Action hitPlayer;
 
+    [SerializeField] private AK.Wwise.Event spawnSound;
+    [SerializeField] private AK.Wwise.Event breachGroundSound;
+    [SerializeField] private AK.Wwise.Event hitSound;
+
+    [SerializeField] private float groundPosition;
+    private bool doOnce = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,12 +23,18 @@ public class Pillar : MonoBehaviour
 
     IEnumerator Move()
     {
+        spawnSound.Post(gameObject);
         yield return new WaitForSeconds(waitTime);
 
         //Move to the end position
         while (transform.position != endPos)
         {
             transform.position = Vector3.MoveTowards(transform.position, endPos, ascendSpeed * Time.deltaTime); 
+            if(gameObject.transform.position.y > groundPosition && doOnce)
+            {
+                doOnce = false;
+                breachGroundSound.Post(gameObject);
+            }
             yield return null;
         }
 
@@ -60,7 +73,10 @@ public class Pillar : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Trigger the event if the player is hit
-        if(other.tag == "Player")
+        if (other.tag == "Player")
+        {
             hitPlayer?.Invoke();
+            hitSound.Post(gameObject);
+        }
     }
 }

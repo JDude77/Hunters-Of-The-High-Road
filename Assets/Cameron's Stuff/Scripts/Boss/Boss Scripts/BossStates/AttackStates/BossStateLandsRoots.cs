@@ -1,17 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class BossStateLandsRoots : BossStatePillarAttack
 {
     private Vector3 previousPosition;
     private Vector3 playerVelocity;
+    [Space(10)]
+    [SerializeField] private AK.Wwise.Event windUp;
+    [SerializeField] private AK.Wwise.Event handInGround;
+    [SerializeField] private AK.Wwise.Event pillarSound;
 
     public void Start()
     {
         base.Start();
         previousPosition = player.transform.position;
         playerVelocity = Vector3.zero;
+
+        eventResponder.AddSoundEffect("WindUpSound", windUp, gameObject);
+        eventResponder.AddAction("StartAttack", () => { StartCoroutine(DoAttack()); });
+        eventResponder.AddAnimation("LandsRootsStart", "Boss_Lands_Roots", false);
+        eventResponder.AddAnimation("LandsRootsLoop", "Boss_Lands_Roots_Loop", false);
+        eventResponder.AddAnimation("LandsRootsExit", "Boss_Lands_Roots_Exiting", false);
     }//End Start
 
 
@@ -27,8 +38,7 @@ public class BossStateLandsRoots : BossStatePillarAttack
     {
         base.OnEnter();
         previousPosition = player.transform.position;
-        //Start the attack
-        StartCoroutine(DoAttack());
+        eventResponder.Activate("WindUpSound");
     }//End OnEnter
 
 
@@ -42,8 +52,6 @@ public class BossStateLandsRoots : BossStatePillarAttack
 
     IEnumerator DoAttack()
     {
-        //Wait for the initial delay
-        yield return new WaitForSeconds(windUpTime);
         //Spawn a new pillar if we're under the cound
         while (spawnedPillars < pillarCount)
         {

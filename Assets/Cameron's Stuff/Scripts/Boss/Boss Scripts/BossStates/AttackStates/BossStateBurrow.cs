@@ -9,9 +9,9 @@ public class BossStateBurrow : AttackState
     [SerializeField] private BurrowMovement particlesPrefab;
     [Space(10)]
 
-    [SerializeField] private AK.Wwise.Event digDown;
-    [SerializeField] private AK.Wwise.Event digToPlayer;
-    [SerializeField] private AK.Wwise.Event digUp;
+    [SerializeField] private AK.Wwise.Event digDownSound;
+    [SerializeField] private AK.Wwise.Event digToPlayerSound;
+    [SerializeField] private AK.Wwise.Event digUpSound;
 
     [Header("Attack Settings")]
     [Tooltip("This should be the y position of the boss when it plays its dig up and dig down animations")]
@@ -31,9 +31,9 @@ public class BossStateBurrow : AttackState
         base.Start();
         if (eventResponder != null)
         {
-            eventResponder.AddSoundEffect("DigDown", digDown, gameObject);
-            eventResponder.AddSoundEffect("DigToPlayer", digToPlayer, gameObject);
-            eventResponder.AddSoundEffect("DigUp", digUp, gameObject);
+            eventResponder.AddSoundEffect("DigDownSound", digDownSound, gameObject);
+            eventResponder.AddSoundEffect("DigToPlayerSound", digToPlayerSound, gameObject);
+            eventResponder.AddSoundEffect("DigUpSound", digUpSound, gameObject);
         }
     }//End Start
 

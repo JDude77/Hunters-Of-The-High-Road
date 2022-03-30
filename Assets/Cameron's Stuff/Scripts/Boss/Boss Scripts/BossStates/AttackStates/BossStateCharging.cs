@@ -22,6 +22,13 @@ public class BossStateCharging : AttackState
     [SerializeField] private float swipeRadius;
     [Tooltip("If this is checked, the damage check for the player will only be done on the animation event")]
     [SerializeField] private bool damageCheckOnAnimation;
+
+    [Header("Sounds")]
+    [SerializeField] private AK.Wwise.Event windUpSound;
+    [SerializeField] private AK.Wwise.Event lightFootstepSound;
+    [SerializeField] private AK.Wwise.Event heavyFootstepSound;
+    [SerializeField] private AK.Wwise.Event swipeSound;
+
     private Vector3 chargePoint;
     private Coroutine currentCoroutine;
     private int chargesCompleted;
@@ -29,6 +36,12 @@ public class BossStateCharging : AttackState
     public void Start()
     {
         base.Start();
+        //In script
+        eventResponder.AddSoundEffect("WindUpSound", windUpSound, gameObject);
+        //Animation event sounds
+        eventResponder.AddSoundEffect("LightFootstepSound", lightFootstepSound, gameObject);
+        eventResponder.AddSoundEffect("HeavyFootstepSound", heavyFootstepSound, gameObject);
+        eventResponder.AddSoundEffect("SwipeSound", swipeSound, gameObject);
     }
 
     public override void OnEnter()
@@ -83,6 +96,7 @@ public class BossStateCharging : AttackState
     //Selects the position to charge to and waits for X seconds
     IEnumerator WindUp(float windTime)
     {
+        eventResponder.Activate("WindUpSound");
         transform.LookAt(player.transform.position);
 
         //Set the point that the boss should charge to
@@ -164,5 +178,19 @@ public class BossStateCharging : AttackState
     void playswipesound()
     {
         //play sound
+    }
+
+    [ContextMenu("Fill default values")]
+    public override void SetDefaultValues()
+    {
+        inRangeDistance = 15f;
+        stopDistance = 3f;
+        runSpeed = 15f;
+        windUpTime = 1f;
+        consecutiveWindUpTime = 0.8f;
+        chargeSpeed = 30f;
+        totalConsecutiveCharges = 3;
+        swipeRadius = 2f;
+        damageCheckOnAnimation = false;
     }
 } 

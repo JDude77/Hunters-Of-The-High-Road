@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class BossStateCircleSwipe : AttackState
+public class BossStateScream: AttackState
 {
     [Space(10)]
     [Header("Swipe settings")]
@@ -18,7 +18,7 @@ public class BossStateCircleSwipe : AttackState
         base.Start();
         eventResponder.AddAnimation("Animation", "Boss_Slash", false);
         eventResponder.AddSoundEffect("SlashNoise", slashNoise, gameObject);
-        eventResponder.AddAction("AttackEnd", () => boss.ReturnToMainState());
+        eventResponder.AddAction("AttackEnd", boss.ReturnToMainState);
     }
 
     public override void OnEnter()

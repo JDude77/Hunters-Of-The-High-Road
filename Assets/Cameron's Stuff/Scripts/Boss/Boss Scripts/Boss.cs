@@ -11,7 +11,7 @@ public class Boss : Character
         Charging,
         LandsRoots,
         Uproot,
-        CircleSwipe,
+        Scream,
         Decision,
         DecisionPrototype,
         Stunned,
@@ -45,7 +45,7 @@ public class Boss : Character
         if (!GetComponent<BossStateCharging>()) gameObject.AddComponent<BossStateCharging>();
         if (!GetComponent<BossStateLandsRoots>()) gameObject.AddComponent<BossStateLandsRoots>();
         if (!GetComponent<BossStateUproot>()) gameObject.AddComponent<BossStateUproot>();
-        if (!GetComponent<BossStateCircleSwipe>()) gameObject.AddComponent<BossStateCircleSwipe>();
+        if (!GetComponent<BossStateScream>()) gameObject.AddComponent<BossStateScream>();
         if (!GetComponent<BossStateBurrow>()) gameObject.AddComponent<BossStateBurrow>();
         if (!GetComponent<BossEventsHandler>()) gameObject.AddComponent<BossEventsHandler>();
 
