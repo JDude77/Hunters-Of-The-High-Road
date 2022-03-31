@@ -29,7 +29,7 @@ public class Boss : Character
 
     public BossEventsHandler eventsHandler;
     public BossState currentState { get; private set; }
-
+    public Animator animator;
     private BoxCollider rightHand;
     private BoxCollider leftHand; 
     //Start is called before the first frame update
@@ -48,6 +48,8 @@ public class Boss : Character
         if (!GetComponent<BossStateScream>()) gameObject.AddComponent<BossStateScream>();
         if (!GetComponent<BossStateBurrow>()) gameObject.AddComponent<BossStateBurrow>();
         if (!GetComponent<BossEventsHandler>()) gameObject.AddComponent<BossEventsHandler>();
+        if (GetComponentInChildren<Animator>()) animator = GetComponentInChildren<Animator>();
+        else Debug.LogError("No Animator detected on boss child");
 
         //Get the rigidbody
         body = GetComponent<Rigidbody>();

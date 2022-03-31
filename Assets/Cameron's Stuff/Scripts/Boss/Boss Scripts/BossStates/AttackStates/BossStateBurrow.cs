@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class BossStateBurrow : AttackState
 {
@@ -63,7 +61,7 @@ public class BossStateBurrow : AttackState
     IEnumerator StartBurrow()
     {
         yield return new WaitForSeconds(windUpTime);
-        eventResponder.ActivateAnimation("DigDown");
+        boss.animator.Play(digDownAnimation);
 
         //Set the y position of the boss after the animation plays
         Vector3 pos = transform.position;
@@ -107,7 +105,7 @@ public class BossStateBurrow : AttackState
 
         //Reset the boss position
         transform.position = new Vector3(particlePos.x, goundedYPosition, particlePos.z);
-        eventResponder.ActivateAnimation("DigUp");
+        boss.animator.Play(digUpAnimation);
     }
 
     [ContextMenu("Fill default values")]
@@ -133,7 +131,5 @@ public class BossStateBurrow : AttackState
         eventResponder.AddSoundEffect(digUpSoundKey, digUpSound, gameObject);
         //Non-Animation events
         eventResponder.AddSoundEffect("DigToPlayer", digToPlayerSound, gameObject);
-        eventResponder.AddAnimation("DigUp", digUpAnimation, gameObject);
-        eventResponder.AddAnimation("DigDown", digDownAnimation, gameObject);
     }//End InitEvents
 }
