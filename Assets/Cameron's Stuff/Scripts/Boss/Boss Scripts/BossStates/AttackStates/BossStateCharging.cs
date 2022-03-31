@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BossStateCharging : AttackState
 {
-    [Space(10)]
+    #region Attack Variables
     [Header("Charge settings")]
     [Tooltip("The distance to the player that the boss will run to and start winding up")]
     [SerializeField] private float inRangeDistance;
@@ -20,14 +20,30 @@ public class BossStateCharging : AttackState
     [SerializeField] private int totalConsecutiveCharges;
     [Space(5)]
     [SerializeField] private float swipeRadius;
-    [Tooltip("If this is checked, the damage check for the player will only be done on the animation event")]
-    [SerializeField] private bool damageCheckOnAnimation;
-    [Space(10)]
+    #endregion
+
+    #region Sounds
     [Header("Sounds")]
     [SerializeField] private AK.Wwise.Event windUpSound;
     [SerializeField] private AK.Wwise.Event lightFootstepSound;
     [SerializeField] private AK.Wwise.Event heavyFootstepSound;
     [SerializeField] private AK.Wwise.Event swipeSound;
+    [SerializeField] private AK.Wwise.Event hitSound;
+    #endregion
+
+    #region Animation Names
+    [Header("Animation Names")]
+    [SerializeField] private string slowRunAnimName;
+    [SerializeField] private string chargeAnimName;
+    [SerializeField] private string swipeAnimName;
+    #endregion
+
+    #region Anim Event Params
+    [Header("Available Animation Event Parameters")]
+    [SerializeField] [ReadOnlyProperty] private string lightFootStepKey = "LightFootStepSound";
+    [SerializeField] [ReadOnlyProperty] private string heavyFootStepKey = "HeavyFootStepSound";
+    [SerializeField] [ReadOnlyProperty] private string swipeKey = "SwipeSound";
+    #endregion
 
     private Vector3 chargePoint;
     private Coroutine currentCoroutine;
@@ -35,14 +51,9 @@ public class BossStateCharging : AttackState
 
     public void Start()
     {
-        base.Start();
-        //In script
-        eventResponder.AddSoundEffect("WindUpSound", windUpSound, gameObject);
-        //Animation event sounds
-        eventResponder.AddSoundEffect("LightFootstepSound", lightFootstepSound, gameObject);
-        eventResponder.AddSoundEffect("HeavyFootstepSound", heavyFootstepSound, gameObject);
-        eventResponder.AddSoundEffect("SwipeSound", swipeSound, gameObject);
-    }
+        base.Start();     
+        InitEvents();
+    }//End Start
 
     public override void OnEnter()
     {
@@ -74,6 +85,7 @@ public class BossStateCharging : AttackState
     //Moves the boss closer to the player
     IEnumerator GetInRange()
     {
+        eventResponder.ActivateAnimation("SlowRun");
         Vector3 distanceToPlayer = player.transform.position - transform.position;
 
         //While we're out of range
@@ -96,7 +108,7 @@ public class BossStateCharging : AttackState
     //Selects the position to charge to and waits for X seconds
     IEnumerator WindUp(float windTime)
     {
-        eventResponder.ActivateAll("WindUpSound");
+        eventResponder.ActivateSound("WindUp");
         transform.LookAt(player.transform.position);
 
         //Set the point that the boss should charge to
@@ -111,7 +123,7 @@ public class BossStateCharging : AttackState
     //Moves to the selected position
     IEnumerator Charge()
     {
-        Debug.Log("Charging");
+        eventResponder.ActivateAnimation("Charge");
         //Convert the stopping distance to a percentage of the distance to cover
         float chargeDistanceOffsetPercent = stopDistance / (chargePoint - transform.position).magnitude;
         //Reset the charge point to account for the stopping distance
@@ -139,10 +151,11 @@ public class BossStateCharging : AttackState
     void Swipe()
     {
         chargesCompleted++;
-
+        eventResponder.ActivateAnimation("Swipe");
         //Check if the boss has hit the player
         if (DoSphereCast())
         {
+            eventResponder.ActivateSound("HitPlayer");
             BossEventsHandler.current.HitPlayer(GetDamageValue());
         }
         else if (chargesCompleted < totalConsecutiveCharges)
@@ -186,6 +199,24 @@ public class BossStateCharging : AttackState
         chargeSpeed = 30f;
         totalConsecutiveCharges = 3;
         swipeRadius = 2f;
-        damageCheckOnAnimation = false;
-    }
+
+        slowRunAnimName = "Boss_Running";
+        chargeAnimName = "Boss_Running";
+        swipeAnimName = "Boss_Slash";
+    }//End SetDefaultValues
+
+    private void InitEvents()
+    {
+        //Script events
+        eventResponder.AddSoundEffect("WindUp", windUpSound, gameObject);
+        eventResponder.AddSoundEffect("HitPlayer", hitSound, gameObject);
+
+        eventResponder.AddAnimation("SlowRun", slowRunAnimName, false);
+        eventResponder.AddAnimation("Charge", chargeAnimName, false);
+        eventResponder.AddAnimation("Swipe", swipeAnimName, false);
+        //Animation event sounds
+        eventResponder.AddSoundEffect(lightFootStepKey, lightFootstepSound, gameObject);
+        eventResponder.AddSoundEffect(heavyFootStepKey, heavyFootstepSound, gameObject);
+        eventResponder.AddSoundEffect(swipeAnimName, swipeSound, gameObject);
+    }//End InitEvents
 } 

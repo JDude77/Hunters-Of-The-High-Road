@@ -27,6 +27,7 @@ public class BossStateUproot : BossStatePillarAttack
     void Start()
     {
         base.Start();
+        InitEvents();
     }
 
     public override void OnEnter()
@@ -65,5 +66,10 @@ public class BossStateUproot : BossStatePillarAttack
         Vector3 direction = transform.forward * attackDistance;
         Vector3 start = transform.position + attackStartOffset * transform.forward;
         Gizmos.DrawRay(start, direction);
+    }
+
+    private void InitEvents()
+    {
+        eventResponder.AddAnimation("Stomp", stompAnimation, false);
     }
 }

@@ -5,18 +5,26 @@ using System;
 
 public class BossStateLandsRoots : BossStatePillarAttack
 {
-    private Vector3 previousPosition;
-    private Vector3 playerVelocity;
-    [Space(10)]
+    #region Sounds
     [Header("Sounds")]
     [SerializeField] private AK.Wwise.Event windUp;
     [SerializeField] private AK.Wwise.Event handInGround;
-    [SerializeField] private AK.Wwise.Event pillarSound;
-    [Space(10)]
+    [SerializeField] private AK.Wwise.Event windDown;
     [Header("Animation Names")]
     [SerializeField] private string startAnimation;
     [SerializeField] private string loopAnimation;
     [SerializeField] private string exitAnimation;
+    #endregion
+
+    #region Anim Event Params
+    [Header("Avaliable Animation Event Parameters")]
+    [SerializeField] [ReadOnlyProperty] private string startAttack = "StartPillars";
+    [SerializeField] [ReadOnlyProperty] private string exitState = "ExitState";
+    #endregion
+
+    private Vector3 previousPosition;
+    private Vector3 playerVelocity;
+
     public void Start()
     {
         base.Start();
@@ -24,9 +32,11 @@ public class BossStateLandsRoots : BossStatePillarAttack
         playerVelocity = Vector3.zero;
 
         //Animation event
-        eventResponder.AddSoundEffect("WindUpSound", windUp, gameObject);
-        eventResponder.AddAction("StartAttack", () => { StartCoroutine(DoAttack()); });
+        eventResponder.AddAction(startAttack, () => { StartCoroutine(DoAttack()); });
+        eventResponder.AddAction(exitState, boss.ReturnToMainState);
         //Script events
+        eventResponder.AddSoundEffect("WindUp", windUp, gameObject);
+        eventResponder.AddSoundEffect("WindDown", windDown, gameObject);
         eventResponder.AddAnimation("LandsRootsStart", startAnimation, false);
         eventResponder.AddAnimation("LandsRootsLoop", loopAnimation, false);
         eventResponder.AddAnimation("LandsRootsExit", exitAnimation, false);
@@ -45,8 +55,8 @@ public class BossStateLandsRoots : BossStatePillarAttack
     {
         base.OnEnter();
         previousPosition = player.transform.position;
-        eventResponder.ActivateAll("WindUpSound");
-        eventResponder.ActivateAll("LandsRootsStart");
+        eventResponder.ActivateSound("WindUp");
+        eventResponder.ActivateAnimation("LandsRootsStart");
     }//End OnEnter
 
 
@@ -60,7 +70,7 @@ public class BossStateLandsRoots : BossStatePillarAttack
 
     IEnumerator DoAttack()
     {
-        eventResponder.ActivateAll("LandsRootsLoop");
+        eventResponder.ActivateAnimation("LandsRootsLoop");
         //Spawn a new pillar if we're under the cound
         while (spawnedPillars < pillarCount)
         {
@@ -68,9 +78,8 @@ public class BossStateLandsRoots : BossStatePillarAttack
             SpawnPillar(predictedPosition);
             yield return new WaitForSeconds(delayBetweenPillars);
         }
-        eventResponder.ActivateAll("LandsRootsExit");
-        //Change state back to idle
-        boss.ReturnToMainState();
+        eventResponder.ActivateAnimation("LandsRootsExit");
+        eventResponder.ActivateSound("WindDown"); 
     }//End DoAttack
 
     [ContextMenu("Fill Default Values")]

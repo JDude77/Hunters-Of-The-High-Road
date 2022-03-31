@@ -5,23 +5,29 @@ using System;
 
 public class BossStateScream : AttackState
 {
-    [Space(10)]
     [Header("Swipe settings")]
     [SerializeField] private float radius;
-    [Space(10)]
     [Header("Sounds")]
     [SerializeField] private AK.Wwise.Event screamNoise;
     [Header("Animation Names")]
     [SerializeField] private string animationName;
 
+    #region Anim Event Params
+    [Header("Available Animation Event Parameters")]
+    [SerializeField] [ReadOnlyProperty] private string screamSound = "ScreamSound";
+    [SerializeField] [ReadOnlyProperty] private string animationEnd = "AnimationEnd";
+    [SerializeField] [ReadOnlyProperty] private string damageCheck = "DamageCheck";
+    #endregion
+
     public void Start()
     {
         base.Start();
         eventResponder.AddAnimation("Scream", animationName, false);
-        eventResponder.AddSoundEffect("SlashNoise", screamNoise, gameObject);
-        eventResponder.AddAction("AttackEnd", boss.ReturnToMainState);
-        eventResponder.AddAction("DamageCheck", DoSphereCast);
-    }
+        //Animation events
+        eventResponder.AddSoundEffect(screamSound, screamNoise, gameObject);
+        eventResponder.AddAction(animationEnd, boss.ReturnToMainState);
+        eventResponder.AddAction(damageCheck, DoSphereCast);
+    }//End Start
 
     public override void OnEnter()
     {
@@ -54,5 +60,5 @@ public class BossStateScream : AttackState
     {
         radius = 6f;
         animationName = "Boss_Scream";
-    }
+    }//End SetDefaultValues
 }

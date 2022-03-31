@@ -30,11 +30,13 @@ public class Pillar : MonoBehaviour
         while (transform.position != endPos)
         {
             transform.position = Vector3.MoveTowards(transform.position, endPos, ascendSpeed * Time.deltaTime); 
+
             if(gameObject.transform.position.y > groundPosition && doOnce)
             {
                 doOnce = false;
                 breachGroundSound.Post(gameObject);
             }
+
             yield return null;
         }
 

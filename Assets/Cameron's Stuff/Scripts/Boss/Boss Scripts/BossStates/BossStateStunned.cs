@@ -29,6 +29,7 @@ public class BossStateStunned : BossState
         base.OnExit();
     }//End OnExit
 
+    [ContextMenu("Fill Default Values")]
     public override void SetDefaultValues()
     {
         stunnedAnimation = "Boss_Stunned";
