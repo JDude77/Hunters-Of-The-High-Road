@@ -32,9 +32,10 @@ public class BossStateBurrow : AttackState
     [SerializeField] private string digUpAnimation;
     [SerializeField] private string digDownAnimation;
 
-    [Header("Available animation event parameters")]
-    [SerializeField] [ReadOnlyProperty] private string digDownSoundKey = "DigDownSound";
-    [SerializeField] [ReadOnlyProperty] private string digUpSoundKey = "DigUpSound";
+    #region Anim Event Params
+    [Space(10f)]
+    [SerializeField] [ReadOnlyProperty] private string[] AnimationEventParameters = new string[] { "DigDownSound", "DigUpSound" };
+    #endregion
     #endregion
 
     public void Start()
@@ -62,6 +63,7 @@ public class BossStateBurrow : AttackState
     {
         yield return new WaitForSeconds(windUpTime);
         boss.animator.Play(digDownAnimation);
+        digDownSound.Post(gameObject);
 
         //Set the y position of the boss after the animation plays
         Vector3 pos = transform.position;
@@ -86,7 +88,7 @@ public class BossStateBurrow : AttackState
         //Update the target position while out of range
         while (distance > inRangeDistance)
         {
-            eventResponder.ActivateSound("DigToPlayer");
+            digToPlayerSound.Post(gameObject);
             //Update the target position
             targetPosition.x = player.transform.position.x;
             targetPosition.z = player.transform.position.z;
@@ -106,6 +108,7 @@ public class BossStateBurrow : AttackState
         //Reset the boss position
         transform.position = new Vector3(particlePos.x, goundedYPosition, particlePos.z);
         boss.animator.Play(digUpAnimation);
+        digUpSound.Post(gameObject);
     }
 
     [ContextMenu("Fill default values")]
@@ -127,9 +130,7 @@ public class BossStateBurrow : AttackState
     void InitEvents()
     {
         //Animation events
-        eventResponder.AddSoundEffect(digDownSoundKey, digDownSound, gameObject);
-        eventResponder.AddSoundEffect(digUpSoundKey, digUpSound, gameObject);
-        //Non-Animation events
-        eventResponder.AddSoundEffect("DigToPlayer", digToPlayerSound, gameObject);
+        eventResponder.AddSoundEffect("DigDownSound", digDownSound, gameObject);
+        eventResponder.AddSoundEffect("DigUpSound", digUpSound, gameObject);
     }//End InitEvents
 }

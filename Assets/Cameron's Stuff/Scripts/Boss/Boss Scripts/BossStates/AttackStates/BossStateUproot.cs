@@ -44,10 +44,17 @@ public class BossStateUproot : BossStatePillarAttack
 
     IEnumerator DoAttack()
     {
-        transform.LookAt(player.transform.position);
+        float timer = 0.0f;
+        while (timer < windUpTime)
+        {
+            timer += Time.deltaTime;
+            Vector3 targetDir = player.transform.position - transform.position;
+            Quaternion targetRot = Quaternion.LookRotation(targetDir, Vector3.up);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRot, 360f * Time.deltaTime);
+            yield return null;
+        }
+
         startPosition = transform.position + attackStartOffset * transform.forward;
-        //Wait for windUp
-        yield return new WaitForSeconds(windUpTime);
 
         while(spawnedPillars < pillarCount)
         {

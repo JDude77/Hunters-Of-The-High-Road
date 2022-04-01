@@ -6,6 +6,7 @@ public class BossStateStunned : BossState
 {
     [Header("Sounds")]
     [SerializeField] private AK.Wwise.Event stunned;
+    [SerializeField] private float stunnedTime;
     [Header("Animation Names")]
     [SerializeField] private string stunnedAnimation;
 
@@ -14,14 +15,13 @@ public class BossStateStunned : BossState
         base.Start();
         eventResponder.AddSoundEffect("StateEnter", stunned, gameObject);
         eventResponder.AddAnimation("StateEnter", stunnedAnimation, false);
-        //Animation event
-        eventResponder.AddAction("AnimationEnd", boss.ReturnToMainState);
     }
 
     public override void OnEnter()
     {
         base.OnEnter();
         eventResponder.ActivateAll("StateEnter");
+        StartCoroutine(timer());
     }//End OnEnter
 
     public override void OnExit()
@@ -29,9 +29,17 @@ public class BossStateStunned : BossState
         base.OnExit();
     }//End OnExit
 
+    IEnumerator timer()
+    {
+        yield return new WaitForSeconds(stunnedTime);
+        boss.ReturnToMainState();
+        //TODO: Call animation trigger
+    }
+
     [ContextMenu("Fill Default Values")]
     public override void SetDefaultValues()
     {
+        stunnedTime = 2f;
         stunnedAnimation = "Boss_Stunned";
     }//End SetDefaultValues
 }

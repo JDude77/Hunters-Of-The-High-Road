@@ -16,9 +16,8 @@ public class BossStateLandsRoots : BossStatePillarAttack
     #endregion
 
     #region Anim Event Params
-    [Header("Avaliable Animation Event Parameters")]
-    [SerializeField] [ReadOnlyProperty] private string startAttack = "StartPillars";
-    [SerializeField] [ReadOnlyProperty] private string exitState = "ExitState";
+    [Space(10f)]
+    [SerializeField] [ReadOnlyProperty] private string[] AnimationEventParameters = new string[] { "StartPillars", "ExitState" };
     #endregion
 
     private Vector3 previousPosition;
@@ -29,16 +28,7 @@ public class BossStateLandsRoots : BossStatePillarAttack
         base.Start();
         previousPosition = player.transform.position;
         playerVelocity = Vector3.zero;
-
-        //Animation event
-        eventResponder.AddAction(startAttack, () => { StartCoroutine(DoAttack()); });
-        eventResponder.AddAction(exitState, boss.ReturnToMainState);
-        //Script events
-        eventResponder.AddSoundEffect("WindUp", windUp, gameObject);
-        eventResponder.AddSoundEffect("WindDown", windDown, gameObject);
-        eventResponder.AddAnimation("LandsRootsStart", startAnimation, false);
-        eventResponder.AddAnimation("LandsRootsLoop", loopAnimation, false);
-        eventResponder.AddAnimation("LandsRootsExit", exitAnimation, false);
+        InitEvents();
     }//End Start
 
 
@@ -54,8 +44,8 @@ public class BossStateLandsRoots : BossStatePillarAttack
     {
         base.OnEnter();
         previousPosition = player.transform.position;
-        eventResponder.ActivateSound("WindUp");
-        eventResponder.ActivateAnimation("LandsRootsStart");
+        windUp.Post(gameObject);
+        boss.animator.Play("LandsRootsStart");
     }//End OnEnter
 
 
@@ -69,7 +59,7 @@ public class BossStateLandsRoots : BossStatePillarAttack
 
     IEnumerator DoAttack()
     {
-        eventResponder.ActivateAnimation("LandsRootsLoop");
+        boss.animator.Play("LandsRootsLoop");
         //Spawn a new pillar if we're under the cound
         while (spawnedPillars < pillarCount)
         {
@@ -77,8 +67,8 @@ public class BossStateLandsRoots : BossStatePillarAttack
             SpawnPillar(predictedPosition);
             yield return new WaitForSeconds(delayBetweenPillars);
         }
-        eventResponder.ActivateAnimation("LandsRootsExit");
-        eventResponder.ActivateSound("WindDown"); 
+        boss.animator.Play("LandsRootsExit");
+        windDown.Post(gameObject);
     }//End DoAttack
 
     [ContextMenu("Fill Default Values")]
@@ -96,5 +86,12 @@ public class BossStateLandsRoots : BossStatePillarAttack
         pillarStayTime = 0.5f;
         startYPos = 5f;
         finalYPos = 9f;
+    }
+
+    private void InitEvents()
+    {
+        //Animation event
+        eventResponder.AddAction("StartPillars", () => { StartCoroutine(DoAttack()); });
+        eventResponder.AddAction("ExitState", boss.ReturnToMainState);
     }
 }

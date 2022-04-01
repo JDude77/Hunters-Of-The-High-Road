@@ -32,16 +32,9 @@ public class BossStateCharging : AttackState
     [SerializeField] private AK.Wwise.Event hitSound;    
     #endregion
 
-    #region Animation Names
-    [Header("Animation Names")]
-    [SerializeField] private string slowRunAnimName;
-    [SerializeField] private string chargeAnimName;
-    [SerializeField] private string swipeAnimTrigger;
-    #endregion
-
     #region Anim Event Params
     [Space(10f)]
-    [SerializeField] [ReadOnlyProperty] string[] AnimationEventParameters = new string[] { "LightFootStepSound", "HeavyFootStepSound", "SwipeSound","DamageCheck", "SwipeEnd" };
+    [SerializeField] [ReadOnlyProperty] private string[] AnimationEventParameters = new string[] { "LightFootStepSound", "HeavyFootStepSound", "SwipeSound","DamageCheck", "SwipeEnd" };
     #endregion
 
     enum SubState
@@ -57,6 +50,8 @@ public class BossStateCharging : AttackState
     private Vector3 chargePoint;
     private Coroutine currentCoroutine;
     private int chargesCompleted;
+
+    //TODO: Set up animation blend tree for boss running
 
     public void Start()
     {
@@ -86,7 +81,7 @@ public class BossStateCharging : AttackState
             //targetDir.y = transform.position.y;
 
             Quaternion targetRot = Quaternion.LookRotation(targetDir, Vector3.up);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRot, 720f * Time.deltaTime);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRot, 360f * Time.deltaTime);
         }
     }
 
@@ -106,8 +101,9 @@ public class BossStateCharging : AttackState
     IEnumerator GetInRange()
     {
         state = SubState.GetInRange;
-        boss.animator.Play(slowRunAnimName);
         Vector3 distanceToPlayer = player.transform.position - transform.position;
+        boss.animator.SetTrigger("DoRunWindUp");
+        
 
         //While we're out of range
         while (distanceToPlayer.magnitude >= inRangeDistance)
@@ -131,7 +127,9 @@ public class BossStateCharging : AttackState
     IEnumerator WindUp(float windTime)
     {
         state = SubState.WindUp;
-        eventResponder.ActivateSound("WindUp");
+        //Play the windup sound
+        windUpSound.Post(gameObject);
+        boss.animator.Play("Idle");
         yield return new WaitForSeconds(windTime);
 
         //Set the point that the boss should charge to
@@ -145,12 +143,13 @@ public class BossStateCharging : AttackState
     IEnumerator Charge()
     {
         state = SubState.Charge;
-        boss.animator.Play(chargeAnimName);
+        boss.animator.SetTrigger("DoRunWindUp");
         print("Charging");
         //Convert the stopping distance to a percentage of the distance to cover
         float chargeDistanceOffsetPercent = stopDistance / (chargePoint - transform.position).magnitude;
         //Reset the charge point to account for the stopping distance
         chargePoint = Vector3.Lerp(transform.position, chargePoint, 1f - chargeDistanceOffsetPercent);
+
         //Check if we're not at the desired position
         while(transform.position != chargePoint)
         {
@@ -176,7 +175,7 @@ public class BossStateCharging : AttackState
     void Swipe()
     {
         state = SubState.Swipe;
-        boss.animator.SetTrigger(swipeAnimTrigger);
+        boss.animator.SetTrigger("DoSlash");
     } //End Swipe
 
     //Animator function called on final swipe frame
@@ -201,7 +200,8 @@ public class BossStateCharging : AttackState
         //Check if there was a collision
         if (collisions.Length > 0)
         {
-            eventResponder.ActivateSound("HitPlayer");
+            print("Hit player");
+            hitSound.Post(gameObject);
             BossEventsHandler.current.HitPlayer(GetDamageValue());
             chargesCompleted = totalConsecutiveCharges;
         }
@@ -226,18 +226,10 @@ public class BossStateCharging : AttackState
         chargeSpeed = 30f;
         totalConsecutiveCharges = 3;
         swipeRadius = 2f;
-
-        slowRunAnimName = "Boss_Running";
-        chargeAnimName = "Boss_Running";
-        swipeAnimTrigger = "DoSlash";
     }//End SetDefaultValues
 
     private void InitEvents()
     {
-        //Script events
-        eventResponder.AddSoundEffect("WindUp", windUpSound, gameObject);
-        eventResponder.AddSoundEffect("HitPlayer", hitSound, gameObject);
-
         //Animation event sounds
         eventResponder.AddSoundEffect("LightFootStepSound", lightFootstepSound, gameObject);
         eventResponder.AddSoundEffect("HeavyFootStepSound", heavyFootstepSound, gameObject);
