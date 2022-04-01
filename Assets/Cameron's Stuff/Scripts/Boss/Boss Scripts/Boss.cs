@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+[DisallowMultipleComponent]
 public class Boss : Character
 {
     public enum State
@@ -13,7 +12,6 @@ public class Boss : Character
         Uproot,
         Scream,
         Decision,
-        DecisionPrototype,
         Stunned,
         Burrow,
         Slashing
@@ -42,6 +40,7 @@ public class Boss : Character
         //Get the current state
         currentState = GetComponent<BossStateIdle>();
         if (currentState == null) currentState = gameObject.AddComponent<BossStateIdle>();
+        if (!GetComponent<BossStateDecision>()) gameObject.AddComponent<BossStateDecision>();
         if (!GetComponent<BossStateCharging>()) gameObject.AddComponent<BossStateCharging>();
         if (!GetComponent<BossStateLandsRoots>()) gameObject.AddComponent<BossStateLandsRoots>();
         if (!GetComponent<BossStateUproot>()) gameObject.AddComponent<BossStateUproot>();
@@ -70,7 +69,7 @@ public class Boss : Character
         }
 
         //PlayerEventsHandler.current.OnHitEnemy += ReduceHealthByAmount;
-        mainState = State.DecisionPrototype;
+        mainState = State.Decision;
     }
 
     protected override void Start()

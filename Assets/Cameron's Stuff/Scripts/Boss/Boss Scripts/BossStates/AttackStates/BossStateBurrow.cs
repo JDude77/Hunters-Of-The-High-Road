@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
+[DisallowMultipleComponent]
 public class BossStateBurrow : AttackState
 {
     #region Attack Variables
@@ -27,15 +28,11 @@ public class BossStateBurrow : AttackState
     [SerializeField] private AK.Wwise.Event digDownSound;
     [SerializeField] private AK.Wwise.Event digToPlayerSound;
     [SerializeField] private AK.Wwise.Event digUpSound;
-
-    [Header("Animation Names")]
-    [SerializeField] private string digUpAnimation;
-    [SerializeField] private string digDownAnimation;
+    #endregion
 
     #region Anim Event Params
     [Space(10f)]
-    [SerializeField] [ReadOnlyProperty] private string[] AnimationEventParameters = new string[] { "DigDownSound", "DigUpSound" };
-    #endregion
+    [SerializeField] [ReadOnlyProperty] private string[] AnimationEventParameters = new string[] { "DigDownSound", "DigUpSound", "StartBurrow", "ExitAttack" };
     #endregion
 
     public void Start()
@@ -49,8 +46,8 @@ public class BossStateBurrow : AttackState
         base.OnEnter();
         //Look at the player's XZ position
         Vector3 newPosition = player.transform.position;
-        newPosition.y = transform.position.y; 
-        StartCoroutine(StartBurrow());
+        newPosition.y = transform.position.y;
+        boss.animator.SetTrigger("DoBurrowStart");
     } //End OnEnter
 
     public override void OnExit()
@@ -61,8 +58,6 @@ public class BossStateBurrow : AttackState
 
     IEnumerator StartBurrow()
     {
-        yield return new WaitForSeconds(windUpTime);
-        boss.animator.Play(digDownAnimation);
         digDownSound.Post(gameObject);
 
         //Set the y position of the boss after the animation plays
@@ -107,7 +102,7 @@ public class BossStateBurrow : AttackState
 
         //Reset the boss position
         transform.position = new Vector3(particlePos.x, goundedYPosition, particlePos.z);
-        boss.animator.Play(digUpAnimation);
+        boss.animator.SetTrigger("DoJumpUp");
         digUpSound.Post(gameObject);
     }
 
@@ -122,9 +117,6 @@ public class BossStateBurrow : AttackState
         burrowSpeed = 10f;
         inRangeDistance = 1f;
         digUpDelay = 0.5f;
-
-        digUpAnimation = "Boss_Burrow_Start";
-        digDownAnimation = "Boss_Jump_Up";
     }//End SetDefaultValues
 
     void InitEvents()
@@ -132,5 +124,7 @@ public class BossStateBurrow : AttackState
         //Animation events
         eventResponder.AddSoundEffect("DigDownSound", digDownSound, gameObject);
         eventResponder.AddSoundEffect("DigUpSound", digUpSound, gameObject);
+        eventResponder.AddAction("ExitAttack", boss.ReturnToMainState);
+        eventResponder.AddAction("StartBurrow", () => StartCoroutine(StartBurrow()));
     }//End InitEvents
 }

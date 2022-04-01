@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[DisallowMultipleComponent]
 public class BossStateScream : AttackState
 {
     [Header("Swipe settings")]
@@ -10,26 +11,20 @@ public class BossStateScream : AttackState
     [SerializeField] private string animationName;
 
     #region Anim Event Params
-    [Header("Available Animation Event Parameters")]
-    [SerializeField] [ReadOnlyProperty] private string screamSound = "ScreamSound";
-    [SerializeField] [ReadOnlyProperty] private string animationEnd = "AnimationEnd";
-    [SerializeField] [ReadOnlyProperty] private string damageCheck = "DamageCheck";
+    [Space(10f)]
+    [SerializeField] [ReadOnlyProperty] private string[] AnimationEventParameters = new string[] { "ScreamSound", "AnimationEnd", "DamageCheck" };
     #endregion
 
     public void Start()
     {
         base.Start();
-        eventResponder.AddAnimation("Scream", animationName, false);
-        //Animation events
-        eventResponder.AddSoundEffect(screamSound, screamNoise, gameObject);
-        eventResponder.AddAction(animationEnd, boss.ReturnToMainState);
-        eventResponder.AddAction(damageCheck, DoSphereCast);
+        InitEvents();
     }//End Start
 
     public override void OnEnter()
     {
         base.OnEnter();
-        eventResponder.ActivateAnimation("Scream");
+        boss.animator.Play(animationName);
     }//End OnEnter
 
     public override void OnExit()
@@ -58,4 +53,12 @@ public class BossStateScream : AttackState
         radius = 6f;
         animationName = "Boss_Scream";
     }//End SetDefaultValues
+    
+    private void InitEvents()
+    {
+        //Animation events
+        eventResponder.AddSoundEffect("ScreamSound", screamNoise, gameObject);
+        eventResponder.AddAction("AnimationEnd", boss.ReturnToMainState);
+        eventResponder.AddAction("DamageCheck", DoSphereCast);
+    }
 }

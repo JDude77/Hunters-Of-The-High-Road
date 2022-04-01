@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[DisallowMultipleComponent]
 public class BossStateLandsRoots : BossStatePillarAttack
 {
     #region Sounds
@@ -45,7 +46,7 @@ public class BossStateLandsRoots : BossStatePillarAttack
         base.OnEnter();
         previousPosition = player.transform.position;
         windUp.Post(gameObject);
-        boss.animator.Play("LandsRootsStart");
+        boss.animator.Play("Boss_Lands_Roots_Enter");
     }//End OnEnter
 
 
@@ -59,7 +60,6 @@ public class BossStateLandsRoots : BossStatePillarAttack
 
     IEnumerator DoAttack()
     {
-        boss.animator.Play("LandsRootsLoop");
         //Spawn a new pillar if we're under the cound
         while (spawnedPillars < pillarCount)
         {
@@ -67,7 +67,7 @@ public class BossStateLandsRoots : BossStatePillarAttack
             SpawnPillar(predictedPosition);
             yield return new WaitForSeconds(delayBetweenPillars);
         }
-        boss.animator.Play("LandsRootsExit");
+        boss.animator.Play("Boss_Lands_Roots_Exiting");
         windDown.Post(gameObject);
     }//End DoAttack
 

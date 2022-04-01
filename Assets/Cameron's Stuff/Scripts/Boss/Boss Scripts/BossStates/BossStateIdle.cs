@@ -10,6 +10,7 @@ public class BossStateIdle : BossState
     public override void OnEnter()
     {
         base.OnEnter();
+        boss.ReturnToMainState();
     }
 
     public override void Run()
