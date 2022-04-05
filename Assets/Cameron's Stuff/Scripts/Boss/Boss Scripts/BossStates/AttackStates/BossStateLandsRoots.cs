@@ -46,7 +46,7 @@ public class BossStateLandsRoots : BossStatePillarAttack
         base.OnEnter();
         previousPosition = player.transform.position;
         windUp.Post(gameObject);
-        boss.animator.Play("Boss_Lands_Roots_Enter");
+        boss.animator.SetTrigger("DoLandsRoots");
     }//End OnEnter
 
 
@@ -67,7 +67,7 @@ public class BossStateLandsRoots : BossStatePillarAttack
             SpawnPillar(predictedPosition);
             yield return new WaitForSeconds(delayBetweenPillars);
         }
-        boss.animator.Play("Boss_Lands_Roots_Exiting");
+        boss.animator.SetTrigger("DoExitLandsRoots");
         windDown.Post(gameObject);
     }//End DoAttack
 

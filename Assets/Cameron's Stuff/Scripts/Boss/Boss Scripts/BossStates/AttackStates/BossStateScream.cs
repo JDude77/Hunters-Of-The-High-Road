@@ -24,7 +24,7 @@ public class BossStateScream : AttackState
     public override void OnEnter()
     {
         base.OnEnter();
-        boss.animator.Play(animationName);
+        boss.animator.SetTrigger("DoScream");
     }//End OnEnter
 
     public override void OnExit()
