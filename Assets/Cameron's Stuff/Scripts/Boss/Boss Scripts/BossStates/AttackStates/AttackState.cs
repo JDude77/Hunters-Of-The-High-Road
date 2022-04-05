@@ -11,10 +11,15 @@ public class AttackState : BossState
     [SerializeField] private float minDamage;
     [SerializeField] private bool checkForStunEvent;
 
-    private void Awake()
+    public void Awake()
     {
         if(checkForStunEvent)
             BossEventsHandler.current.OnBossStunned += StunnedResponse;
+    }
+
+    public void Start()
+    {
+        base.Start();
     }
 
     protected float GetDamageValue()
@@ -28,6 +33,6 @@ public class AttackState : BossState
     private void StunnedResponse()
     {
         //Change the boss's state
-        boss.ChangeState(Boss.State.Stunned);
+        boss.ReturnToMainState();
     }
 }

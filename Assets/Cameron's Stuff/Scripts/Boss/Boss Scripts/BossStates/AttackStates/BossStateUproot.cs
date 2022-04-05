@@ -2,16 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[DisallowMultipleComponent]
 public class BossStateUproot : BossStatePillarAttack
 {
     [Header("Uproot settings")]
     [SerializeField] private float attackDistance;
     [SerializeField] private float attackStartOffset;
+
+    [SerializeField] private AK.Wwise.Event stomp;
+    [SerializeField] private string stompAnimation;
+
+    [HideInInspector] public float rangeEnd { 
+        get { 
+            return attackDistance; 
+        } 
+    }
+    [HideInInspector] public float rangeStart { 
+        get { 
+            return attackStartOffset; 
+        } 
+    }
+
     private Vector3 startPosition;
     // Start is called before the first frame update
     void Start()
     {
         base.Start();
+        InitEvents();
     }
 
     public override void OnEnter()
@@ -28,10 +45,17 @@ public class BossStateUproot : BossStatePillarAttack
 
     IEnumerator DoAttack()
     {
-        transform.LookAt(player.transform.position);
+        float timer = 0.0f;
+        while (timer < windUpTime)
+        {
+            timer += Time.deltaTime;
+            Vector3 targetDir = player.transform.position - transform.position;
+            Quaternion targetRot = Quaternion.LookRotation(targetDir, Vector3.up);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRot, 360f * Time.deltaTime);
+            yield return null;
+        }
+
         startPosition = transform.position + attackStartOffset * transform.forward;
-        //Wait for windUp
-        yield return new WaitForSeconds(windUpTime);
 
         while(spawnedPillars < pillarCount)
         {
@@ -42,7 +66,7 @@ public class BossStateUproot : BossStatePillarAttack
             yield return new WaitForSeconds(delayBetweenPillars);
         }
         //Change state back to idle
-        boss.ChangeState(Boss.State.Idle);
+        boss.ReturnToMainState();
     }
 
     private void OnDrawGizmos()
@@ -50,5 +74,10 @@ public class BossStateUproot : BossStatePillarAttack
         Vector3 direction = transform.forward * attackDistance;
         Vector3 start = transform.position + attackStartOffset * transform.forward;
         Gizmos.DrawRay(start, direction);
+    }
+
+    private void InitEvents()
+    {
+        eventResponder.AddAnimation("Stomp", stompAnimation, false);
     }
 }

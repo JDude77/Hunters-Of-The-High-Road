@@ -11,7 +11,7 @@ public struct Particle
 }//End Particle
 
 [Serializable]
-public class EventResponse
+public class InspectorEventResponse
 {
     [SerializeField] private string Label;
     [Space(10)]
