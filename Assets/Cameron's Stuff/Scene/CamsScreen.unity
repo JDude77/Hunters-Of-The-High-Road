@@ -10239,6 +10239,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 545548857112470208, guid: d065d325eef50af4692dc20b258e8599, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 545548857157585927, guid: d065d325eef50af4692dc20b258e8599, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 545548857889198256, guid: d065d325eef50af4692dc20b258e8599, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 545548857982566007, guid: d065d325eef50af4692dc20b258e8599, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 609453581122754406, guid: d065d325eef50af4692dc20b258e8599, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 609453581163690401, guid: d065d325eef50af4692dc20b258e8599, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 609453582066664596, guid: d065d325eef50af4692dc20b258e8599, type: 3}
       propertyPath: m_RootOrder
       value: 22
