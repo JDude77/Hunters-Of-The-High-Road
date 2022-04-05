@@ -5299,7 +5299,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 212.77933, y: -489.38916}
+  m_AnchoredPosition: {x: 212.77933, y: -549.0722}
   m_SizeDelta: {x: 247.4529, y: 69.4605}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &609453581732084991
@@ -5750,7 +5750,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 212.77933, y: -352.5637}
+  m_AnchoredPosition: {x: 212.77933, y: -395.19446}
   m_SizeDelta: {x: 247.4529, y: 69.4605}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &609453581836764996
@@ -9015,7 +9015,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 212.77933, y: -215.7382}
+  m_AnchoredPosition: {x: 212.77933, y: -241.31667}
   m_SizeDelta: {x: 247.4529, y: 69.4605}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &609453582405032587
@@ -10253,7 +10253,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 212.77933, y: -78.912735}
+  m_AnchoredPosition: {x: 212.77933, y: -87.43889}
   m_SizeDelta: {x: 247.4529, y: 69.4605}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &609453582634670579
@@ -12446,6 +12446,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 609453581666782736}
     m_Modifications:
+    - target: {fileID: 1145914342944074983, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: LeftMonsterImg
+      value: 
+      objectReference: {fileID: 21300000, guid: b4b448d7ace7a1b44a233612e55d7bce, type: 3}
+    - target: {fileID: 1145914342944074983, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: LeftMonsterDesc
+      value: A big gal who swims around Loch Ness. Kinda just vibes but because she
+        hates Christianity we must kill her lol
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914342944074983, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: LeftMonsterName
+      value: Nessie
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914342944074983, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: RightMonsterImg
+      value: 
+      objectReference: {fileID: 21300000, guid: 561dab3f71571a145aeaf570e7e6d4c9, type: 3}
+    - target: {fileID: 1145914342944074983, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: RightMonsterDesc
+      value: Big scary horse dude that is scared of water lol
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914342944074983, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: RightMonsterName
+      value: Nuckelavee
+      objectReference: {fileID: 0}
     - target: {fileID: 1145914342944074986, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -12538,6 +12563,70 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1145914343853207668, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914343853207668, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 561dab3f71571a145aeaf570e7e6d4c9, type: 3}
+    - target: {fileID: 1145914343853207670, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914343853207670, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.6017838
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914343853207670, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 204.65411
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914343853207670, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -0.2468872
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914343853207670, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 19.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914343853207670, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.11999512
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914343944462003, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914343944462003, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b4b448d7ace7a1b44a233612e55d7bce, type: 3}
+    - target: {fileID: 1145914343944462005, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914343944462005, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.45327038
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914343944462005, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -2.4200134
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914343944462005, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -0.82640076
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914343944462005, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.2100067
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914343944462005, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.4179077
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
 --- !u!224 &609453582361070584 stripped
@@ -12560,20 +12649,20 @@ PrefabInstance:
     - target: {fileID: 1145914342944074983, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
       propertyPath: LeftMonsterImg
       value: 
-      objectReference: {fileID: 21300000, guid: 3e20e3a9f3cc93640b7de1b12037558b, type: 3}
+      objectReference: {fileID: 21300000, guid: 921e57d8910826240a3755b6f6dca1e7, type: 3}
     - target: {fileID: 1145914342944074983, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
       propertyPath: LeftMonsterDesc
-      value: A big gal who swims around Loch Ness. Kinda just vibes but because she
-        hates Christianity we must kill her lol
+      value: Forgot what I wrote as a placeholder lol. Scary vampire lady who is
+        devoted to finding a nail salon
       objectReference: {fileID: 0}
     - target: {fileID: 1145914342944074983, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
       propertyPath: LeftMonsterName
-      value: The Loch Ness Monster
+      value: the Baobhan Sith
       objectReference: {fileID: 0}
     - target: {fileID: 1145914342944074983, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
       propertyPath: RightMonsterImg
       value: 
-      objectReference: {fileID: 21300000, guid: d21b73c6e2a2e5744b596d8e37c884b8, type: 3}
+      objectReference: {fileID: 21300000, guid: 02cedea703530fd409b6bbfcc51954ab, type: 3}
     - target: {fileID: 1145914342944074983, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
       propertyPath: RightMonsterDesc
       value: Pengu is out for blood. Do not approach this absolute beast
@@ -12673,6 +12762,78 @@ PrefabInstance:
     - target: {fileID: 1145914342944074987, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914343853207668, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914343853207668, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 02cedea703530fd409b6bbfcc51954ab, type: 3}
+    - target: {fileID: 1145914343853207670, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.48351887
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914343853207670, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.54464865
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914343853207670, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914343853207670, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -2.2906036
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914343853207670, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1.2578125
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914343853207670, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914343853207670, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.6300049
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914343944462003, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914343944462003, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 921e57d8910826240a3755b6f6dca1e7, type: 3}
+    - target: {fileID: 1145914343944462005, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914343944462005, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.66043246
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914343944462005, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914343944462005, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2.263504
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914343944462005, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 10.209991
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914343944462005, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.6230164
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914343944462005, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -3.7200623
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
