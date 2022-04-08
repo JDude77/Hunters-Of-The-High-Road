@@ -10,10 +10,6 @@ public class BossStateLandsRoots : BossStatePillarAttack
     [SerializeField] private AK.Wwise.Event windUp;
     [SerializeField] private AK.Wwise.Event handInGround;
     [SerializeField] private AK.Wwise.Event windDown;
-    [Header("Animation Names")]
-    [SerializeField] private string startAnimation;
-    [SerializeField] private string loopAnimation;
-    [SerializeField] private string exitAnimation;
     #endregion
 
     #region Anim Event Params
@@ -46,7 +42,7 @@ public class BossStateLandsRoots : BossStatePillarAttack
         base.OnEnter();
         previousPosition = player.transform.position;
         windUp.Post(gameObject);
-        boss.animator.Play("Boss_Lands_Roots_Enter");
+        boss.animator.SetTrigger("DoLandsRoots");
     }//End OnEnter
 
 
@@ -67,16 +63,13 @@ public class BossStateLandsRoots : BossStatePillarAttack
             SpawnPillar(predictedPosition);
             yield return new WaitForSeconds(delayBetweenPillars);
         }
-        boss.animator.Play("Boss_Lands_Roots_Exiting");
+        boss.animator.SetTrigger("DoEndLandsRoots");
         windDown.Post(gameObject);
     }//End DoAttack
 
     [ContextMenu("Fill Default Values")]
     public override void SetDefaultValues()
     {
-        startAnimation = "Boss_Lands_Roots";
-        loopAnimation = "Boss_Lands_Roots_Loop";
-        exitAnimation = "Boss_Lands_RootsExiting";
         pillarCount = 5;
         windUpTime = 1f;
         delayBetweenPillars = 0.8f;
