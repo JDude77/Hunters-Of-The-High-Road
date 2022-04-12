@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3390772922246639419}
+  - component: {fileID: 5443498224406013055}
   m_Layer: 0
   m_Name: Pine1prefab
   m_TagString: Untagged
@@ -32,6 +33,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!205 &5443498224406013055
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2613674024319219073}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: -0.17182553, y: 9.530211, z: 0.28096962}
+  m_Size: 19.027678
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.32929462
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 8394362315761174002}
+    - renderer: {fileID: 3849253929378528591}
+  - screenRelativeHeight: 0.06197984
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 8394362315761174002}
+  m_Enabled: 1
 --- !u!1 &4077565900932012329
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6716069347674808470}
+  - component: {fileID: 6106780649093274575}
   m_Layer: 0
   m_Name: GateSpawn
   m_TagString: Untagged
@@ -31,6 +32,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!205 &6106780649093274575
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6716069347674808469}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 1.1931604, y: 2.3623216, z: -0.24881949}
+  m_Size: 4.772413
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.32929462
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 1780140995604117863}
+    - renderer: {fileID: 6789598863888085095}
+  - screenRelativeHeight: 0.06197984
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 6789598863888085095}
+  m_Enabled: 1
 --- !u!1001 &6716069349154300862
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -91,5 +116,15 @@ PrefabInstance:
 --- !u!4 &6538940786414077013 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: bfc15c4c66587a34692a5cbdac343468, type: 3}
+  m_PrefabInstance: {fileID: 6716069349154300862}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1780140995604117863 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5008022236170083033, guid: bfc15c4c66587a34692a5cbdac343468, type: 3}
+  m_PrefabInstance: {fileID: 6716069349154300862}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &6789598863888085095 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -9003323146575883303, guid: bfc15c4c66587a34692a5cbdac343468, type: 3}
   m_PrefabInstance: {fileID: 6716069349154300862}
   m_PrefabAsset: {fileID: 0}

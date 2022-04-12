@@ -171,6 +171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7065621440610123530}
+  - component: {fileID: 4469693476887503433}
   m_Layer: 0
   m_Name: Birch3Prefab
   m_TagString: Untagged
@@ -194,3 +195,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -86.839, z: 0}
+--- !u!205 &4469693476887503433
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7585735157487986096}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: -0.78744125, y: 6.382552, z: 0.9051676}
+  m_Size: 12.776724
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.32929462
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 8950757247177836549}
+    - renderer: {fileID: 823593928878331722}
+  - screenRelativeHeight: 0.06197984
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 823593928878331722}
+  m_Enabled: 1
