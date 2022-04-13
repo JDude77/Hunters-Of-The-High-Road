@@ -14,7 +14,6 @@ public class Boss : Character
         Decision,
         Stunned,
         Burrow,
-        Slashing
     }
 
     public State state;
