@@ -103,8 +103,7 @@ public class BossStateCharging : AttackState
     {
         state = SubState.GetInRange;
         Vector3 distanceToPlayer = player.transform.position - transform.position;
-        boss.animator.SetTrigger("DoRunWindUp");
-        
+        boss.animator.SetTrigger("DoRunWindUp");        
 
         //While we're out of range
         while (distanceToPlayer.magnitude >= inRangeDistance)
@@ -129,10 +128,11 @@ public class BossStateCharging : AttackState
     {
         state = SubState.WindUp;
         //Play the windup sound
-        windUpSound.Post(gameObject);
-        boss.animator.Play("Idle");
+        windUpSound.Post(gameObject);      
+
         yield return new WaitForSeconds(windTime);
 
+        boss.animator.SetTrigger("DoRunWindUp");
         //Set the point that the boss should charge to
         chargePoint = player.transform.position;
         chargePoint.y = transform.position.y;
@@ -167,8 +167,7 @@ public class BossStateCharging : AttackState
     IEnumerator WindDown()
     {
         state = SubState.WindDown;
-        yield return new WaitForSeconds(windDownTime);
-        boss.ReturnToMainState();
+        yield return new WaitForSeconds(windDownTime);   
     } //End WindDown
 
 
@@ -188,7 +187,8 @@ public class BossStateCharging : AttackState
         }
         else
         {
-            ChangeCoroutineTo(WindDown());
+            boss.animator.SetTrigger("DoExitCharge");
+            boss.ReturnToMainState();
         }
     }
 
@@ -237,5 +237,6 @@ public class BossStateCharging : AttackState
         eventResponder.AddSoundEffect("SwipeSound", swipeSound, gameObject);
         eventResponder.AddAction("DamageCheck", DoSphereCast);
         eventResponder.AddAction("SwipeEnd", CheckChargeCondition);
+        eventResponder.AddAction("ExitState", boss.ReturnToMainState);
     }//End InitEvents
 } 

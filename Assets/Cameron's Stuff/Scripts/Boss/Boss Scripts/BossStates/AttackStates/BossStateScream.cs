@@ -38,7 +38,10 @@ public class BossStateScream : AttackState
         Collider[] collisions = Physics.OverlapSphere(transform.position, radius, boss.attackLayer);
 
         if (collisions.Length > 0)
+        {
+            print("Hit player");
             BossEventsHandler.current.HitPlayer(GetDamageValue());
+        }
     }//End DoSphereCast
 
     public void OnDrawGizmos()

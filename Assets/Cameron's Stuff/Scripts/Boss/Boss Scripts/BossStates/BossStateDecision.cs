@@ -13,7 +13,7 @@ public class BossStateDecision : BossState
     private List<Boss.State> attackPool = new List<Boss.State>();
     private Boss.State previousAttack;
 
-    private Vector3 playerPosition;
+    private Vector3 playerCenter;
     private float playerDistance;
 
     [Header("Attack Ranges")]
@@ -28,8 +28,7 @@ public class BossStateDecision : BossState
     [Header("Decision Delay Settings")]
     [SerializeField] private float maxDecisionTime;
     [SerializeField] private float minDecisionTime;
-
-
+        
     private void Awake()
     {        
         base.Awake();
@@ -65,7 +64,10 @@ public class BossStateDecision : BossState
     public override void OnEnter()
     {
         base.OnEnter();
-        playerPosition = player.transform.position;
+
+        playerCenter = player.transform.position;
+        playerCenter.y += 5f;
+
         playerDistance = (player.transform.position - transform.position).magnitude;
 
         float rand = UnityEngine.Random.Range(minDecisionTime, maxDecisionTime);
@@ -77,27 +79,20 @@ public class BossStateDecision : BossState
         base.OnExit();
     }
 
-    Boss.State ChooseAttack()
+    Boss.State ChooseState()
     {
-        SetAttackPool();
-
-        Boss.State newAttack;
-        //If there are attacks in the pool
-        if (attackPool.Count > 0)
+        if (SetAttackPool())
         {
-            //Set the 
-            newAttack = attackPool[UnityEngine.Random.Range(0, attackPool.Count)];
+            previousAttack = attackPool[UnityEngine.Random.Range(0, attackPool.Count)]; ;
+            return previousAttack;
         }
         else
         {
-            newAttack = Boss.State.Idle;
+            return Boss.State.Idle;
         }
-
-        previousAttack = newAttack;
-        return newAttack;
     }
 
-    void SetAttackPool()
+    bool SetAttackPool()
     {
         attackPool.Clear();
 
@@ -111,17 +106,38 @@ public class BossStateDecision : BossState
             }//End if
         }//End Foreach
 
-        //If the previous attack is the only available attack, re-add it to the pool
-        if (attackPool.Count == 0)
+        if (attackPool.Contains(Boss.State.Scream))
+        {
+            attackPool.Clear();
+            attackPool.Add(Boss.State.Scream);
+            return true;
+        }
+
+        if (attackPool.Contains(Boss.State.Uproot))
+        {
+            attackPool.Clear();
+            attackPool.Add(Boss.State.Uproot);
+            print("Here i am");
+            return true;
+        }
+
+        if (attackPool.Count > 0)
+            return true;
+
+        //If the previous attack is the only available attack, It's not idle, and it's condition is met re-add it to the pool
+        if (previousAttack != Boss.State.Idle && attackDictionary[previousAttack].Invoke())
         {
             attackPool.Add(previousAttack);
+            return true;
         }//End if
+
+        return false;
     }
 
     IEnumerator wait(float time)
     {
         yield return new WaitForSeconds(time);
-        boss.ChangeState(ChooseAttack());
+        boss.ChangeState(ChooseState());
     }
 
     //Remove the non attack states from the list
@@ -149,7 +165,11 @@ public class BossStateDecision : BossState
 
         if (attacks.Contains(Boss.State.Scream)) attackDictionary.Add(Boss.State.Scream, () => playerDistance < screamInRange);
 
-        if (attacks.Contains(Boss.State.Uproot)) attackDictionary.Add(Boss.State.Uproot, () => uprootBox.bounds.Contains(playerPosition));
+        if (attacks.Contains(Boss.State.Uproot)) attackDictionary.Add(Boss.State.Uproot, () => {
+            Bounds col = FindObjectOfType<Player>().GetComponent<CharacterController>().bounds;
+            return uprootBox.bounds.Intersects(col);
+            }
+        );
     }
 
 
