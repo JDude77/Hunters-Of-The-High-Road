@@ -7,6 +7,7 @@ public class BurrowMovement : MonoBehaviour
 {
     private Rigidbody body;
     private float rotationSpeed;
+    private float rotationSpeedIncreaseRate;
     private float speed;
     private Vector3 targetPosition;
 
@@ -41,11 +42,14 @@ public class BurrowMovement : MonoBehaviour
         //Rotate around the y axis by the rotation amount * rotation speed
         body.angularVelocity = new Vector3(0, -rotationAmount * rotationSpeed, 0);
         body.velocity = transform.forward * speed;
+
+        rotationSpeed += rotationSpeedIncreaseRate;
     }//End FixedUpdate
 
-    public void Init(float rotationSpeed, float speed)
+    public void Init(float rotationSpeed,float rotationSpeedIncreaseRate, float speed)
     {
         this.rotationSpeed = rotationSpeed;
+        this.rotationSpeedIncreaseRate = rotationSpeedIncreaseRate;
         this.speed = speed;
     }//End Init
 

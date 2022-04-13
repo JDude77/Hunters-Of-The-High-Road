@@ -14,7 +14,7 @@ public class AttackState : BossState
     public void Awake()
     {
         if(checkForStunEvent)
-            BossEventsHandler.current.OnBossStunned += StunnedResponse;
+            PlayerEventsHandler.current.OnStaggerEnemy += StunnedResponse;
     }
 
     public void Start()
@@ -30,9 +30,15 @@ public class AttackState : BossState
         return minDamage;
     }
 
-    private void StunnedResponse()
+    private void StunnedResponse(GameObject obj)
     {
         //Change the boss's state
-        boss.ReturnToMainState();
+        boss.ChangeState(Boss.State.Stunned);
+    }
+
+    private void OnDestroy()
+    {
+        if (checkForStunEvent)
+            PlayerEventsHandler.current.OnStaggerEnemy -= StunnedResponse;
     }
 }
