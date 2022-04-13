@@ -16,7 +16,8 @@ public class BossStateBurrow : AttackState
     [SerializeField] private float burrowYPosition;
     [SerializeField] private float particleYPosition;
     [Tooltip("Higher max rotation speed means the boss will align itself with the direction to the player faster")]
-    [SerializeField] private float maxRotationSpeed;
+    [SerializeField] private float startRotationSpeed;
+    [SerializeField] private float rotationSpeedIncreaseRate;
     [SerializeField] private float burrowSpeed;
     [Tooltip("The distance to the player that the particles must be to activate the dig up animation")]
     [SerializeField] private float inRangeDistance;
@@ -78,7 +79,7 @@ public class BossStateBurrow : AttackState
         //Initialise the distance to the player
         float distance = (burrower.transform.position - targetPosition).magnitude;
         //Give the particle object the rotation speed and movement speed
-        burrower.Init(maxRotationSpeed, burrowSpeed);
+        burrower.Init(startRotationSpeed, rotationSpeedIncreaseRate, burrowSpeed);
 
         //Update the target position while out of range
         while (distance > inRangeDistance)
@@ -100,8 +101,15 @@ public class BossStateBurrow : AttackState
 
         yield return new WaitForSeconds(digUpDelay);
 
+       
+
         //Reset the boss position
         transform.position = new Vector3(particlePos.x, goundedYPosition, particlePos.z);
+
+        Vector3 newDir = player.transform.position;
+        newDir.y = transform.position.y;
+        transform.LookAt(newDir);
+
         boss.animator.SetTrigger("DoJumpUp");
         digUpSound.Post(gameObject);
     }
@@ -113,7 +121,7 @@ public class BossStateBurrow : AttackState
         goundedYPosition = 9f;
         burrowYPosition = 1f;
         particleYPosition = 8f;
-        maxRotationSpeed = 5f;
+        startRotationSpeed = 5f;
         burrowSpeed = 10f;
         inRangeDistance = 1f;
         digUpDelay = 0.5f;

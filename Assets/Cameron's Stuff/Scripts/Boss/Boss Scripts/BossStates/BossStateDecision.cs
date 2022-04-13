@@ -13,7 +13,7 @@ public class BossStateDecision : BossState
     private List<Boss.State> attackPool = new List<Boss.State>();
     private Boss.State previousAttack;
 
-    private Vector3 playerPosition;
+    private Vector3 playerCenter;
     private float playerDistance;
 
     [Header("Attack Ranges")]
@@ -28,8 +28,7 @@ public class BossStateDecision : BossState
     [Header("Decision Delay Settings")]
     [SerializeField] private float maxDecisionTime;
     [SerializeField] private float minDecisionTime;
-
-
+        
     private void Awake()
     {        
         base.Awake();
@@ -65,7 +64,10 @@ public class BossStateDecision : BossState
     public override void OnEnter()
     {
         base.OnEnter();
-        playerPosition = player.transform.position;
+
+        playerCenter = player.transform.position;
+        playerCenter.y += 5f;
+
         playerDistance = (player.transform.position - transform.position).magnitude;
 
         float rand = UnityEngine.Random.Range(minDecisionTime, maxDecisionTime);
@@ -115,6 +117,7 @@ public class BossStateDecision : BossState
         {
             attackPool.Clear();
             attackPool.Add(Boss.State.Uproot);
+            print("Here i am");
             return true;
         }
 
@@ -162,7 +165,11 @@ public class BossStateDecision : BossState
 
         if (attacks.Contains(Boss.State.Scream)) attackDictionary.Add(Boss.State.Scream, () => playerDistance < screamInRange);
 
-        if (attacks.Contains(Boss.State.Uproot)) attackDictionary.Add(Boss.State.Uproot, () => uprootBox.bounds.Contains(playerPosition));
+        if (attacks.Contains(Boss.State.Uproot)) attackDictionary.Add(Boss.State.Uproot, () => {
+            Bounds col = FindObjectOfType<Player>().GetComponent<CharacterController>().bounds;
+            return uprootBox.bounds.Intersects(col);
+            }
+        );
     }
 
 

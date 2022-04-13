@@ -46464,7 +46464,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 1.1666666
-    functionName: ActivateEvent
+    functionName: ActivateAction
     data: ExitState
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
