@@ -26,7 +26,7 @@ public class BossStatePillarAttack : AttackState
     protected int spawnedPillars;
 
     public override void OnEnter()
-    {
+    {        
         base.OnEnter();
         spawnedPillars = 0;
     }//End OnEnter

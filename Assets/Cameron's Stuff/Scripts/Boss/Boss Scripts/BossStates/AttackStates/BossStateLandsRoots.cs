@@ -2,8 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[DisallowMultipleComponent]
 public class BossStateLandsRoots : BossStatePillarAttack
 {
+    #region Sounds
+    [Header("Sounds")]
+    [SerializeField] private AK.Wwise.Event windUp;
+    [SerializeField] private AK.Wwise.Event handInGround;
+    [SerializeField] private AK.Wwise.Event windDown;
+    #endregion
+
+    #region Anim Event Params
+    [Space(10f)]
+    [SerializeField] [ReadOnlyProperty] private string[] AnimationEventParameters = new string[] { "StartPillars", "ExitState" };
+    #endregion
+
     private Vector3 previousPosition;
     private Vector3 playerVelocity;
 
@@ -12,6 +25,7 @@ public class BossStateLandsRoots : BossStatePillarAttack
         base.Start();
         previousPosition = player.transform.position;
         playerVelocity = Vector3.zero;
+        InitEvents();
     }//End Start
 
 
@@ -27,8 +41,10 @@ public class BossStateLandsRoots : BossStatePillarAttack
     {
         base.OnEnter();
         previousPosition = player.transform.position;
-        //Start the attack
-        StartCoroutine(DoAttack());
+        windUp.Post(gameObject);        
+
+        boss.animator.SetTrigger("DoLandsRoots");
+        
     }//End OnEnter
 
 
@@ -42,8 +58,6 @@ public class BossStateLandsRoots : BossStatePillarAttack
 
     IEnumerator DoAttack()
     {
-        //Wait for the initial delay
-        yield return new WaitForSeconds(windUpTime);
         //Spawn a new pillar if we're under the cound
         while (spawnedPillars < pillarCount)
         {
@@ -51,8 +65,28 @@ public class BossStateLandsRoots : BossStatePillarAttack
             SpawnPillar(predictedPosition);
             yield return new WaitForSeconds(delayBetweenPillars);
         }
-        //Change state back to idle
-        boss.ChangeState(Boss.State.Idle);
+        boss.animator.SetTrigger("DoEndLandsRoots");
+        windDown.Post(gameObject);
     }//End DoAttack
 
+    [ContextMenu("Fill Default Values")]
+    public override void SetDefaultValues()
+    {
+        pillarCount = 5;
+        windUpTime = 1f;
+        delayBetweenPillars = 0.8f;
+        pillarWaitTime = 0.8f;
+        pillarAscendSpeed = 20f;
+        pillarDescendSpeed = 10f;
+        pillarStayTime = 0.5f;
+        startYPos = 5f;
+        finalYPos = 9f;
+    }
+
+    private void InitEvents()
+    {
+        //Animation event
+        eventResponder.AddAction("StartPillars", () => { StartCoroutine(DoAttack()); });
+        eventResponder.AddAction("ExitState", boss.ReturnToMainState);
+    }
 }
