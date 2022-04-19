@@ -48,10 +48,6 @@ public class BossStateUproot : BossStatePillarAttack
         while (timer < windUpTime)
         {
             timer += Time.deltaTime;
-
-            Vector3 playerXZ = player.transform.position;
-            playerXZ.y = transform.position.y;
-
             Vector3 targetDir = player.transform.position - transform.position;
             Quaternion targetRot = Quaternion.LookRotation(targetDir, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRot, 360f * Time.deltaTime);
