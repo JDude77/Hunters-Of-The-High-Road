@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6c27575bb18f6f49be55ff13153237f, type: 3}
   m_Name: BC4E901C-BA52-4B01-A2C2-9968EE0F761B
   m_EditorClassIdentifier: 
-  objectName: Play_Rifle_Blend_Container
-  id: 1620154736
+  objectName: Play_Rifle_Shoot
+  id: 1967888440
   guid: BC4E901C-BA52-4B01-A2C2-9968EE0F761B
