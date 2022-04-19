@@ -456,7 +456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e88bef4af422b7448d2bc576fc9ba63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attacks: 0300000004000000020000000700000001000000
+  attacks: 03000000040000000200000007000000
   priorityAttacksInOrder: 
   chargeInRange: 30
   landsRootsInRange: 30
@@ -559,6 +559,13 @@ MonoBehaviour:
   windDownTime: 0
   consecutiveWindUpTime: 0.8
   maxChargeSpeed: 20
+  accelerateTime: 0
+  accelerationCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   totalConsecutiveCharges: 3
   swipeRadius: 2
   windUpSound:
@@ -662,7 +669,6 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
-  stompAnimation: 
 --- !u!114 &6365468786078111800
 MonoBehaviour:
   m_ObjectHideFlags: 0
