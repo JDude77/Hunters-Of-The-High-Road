@@ -345,7 +345,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: f29db30d3de19b4ab8585db4572c3287
     GuidInternal: 
-    m_lastTime: -8585513080611978045
+    m_lastTime: -8585512357943003904
     List:
     - name: Boss
       guid: 98b33e5d7b53c94e8d716db6ebe49152
@@ -389,6 +389,20 @@ MonoBehaviour:
         ObjectType: 7
         guid: 6d0ed16015fced4d9bb770595284826e
       Path: SoundBanks\Default Work Unit\Player
+    - name: UI
+      guid: 6edccbeb54b5b54089a2dc58fdaf2be4
+      id: 1551306167
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f29db30d3de19b4ab8585db4572c3287
+      - ElementName: UI
+        ObjectType: 7
+        guid: 6edccbeb54b5b54089a2dc58fdaf2be4
+      Path: SoundBanks\Default Work Unit\UI
     - name: Weapons
       guid: 2307fe3c5bf4164fa345e8a403948a93
       id: 1467963052
@@ -415,7 +429,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: fb0dbcfe02547c49afbe650cce855735
     GuidInternal: 
-    m_lastTime: -8585513009883931359
+    m_lastTime: -8585512359138637042
     List:
     - name: Attacks sounds
       guid: 1c4bc2c32d9f7e4fa4cb7d34a0bde9f0
@@ -514,6 +528,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_camp_fire
+      guid: 0d2c2da956c3364599d4a2ef91e5ee10
+      id: 1293037340
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: environment
+        ObjectType: 4
+        guid: 4dfa3e976c15d449957f82f440590fe2
+      - ElementName: Play_camp_fire
+        ObjectType: 3
+        guid: 0d2c2da956c3364599d4a2ef91e5ee10
+      Path: Events\Default Work Unit\environment\Play_camp_fire
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_environment_grave
       guid: 3c18ac02ae9e8f498be0bd117b96be72
       id: 4166756183
@@ -531,7 +565,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: 3c18ac02ae9e8f498be0bd117b96be72
       Path: Events\Default Work Unit\environment\Play_environment_grave
-      maxAttenuation: 40
+      maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
     - name: Play_environment_main_forest
@@ -551,7 +585,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: 97810a694cbb2b43956351c4067e92ff
       Path: Events\Default Work Unit\environment\Play_environment_main_forest
-      maxAttenuation: 150
+      maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
     - name: Play_Flys_buzzing
@@ -571,7 +605,27 @@ MonoBehaviour:
         ObjectType: 3
         guid: ea752970bd705d43b419188980cd6ff4
       Path: Events\Default Work Unit\environment\Play_Flys_buzzing
-      maxAttenuation: 3
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_gate_open
+      guid: 523b16f872035f44967915e5a08ce93d
+      id: 4089264814
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: environment
+        ObjectType: 4
+        guid: 4dfa3e976c15d449957f82f440590fe2
+      - ElementName: Play_gate_open
+        ObjectType: 3
+        guid: 523b16f872035f44967915e5a08ce93d
+      Path: Events\Default Work Unit\environment\Play_gate_open
+      maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
     - name: Play_Glass_Bottle_Brake
@@ -654,6 +708,26 @@ MonoBehaviour:
         ObjectType: 3
         guid: 944e755a694ebc459252fe12d2a45f73
       Path: Events\Default Work Unit\environment\Play_Padlock_Brake
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_page_turn
+      guid: cc9f275ac1db3a4b81fdfb1b7a1f9e5b
+      id: 786024383
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: UI
+        ObjectType: 4
+        guid: 8934a8bef04994429041dcea1f450336
+      - ElementName: Play_page_turn
+        ObjectType: 3
+        guid: cc9f275ac1db3a4b81fdfb1b7a1f9e5b
+      Path: Events\Default Work Unit\UI\Play_page_turn
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -757,7 +831,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: de5554c6bec3da498fc734efaa9229bc
       Path: Events\Default Work Unit\environment\Play_sfx_environment_fire_tourch_01
-      maxAttenuation: 3
+      maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
     - name: Play_sfx_environment_fire_tourch_02
@@ -777,7 +851,67 @@ MonoBehaviour:
         ObjectType: 3
         guid: 0b432d030f39074da871745deaa9fc3d
       Path: Events\Default Work Unit\environment\Play_sfx_environment_fire_tourch_02
-      maxAttenuation: 3
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_sfx_ui_back_01
+      guid: b523c04aaed9c2439a6bea3cffbcba34
+      id: 1198841816
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: UI
+        ObjectType: 4
+        guid: 8934a8bef04994429041dcea1f450336
+      - ElementName: Play_sfx_ui_back_01
+        ObjectType: 3
+        guid: b523c04aaed9c2439a6bea3cffbcba34
+      Path: Events\Default Work Unit\UI\Play_sfx_ui_back_01
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_sfx_ui_move_01
+      guid: e6f558e9bc9ae6418e5bdaa25dda7939
+      id: 3633800886
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: UI
+        ObjectType: 4
+        guid: 8934a8bef04994429041dcea1f450336
+      - ElementName: Play_sfx_ui_move_01
+        ObjectType: 3
+        guid: e6f558e9bc9ae6418e5bdaa25dda7939
+      Path: Events\Default Work Unit\UI\Play_sfx_ui_move_01
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_sfx_ui_select_01
+      guid: b3bd3af84112ef4db86119c7cac0aada
+      id: 631659255
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: UI
+        ObjectType: 4
+        guid: 8934a8bef04994429041dcea1f450336
+      - ElementName: Play_sfx_ui_select_01
+        ObjectType: 3
+        guid: b3bd3af84112ef4db86119c7cac0aada
+      Path: Events\Default Work Unit\UI\Play_sfx_ui_select_01
+      maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
     - name: Play_sword_full
@@ -877,6 +1011,23 @@ MonoBehaviour:
         ObjectType: 3
         guid: 028bf474f607fc42a14fa62b6bd9ca93
       Path: Events\Default Work Unit\boss sounds\Attacks sounds\swipe_attack
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: UI
+      guid: 8934a8bef04994429041dcea1f450336
+      id: 1551306167
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: UI
+        ObjectType: 4
+        guid: 8934a8bef04994429041dcea1f450336
+      Path: Events\Default Work Unit\UI
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -1263,7 +1414,7 @@ MonoBehaviour:
     m_lastTime: -8585548625492553666
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 06000000070000000f00000010000000
+  ExpandedWaapiItemIds: 0600000007000000080000000a0000000f00000010000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0
