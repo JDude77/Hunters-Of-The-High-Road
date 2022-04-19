@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6c27575bb18f6f49be55ff13153237f, type: 3}
-  m_Name: BC4E901C-BA52-4B01-A2C2-9968EE0F761B
+  m_Script: {fileID: 11500000, guid: 6c0813e06d601e54e97c8b75a709ec3d, type: 3}
+  m_Name: 5D3EB398-537B-4EC9-8D71-6DB6EBE49152
   m_EditorClassIdentifier: 
-  objectName: Play_Rifle_Shoot
-  id: 1967888440
-  guid: BC4E901C-BA52-4B01-A2C2-9968EE0F761B
+  objectName: Boss
+  id: 1560169506
+  guid: 5D3EB398-537B-4EC9-8D71-6DB6EBE49152

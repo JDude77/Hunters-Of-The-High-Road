@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6c27575bb18f6f49be55ff13153237f, type: 3}
   m_Name: 2C9B4E03-8BD5-4D18-AACB-209FAE502C16
   m_EditorClassIdentifier: 
-  objectName: Play_sward_full
-  id: 2602512053
+  objectName: Play_sword_full
+  id: 858025235
   guid: 2C9B4E03-8BD5-4D18-AACB-209FAE502C16
