@@ -101,8 +101,6 @@ public class BossStateBurrow : AttackState
 
         yield return new WaitForSeconds(digUpDelay);
 
-       
-
         //Reset the boss position
         transform.position = new Vector3(particlePos.x, goundedYPosition, particlePos.z);
 

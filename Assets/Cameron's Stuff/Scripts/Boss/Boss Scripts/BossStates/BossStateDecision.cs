@@ -11,6 +11,9 @@ public class BossStateDecision : BossState
     [SerializeField] private List<Boss.State> attacks;
     private Dictionary<Boss.State, Func<bool>> attackDictionary = new Dictionary<Boss.State, Func<bool>>();
     private List<Boss.State> attackPool = new List<Boss.State>();
+
+    [HideInInspector] public List<Boss.State> priorityAttacksInOrder = new List<Boss.State>();
+
     private Boss.State previousAttack;
 
     private Vector3 playerCenter;
@@ -59,6 +62,10 @@ public class BossStateDecision : BossState
             uprootBox.center = new Vector3(0f, 1.5f, up.rangeEnd / 2f + up.rangeStart);
             uprootBox.size = new Vector3(3f, 3f, up.rangeEnd);
         }
+
+        //Priority in this order
+        priorityAttacksInOrder.Add(Boss.State.Scream);
+        priorityAttacksInOrder.Add(Boss.State.Uproot);
     }
 
     public override void OnEnter()
@@ -71,12 +78,15 @@ public class BossStateDecision : BossState
         playerDistance = (player.transform.position - transform.position).magnitude;
 
         float rand = UnityEngine.Random.Range(minDecisionTime, maxDecisionTime);
+
+        boss.animator.SetTrigger("DoReturnToIdle");
+
         StartCoroutine(wait(rand));
     }
 
     public override void OnExit()
     {
-        base.OnExit();
+        base.OnExit();        
     }
 
     Boss.State ChooseState()
@@ -106,21 +116,18 @@ public class BossStateDecision : BossState
             }//End if
         }//End Foreach
 
-        if (attackPool.Contains(Boss.State.Scream))
+        //If there is an available attack that is a priority
+        foreach (Boss.State attack in priorityAttacksInOrder)
         {
-            attackPool.Clear();
-            attackPool.Add(Boss.State.Scream);
-            return true;
+            if (attackPool.Contains(attack))
+            {
+                attackPool.Clear();
+                attackPool.Add(attack);
+                return true;
+            }
         }
 
-        if (attackPool.Contains(Boss.State.Uproot))
-        {
-            attackPool.Clear();
-            attackPool.Add(Boss.State.Uproot);
-            print("Here i am");
-            return true;
-        }
-
+        //If there is at least 1 attack in the pool that isn't the previous attack
         if (attackPool.Count > 0)
             return true;
 

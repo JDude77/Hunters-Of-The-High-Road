@@ -456,7 +456,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e88bef4af422b7448d2bc576fc9ba63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attacks: 03000000040000000200000007000000
+  attacks: 0300000004000000020000000700000001000000
+  priorityAttacksInOrder: 
   chargeInRange: 30
   landsRootsInRange: 30
   burrowInRange: 30
@@ -493,7 +494,6 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
   stunnedTime: 0
-  stunnedAnimation: 
 --- !u!114 &6365468786078111804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -549,7 +549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomizeDamage: 0
   maxDamage: 0
-  minDamage: 0
+  minDamage: 10
   checkForStunEvent: 0
   inRangeDistance: 13
   rotateSpeed: 2
@@ -558,7 +558,7 @@ MonoBehaviour:
   windUpTime: 1
   windDownTime: 0
   consecutiveWindUpTime: 0.8
-  chargeSpeed: 20
+  maxChargeSpeed: 20
   totalConsecutiveCharges: 3
   swipeRadius: 2
   windUpSound:
@@ -601,7 +601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomizeDamage: 0
   maxDamage: 0
-  minDamage: 0
+  minDamage: 10
   checkForStunEvent: 0
   pillar: {fileID: 868277590454778659, guid: 1e14d765cacb20b4eaa34fb1b25858a5, type: 3}
   pillarCount: 5

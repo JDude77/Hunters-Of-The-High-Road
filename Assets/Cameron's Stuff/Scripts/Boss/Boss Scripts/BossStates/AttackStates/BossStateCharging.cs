@@ -12,13 +12,20 @@ public class BossStateCharging : AttackState
     [SerializeField] private float rotateSpeed;
     [Tooltip("An offset from the charge's end point so that the boss does not go the full distance. Preferably set to half the radius of the swipe attack circle")]
     [SerializeField] private float stopDistance;
-    [SerializeField]  public float runSpeed;
+    [SerializeField] public float runSpeed;
     [Space(5)]
     [SerializeField] private float windUpTime;
     [SerializeField] private float windDownTime;
     [SerializeField] private float consecutiveWindUpTime;
     [Space(5)] 
-    [SerializeField] private float chargeSpeed;
+    [SerializeField] private float maxChargeSpeed;
+
+    [SerializeField] private float accelerateTime;
+    private float speedMultiplier = 0;
+    private float accelerateTimer;
+
+    [SerializeField] private AnimationCurve accelerationCurve;
+
     [SerializeField] private int totalConsecutiveCharges;
     [Space(5)]
     [SerializeField] private float swipeRadius;
@@ -58,6 +65,7 @@ public class BossStateCharging : AttackState
     {
         base.Start();     
         InitEvents();
+
     }//End Start
 
     public override void OnEnter()
@@ -78,12 +86,19 @@ public class BossStateCharging : AttackState
         base.Run();
         if(state == SubState.GetInRange || state == SubState.WindUp)
         {
-            Vector3 targetDir = player.transform.position - transform.position;
-            //targetDir.y = transform.position.y;
+            Vector3 playerXZ = player.transform.position;
+            playerXZ.y = transform.position.y;
+
+            Vector3 targetDir = playerXZ - transform.position;
 
             Quaternion targetRot = Quaternion.LookRotation(targetDir, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRot, 360f * Time.deltaTime);
         }
+    }//End Run
+
+    public override void FixedRun()
+    {
+        base.FixedRun();
     }
 
     //Stops the current coroutine if one is running before starting the new one
@@ -101,9 +116,10 @@ public class BossStateCharging : AttackState
     //Moves the boss closer to the player
     IEnumerator GetInRange()
     {
+        print("GIR");
         state = SubState.GetInRange;
+        boss.animator.SetTrigger("DoRun");
         Vector3 distanceToPlayer = player.transform.position - transform.position;
-        boss.animator.SetTrigger("DoRunWindUp");        
 
         //While we're out of range
         while (distanceToPlayer.magnitude >= inRangeDistance)
@@ -121,18 +137,21 @@ public class BossStateCharging : AttackState
         //Start the wind up
         ChangeCoroutineTo(WindUp(windUpTime));
 
-    } //End GetInRange
+    }//End GetInRange
 
     //Selects the position to charge to and waits for X seconds
     IEnumerator WindUp(float windTime)
     {
+        print("WindUp");
         state = SubState.WindUp;
+
+        boss.animator.SetTrigger("DoReturnToIdle");
+
         //Play the windup sound
-        windUpSound.Post(gameObject);      
+        windUpSound.Post(gameObject);
 
         yield return new WaitForSeconds(windTime);
 
-        boss.animator.SetTrigger("DoRunWindUp");
         //Set the point that the boss should charge to
         chargePoint = player.transform.position;
         chargePoint.y = transform.position.y;
@@ -144,8 +163,13 @@ public class BossStateCharging : AttackState
     IEnumerator Charge()
     {
         state = SubState.Charge;
-        boss.animator.SetTrigger("DoRunWindUp");
-        print("Charging");
+
+        boss.animator.SetTrigger("DoRun");
+
+        accelerateTimer = 0f;
+        speedMultiplier = accelerationCurve.Evaluate(0.0f);
+
+        print("Charge");
         //Convert the stopping distance to a percentage of the distance to cover
         float chargeDistanceOffsetPercent = stopDistance / (chargePoint - transform.position).magnitude;
         //Reset the charge point to account for the stopping distance
@@ -154,8 +178,15 @@ public class BossStateCharging : AttackState
         //Check if we're not at the desired position
         while(transform.position != chargePoint)
         {
+            //if (speedMultiplier < 1f)
+            //{
+            //    accelerateTimer += Time.deltaTime * accelerateTime;
+            //    speedMultiplier = accelerationCurve.Evaluate(accelerateTimer / accelerateTime);
+            //    boss.animator.speed = speedMultiplier;
+            //}
+
             //Charge to the charge point
-            transform.position = Vector3.MoveTowards(transform.position, chargePoint, chargeSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, chargePoint, maxChargeSpeed * Time.deltaTime);// * speedMultiplier);
             yield return null;
         }
 
@@ -187,10 +218,9 @@ public class BossStateCharging : AttackState
         }
         else
         {
-            boss.animator.SetTrigger("DoExitCharge");
             boss.ReturnToMainState();
         }
-    }
+    }//End CheckChargeCondition
 
     public void DoSphereCast()
     {
@@ -206,7 +236,7 @@ public class BossStateCharging : AttackState
             BossEventsHandler.current.HitPlayer(GetDamageValue());
             chargesCompleted = totalConsecutiveCharges;
         }
-    }
+    }//End DoSphereCast
 
     private void OnDrawGizmos()
     {
@@ -224,7 +254,7 @@ public class BossStateCharging : AttackState
         windUpTime = 1f;
         windDownTime = 1f;
         consecutiveWindUpTime = 0.8f;
-        chargeSpeed = 30f;
+        maxChargeSpeed = 30f;
         totalConsecutiveCharges = 3;
         swipeRadius = 2f;
     }//End SetDefaultValues
