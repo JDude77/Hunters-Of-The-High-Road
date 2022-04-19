@@ -41,8 +41,10 @@ public class BossStateLandsRoots : BossStatePillarAttack
     {
         base.OnEnter();
         previousPosition = player.transform.position;
-        windUp.Post(gameObject);
+        windUp.Post(gameObject);        
+
         boss.animator.SetTrigger("DoLandsRoots");
+        
     }//End OnEnter
 
 

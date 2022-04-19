@@ -10,7 +10,6 @@ public class BossStateUproot : BossStatePillarAttack
     [SerializeField] private float attackStartOffset;
 
     [SerializeField] private AK.Wwise.Event stomp;
-    [SerializeField] private string stompAnimation;
 
     [HideInInspector] public float rangeEnd { 
         get { 
@@ -34,16 +33,16 @@ public class BossStateUproot : BossStatePillarAttack
     public override void OnEnter()
     {
         spawnedPillars = 0;
-        StartCoroutine(DoAttack());
+        StartCoroutine(StartWindUp());
     }
 
     public override void OnExit()
     {
         base.OnExit();
-        StopCoroutine(DoAttack()); 
+        StopAllCoroutines();
     }
 
-    IEnumerator DoAttack()
+    IEnumerator StartWindUp()
     {
         float timer = 0.0f;
         while (timer < windUpTime)
@@ -56,8 +55,12 @@ public class BossStateUproot : BossStatePillarAttack
         }
 
         startPosition = transform.position + attackStartOffset * transform.forward;
+        boss.animator.SetTrigger("DoStomp");        
+    }
 
-        while(spawnedPillars < pillarCount)
+    IEnumerator DoAttack()
+    {
+        while (spawnedPillars < pillarCount)
         {
             Vector3 position = startPosition + transform.forward * (attackDistance * spawnedPillars / pillarCount);
 
@@ -78,6 +81,7 @@ public class BossStateUproot : BossStatePillarAttack
 
     private void InitEvents()
     {
-        eventResponder.AddAnimation("Stomp", stompAnimation, false);
+        eventResponder.AddSoundEffect("StompSound", stomp, gameObject);
+        eventResponder.AddAction("DoAttack", () => StartCoroutine(DoAttack()));
     }
 }
