@@ -29016,14 +29016,9 @@ PrefabInstance:
     - target: {fileID: 3545117242526740697, guid: 739eab9a1c7a4064d89cafd0e8957345, type: 3}
       propertyPath: particleSpawn
       value: 
-      objectReference: {fileID: 3545117241225504833}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 739eab9a1c7a4064d89cafd0e8957345, type: 3}
---- !u!4 &3545117241225504833 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6833117180791220486, guid: 739eab9a1c7a4064d89cafd0e8957345, type: 3}
-  m_PrefabInstance: {fileID: 3545117241225504832}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5709596465328027095
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30070,6 +30065,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -6.18667
       objectReference: {fileID: 0}
+    - target: {fileID: 6365468786078111802, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
+      propertyPath: addRandomWaitTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365468786078111802, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
+      propertyPath: delayBetweenPillars
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365468786078111802, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
+      propertyPath: randomWaitTimeRange
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6365468786078111803, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
       propertyPath: accelerateTime
       value: 0.5
@@ -30260,11 +30267,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6365468786078111807, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
       propertyPath: attacks.Array.data[0]
-      value: 7
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6365468786078111807, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
       propertyPath: attacks.Array.data[1]
-      value: 7
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6365468786078111807, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
       propertyPath: attacks.Array.data[2]
