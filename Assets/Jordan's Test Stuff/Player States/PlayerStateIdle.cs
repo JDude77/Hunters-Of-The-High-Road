@@ -22,6 +22,8 @@ public class PlayerStateIdle : PlayerState
     public override void UpdateState()
     {
         base.UpdateState();
+
+        playerReference.RegenerateFaith();
     }//End UpdateState
 
     protected override void UpdateStateInputs()
