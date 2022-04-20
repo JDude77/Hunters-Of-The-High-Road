@@ -12,6 +12,11 @@ public class Player : Character
     [SerializeField]
     protected float maxFaith = 10.0f;
 
+    [SerializeField]
+    [Tooltip("This is multiplied by Time.deltaTime in-script, so this is the regeneration rate per second.")]
+    [Range(0.0f, 5.0f)]
+    protected float faithRegenerationRate = 0.05f;
+
     public void SetFaith(float faith)
     {
         this.faith = faith;
@@ -35,10 +40,23 @@ public class Player : Character
         SetFaith(this.faith + Mathf.Abs(faith));
     }//End IncreaseFaithByAmount
 
+    //Shortcut function, equivalent to IncreaseFaithByAmount(faithRegenerationRate * delta time)
+    public void RegenerateFaith()
+    {
+        IncreaseFaithByAmount(faithRegenerationRate * Time.deltaTime);
+    }//End RegenerateFaith
+
     public float GetFaith()
     {
         return faith;
     }//End GetFaith
+
+    //Shortcut function, equivalent to "SetHealth(faith) THEN SetFaith(0)"
+    public void ActivateFaith()
+    {
+        SetHealth(faith);
+        DrainAllFaith();
+    }//End ActivateFaith
 
     //Shortcut function, equivalent to "SetFaith(maxFaith)"
     [ContextMenu("Restore Faith Fully", false, 1)]

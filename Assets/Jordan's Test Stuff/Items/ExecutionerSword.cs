@@ -52,6 +52,7 @@ public class ExecutionerSword : Weapon
                 case "Enemy":
                 case "Boss":
                     PlayerEventsHandler.current.HitEnemy(objectHit.gameObject, damage);
+                    playerReference.ActivateFaith();
                     break;
             }//End switch
         }//End foreach
