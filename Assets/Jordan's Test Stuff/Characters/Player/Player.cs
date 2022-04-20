@@ -51,10 +51,10 @@ public class Player : Character
         return faith;
     }//End GetFaith
 
-    //Shortcut function, equivalent to "SetHealth(faith) THEN SetFaith(0)"
+    //Shortcut function, equivalent to "IncreaseHealthByAmount(faith) THEN SetFaith(0)"
     public void ActivateFaith()
     {
-        SetHealth(faith);
+        IncreaseHealthByAmount(faith);
         DrainAllFaith();
     }//End ActivateFaith
 
