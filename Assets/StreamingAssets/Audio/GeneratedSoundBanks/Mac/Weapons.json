@@ -5,25 +5,25 @@
   "SchemaVersion": "12",
   "SoundbankVersion": "140",
   "RootPaths": {
-   "ProjectRoot": "D:\\unity Projects\\Hunters-Of-The-High-Road\\Assets\\Hunters-Of-The-High-Road_WwiseProject\\",
-   "SourceFilesRoot": "D:\\unity Projects\\Hunters-Of-The-High-Road\\Assets\\Hunters-Of-The-High-Road_WwiseProject\\.cache\\Mac\\",
-   "SoundBanksRoot": "D:\\unity Projects\\Hunters-Of-The-High-Road\\Assets\\Hunters-Of-The-High-Road_WwiseProject\\GeneratedSoundBanks\\Mac\\",
+   "ProjectRoot": "D:\\unity Projects\\Hunters-Of-The-High-Road_WwiseProject\\",
+   "SourceFilesRoot": "D:\\unity Projects\\Hunters-Of-The-High-Road_WwiseProject\\.cache\\Mac\\",
+   "SoundBanksRoot": "D:\\unity Projects\\Hunters-Of-The-High-Road_WwiseProject\\GeneratedSoundBanks\\Mac\\",
    "ExternalSourcesInputFile": "",
-   "ExternalSourcesOutputRoot": "D:\\unity Projects\\Hunters-Of-The-High-Road\\Assets\\Hunters-Of-The-High-Road_WwiseProject\\GeneratedSoundBanks\\Mac"
+   "ExternalSourcesOutputRoot": "D:\\unity Projects\\Hunters-Of-The-High-Road_WwiseProject\\GeneratedSoundBanks\\Mac"
   },
   "SoundBanks": [
    {
     "Id": "1467963052",
     "Language": "SFX",
-    "Hash": "3186828977",
+    "Hash": "1123557863",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Weapons",
     "ShortName": "Weapons",
     "Path": "Weapons.bnk",
     "IncludedEvents": [
      {
-      "Id": "1620154736",
-      "Name": "Play_Rifle_Blend_Container",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_Rifle_Blend_Container",
+      "Id": "1967888440",
+      "Name": "Play_Rifle_Shoot",
+      "ObjectPath": "\\Events\\Default Work Unit\\Player weapons\\Play_Rifle_Shoot",
       "IncludedMemoryFiles": [
        {
         "Id": "153752956",
@@ -64,9 +64,9 @@
       ]
      },
      {
-      "Id": "2602512053",
-      "Name": "Play_sward_full",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_sward_full",
+      "Id": "858025235",
+      "Name": "Play_sword_full",
+      "ObjectPath": "\\Events\\Default Work Unit\\Player weapons\\Play_sword_full",
       "IncludedMemoryFiles": [
        {
         "Id": "243304111",
