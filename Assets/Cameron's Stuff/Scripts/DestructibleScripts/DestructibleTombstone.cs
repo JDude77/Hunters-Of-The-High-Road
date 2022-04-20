@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestructibleTombstone : MonoBehaviour
+public class DestructibleTombstone : MonoBehaviour, IDestructible
 {
     [SerializeField]
     private GameObject DestroyedVersion;
+    [SerializeField] 
     private GameObject normalVersion;
 
     // Start is called before the first frame update
@@ -26,4 +27,13 @@ public class DestructibleTombstone : MonoBehaviour
             FindObjectOfType<PlayerEventsHandler>().OnHitGravestone -= DestroyTombstone;
         }//End if
     }//End DestroyTombstone
+
+    public void DestroyObject()
+    {
+        DestroyedVersion.transform.parent = null;
+        DestroyedVersion.SetActive(true);
+        normalVersion.SetActive(false);
+        //TODO: remove this once full transition to interface is done
+        FindObjectOfType<PlayerEventsHandler>().OnHitGravestone -= DestroyTombstone;
+    }    
 }

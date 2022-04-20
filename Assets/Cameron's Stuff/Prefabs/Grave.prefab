@@ -60,6 +60,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DestroyedVersion: {fileID: 3545117241859719177}
+  normalVersion: {fileID: 0}
+  particles: {fileID: 8832065540742811821, guid: 6d8166a3e7c5ead4983232da2d4534af, type: 3}
+  particleSpawn: {fileID: 0}
 --- !u!1001 &4243155334105585835
 PrefabInstance:
   m_ObjectHideFlags: 0
