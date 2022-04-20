@@ -43,6 +43,8 @@ public class PlayerStateRifleAimedShot : PlayerState
     {
         base.UpdateState();
 
+        playerReference.RegenerateFaith();
+
         MakePlayerLookAtAimLocation();
         rifle.UpdateLinePosition();
     }//End UpdateState
