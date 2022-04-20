@@ -91,6 +91,20 @@ public class Player : Character
     private List<Item> items;
     #endregion
 
+    #region Shortcut Movement Functions
+    [ContextMenu("Move Player To Boss Arena", false)]
+    private void MoveToBossArena()
+    {
+        transform.position = new Vector3(20.0f, 8.0f, 145.0f);
+    }//End MoveToBossArena
+
+    [ContextMenu("Move Player To Start Location", false)]
+    private void MoveToStartLocation()
+    {
+        transform.position = new Vector3(7.45f, 8.0f, -1.9f);
+    }//End MoveToStartLocation
+    #endregion
+
     protected override void Start()
     {
         //Sets the health and stamina to max
