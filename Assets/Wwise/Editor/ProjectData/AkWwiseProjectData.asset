@@ -545,7 +545,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: 0d2c2da956c3364599d4a2ef91e5ee10
       Path: Events\Default Work Unit\environment\Play_camp_fire
-      maxAttenuation: 3
+      maxAttenuation: 10
       maxDuration: -1
       minDuration: -1
     - name: Play_environment_grave
@@ -605,7 +605,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: ea752970bd705d43b419188980cd6ff4
       Path: Events\Default Work Unit\environment\Play_Flys_buzzing
-      maxAttenuation: 3
+      maxAttenuation: 6
       maxDuration: -1
       minDuration: -1
     - name: Play_gate_open
@@ -831,7 +831,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: de5554c6bec3da498fc734efaa9229bc
       Path: Events\Default Work Unit\environment\Play_sfx_environment_fire_tourch_01
-      maxAttenuation: 3
+      maxAttenuation: 6
       maxDuration: -1
       minDuration: -1
     - name: Play_sfx_environment_fire_tourch_02
@@ -851,7 +851,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: 0b432d030f39074da871745deaa9fc3d
       Path: Events\Default Work Unit\environment\Play_sfx_environment_fire_tourch_02
-      maxAttenuation: 3
+      maxAttenuation: 6
       maxDuration: -1
       minDuration: -1
     - name: Play_sfx_ui_back_01
@@ -1413,9 +1413,9 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8585548625492553666
     List: []
-  ExpandedFileSystemItemIds: 0600000007000000090000000f000000100000002e0000002f000000
-  ExpandedWaapiItemIds: 0600000007000000090000000f000000100000002e0000002f000000
+  ExpandedFileSystemItemIds: 0600000007000000080000000a0000000f000000100000002e0000002f000000
+  ExpandedWaapiItemIds: 060000000700000008000000090000000a0000000b0000000c0000000f000000100000001600000017000000190000002e0000002f000000
   AutoSyncSelection: 1
   autoPopulateEnabled: 1
-  currentDataSource: 1
+  currentDataSource: 0
   CurrentPluginConfig: 
