@@ -5,6 +5,9 @@ using UnityEngine;
 public class DestructibleTombstone : MonoBehaviour
 {
     [SerializeField]
+    private GameObject[] graveVariants;
+
+    [SerializeField]
     private GameObject DestroyedVersion;
     private GameObject normalVersion;
 
@@ -12,7 +15,16 @@ public class DestructibleTombstone : MonoBehaviour
     void Start()
     {
         FindObjectOfType<PlayerEventsHandler>().OnHitGravestone += DestroyTombstone;
-        normalVersion = gameObject;
+
+        foreach (var grave in graveVariants)
+        {
+            grave.SetActive(false);
+        }
+
+        int ranNum = Random.Range(0, graveVariants.Length);
+        graveVariants[ranNum].SetActive(true);
+
+        normalVersion = graveVariants[ranNum];
     }
 
     public void DestroyTombstone(GameObject instance)
