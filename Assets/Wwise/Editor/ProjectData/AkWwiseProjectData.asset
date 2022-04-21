@@ -345,7 +345,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: f29db30d3de19b4ab8585db4572c3287
     GuidInternal: 
-    m_lastTime: -8585512357943003904
+    m_lastTime: -8585510558549488755
     List:
     - name: Boss
       guid: 98b33e5d7b53c94e8d716db6ebe49152
@@ -429,7 +429,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: fb0dbcfe02547c49afbe650cce855735
     GuidInternal: 
-    m_lastTime: -8585512359138637042
+    m_lastTime: -8585510558549638512
     List:
     - name: Attacks sounds
       guid: 1c4bc2c32d9f7e4fa4cb7d34a0bde9f0
@@ -568,26 +568,6 @@ MonoBehaviour:
       maxAttenuation: 40
       maxDuration: -1
       minDuration: -1
-    - name: Play_environment_main_forest
-      guid: 97810a694cbb2b43956351c4067e92ff
-      id: 2929614753
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: fb0dbcfe02547c49afbe650cce855735
-      - ElementName: environment
-        ObjectType: 4
-        guid: 4dfa3e976c15d449957f82f440590fe2
-      - ElementName: Play_environment_main_forest
-        ObjectType: 3
-        guid: 97810a694cbb2b43956351c4067e92ff
-      Path: Events\Default Work Unit\environment\Play_environment_main_forest
-      maxAttenuation: 150
-      maxDuration: -1
-      minDuration: -1
     - name: Play_Flys_buzzing
       guid: ea752970bd705d43b419188980cd6ff4
       id: 3450565664
@@ -691,6 +671,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 3.359728
       minDuration: 2.050301
+    - name: Play_night_forrest
+      guid: bbc4697dc2469c4d9d51add72b7748a0
+      id: 3778516394
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: environment
+        ObjectType: 4
+        guid: 4dfa3e976c15d449957f82f440590fe2
+      - ElementName: Play_night_forrest
+        ObjectType: 3
+        guid: bbc4697dc2469c4d9d51add72b7748a0
+      Path: Events\Default Work Unit\environment\Play_night_forrest
+      maxAttenuation: 150
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Padlock_Brake
       guid: 944e755a694ebc459252fe12d2a45f73
       id: 3390075432
@@ -1413,8 +1413,8 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8585548625492553666
     List: []
-  ExpandedFileSystemItemIds: 02000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000f000000100000001600000017000000190000002e0000002f00000030000000
-  ExpandedWaapiItemIds: 02000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000f000000100000001600000017000000190000002e0000002f000000
+  ExpandedFileSystemItemIds: 0100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000f00000010000000110000001600000017000000190000002e0000002f000000
+  ExpandedWaapiItemIds: 0100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000f00000010000000110000001600000017000000190000002e0000002f000000
   AutoSyncSelection: 1
   autoPopulateEnabled: 1
   currentDataSource: 0
