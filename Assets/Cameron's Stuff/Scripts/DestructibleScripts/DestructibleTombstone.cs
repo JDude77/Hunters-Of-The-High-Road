@@ -11,6 +11,8 @@ public class DestructibleTombstone : MonoBehaviour
     private GameObject DestroyedVersion;
     private GameObject normalVersion;
 
+    private Collider boxCollider;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class DestructibleTombstone : MonoBehaviour
         graveVariants[ranNum].SetActive(true);
 
         normalVersion = graveVariants[ranNum];
+        boxCollider = GetComponent<Collider>();
     }
 
     public void DestroyTombstone(GameObject instance)
@@ -33,8 +36,10 @@ public class DestructibleTombstone : MonoBehaviour
         {
             DestroyedVersion.transform.parent = null;
             DestroyedVersion.SetActive(true);
+            boxCollider.enabled = false;
 
             normalVersion.SetActive(false);
+            
             FindObjectOfType<PlayerEventsHandler>().OnHitGravestone -= DestroyTombstone;
         }//End if
     }//End DestroyTombstone
