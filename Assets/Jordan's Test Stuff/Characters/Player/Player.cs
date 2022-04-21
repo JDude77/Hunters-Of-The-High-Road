@@ -87,7 +87,8 @@ public class Player : Character
         Dodging,
         RifleAimedShot,
         ExecutionerSwordAttack,
-        GameStart
+        GameStart,
+        Dead
     }//End States
 
     [Header("State Options")]
@@ -147,6 +148,9 @@ public class Player : Character
     protected override void Update()
     {
         base.Update();
+
+        //Quick and dirty code to make sure the player state is "dead" if they lose all health
+        if (health <= 0) ChangeState(State.Dead);
 
         currentStateScript.UpdateState();
     }//End Update
