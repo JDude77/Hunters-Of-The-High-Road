@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
 	<RootPaths>
-		<ProjectRoot>D:\unity Projects\Hunters-Of-The-High-Road\Assets\Hunters-Of-The-High-Road_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>D:\unity Projects\Hunters-Of-The-High-Road\Assets\Hunters-Of-The-High-Road_WwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>D:\unity Projects\Hunters-Of-The-High-Road\Assets\Hunters-Of-The-High-Road_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>D:\unity Projects\Hunters-Of-The-High-Road_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>D:\unity Projects\Hunters-Of-The-High-Road_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>D:\unity Projects\Hunters-Of-The-High-Road_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>D:\unity Projects\Hunters-Of-The-High-Road\Assets\Hunters-Of-The-High-Road_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>D:\unity Projects\Hunters-Of-The-High-Road_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<SoundBanks>
-		<SoundBank Id="1467963052" Language="SFX" Hash="3186828977">
+		<SoundBank Id="1467963052" Language="SFX" Hash="1123557863">
 			<ObjectPath>\SoundBanks\Default Work Unit\Weapons</ObjectPath>
 			<ShortName>Weapons</ShortName>
 			<Path>Weapons.bnk</Path>
 			<IncludedEvents>
-				<Event Id="1620154736" Name="Play_Rifle_Blend_Container" ObjectPath="\Events\Default Work Unit\Play_Rifle_Blend_Container">
+				<Event Id="1967888440" Name="Play_Rifle_Shoot" ObjectPath="\Events\Default Work Unit\Player weapons\Play_Rifle_Shoot">
 					<IncludedMemoryFiles>
 						<File Id="153752956" Language="SFX">
 							<ShortName>sfx_weapon_rifle_reloadclick_01.wav</ShortName>
@@ -41,7 +41,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2602512053" Name="Play_sward_full" ObjectPath="\Events\Default Work Unit\Play_sward_full">
+				<Event Id="858025235" Name="Play_sword_full" ObjectPath="\Events\Default Work Unit\Player weapons\Play_sword_full">
 					<IncludedMemoryFiles>
 						<File Id="243304111" Language="SFX">
 							<ShortName>sward pull.wav</ShortName>
