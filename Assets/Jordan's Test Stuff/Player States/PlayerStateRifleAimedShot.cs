@@ -33,6 +33,7 @@ public class PlayerStateRifleAimedShot : PlayerState
     {
         rifle.DeactivateDeadshot();
         rifle.SetIsBeingAimed(false);
+        playerAnimator.Play("HipFiring");
         playerAnimator.SetBool("isAiming", false);
         playerAnimator.SetLayerWeight(1, 1);
 
