@@ -68,7 +68,7 @@ public class Boss : Character
             animatedChild.AddComponent<BossAnimationEventsHandler>();
         }
 
-        //PlayerEventsHandler.current.OnHitEnemy += ReduceHealthByAmount;
+        PlayerEventsHandler.current.OnHitEnemy += ReduceHealthByAmount;
         mainState = State.Decision;
     }
 
