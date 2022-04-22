@@ -24,10 +24,13 @@ public class DestructibleTombstone : MonoBehaviour, IDestructible
             grave.SetActive(false);
         }
 
-        int ranNum = Random.Range(0, graveVariants.Length);
-        graveVariants[ranNum].SetActive(true);
+        if (graveVariants.Length > 0) {
+            int ranNum = Random.Range(0, graveVariants.Length);
+            graveVariants[ranNum].SetActive(true);
 
-        normalVersion = graveVariants[ranNum];
+            normalVersion = graveVariants[ranNum];
+        }
+        
         boxCollider = GetComponent<Collider>();
     }
 
