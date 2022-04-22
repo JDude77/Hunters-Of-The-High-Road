@@ -48,8 +48,7 @@ public class BossStateCharging : AttackState
     #endregion
 
     #region Anim Event Params
-    [Space(10f)]
-    [SerializeField] [ReadOnlyProperty] private string[] AnimationEventParameters = new string[] { "LightFootStepSound", "HeavyFootStepSound", "SwipeSound","DamageCheck", "SwipeEnd" };
+    //[SerializeField] [ReadOnlyProperty] private string[] AnimationEventParameters = new string[] { "LightFootStepSound", "HeavyFootStepSound", "SwipeSound","DamageCheck", "SwipeEnd" };
     #endregion
 
     enum SubState

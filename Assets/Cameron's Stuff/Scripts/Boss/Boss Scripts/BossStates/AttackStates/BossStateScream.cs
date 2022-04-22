@@ -12,8 +12,7 @@ public class BossStateScream : AttackState
     [SerializeField] private string animationName;
 
     #region Anim Event Params
-    [Space(10f)]
-    [SerializeField] [ReadOnlyProperty] private string[] AnimationEventParameters = new string[] { "ScreamSound", "AnimationEnd", "DamageCheck" };
+    //[SerializeField] [ReadOnlyProperty] private string[] AnimationEventParameters = new string[] { "ScreamSound", "AnimationEnd", "DamageCheck" };
     #endregion
 
     public void Start()

@@ -35,8 +35,7 @@ public class BossStateBurrow : AttackState
     #endregion
 
     #region Anim Event Params
-    [Space(10f)]
-    [SerializeField] [ReadOnlyProperty] private string[] AnimationEventParameters = new string[] { "DigDownSound", "DigUpSound", "StartBurrow", "ExitAttack" };
+    //[SerializeField] [ReadOnlyProperty] private string[] AnimationEventParameters = new string[] { "DigDownSound", "DigUpSound", "StartBurrow", "ExitAttack" };
     #endregion
 
     public void Start()

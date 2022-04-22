@@ -19,8 +19,7 @@ public class BossStateLandsRoots : BossStatePillarAttack
     #endregion
 
     #region Anim Event Params
-    [Space(10f)]
-    [SerializeField] [ReadOnlyProperty] private string[] AnimationEventParameters = new string[] { "StartPillars", "ExitState" };
+    //[SerializeField] [ReadOnlyProperty] private string[] AnimationEventParameters = new string[] { "StartPillars", "ExitState" };
     #endregion
 
     private Vector3 previousPosition;
