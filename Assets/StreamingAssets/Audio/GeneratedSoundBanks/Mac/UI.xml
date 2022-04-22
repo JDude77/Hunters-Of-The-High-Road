@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="12" SoundbankVersion="140">
+	<RootPaths>
+		<ProjectRoot>D:\unity Projects\Hunters-Of-The-High-Road_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>D:\unity Projects\Hunters-Of-The-High-Road_WwiseProject\.cache\Mac\</SourceFilesRoot>
+		<SoundBanksRoot>D:\unity Projects\Hunters-Of-The-High-Road_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>D:\unity Projects\Hunters-Of-The-High-Road_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<SoundBanks>
+		<SoundBank Id="1551306167" Language="SFX" Hash="1422870862">
+			<ObjectPath>\SoundBanks\Default Work Unit\UI</ObjectPath>
+			<ShortName>UI</ShortName>
+			<Path>UI.bnk</Path>
+			<IncludedEvents>
+				<Event Id="786024383" Name="Play_page_turn" ObjectPath="\Events\Default Work Unit\UI\Play_page_turn">
+					<IncludedMemoryFiles>
+						<File Id="552280281" Language="SFX">
+							<ShortName>sfx_ui_pageturn_01.wav</ShortName>
+							<Path>SFX\sfx_ui_pageturn_01_0AEAA22F.wem</Path>
+						</File>
+						<File Id="592074442" Language="SFX">
+							<ShortName>sfx_ui_pageturn_03.wav</ShortName>
+							<Path>SFX\sfx_ui_pageturn_03_76A0958A.wem</Path>
+						</File>
+						<File Id="1031358545" Language="SFX">
+							<ShortName>sfx_ui_pageturn_02.wav</ShortName>
+							<Path>SFX\sfx_ui_pageturn_02_D7A15F15.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1198841816" Name="Play_sfx_ui_back_01" ObjectPath="\Events\Default Work Unit\UI\Play_sfx_ui_back_01">
+					<IncludedMemoryFiles>
+						<File Id="694767111" Language="SFX">
+							<ShortName>sfx_ui_back_01.wav</ShortName>
+							<Path>SFX\sfx_ui_back_01_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3633800886" Name="Play_sfx_ui_move_01" ObjectPath="\Events\Default Work Unit\UI\Play_sfx_ui_move_01">
+					<IncludedMemoryFiles>
+						<File Id="426194716" Language="SFX">
+							<ShortName>sfx_ui_move_01.wav</ShortName>
+							<Path>SFX\sfx_ui_move_01_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="631659255" Name="Play_sfx_ui_select_01" ObjectPath="\Events\Default Work Unit\UI\Play_sfx_ui_select_01">
+					<IncludedMemoryFiles>
+						<File Id="751707267" Language="SFX">
+							<ShortName>sfx_ui_select_01.wav</ShortName>
+							<Path>SFX\sfx_ui_select_01_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

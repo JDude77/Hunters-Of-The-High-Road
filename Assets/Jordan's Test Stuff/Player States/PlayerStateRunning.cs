@@ -25,6 +25,13 @@ public class PlayerStateRunning : PlayerState
     {
         base.UpdateState();
 
+        playerReference.RegenerateFaith();
+
+        PlayerMovement();
+    }//End UpdateState
+
+    private void PlayerMovement()
+    {
         //Simple movement code stolen from Cameron's script - could be improved
         movement.x = Input.GetAxis("Horizontal");
         movement.z = Input.GetAxis("Vertical");
@@ -42,7 +49,7 @@ public class PlayerStateRunning : PlayerState
         {
             playerReference.ChangeState(Player.State.Idle);
         }//End if
-    }//End UpdateState
+    }
 
     protected override void UpdateStateInputs()
     {

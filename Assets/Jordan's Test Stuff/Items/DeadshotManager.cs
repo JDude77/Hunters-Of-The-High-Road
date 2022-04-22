@@ -32,6 +32,10 @@ public class DeadshotManager : MonoBehaviour
     [SerializeField]
     private int deadshotTokensRequiredToStagger;
     private int currentDeadshotTokens = 0;
+    public int GetTokenCount()
+    {
+        return currentDeadshotTokens;
+    }//End GetTokenCount
     private bool deadshotSkillCheckPassed = false;
 
     private void Awake()
@@ -154,11 +158,13 @@ public class DeadshotManager : MonoBehaviour
         currentDeadshotTokens = 0;
     }//End ResetTokens
 
+    [ContextMenu("Add Token")]
     public void AddToken()
     {
         currentDeadshotTokens++;
     }//End AddToken
 
+    [ContextMenu("Remove Token")]
     public void RemoveToken()
     {
         currentDeadshotTokens -= 1;

@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: 0b08f4fb21f4f5458aa072cf4bde4d6b
     GuidInternal: 
-    m_lastTime: -8585535669519861393
+    m_lastTime: -8585548625492543684
     List: []
   - PhysicalPath: Virtual Acoustics\Factory Acoustic Textures.wwu
     PathAndIcons:
@@ -37,7 +37,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Factory Acoustic Textures
     guid: 6b663d46a83ca54f8b4a5fef12b883f6
     GuidInternal: 
-    m_lastTime: -8585535669519861393
+    m_lastTime: -8585548625492533729
     List:
     - name: Acoustic_Banner
       guid: f2532d2fccda8e408b8898b1b52a26d6
@@ -303,7 +303,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 67ca422564cef746a6b2643343ef226c
     GuidInternal: 
-    m_lastTime: -8585535669533489064
+    m_lastTime: -8585548625537080107
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -345,8 +345,22 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: f29db30d3de19b4ab8585db4572c3287
     GuidInternal: 
-    m_lastTime: -8585535669519891399
+    m_lastTime: -8585510558549488755
     List:
+    - name: Boss
+      guid: 98b33e5d7b53c94e8d716db6ebe49152
+      id: 1560169506
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f29db30d3de19b4ab8585db4572c3287
+      - ElementName: Boss
+        ObjectType: 7
+        guid: 98b33e5d7b53c94e8d716db6ebe49152
+      Path: SoundBanks\Default Work Unit\Boss
     - name: environment
       guid: ceea2e7c09b4634481f536b47d7cbb94
       id: 1229948536
@@ -375,6 +389,20 @@ MonoBehaviour:
         ObjectType: 7
         guid: 6d0ed16015fced4d9bb770595284826e
       Path: SoundBanks\Default Work Unit\Player
+    - name: UI
+      guid: 6edccbeb54b5b54089a2dc58fdaf2be4
+      id: 1551306167
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f29db30d3de19b4ab8585db4572c3287
+      - ElementName: UI
+        ObjectType: 7
+        guid: 6edccbeb54b5b54089a2dc58fdaf2be4
+      Path: SoundBanks\Default Work Unit\UI
     - name: Weapons
       guid: 2307fe3c5bf4164fa345e8a403948a93
       id: 1467963052
@@ -401,11 +429,11 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: fb0dbcfe02547c49afbe650cce855735
     GuidInternal: 
-    m_lastTime: -8585535669537397331
+    m_lastTime: -8585509912829932784
     List:
-    - name: Play_Foot_steps_Blend_Container
-      guid: 4259cbb772d5b743ae1409200a366a08
-      id: 3655442102
+    - name: Attacks sounds
+      guid: 1c4bc2c32d9f7e4fa4cb7d34a0bde9f0
+      id: 2480733416
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -413,16 +441,19 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: fb0dbcfe02547c49afbe650cce855735
-      - ElementName: Play_Foot_steps_Blend_Container
-        ObjectType: 3
-        guid: 4259cbb772d5b743ae1409200a366a08
-      Path: Events\Default Work Unit\Play_Foot_steps_Blend_Container
+      - ElementName: boss sounds
+        ObjectType: 4
+        guid: dade6bf5c1313b4cae34771ebb8d137d
+      - ElementName: Attacks sounds
+        ObjectType: 4
+        guid: 1c4bc2c32d9f7e4fa4cb7d34a0bde9f0
+      Path: Events\Default Work Unit\boss sounds\Attacks sounds
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: Play_main_forest_Blend_Container
-      guid: 97810a694cbb2b43956351c4067e92ff
-      id: 185960795
+    - name: boss sounds
+      guid: dade6bf5c1313b4cae34771ebb8d137d
+      id: 1232541386
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -430,11 +461,413 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: fb0dbcfe02547c49afbe650cce855735
-      - ElementName: Play_main_forest_Blend_Container
+      - ElementName: boss sounds
+        ObjectType: 4
+        guid: dade6bf5c1313b4cae34771ebb8d137d
+      Path: Events\Default Work Unit\boss sounds
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Burrow
+      guid: 1c8ad3a518b388448aabf6ff8e1df998
+      id: 368757528
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: boss sounds
+        ObjectType: 4
+        guid: dade6bf5c1313b4cae34771ebb8d137d
+      - ElementName: Attacks sounds
+        ObjectType: 4
+        guid: 1c4bc2c32d9f7e4fa4cb7d34a0bde9f0
+      - ElementName: Burrow
+        ObjectType: 4
+        guid: 1c8ad3a518b388448aabf6ff8e1df998
+      Path: Events\Default Work Unit\boss sounds\Attacks sounds\Burrow
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: environment
+      guid: 4dfa3e976c15d449957f82f440590fe2
+      id: 1229948536
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: environment
+        ObjectType: 4
+        guid: 4dfa3e976c15d449957f82f440590fe2
+      Path: Events\Default Work Unit\environment
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: grunt
+      guid: 4ed93c6ff4182145a5e464f6a60a147c
+      id: 3797621065
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: boss sounds
+        ObjectType: 4
+        guid: dade6bf5c1313b4cae34771ebb8d137d
+      - ElementName: Attacks sounds
+        ObjectType: 4
+        guid: 1c4bc2c32d9f7e4fa4cb7d34a0bde9f0
+      - ElementName: hand roots
+        ObjectType: 4
+        guid: 8d0e4dc16da16945b5cf6e899810fb26
+      - ElementName: grunt
         ObjectType: 3
-        guid: 97810a694cbb2b43956351c4067e92ff
-      Path: Events\Default Work Unit\Play_main_forest_Blend_Container
-      maxAttenuation: 150
+        guid: 4ed93c6ff4182145a5e464f6a60a147c
+      Path: Events\Default Work Unit\boss sounds\Attacks sounds\hand roots\grunt
+      maxAttenuation: 0
+      maxDuration: 0.658701
+      minDuration: 0
+    - name: hand roots
+      guid: 8d0e4dc16da16945b5cf6e899810fb26
+      id: 2415149733
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: boss sounds
+        ObjectType: 4
+        guid: dade6bf5c1313b4cae34771ebb8d137d
+      - ElementName: Attacks sounds
+        ObjectType: 4
+        guid: 1c4bc2c32d9f7e4fa4cb7d34a0bde9f0
+      - ElementName: hand roots
+        ObjectType: 4
+        guid: 8d0e4dc16da16945b5cf6e899810fb26
+      Path: Events\Default Work Unit\boss sounds\Attacks sounds\hand roots
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: hands_in
+      guid: 4f707d97845a6f4889885e77ad045178
+      id: 919531205
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: boss sounds
+        ObjectType: 4
+        guid: dade6bf5c1313b4cae34771ebb8d137d
+      - ElementName: Attacks sounds
+        ObjectType: 4
+        guid: 1c4bc2c32d9f7e4fa4cb7d34a0bde9f0
+      - ElementName: hand roots
+        ObjectType: 4
+        guid: 8d0e4dc16da16945b5cf6e899810fb26
+      - ElementName: hands_in
+        ObjectType: 3
+        guid: 4f707d97845a6f4889885e77ad045178
+      Path: Events\Default Work Unit\boss sounds\Attacks sounds\hand roots\hands_in
+      maxAttenuation: 0
+      maxDuration: 0.839212
+      minDuration: 0.470992
+    - name: Play_boss_movement
+      guid: b1a2aa1731c894458687bb9bd4d8d56b
+      id: 1677138927
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: boss sounds
+        ObjectType: 4
+        guid: dade6bf5c1313b4cae34771ebb8d137d
+      - ElementName: Play_boss_movement
+        ObjectType: 3
+        guid: b1a2aa1731c894458687bb9bd4d8d56b
+      Path: Events\Default Work Unit\boss sounds\Play_boss_movement
+      maxAttenuation: 0
+      maxDuration: 0.501708
+      minDuration: 0.218211
+    - name: Play_camp_fire
+      guid: 0d2c2da956c3364599d4a2ef91e5ee10
+      id: 1293037340
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: environment
+        ObjectType: 4
+        guid: 4dfa3e976c15d449957f82f440590fe2
+      - ElementName: Play_camp_fire
+        ObjectType: 3
+        guid: 0d2c2da956c3364599d4a2ef91e5ee10
+      Path: Events\Default Work Unit\environment\Play_camp_fire
+      maxAttenuation: 10
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Dig_down
+      guid: 70b5541f8f788a43a8f49ca5ec45368a
+      id: 3936914037
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: boss sounds
+        ObjectType: 4
+        guid: dade6bf5c1313b4cae34771ebb8d137d
+      - ElementName: Attacks sounds
+        ObjectType: 4
+        guid: 1c4bc2c32d9f7e4fa4cb7d34a0bde9f0
+      - ElementName: Burrow
+        ObjectType: 4
+        guid: 1c8ad3a518b388448aabf6ff8e1df998
+      - ElementName: Play_Dig_down
+        ObjectType: 3
+        guid: 70b5541f8f788a43a8f49ca5ec45368a
+      Path: Events\Default Work Unit\boss sounds\Attacks sounds\Burrow\Play_Dig_down
+      maxAttenuation: 0
+      maxDuration: 0.767092
+      minDuration: 0.350794
+    - name: Play_dig_up
+      guid: 8a3eac4766bb4b46838a28a6961635dc
+      id: 990938754
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: boss sounds
+        ObjectType: 4
+        guid: dade6bf5c1313b4cae34771ebb8d137d
+      - ElementName: Attacks sounds
+        ObjectType: 4
+        guid: 1c4bc2c32d9f7e4fa4cb7d34a0bde9f0
+      - ElementName: Burrow
+        ObjectType: 4
+        guid: 1c8ad3a518b388448aabf6ff8e1df998
+      - ElementName: Play_dig_up
+        ObjectType: 3
+        guid: 8a3eac4766bb4b46838a28a6961635dc
+      Path: Events\Default Work Unit\boss sounds\Attacks sounds\Burrow\Play_dig_up
+      maxAttenuation: 0
+      maxDuration: 1.264286
+      minDuration: 0.592394
+    - name: Play_digging
+      guid: 03fb83e611030440843cee821a2dd79e
+      id: 813141615
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: boss sounds
+        ObjectType: 4
+        guid: dade6bf5c1313b4cae34771ebb8d137d
+      - ElementName: Attacks sounds
+        ObjectType: 4
+        guid: 1c4bc2c32d9f7e4fa4cb7d34a0bde9f0
+      - ElementName: Burrow
+        ObjectType: 4
+        guid: 1c8ad3a518b388448aabf6ff8e1df998
+      - ElementName: Play_digging
+        ObjectType: 3
+        guid: 03fb83e611030440843cee821a2dd79e
+      Path: Events\Default Work Unit\boss sounds\Attacks sounds\Burrow\Play_digging
+      maxAttenuation: 0
+      maxDuration: 4.366508
+      minDuration: 1.864789
+    - name: Play_environment_grave
+      guid: 3c18ac02ae9e8f498be0bd117b96be72
+      id: 4166756183
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: environment
+        ObjectType: 4
+        guid: 4dfa3e976c15d449957f82f440590fe2
+      - ElementName: Play_environment_grave
+        ObjectType: 3
+        guid: 3c18ac02ae9e8f498be0bd117b96be72
+      Path: Events\Default Work Unit\environment\Play_environment_grave
+      maxAttenuation: 40
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Flys_buzzing
+      guid: ea752970bd705d43b419188980cd6ff4
+      id: 3450565664
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: environment
+        ObjectType: 4
+        guid: 4dfa3e976c15d449957f82f440590fe2
+      - ElementName: Play_Flys_buzzing
+        ObjectType: 3
+        guid: ea752970bd705d43b419188980cd6ff4
+      Path: Events\Default Work Unit\environment\Play_Flys_buzzing
+      maxAttenuation: 6
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_gate_open
+      guid: 523b16f872035f44967915e5a08ce93d
+      id: 4089264814
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: environment
+        ObjectType: 4
+        guid: 4dfa3e976c15d449957f82f440590fe2
+      - ElementName: Play_gate_open
+        ObjectType: 3
+        guid: 523b16f872035f44967915e5a08ce93d
+      Path: Events\Default Work Unit\environment\Play_gate_open
+      maxAttenuation: 0
+      maxDuration: 4.228112
+      minDuration: 3.355855
+    - name: Play_Glass_Bottle_Brake
+      guid: 732609412c478740be0e886315593ffc
+      id: 2038828501
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: environment
+        ObjectType: 4
+        guid: 4dfa3e976c15d449957f82f440590fe2
+      - ElementName: Play_Glass_Bottle_Brake
+        ObjectType: 3
+        guid: 732609412c478740be0e886315593ffc
+      Path: Events\Default Work Unit\environment\Play_Glass_Bottle_Brake
+      maxAttenuation: 0
+      maxDuration: 1.270229
+      minDuration: 0.671533
+    - name: Play_Grave_Damage
+      guid: 2dd225bdb626314faafd97c382d62e29
+      id: 2115375931
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: environment
+        ObjectType: 4
+        guid: 4dfa3e976c15d449957f82f440590fe2
+      - ElementName: Play_Grave_Damage
+        ObjectType: 3
+        guid: 2dd225bdb626314faafd97c382d62e29
+      Path: Events\Default Work Unit\environment\Play_Grave_Damage
+      maxAttenuation: 0
+      maxDuration: 2.41273
+      minDuration: 0.981743
+    - name: Play_hit_sound
+      guid: 3f88a4f93b202448b864d08cea67d87f
+      id: 1741081981
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: boss sounds
+        ObjectType: 4
+        guid: dade6bf5c1313b4cae34771ebb8d137d
+      - ElementName: Attacks sounds
+        ObjectType: 4
+        guid: 1c4bc2c32d9f7e4fa4cb7d34a0bde9f0
+      - ElementName: swipe
+        ObjectType: 4
+        guid: fa78dec37984e34491148350578b29e9
+      - ElementName: Play_hit_sound
+        ObjectType: 3
+        guid: 3f88a4f93b202448b864d08cea67d87f
+      Path: Events\Default Work Unit\boss sounds\Attacks sounds\swipe\Play_hit_sound
+      maxAttenuation: 0
+      maxDuration: 0.112993
+      minDuration: 0
+    - name: Play_land_roots_attack
+      guid: bfd0bdf5c3b9a246bc77901aa3f52a4d
+      id: 2599551658
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: boss sounds
+        ObjectType: 4
+        guid: dade6bf5c1313b4cae34771ebb8d137d
+      - ElementName: Attacks sounds
+        ObjectType: 4
+        guid: 1c4bc2c32d9f7e4fa4cb7d34a0bde9f0
+      - ElementName: Play_land_roots_attack
+        ObjectType: 3
+        guid: bfd0bdf5c3b9a246bc77901aa3f52a4d
+      Path: Events\Default Work Unit\boss sounds\Attacks sounds\Play_land_roots_attack
+      maxAttenuation: 0
+      maxDuration: 3.359728
+      minDuration: 2.050301
+    - name: Play_night_forrest
+      guid: bbc4697dc2469c4d9d51add72b7748a0
+      id: 3778516394
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: environment
+        ObjectType: 4
+        guid: 4dfa3e976c15d449957f82f440590fe2
+      - ElementName: Play_night_forrest
+        ObjectType: 3
+        guid: bbc4697dc2469c4d9d51add72b7748a0
+      Path: Events\Default Work Unit\environment\Play_night_forrest
+      maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
     - name: Play_Padlock_Brake
@@ -447,16 +880,19 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: environment
+        ObjectType: 4
+        guid: 4dfa3e976c15d449957f82f440590fe2
       - ElementName: Play_Padlock_Brake
         ObjectType: 3
         guid: 944e755a694ebc459252fe12d2a45f73
-      Path: Events\Default Work Unit\Play_Padlock_Brake
+      Path: Events\Default Work Unit\environment\Play_Padlock_Brake
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: Play_Rifle_Blend_Container
-      guid: 1c904ebc52ba014ba2c29968ee0f761b
-      id: 1620154736
+      maxDuration: 1.044929
+      minDuration: 0.82412
+    - name: Play_page_turn
+      guid: cc9f275ac1db3a4b81fdfb1b7a1f9e5b
+      id: 786024383
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -464,16 +900,19 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: fb0dbcfe02547c49afbe650cce855735
-      - ElementName: Play_Rifle_Blend_Container
+      - ElementName: UI
+        ObjectType: 4
+        guid: 8934a8bef04994429041dcea1f450336
+      - ElementName: Play_page_turn
         ObjectType: 3
-        guid: 1c904ebc52ba014ba2c29968ee0f761b
-      Path: Events\Default Work Unit\Play_Rifle_Blend_Container
+        guid: cc9f275ac1db3a4b81fdfb1b7a1f9e5b
+      Path: Events\Default Work Unit\UI\Play_page_turn
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: Play_Roll_Blend_Container
-      guid: 3dcd29ead8064d4f95f3e1c86dc937b7
-      id: 4208395867
+      maxDuration: 0.846598
+      minDuration: 0.479035
+    - name: Play_pillersup
+      guid: 877b8750038eee469c68820fb1782d15
+      id: 2860663338
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -481,16 +920,320 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: fb0dbcfe02547c49afbe650cce855735
-      - ElementName: Play_Roll_Blend_Container
+      - ElementName: boss sounds
+        ObjectType: 4
+        guid: dade6bf5c1313b4cae34771ebb8d137d
+      - ElementName: Attacks sounds
+        ObjectType: 4
+        guid: 1c4bc2c32d9f7e4fa4cb7d34a0bde9f0
+      - ElementName: uproot
+        ObjectType: 4
+        guid: 57a943785b831e4d81778fa314bedef4
+      - ElementName: Play_pillersup
+        ObjectType: 3
+        guid: 877b8750038eee469c68820fb1782d15
+      Path: Events\Default Work Unit\boss sounds\Attacks sounds\uproot\Play_pillersup
+      maxAttenuation: 0
+      maxDuration: 2.485224
+      minDuration: 0.734532
+    - name: Play_Player_movement
+      guid: 4259cbb772d5b743ae1409200a366a08
+      id: 3879190359
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: Player sounds
+        ObjectType: 4
+        guid: 65a5e046ab1a8d4a9fb8ba5e00253a95
+      - ElementName: Play_Player_movement
+        ObjectType: 3
+        guid: 4259cbb772d5b743ae1409200a366a08
+      Path: Events\Default Work Unit\Player sounds\Play_Player_movement
+      maxAttenuation: 0
+      maxDuration: 0.529689
+      minDuration: 0.235189
+    - name: Play_player_Roll
+      guid: 3dcd29ead8064d4f95f3e1c86dc937b7
+      id: 2370959289
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: Player sounds
+        ObjectType: 4
+        guid: 65a5e046ab1a8d4a9fb8ba5e00253a95
+      - ElementName: Play_player_Roll
         ObjectType: 3
         guid: 3dcd29ead8064d4f95f3e1c86dc937b7
-      Path: Events\Default Work Unit\Play_Roll_Blend_Container
+      Path: Events\Default Work Unit\Player sounds\Play_player_Roll
+      maxAttenuation: 0
+      maxDuration: 1.270286
+      minDuration: 0.757707
+    - name: Play_Rifle_Shoot
+      guid: 1c904ebc52ba014ba2c29968ee0f761b
+      id: 1967888440
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: Player weapons
+        ObjectType: 4
+        guid: f35a9e8d9091ec44a3b575af74aa89ae
+      - ElementName: Play_Rifle_Shoot
+        ObjectType: 3
+        guid: 1c904ebc52ba014ba2c29968ee0f761b
+      Path: Events\Default Work Unit\Player weapons\Play_Rifle_Shoot
+      maxAttenuation: 0
+      maxDuration: 4.987375
+      minDuration: 4.205906
+    - name: Play_scream_attack
+      guid: 7a442408a1329941b7d6a7831f423845
+      id: 2779817312
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: boss sounds
+        ObjectType: 4
+        guid: dade6bf5c1313b4cae34771ebb8d137d
+      - ElementName: Attacks sounds
+        ObjectType: 4
+        guid: 1c4bc2c32d9f7e4fa4cb7d34a0bde9f0
+      - ElementName: Play_scream_attack
+        ObjectType: 3
+        guid: 7a442408a1329941b7d6a7831f423845
+      Path: Events\Default Work Unit\boss sounds\Attacks sounds\Play_scream_attack
+      maxAttenuation: 0
+      maxDuration: 3.731934
+      minDuration: 2.793559
+    - name: Play_sfx_environment_fire_tourch_01
+      guid: de5554c6bec3da498fc734efaa9229bc
+      id: 282408186
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: environment
+        ObjectType: 4
+        guid: 4dfa3e976c15d449957f82f440590fe2
+      - ElementName: Play_sfx_environment_fire_tourch_01
+        ObjectType: 3
+        guid: de5554c6bec3da498fc734efaa9229bc
+      Path: Events\Default Work Unit\environment\Play_sfx_environment_fire_tourch_01
+      maxAttenuation: 6
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_sfx_environment_fire_tourch_02
+      guid: 0b432d030f39074da871745deaa9fc3d
+      id: 282408185
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: environment
+        ObjectType: 4
+        guid: 4dfa3e976c15d449957f82f440590fe2
+      - ElementName: Play_sfx_environment_fire_tourch_02
+        ObjectType: 3
+        guid: 0b432d030f39074da871745deaa9fc3d
+      Path: Events\Default Work Unit\environment\Play_sfx_environment_fire_tourch_02
+      maxAttenuation: 6
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_sfx_ui_back_01
+      guid: b523c04aaed9c2439a6bea3cffbcba34
+      id: 1198841816
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: UI
+        ObjectType: 4
+        guid: 8934a8bef04994429041dcea1f450336
+      - ElementName: Play_sfx_ui_back_01
+        ObjectType: 3
+        guid: b523c04aaed9c2439a6bea3cffbcba34
+      Path: Events\Default Work Unit\UI\Play_sfx_ui_back_01
+      maxAttenuation: 0
+      maxDuration: 1.35
+      minDuration: 1.35
+    - name: Play_sfx_ui_move_01
+      guid: e6f558e9bc9ae6418e5bdaa25dda7939
+      id: 3633800886
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: UI
+        ObjectType: 4
+        guid: 8934a8bef04994429041dcea1f450336
+      - ElementName: Play_sfx_ui_move_01
+        ObjectType: 3
+        guid: e6f558e9bc9ae6418e5bdaa25dda7939
+      Path: Events\Default Work Unit\UI\Play_sfx_ui_move_01
+      maxAttenuation: 0
+      maxDuration: 0.961973
+      minDuration: 0.961973
+    - name: Play_sfx_ui_select_01
+      guid: b3bd3af84112ef4db86119c7cac0aada
+      id: 631659255
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: UI
+        ObjectType: 4
+        guid: 8934a8bef04994429041dcea1f450336
+      - ElementName: Play_sfx_ui_select_01
+        ObjectType: 3
+        guid: b3bd3af84112ef4db86119c7cac0aada
+      Path: Events\Default Work Unit\UI\Play_sfx_ui_select_01
+      maxAttenuation: 0
+      maxDuration: 1.68
+      minDuration: 1.68
+    - name: Play_Swing_attack
+      guid: 060f57c49278a44d8b4463831be4dd7a
+      id: 495359303
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: boss sounds
+        ObjectType: 4
+        guid: dade6bf5c1313b4cae34771ebb8d137d
+      - ElementName: Attacks sounds
+        ObjectType: 4
+        guid: 1c4bc2c32d9f7e4fa4cb7d34a0bde9f0
+      - ElementName: swipe
+        ObjectType: 4
+        guid: fa78dec37984e34491148350578b29e9
+      - ElementName: Play_Swing_attack
+        ObjectType: 3
+        guid: 060f57c49278a44d8b4463831be4dd7a
+      Path: Events\Default Work Unit\boss sounds\Attacks sounds\swipe\Play_Swing_attack
+      maxAttenuation: 0
+      maxDuration: 1.121943
+      minDuration: 0.580393
+    - name: Play_sword_full
+      guid: 034e9b2cd58b184daacb209fae502c16
+      id: 858025235
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: Player weapons
+        ObjectType: 4
+        guid: f35a9e8d9091ec44a3b575af74aa89ae
+      - ElementName: Play_sword_full
+        ObjectType: 3
+        guid: 034e9b2cd58b184daacb209fae502c16
+      Path: Events\Default Work Unit\Player weapons\Play_sword_full
+      maxAttenuation: 0
+      maxDuration: 3.873754
+      minDuration: 3.532517
+    - name: Play_Uproot_Attack
+      guid: c6a0caeabbecca4ba9e9dafdc99d54c2
+      id: 2956397052
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: boss sounds
+        ObjectType: 4
+        guid: dade6bf5c1313b4cae34771ebb8d137d
+      - ElementName: Attacks sounds
+        ObjectType: 4
+        guid: 1c4bc2c32d9f7e4fa4cb7d34a0bde9f0
+      - ElementName: Play_Uproot_Attack
+        ObjectType: 3
+        guid: c6a0caeabbecca4ba9e9dafdc99d54c2
+      Path: Events\Default Work Unit\boss sounds\Attacks sounds\Play_Uproot_Attack
+      maxAttenuation: 0
+      maxDuration: 3.833532
+      minDuration: 1.715014
+    - name: Play_UpRootStomp
+      guid: 07d24f626ec8ff469ffb4a250e7f0aa7
+      id: 4184561336
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: boss sounds
+        ObjectType: 4
+        guid: dade6bf5c1313b4cae34771ebb8d137d
+      - ElementName: Attacks sounds
+        ObjectType: 4
+        guid: 1c4bc2c32d9f7e4fa4cb7d34a0bde9f0
+      - ElementName: uproot
+        ObjectType: 4
+        guid: 57a943785b831e4d81778fa314bedef4
+      - ElementName: Play_UpRootStomp
+        ObjectType: 3
+        guid: 07d24f626ec8ff469ffb4a250e7f0aa7
+      Path: Events\Default Work Unit\boss sounds\Attacks sounds\uproot\Play_UpRootStomp
+      maxAttenuation: 0
+      maxDuration: 1.348307
+      minDuration: 0.980482
+    - name: Player sounds
+      guid: 65a5e046ab1a8d4a9fb8ba5e00253a95
+      id: 136533858
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: Player sounds
+        ObjectType: 4
+        guid: 65a5e046ab1a8d4a9fb8ba5e00253a95
+      Path: Events\Default Work Unit\Player sounds
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: Play_sfx_environment_trees_01
-      guid: 3c18ac02ae9e8f498be0bd117b96be72
-      id: 2569274399
+    - name: Player weapons
+      guid: f35a9e8d9091ec44a3b575af74aa89ae
+      id: 2022525801
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -498,16 +1241,16 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: fb0dbcfe02547c49afbe650cce855735
-      - ElementName: Play_sfx_environment_trees_01
-        ObjectType: 3
-        guid: 3c18ac02ae9e8f498be0bd117b96be72
-      Path: Events\Default Work Unit\Play_sfx_environment_trees_01
-      maxAttenuation: 40
+      - ElementName: Player weapons
+        ObjectType: 4
+        guid: f35a9e8d9091ec44a3b575af74aa89ae
+      Path: Events\Default Work Unit\Player weapons
+      maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: Play_sward_full
-      guid: 034e9b2cd58b184daacb209fae502c16
-      id: 2602512053
+    - name: roots_up
+      guid: 91f01a3e1fc7d1488f2f887212db091d
+      id: 948909352
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -515,10 +1258,82 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: fb0dbcfe02547c49afbe650cce855735
-      - ElementName: Play_sward_full
+      - ElementName: boss sounds
+        ObjectType: 4
+        guid: dade6bf5c1313b4cae34771ebb8d137d
+      - ElementName: Attacks sounds
+        ObjectType: 4
+        guid: 1c4bc2c32d9f7e4fa4cb7d34a0bde9f0
+      - ElementName: hand roots
+        ObjectType: 4
+        guid: 8d0e4dc16da16945b5cf6e899810fb26
+      - ElementName: roots_up
         ObjectType: 3
-        guid: 034e9b2cd58b184daacb209fae502c16
-      Path: Events\Default Work Unit\Play_sward_full
+        guid: 91f01a3e1fc7d1488f2f887212db091d
+      Path: Events\Default Work Unit\boss sounds\Attacks sounds\hand roots\roots_up
+      maxAttenuation: 0
+      maxDuration: 1.861814
+      minDuration: 1.004767
+    - name: swipe
+      guid: fa78dec37984e34491148350578b29e9
+      id: 2420075157
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: boss sounds
+        ObjectType: 4
+        guid: dade6bf5c1313b4cae34771ebb8d137d
+      - ElementName: Attacks sounds
+        ObjectType: 4
+        guid: 1c4bc2c32d9f7e4fa4cb7d34a0bde9f0
+      - ElementName: swipe
+        ObjectType: 4
+        guid: fa78dec37984e34491148350578b29e9
+      Path: Events\Default Work Unit\boss sounds\Attacks sounds\swipe
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: UI
+      guid: 8934a8bef04994429041dcea1f450336
+      id: 1551306167
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: UI
+        ObjectType: 4
+        guid: 8934a8bef04994429041dcea1f450336
+      Path: Events\Default Work Unit\UI
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: uproot
+      guid: 57a943785b831e4d81778fa314bedef4
+      id: 3270899146
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: boss sounds
+        ObjectType: 4
+        guid: dade6bf5c1313b4cae34771ebb8d137d
+      - ElementName: Attacks sounds
+        ObjectType: 4
+        guid: 1c4bc2c32d9f7e4fa4cb7d34a0bde9f0
+      - ElementName: uproot
+        ObjectType: 4
+        guid: 57a943785b831e4d81778fa314bedef4
+      Path: Events\Default Work Unit\boss sounds\Attacks sounds\uproot
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -534,7 +1349,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: e2241ccf4fdf274288171cc7b02decc2
     GuidInternal: 
-    m_lastTime: -8585535669537387336
+    m_lastTime: -8585548625537219724
     List: []
   - PhysicalPath: Game Parameters\Factory Motion.wwu
     PathAndIcons:
@@ -547,7 +1362,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Factory Motion
     guid: 225213d7dbd1d042adc0930743567776
     GuidInternal: 
-    m_lastTime: -8585535669537387336
+    m_lastTime: -8585548625537209640
     List:
     - name: Playback_Rate
       guid: e37e38283ac11643b9c3db5c521624af
@@ -588,7 +1403,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Factory SoundSeed Air Game Syncs
     guid: 5577163b42fb8b4598bf96f557afb3b9
     GuidInternal: 
-    m_lastTime: -8585535669537377330
+    m_lastTime: -8585548625537199784
     List:
     - name: SS_Air_Fear
       guid: 59062ef746431c4ea1b1dab46a05101e
@@ -742,7 +1557,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 36dfd18b685dea41b71add1929d942e5
     GuidInternal: 
-    m_lastTime: -8585535669519881395
+    m_lastTime: -8585548625492583552
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
@@ -756,7 +1571,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: e080a443e87ed44987615ccbddaaee16
     GuidInternal: 
-    m_lastTime: -8585535669519871395
+    m_lastTime: -8585548625492563575
     List:
     - name: environment
       guid: 892ad728ba964e41872b9daca100395b
@@ -902,11 +1717,11 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: 4b5cbb0c89d56d4ca34f4e719fe38bc9
     GuidInternal: 
-    m_lastTime: -8585535669519871395
+    m_lastTime: -8585548625492553666
     List: []
-  ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 
-  AutoSyncSelection: 0
+  ExpandedFileSystemItemIds: 01000000020000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000f0000001000000011000000150000001600000017000000190000002600000027000000280000002e0000002f0000004f0000005c000000
+  ExpandedWaapiItemIds: 0100000002000000030000000400000005000000060000000700000008000000090000000f0000001000000011000000160000001700000019000000260000002700000028000000290000002a0000002b0000002c0000002e0000002f000000380000004b0000004c0000004f00000050000000510000005c0000005d0000006100000062000000660000007b0000006c5005002fb30600
+  AutoSyncSelection: 1
   autoPopulateEnabled: 1
   currentDataSource: 0
   CurrentPluginConfig: 

@@ -5,11 +5,11 @@
   "SchemaVersion": "12",
   "SoundbankVersion": "140",
   "RootPaths": {
-   "ProjectRoot": "D:\\unity Projects\\Hunters-Of-The-High-Road\\Assets\\Hunters-Of-The-High-Road_WwiseProject\\",
-   "SourceFilesRoot": "D:\\unity Projects\\Hunters-Of-The-High-Road\\Assets\\Hunters-Of-The-High-Road_WwiseProject\\.cache\\Mac\\",
-   "SoundBanksRoot": "D:\\unity Projects\\Hunters-Of-The-High-Road\\Assets\\Hunters-Of-The-High-Road_WwiseProject\\GeneratedSoundBanks\\Mac\\",
+   "ProjectRoot": "D:\\unity Projects\\Hunters-Of-The-High-Road_WwiseProject\\",
+   "SourceFilesRoot": "D:\\unity Projects\\Hunters-Of-The-High-Road_WwiseProject\\.cache\\Mac\\",
+   "SoundBanksRoot": "D:\\unity Projects\\Hunters-Of-The-High-Road_WwiseProject\\GeneratedSoundBanks\\Mac\\",
    "ExternalSourcesInputFile": "",
-   "ExternalSourcesOutputRoot": "D:\\unity Projects\\Hunters-Of-The-High-Road\\Assets\\Hunters-Of-The-High-Road_WwiseProject\\GeneratedSoundBanks\\Mac"
+   "ExternalSourcesOutputRoot": "D:\\unity Projects\\Hunters-Of-The-High-Road_WwiseProject\\GeneratedSoundBanks\\Mac"
   },
   "SoundBanks": [
    {

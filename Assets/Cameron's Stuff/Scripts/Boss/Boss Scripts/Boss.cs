@@ -67,14 +67,14 @@ public class Boss : Character
             animatedChild.AddComponent<BossAnimationEventsHandler>();
         }
 
-        //PlayerEventsHandler.current.OnHitEnemy += ReduceHealthByAmount;
+        PlayerEventsHandler.current.OnHitEnemy += ReduceHealthByAmount;
         mainState = State.Decision;
     }
 
     protected override void Start()
     {
         base.Start();
-        FindObjectOfType<BossTrigger>().TriggerActivated = () => { if (currentState is BossStateIdle) ChangeState(mainState); };
+        FindObjectOfType<BossTrigger>().TriggerActivated += () => { if (currentState is BossStateIdle) ChangeState(mainState); };
     } //End Start
 
     //Update is called once per frame

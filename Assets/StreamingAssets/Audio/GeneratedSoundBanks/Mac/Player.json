@@ -5,25 +5,25 @@
   "SchemaVersion": "12",
   "SoundbankVersion": "140",
   "RootPaths": {
-   "ProjectRoot": "D:\\unity Projects\\Hunters-Of-The-High-Road\\Assets\\Hunters-Of-The-High-Road_WwiseProject\\",
-   "SourceFilesRoot": "D:\\unity Projects\\Hunters-Of-The-High-Road\\Assets\\Hunters-Of-The-High-Road_WwiseProject\\.cache\\Mac\\",
-   "SoundBanksRoot": "D:\\unity Projects\\Hunters-Of-The-High-Road\\Assets\\Hunters-Of-The-High-Road_WwiseProject\\GeneratedSoundBanks\\Mac\\",
+   "ProjectRoot": "D:\\unity Projects\\Hunters-Of-The-High-Road_WwiseProject\\",
+   "SourceFilesRoot": "D:\\unity Projects\\Hunters-Of-The-High-Road_WwiseProject\\.cache\\Mac\\",
+   "SoundBanksRoot": "D:\\unity Projects\\Hunters-Of-The-High-Road_WwiseProject\\GeneratedSoundBanks\\Mac\\",
    "ExternalSourcesInputFile": "",
-   "ExternalSourcesOutputRoot": "D:\\unity Projects\\Hunters-Of-The-High-Road\\Assets\\Hunters-Of-The-High-Road_WwiseProject\\GeneratedSoundBanks\\Mac"
+   "ExternalSourcesOutputRoot": "D:\\unity Projects\\Hunters-Of-The-High-Road_WwiseProject\\GeneratedSoundBanks\\Mac"
   },
   "SoundBanks": [
    {
     "Id": "1069431850",
     "Language": "SFX",
-    "Hash": "4257131481",
+    "Hash": "1618383971",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Player",
     "ShortName": "Player",
     "Path": "Player.bnk",
     "IncludedEvents": [
      {
-      "Id": "3655442102",
-      "Name": "Play_Foot_steps_Blend_Container",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_Foot_steps_Blend_Container",
+      "Id": "3879190359",
+      "Name": "Play_Player_movement",
+      "ObjectPath": "\\Events\\Default Work Unit\\Player sounds\\Play_Player_movement",
       "IncludedMemoryFiles": [
        {
         "Id": "20253490",
@@ -358,9 +358,9 @@
       ]
      },
      {
-      "Id": "4208395867",
-      "Name": "Play_Roll_Blend_Container",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_Roll_Blend_Container",
+      "Id": "2370959289",
+      "Name": "Play_player_Roll",
+      "ObjectPath": "\\Events\\Default Work Unit\\Player sounds\\Play_player_Roll",
       "IncludedMemoryFiles": [
        {
         "Id": "43852155",
