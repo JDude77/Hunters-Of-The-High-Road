@@ -47,13 +47,15 @@ public class BossStateDecision : BossState
             }
         }
 
-        //Create a child object with the bouding box attached
-        if (uprootBox == null)
-        {
+        uprootBox = transform.Find("UprootBox").GetComponent<BoxCollider>();
+
+        ////Create a child object with the bouding box attached
+        if (uprootBox == null) {
             //Create an empty game object as a child
             GameObject blank = new GameObject();
             blank = Instantiate(blank, gameObject.transform);
             blank.name = "UprootBox";
+            blank.layer = 6;
             //Add a boc colider to the gameobject
             uprootBox = blank.AddComponent<BoxCollider>();
             uprootBox.isTrigger = true;
