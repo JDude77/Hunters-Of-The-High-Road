@@ -118,7 +118,6 @@ public class BossStateBurrow : AttackState
     [ContextMenu("Fill default values")]
     public override void SetDefaultValues()
     {
-        windUpTime = 0f;
         goundedYPosition = 9f;
         burrowYPosition = 1f;
         particleYPosition = 8f;
