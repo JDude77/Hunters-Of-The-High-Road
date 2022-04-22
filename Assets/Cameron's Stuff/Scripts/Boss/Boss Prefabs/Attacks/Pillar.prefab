@@ -115,7 +115,7 @@ MonoBehaviour:
   breachGroundSound:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 1992c2f01d34c1e429c6abd816982c94, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 360b6348d024be54bb86f258643f0446, type: 2}
   hitSound:
     idInternal: 0
     valueGuidInternal: 

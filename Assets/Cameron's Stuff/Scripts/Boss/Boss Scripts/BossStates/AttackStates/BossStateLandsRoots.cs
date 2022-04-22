@@ -5,6 +5,11 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public class BossStateLandsRoots : BossStatePillarAttack
 {
+    [Space(5)]
+    [SerializeField] private bool addRandomWaitTime;
+    [Tooltip("Random amount that is added to 'delayBetweenPillars'. Amount added is between 0 and this maximum range")]
+    [SerializeField] private float randomWaitTimeRange;
+
     #region Sounds
     [Header("Sounds")]
     [SerializeField] private AK.Wwise.Event windUp;
@@ -24,7 +29,8 @@ public class BossStateLandsRoots : BossStatePillarAttack
     {
         base.Start();
         previousPosition = player.transform.position;
-        playerVelocity = Vector3.zero;
+        playerVelocity = Vector3.zero;        
+
         InitEvents();
     }//End Start
 
@@ -63,6 +69,12 @@ public class BossStateLandsRoots : BossStatePillarAttack
         {
             Vector3 predictedPosition = player.transform.position + (playerVelocity * pillarWaitTime);
             SpawnPillar(predictedPosition);
+
+            if (addRandomWaitTime)
+            {
+                yield return new WaitForSeconds(delayBetweenPillars + Random.Range(0, randomWaitTimeRange));
+            }
+
             yield return new WaitForSeconds(delayBetweenPillars);
         }
         boss.animator.SetTrigger("DoEndLandsRoots");

@@ -1232,6 +1232,8 @@ MonoBehaviour:
   pillarStayTime: 0.5
   startYPos: 5
   finalYPos: 9
+  addRandomWaitTime: 0
+  randomWaitTimeRange: 0
   windUp:
     idInternal: 0
     valueGuidInternal: 
@@ -1239,7 +1241,7 @@ MonoBehaviour:
   handInGround:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: a343f81dba347c5409b0a33aee5447df, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 15636cb7ec1054a44814b7fa824a2567, type: 2}
   windDown:
     idInternal: 0
     valueGuidInternal: 
