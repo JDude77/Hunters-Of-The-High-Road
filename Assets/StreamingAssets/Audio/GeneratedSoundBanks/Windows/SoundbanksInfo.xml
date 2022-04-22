@@ -16,7 +16,7 @@
 			<ShortName>Player</ShortName>
 			<Path>Player.bnk</Path>
 			<IncludedEvents>
-				<Event Id="3879190359" Name="Play_Player_movement" ObjectPath="\Events\Default Work Unit\Player sounds\Play_Player_movement">
+				<Event Id="3879190359" Name="Play_Player_movement" ObjectPath="\Events\Default Work Unit\Player sounds\Play_Player_movement" DurationType="OneShot" DurationMin="0.235189" DurationMax="0.529689">
 					<IncludedMemoryFiles>
 						<File Id="20253490" Language="SFX">
 							<ShortName>sfx_footstep_toe_gravel_03.wav</ShortName>
@@ -215,7 +215,7 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="2370959289" Name="Play_player_Roll" ObjectPath="\Events\Default Work Unit\Player sounds\Play_player_Roll">
+				<Event Id="2370959289" Name="Play_player_Roll" ObjectPath="\Events\Default Work Unit\Player sounds\Play_player_Roll" DurationType="OneShot" DurationMin="0.757707" DurationMax="1.270286">
 					<IncludedMemoryFiles>
 						<File Id="43852155" Language="SFX">
 							<ShortName>sfx_movement_impact_cloth_04.wav</ShortName>
@@ -283,12 +283,12 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1229948536" Language="SFX" Hash="1036094129">
+		<SoundBank Id="1229948536" Language="SFX" Hash="3540250742">
 			<ObjectPath>\SoundBanks\Default Work Unit\environment</ObjectPath>
 			<ShortName>environment</ShortName>
 			<Path>environment.bnk</Path>
 			<IncludedEvents>
-				<Event Id="1293037340" Name="Play_camp_fire" ObjectPath="\Events\Default Work Unit\environment\Play_camp_fire" MaxAttenuation="10.">
+				<Event Id="1293037340" Name="Play_camp_fire" ObjectPath="\Events\Default Work Unit\environment\Play_camp_fire" MaxAttenuation="10." DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="169922276" Language="SFX">
 							<ShortName>sfx_environment_camp_fire_01.wav</ShortName>
@@ -296,7 +296,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="4166756183" Name="Play_environment_grave" ObjectPath="\Events\Default Work Unit\environment\Play_environment_grave" MaxAttenuation="40.">
+				<Event Id="4166756183" Name="Play_environment_grave" ObjectPath="\Events\Default Work Unit\environment\Play_environment_grave" MaxAttenuation="40." DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="763286601" Language="SFX">
 							<ShortName>sfx_environment_trees_01.wav</ShortName>
@@ -304,35 +304,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2929614753" Name="Play_environment_main_forest" ObjectPath="\Events\Default Work Unit\environment\Play_environment_main_forest" MaxAttenuation="150.">
-					<IncludedMemoryFiles>
-						<File Id="59818597" Language="SFX">
-							<ShortName>sfx_environment_owl_02.wav</ShortName>
-							<Path>SFX\sfx_environment_owl_02_10C4C929.wem</Path>
-						</File>
-						<File Id="97940187" Language="SFX">
-							<ShortName>sfx_environment_owl_03.wav</ShortName>
-							<Path>SFX\sfx_environment_owl_03_10C4C929.wem</Path>
-						</File>
-						<File Id="382204857" Language="SFX">
-							<ShortName>sfx_environment_birds_01.wav</ShortName>
-							<Path>SFX\sfx_environment_birds_01_D79FB2B7.wem</Path>
-						</File>
-						<File Id="559624516" Language="SFX">
-							<ShortName>sfx_environment_owl_05.wav</ShortName>
-							<Path>SFX\sfx_environment_owl_05_10C4C929.wem</Path>
-						</File>
-						<File Id="798562294" Language="SFX">
-							<ShortName>sfx_environment_owl_04.wav</ShortName>
-							<Path>SFX\sfx_environment_owl_04_10C4C929.wem</Path>
-						</File>
-						<File Id="861427743" Language="SFX">
-							<ShortName>sfx_environment_owl_01.wav</ShortName>
-							<Path>SFX\sfx_environment_owl_01_10C4C929.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
-				<Event Id="3450565664" Name="Play_Flys_buzzing" ObjectPath="\Events\Default Work Unit\environment\Play_Flys_buzzing" MaxAttenuation="6.">
+				<Event Id="3450565664" Name="Play_Flys_buzzing" ObjectPath="\Events\Default Work Unit\environment\Play_Flys_buzzing" MaxAttenuation="6." DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="753792408" Language="SFX">
 							<ShortName>500482-Single_Fly_Buzzing_-One_Fly_or_Insect_Flying_Buzz_Noise_-Loop_-Panned_Version_009530_.wav</ShortName>
@@ -344,7 +316,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="4089264814" Name="Play_gate_open" ObjectPath="\Events\Default Work Unit\environment\Play_gate_open">
+				<Event Id="4089264814" Name="Play_gate_open" ObjectPath="\Events\Default Work Unit\environment\Play_gate_open" DurationType="OneShot" DurationMin="3.355855" DurationMax="4.228112">
 					<IncludedMemoryFiles>
 						<File Id="967804768" Language="SFX">
 							<ShortName>sfx_environment_gate_01.wav</ShortName>
@@ -352,7 +324,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2038828501" Name="Play_Glass_Bottle_Brake" ObjectPath="\Events\Default Work Unit\environment\Play_Glass_Bottle_Brake">
+				<Event Id="2038828501" Name="Play_Glass_Bottle_Brake" ObjectPath="\Events\Default Work Unit\environment\Play_Glass_Bottle_Brake" DurationType="OneShot" DurationMin="0.671533" DurationMax="1.270229">
 					<IncludedMemoryFiles>
 						<File Id="86351964" Language="SFX">
 							<ShortName>sfx_environment_brake_glassbottle_02.wav</ShortName>
@@ -368,7 +340,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2115375931" Name="Play_Grave_Damage" ObjectPath="\Events\Default Work Unit\environment\Play_Grave_Damage">
+				<Event Id="2115375931" Name="Play_Grave_Damage" ObjectPath="\Events\Default Work Unit\environment\Play_Grave_Damage" DurationType="OneShot" DurationMin="0.981743" DurationMax="2.41273">
 					<IncludedMemoryFiles>
 						<File Id="35998100" Language="SFX">
 							<ShortName>sfx_environment_stonecrumble_03.wav</ShortName>
@@ -392,7 +364,19 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3390075432" Name="Play_Padlock_Brake" ObjectPath="\Events\Default Work Unit\environment\Play_Padlock_Brake">
+				<Event Id="3778516394" Name="Play_night_forrest" ObjectPath="\Events\Default Work Unit\environment\Play_night_forrest" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="410717211" Language="SFX">
+							<ShortName>sfx_environment_night_01.wav</ShortName>
+							<Path>SFX\sfx_environment_night_01_CBCC2486.wem</Path>
+						</File>
+						<File Id="651605714" Language="SFX">
+							<ShortName>sfx_environment_nightsquirl_01.wav</ShortName>
+							<Path>SFX\sfx_environment_nightsquirl_01_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3390075432" Name="Play_Padlock_Brake" ObjectPath="\Events\Default Work Unit\environment\Play_Padlock_Brake" DurationType="OneShot" DurationMin="0.82412" DurationMax="1.044929">
 					<IncludedMemoryFiles>
 						<File Id="84890005" Language="SFX">
 							<ShortName>sfx_environment_brake_padlock_03.wav</ShortName>
@@ -408,7 +392,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="282408186" Name="Play_sfx_environment_fire_tourch_01" ObjectPath="\Events\Default Work Unit\environment\Play_sfx_environment_fire_tourch_01" MaxAttenuation="6.">
+				<Event Id="282408186" Name="Play_sfx_environment_fire_tourch_01" ObjectPath="\Events\Default Work Unit\environment\Play_sfx_environment_fire_tourch_01" MaxAttenuation="6." DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="409183702" Language="SFX">
 							<ShortName>sfx_environment_fire_tourch_01.wav</ShortName>
@@ -416,7 +400,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="282408185" Name="Play_sfx_environment_fire_tourch_02" ObjectPath="\Events\Default Work Unit\environment\Play_sfx_environment_fire_tourch_02" MaxAttenuation="6.">
+				<Event Id="282408185" Name="Play_sfx_environment_fire_tourch_02" ObjectPath="\Events\Default Work Unit\environment\Play_sfx_environment_fire_tourch_02" MaxAttenuation="6." DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="261067370" Language="SFX">
 							<ShortName>sfx_environment_fire_tourch_02.wav</ShortName>
@@ -436,7 +420,7 @@
 			<ShortName>Weapons</ShortName>
 			<Path>Weapons.bnk</Path>
 			<IncludedEvents>
-				<Event Id="1967888440" Name="Play_Rifle_Shoot" ObjectPath="\Events\Default Work Unit\Player weapons\Play_Rifle_Shoot">
+				<Event Id="1967888440" Name="Play_Rifle_Shoot" ObjectPath="\Events\Default Work Unit\Player weapons\Play_Rifle_Shoot" DurationType="OneShot" DurationMin="4.205906" DurationMax="4.987375">
 					<IncludedMemoryFiles>
 						<File Id="153752956" Language="SFX">
 							<ShortName>sfx_weapon_rifle_reloadclick_01.wav</ShortName>
@@ -464,7 +448,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="858025235" Name="Play_sword_full" ObjectPath="\Events\Default Work Unit\Player weapons\Play_sword_full">
+				<Event Id="858025235" Name="Play_sword_full" ObjectPath="\Events\Default Work Unit\Player weapons\Play_sword_full" DurationType="OneShot" DurationMin="3.532517" DurationMax="3.873754">
 					<IncludedMemoryFiles>
 						<File Id="243304111" Language="SFX">
 							<ShortName>sward pull.wav</ShortName>
@@ -507,7 +491,7 @@
 			<ShortName>UI</ShortName>
 			<Path>UI.bnk</Path>
 			<IncludedEvents>
-				<Event Id="786024383" Name="Play_page_turn" ObjectPath="\Events\Default Work Unit\UI\Play_page_turn">
+				<Event Id="786024383" Name="Play_page_turn" ObjectPath="\Events\Default Work Unit\UI\Play_page_turn" DurationType="OneShot" DurationMin="0.479035" DurationMax="0.846598">
 					<IncludedMemoryFiles>
 						<File Id="552280281" Language="SFX">
 							<ShortName>sfx_ui_pageturn_01.wav</ShortName>
@@ -523,7 +507,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1198841816" Name="Play_sfx_ui_back_01" ObjectPath="\Events\Default Work Unit\UI\Play_sfx_ui_back_01">
+				<Event Id="1198841816" Name="Play_sfx_ui_back_01" ObjectPath="\Events\Default Work Unit\UI\Play_sfx_ui_back_01" DurationType="OneShot" DurationMin="1.35" DurationMax="1.35">
 					<IncludedMemoryFiles>
 						<File Id="694767111" Language="SFX">
 							<ShortName>sfx_ui_back_01.wav</ShortName>
@@ -531,7 +515,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3633800886" Name="Play_sfx_ui_move_01" ObjectPath="\Events\Default Work Unit\UI\Play_sfx_ui_move_01">
+				<Event Id="3633800886" Name="Play_sfx_ui_move_01" ObjectPath="\Events\Default Work Unit\UI\Play_sfx_ui_move_01" DurationType="OneShot" DurationMin="0.961973" DurationMax="0.961973">
 					<IncludedMemoryFiles>
 						<File Id="426194716" Language="SFX">
 							<ShortName>sfx_ui_move_01.wav</ShortName>
@@ -539,7 +523,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="631659255" Name="Play_sfx_ui_select_01" ObjectPath="\Events\Default Work Unit\UI\Play_sfx_ui_select_01">
+				<Event Id="631659255" Name="Play_sfx_ui_select_01" ObjectPath="\Events\Default Work Unit\UI\Play_sfx_ui_select_01" DurationType="OneShot" DurationMin="1.68" DurationMax="1.68">
 					<IncludedMemoryFiles>
 						<File Id="751707267" Language="SFX">
 							<ShortName>sfx_ui_select_01.wav</ShortName>
@@ -549,12 +533,40 @@
 				</Event>
 			</IncludedEvents>
 		</SoundBank>
-		<SoundBank Id="1560169506" Language="SFX" Hash="2818509056">
+		<SoundBank Id="1560169506" Language="SFX" Hash="1133018488">
 			<ObjectPath>\SoundBanks\Default Work Unit\Boss</ObjectPath>
 			<ShortName>Boss</ShortName>
 			<Path>Boss.bnk</Path>
 			<IncludedEvents>
-				<Event Id="1677138927" Name="Play_boss_movement" ObjectPath="\Events\Default Work Unit\boss sounds\Play_boss_movement">
+				<Event Id="3797621065" Name="grunt" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\hand roots\grunt" DurationType="OneShot" DurationMin="0." DurationMax="0.658701">
+					<IncludedMemoryFiles>
+						<File Id="155062614" Language="SFX">
+							<ShortName>sfx_boss_attack_grunt_03.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_grunt_03_42F2BC79.wem</Path>
+						</File>
+						<File Id="225506425" Language="SFX">
+							<ShortName>sfx_boss_attack_grunt_02.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_grunt_02_EEBFBC77.wem</Path>
+						</File>
+						<File Id="571547885" Language="SFX">
+							<ShortName>sfx_boss_attack_grunt_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_grunt_01_10C4C929.wem</Path>
+						</File>
+						<File Id="590982211" Language="SFX">
+							<ShortName>sfx_boss_attack_grunt_04.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_grunt_04_47619B6A.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="919531205" Name="hands_in" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\hand roots\hands_in" DurationType="OneShot" DurationMin="0.470992" DurationMax="0.839212">
+					<IncludedMemoryFiles>
+						<File Id="763859046" Language="SFX">
+							<ShortName>sfx_boss_impact_ground_01.wav</ShortName>
+							<Path>SFX\sfx_boss_impact_ground_01_39E56F4B.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1677138927" Name="Play_boss_movement" ObjectPath="\Events\Default Work Unit\boss sounds\Play_boss_movement" DurationType="OneShot" DurationMin="0.218211" DurationMax="0.501708">
 					<IncludedMemoryFiles>
 						<File Id="31148998" Language="SFX">
 							<ShortName>63759-Wig_big_clown_hair_adjust_on_head-BLASTWAVEFX-02183.wav</ShortName>
@@ -641,24 +653,8 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="1148002322" Name="Play_Burrow_attack" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Play_Burrow_attack">
+				<Event Id="3936914037" Name="Play_Dig_down" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Burrow\Play_Dig_down" DurationType="OneShot" DurationMin="0.350794" DurationMax="0.767092">
 					<IncludedMemoryFiles>
-						<File Id="82444583" Language="SFX">
-							<ShortName>sfx_boss_attack_digging_03.wav</ShortName>
-							<Path>SFX\sfx_boss_attack_digging_03_04319DFE.wem</Path>
-						</File>
-						<File Id="86039684" Language="SFX">
-							<ShortName>sfx_boss_attack_digup_02.wav</ShortName>
-							<Path>SFX\sfx_boss_attack_digup_02_DA8550E9.wem</Path>
-						</File>
-						<File Id="154975497" Language="SFX">
-							<ShortName>sfx_boss_attack_digup_01.wav</ShortName>
-							<Path>SFX\sfx_boss_attack_digup_01_813358E4.wem</Path>
-						</File>
-						<File Id="387731555" Language="SFX">
-							<ShortName>sfx_boss_attack_digging_01.wav</ShortName>
-							<Path>SFX\sfx_boss_attack_digging_01_57457BDC.wem</Path>
-						</File>
 						<File Id="471210075" Language="SFX">
 							<ShortName>sfx_boss_attack_digdown_03.wav</ShortName>
 							<Path>SFX\sfx_boss_attack_digdown_03_10C4C929.wem</Path>
@@ -667,17 +663,61 @@
 							<ShortName>sfx_boss_attack_digdown_02.wav</ShortName>
 							<Path>SFX\sfx_boss_attack_digdown_02_10C4C929.wem</Path>
 						</File>
-						<File Id="857458611" Language="SFX">
-							<ShortName>sfx_boss_attack_digging_02.wav</ShortName>
-							<Path>SFX\sfx_boss_attack_digging_02_A8A593B2.wem</Path>
-						</File>
 						<File Id="946470933" Language="SFX">
 							<ShortName>sfx_boss_attack_digdown_01.wav</ShortName>
 							<Path>SFX\sfx_boss_attack_digdown_01_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2599551658" Name="Play_land_roots_attack" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Play_land_roots_attack">
+				<Event Id="990938754" Name="Play_dig_up" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Burrow\Play_dig_up" DurationType="OneShot" DurationMin="0.592394" DurationMax="1.264286">
+					<IncludedMemoryFiles>
+						<File Id="86039684" Language="SFX">
+							<ShortName>sfx_boss_attack_digup_02.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_digup_02_DA8550E9.wem</Path>
+						</File>
+						<File Id="154975497" Language="SFX">
+							<ShortName>sfx_boss_attack_digup_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_digup_01_813358E4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="813141615" Name="Play_digging" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Burrow\Play_digging" DurationType="OneShot" DurationMin="1.864789" DurationMax="4.366508">
+					<IncludedMemoryFiles>
+						<File Id="82444583" Language="SFX">
+							<ShortName>sfx_boss_attack_digging_03.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_digging_03_04319DFE.wem</Path>
+						</File>
+						<File Id="387731555" Language="SFX">
+							<ShortName>sfx_boss_attack_digging_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_digging_01_57457BDC.wem</Path>
+						</File>
+						<File Id="857458611" Language="SFX">
+							<ShortName>sfx_boss_attack_digging_02.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_digging_02_A8A593B2.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1741081981" Name="Play_hit_sound" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\swipe\Play_hit_sound" DurationType="OneShot" DurationMin="0." DurationMax="0.112993">
+					<IncludedMemoryFiles>
+						<File Id="622216869" Language="SFX">
+							<ShortName>sfx_boss_attack_swing_03.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_swing_03_95DB850A.wem</Path>
+						</File>
+						<File Id="654923840" Language="SFX">
+							<ShortName>sfx_boss_attack_swing_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_swing_01_4A32AD7F.wem</Path>
+						</File>
+						<File Id="903526883" Language="SFX">
+							<ShortName>sfx_boss_attack_swing_04.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_swing_04_EED9C6BB.wem</Path>
+						</File>
+						<File Id="940954914" Language="SFX">
+							<ShortName>sfx_boss_attack_swing_02.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_swing_02_76353BB4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2599551658" Name="Play_land_roots_attack" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Play_land_roots_attack" DurationType="OneShot" DurationMin="2.050301" DurationMax="3.359728">
 					<IncludedMemoryFiles>
 						<File Id="155062614" Language="SFX">
 							<ShortName>sfx_boss_attack_grunt_03.wav</ShortName>
@@ -713,7 +753,35 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2779817312" Name="Play_scream_attack" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Play_scream_attack">
+				<Event Id="2860663338" Name="Play_pillersup" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\uproot\Play_pillersup" DurationType="OneShot" DurationMin="0.734532" DurationMax="2.485224">
+					<IncludedMemoryFiles>
+						<File Id="295087768" Language="SFX">
+							<ShortName>sfx_boss_attack_pillars_03.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_pillars_03_D29FF5A2.wem</Path>
+						</File>
+						<File Id="382482348" Language="SFX">
+							<ShortName>sfx_boss_attack_dirtdebris_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_dirtdebris_01_43421C9E.wem</Path>
+						</File>
+						<File Id="385143009" Language="SFX">
+							<ShortName>sfx_boss_attack_dirtdebris_02.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_dirtdebris_02_299CA992.wem</Path>
+						</File>
+						<File Id="1057579346" Language="SFX">
+							<ShortName>sfx_boss_attack_pillars_02.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_pillars_02_372AA902.wem</Path>
+						</File>
+						<File Id="1059656706" Language="SFX">
+							<ShortName>sfx_boss_attack_pillars_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_pillars_01_413C334E.wem</Path>
+						</File>
+						<File Id="1061007027" Language="SFX">
+							<ShortName>sfx_boss_attack_dirtdebris_03.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_dirtdebris_03_C6392C56.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2779817312" Name="Play_scream_attack" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Play_scream_attack" DurationType="OneShot" DurationMin="2.793559" DurationMax="3.731934">
 					<IncludedMemoryFiles>
 						<File Id="354529564" Language="SFX">
 							<ShortName>sfx_boss_attack_scream_02.wav</ShortName>
@@ -737,7 +805,47 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2956397052" Name="Play_Uproot_Attack" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Play_Uproot_Attack">
+				<Event Id="495359303" Name="Play_Swing_attack" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\swipe\Play_Swing_attack" DurationType="OneShot" DurationMin="0.580393" DurationMax="1.121943">
+					<IncludedMemoryFiles>
+						<File Id="49360364" Language="SFX">
+							<ShortName>sfx_boss_attack__05.wav</ShortName>
+							<Path>SFX\sfx_boss_attack__05_015BFF9E.wem</Path>
+						</File>
+						<File Id="101982553" Language="SFX">
+							<ShortName>sfx_boss_attack_swing_02.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_swing_02_913230C8.wem</Path>
+						</File>
+						<File Id="109734831" Language="SFX">
+							<ShortName>sfx_boss_attack_swing_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_swing_01_0E7A7F71.wem</Path>
+						</File>
+						<File Id="131001721" Language="SFX">
+							<ShortName>sfx_boss_attack__03.wav</ShortName>
+							<Path>SFX\sfx_boss_attack__03_1B62D577.wem</Path>
+						</File>
+						<File Id="433508468" Language="SFX">
+							<ShortName>sfx_boss_attack_swing_04.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_swing_04_76B12647.wem</Path>
+						</File>
+						<File Id="538157863" Language="SFX">
+							<ShortName>sfx_boss_attack__04.wav</ShortName>
+							<Path>SFX\sfx_boss_attack__04_3844E5A0.wem</Path>
+						</File>
+						<File Id="619175511" Language="SFX">
+							<ShortName>sfx_boss_attack__02.wav</ShortName>
+							<Path>SFX\sfx_boss_attack__02_8AF07023.wem</Path>
+						</File>
+						<File Id="693164142" Language="SFX">
+							<ShortName>sfx_boss_attack_swing_03.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_swing_03_03833FF1.wem</Path>
+						</File>
+						<File Id="874802181" Language="SFX">
+							<ShortName>sfx_boss_attack__01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack__01_DFDCADCB.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2956397052" Name="Play_Uproot_Attack" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Play_Uproot_Attack" DurationType="OneShot" DurationMin="1.715014" DurationMax="3.833532">
 					<IncludedMemoryFiles>
 						<File Id="205365064" Language="SFX">
 							<ShortName>sfx_boss_attack_stomp_01.wav</ShortName>
@@ -785,43 +893,55 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2641104580" Name="swipe_attack" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\swipe_attack">
+				<Event Id="4184561336" Name="Play_UpRootStomp" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\uproot\Play_UpRootStomp" DurationType="OneShot" DurationMin="0.980482" DurationMax="1.348307">
 					<IncludedMemoryFiles>
-						<File Id="49360364" Language="SFX">
-							<ShortName>sfx_boss_attack__05.wav</ShortName>
-							<Path>SFX\sfx_boss_attack__05_015BFF9E.wem</Path>
+						<File Id="205365064" Language="SFX">
+							<ShortName>sfx_boss_attack_stomp_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_stomp_01_49EBBB37.wem</Path>
 						</File>
-						<File Id="101982553" Language="SFX">
-							<ShortName>sfx_boss_attack_swing_02.wav</ShortName>
-							<Path>SFX\sfx_boss_attack_swing_02_64B00A8B.wem</Path>
+						<File Id="382482348" Language="SFX">
+							<ShortName>sfx_boss_attack_dirtdebris_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_dirtdebris_01_43421C9E.wem</Path>
 						</File>
-						<File Id="109734831" Language="SFX">
-							<ShortName>sfx_boss_attack_swing_01.wav</ShortName>
-							<Path>SFX\sfx_boss_attack_swing_01_AB7025AC.wem</Path>
+						<File Id="385143009" Language="SFX">
+							<ShortName>sfx_boss_attack_dirtdebris_02.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_dirtdebris_02_299CA992.wem</Path>
 						</File>
-						<File Id="131001721" Language="SFX">
-							<ShortName>sfx_boss_attack__03.wav</ShortName>
-							<Path>SFX\sfx_boss_attack__03_1B62D577.wem</Path>
+						<File Id="657166689" Language="SFX">
+							<ShortName>sfx_boss_attack_stomp_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_stomp_01_2FA828CF.wem</Path>
 						</File>
-						<File Id="433508468" Language="SFX">
-							<ShortName>sfx_boss_attack_swing_04.wav</ShortName>
-							<Path>SFX\sfx_boss_attack_swing_04_FF054768.wem</Path>
+						<File Id="746852970" Language="SFX">
+							<ShortName>sfx_boss_attack_stomp_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_stomp_01_3D533492.wem</Path>
 						</File>
-						<File Id="538157863" Language="SFX">
-							<ShortName>sfx_boss_attack__04.wav</ShortName>
-							<Path>SFX\sfx_boss_attack__04_3844E5A0.wem</Path>
+						<File Id="1046182162" Language="SFX">
+							<ShortName>sfx_boss_attack_groundtump_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_groundtump_01_E7F850F1.wem</Path>
 						</File>
-						<File Id="619175511" Language="SFX">
-							<ShortName>sfx_boss_attack__02.wav</ShortName>
-							<Path>SFX\sfx_boss_attack__02_8AF07023.wem</Path>
+						<File Id="1061007027" Language="SFX">
+							<ShortName>sfx_boss_attack_dirtdebris_03.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_dirtdebris_03_C6392C56.wem</Path>
 						</File>
-						<File Id="693164142" Language="SFX">
-							<ShortName>sfx_boss_attack_swing_03.wav</ShortName>
-							<Path>SFX\sfx_boss_attack_swing_03_E69C1993.wem</Path>
+						<File Id="1069427337" Language="SFX">
+							<ShortName>sfx_boss_attack_stomp_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_stomp_01_7EA7F852.wem</Path>
 						</File>
-						<File Id="874802181" Language="SFX">
-							<ShortName>sfx_boss_attack__01.wav</ShortName>
-							<Path>SFX\sfx_boss_attack__01_DFDCADCB.wem</Path>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="948909352" Name="roots_up" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\hand roots\roots_up" DurationType="OneShot" DurationMin="1.004767" DurationMax="1.861814">
+					<IncludedMemoryFiles>
+						<File Id="295087768" Language="SFX">
+							<ShortName>sfx_boss_attack_pillars_03.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_pillars_03_D29FF5A2.wem</Path>
+						</File>
+						<File Id="949080387" Language="SFX">
+							<ShortName>sfx_boss_attack_pillars_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_pillars_01_60F97F09.wem</Path>
+						</File>
+						<File Id="1057579346" Language="SFX">
+							<ShortName>sfx_boss_attack_pillars_02.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_pillars_02_372AA902.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
