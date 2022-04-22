@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c27575bb18f6f49be55ff13153237f, type: 3}
+  m_Name: 3E1AF091-C71F-48D1-8F2F-887212DB091D
+  m_EditorClassIdentifier: 
+  objectName: roots_up
+  id: 948909352
+  guid: 3E1AF091-C71F-48D1-8F2F-887212DB091D
