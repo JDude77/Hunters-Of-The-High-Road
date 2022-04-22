@@ -4,6 +4,7 @@ using UnityEngine;
 public class BossStateScream : AttackState
 {
     [Header("Swipe settings")]
+    [Tooltip("Radius that the player can be inside to receive damage (For activation radius, see BossStateDecision component)")]
     [SerializeField] private float radius;
     [Header("Sounds")]
     [SerializeField] private AK.Wwise.Event screamNoise;

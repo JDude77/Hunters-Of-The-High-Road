@@ -12,22 +12,29 @@ public class BossStateCharging : AttackState
     [SerializeField] private float rotateSpeed;
     [Tooltip("An offset from the charge's end point so that the boss does not go the full distance. Preferably set to half the radius of the swipe attack circle")]
     [SerializeField] private float stopDistance;
+    [Tooltip("The speed of the boss while getting in range of the player")]
     [SerializeField] public float runSpeed;
     [Space(5)]
+    [Tooltip("The time the boss will wait before doing the first charge")]
     [SerializeField] private float windUpTime;
+    [Tooltip("The time the boss will wait before exiting the state")]
     [SerializeField] private float windDownTime;
+    [Tooltip("The time the boss will wait before charging, after the first charge")]
     [SerializeField] private float consecutiveWindUpTime;
-    [Space(5)] 
+    [Space(5)]
+    [Tooltip("The speed of the boss while charging")]
     [SerializeField] private float maxChargeSpeed;
-
+    [Tooltip("NOT CURRENTLY USED - The acceleration of the boss at the start of a charge")]
     [SerializeField] private float accelerateTime;
     private float speedMultiplier = 0;
     private float accelerateTimer;
 
+    [Tooltip("The curve applied to the boss's acceleration before reaching top speed")]
     [SerializeField] private AnimationCurve accelerationCurve;
-
+    [Tooltip("How many times the boss can charge in total before exiting the attack")]
     [SerializeField] private int totalConsecutiveCharges;
     [Space(5)]
+    [Tooltip("Radius of the swipe attack after each charge")]
     [SerializeField] private float swipeRadius;
     #endregion
 

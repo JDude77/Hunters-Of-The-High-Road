@@ -9,18 +9,21 @@ public class BossStateBurrow : AttackState
     [SerializeField] private BurrowMovement particlesPrefab;
 
     [Header("Attack Settings")]
-    [SerializeField] private float windUpTime;
     [Tooltip("This should be the y position of the boss when it plays its dig up and dig down animations")]
     [SerializeField] private float goundedYPosition;
     [Tooltip("The position of the boss as the particles are moving")]
     [SerializeField] private float burrowYPosition;
+    [Tooltip("The position of the particles as they are moving")]
     [SerializeField] private float particleYPosition;
     [Tooltip("Higher max rotation speed means the boss will align itself with the direction to the player faster")]
     [SerializeField] private float startRotationSpeed;
+    [Tooltip("Rate at which the rotation speed increases")]
     [SerializeField] private float rotationSpeedIncreaseRate;
+    [Tooltip("Forward movement speed of the boss")]
     [SerializeField] private float burrowSpeed;
-    [Tooltip("The distance to the player that the particles must be to activate the dig up animation")]
+    [Tooltip("The distance to the player that the boss must be to activate the dig up animation")]
     [SerializeField] private float inRangeDistance;
+    [Tooltip("The time the boss will wait before jumping up")]
     [SerializeField] private float digUpDelay;
     #endregion
 

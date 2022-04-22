@@ -6,7 +6,9 @@ using UnityEngine;
 public class BossStateUproot : BossStatePillarAttack
 {
     [Header("Uproot settings")]
+    [Tooltip("Distance to the final pillar that will be spawned")]
     [SerializeField] private float attackDistance;
+    [Tooltip("Position of the first pillar that will be spawned")]
     [SerializeField] private float attackStartOffset;
 
     [SerializeField] private AK.Wwise.Event stomp;
