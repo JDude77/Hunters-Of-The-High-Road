@@ -108,3 +108,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 245cc804589c59e488637449100aadcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  breachGroundSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1992c2f01d34c1e429c6abd816982c94, type: 2}
+  hitSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  groundPosition: 0

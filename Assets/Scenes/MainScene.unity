@@ -10429,6 +10429,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4391661727102193929, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
+      propertyPath: stomp.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: cb5dd4a3648661940afee150c1438c3a, type: 2}
     - target: {fileID: 5737708253282028240, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
       propertyPath: digUpSound.WwiseObjectReference
       value: 
@@ -11168,7 +11172,7 @@ PrefabInstance:
     - target: {fileID: 7435550965853241673, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
       propertyPath: windDown.WwiseObjectReference
       value: 
-      objectReference: {fileID: 11400000, guid: 360b6348d024be54bb86f258643f0446, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 7435550965853241673, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
       propertyPath: handInGround.WwiseObjectReference
       value: 
