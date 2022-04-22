@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     private Player player;
     private Boss boss;
 
+    //Please ignore my horrendous placeholder audio bug fix code - Jordan
+    private TutorialBottle[] tutorialBottlesForBreakSoundOnRestartFix;
 
 
     // Start is called before the first frame update
@@ -17,6 +19,7 @@ public class GameManager : MonoBehaviour
         ani = GetComponent<Animator>();
         player = FindObjectOfType<Player>();
         boss = FindObjectOfType<Boss>();
+        tutorialBottlesForBreakSoundOnRestartFix = FindObjectsOfType<TutorialBottle>();
     }
 
     // Update is called once per frame
@@ -37,6 +40,13 @@ public class GameManager : MonoBehaviour
     //public methods are used by buttons
     public void RestartGame()
     {
+        for(int i = 0; i < tutorialBottlesForBreakSoundOnRestartFix.Length; i++)
+        {
+            tutorialBottlesForBreakSoundOnRestartFix[i].GetComponentInChildren<AkGameObj>().enabled = false;
+            tutorialBottlesForBreakSoundOnRestartFix[i].GetComponentInChildren<AkEvent>().data.ObjectReference = null;
+            tutorialBottlesForBreakSoundOnRestartFix[i].GetComponentInChildren<AkEvent>().enabled = false;
+        }//End for
+
         //reloads the current scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
