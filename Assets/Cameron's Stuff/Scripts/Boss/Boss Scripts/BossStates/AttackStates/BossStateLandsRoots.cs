@@ -87,6 +87,7 @@ public class BossStateLandsRoots : BossStatePillarAttack
     {
         //Animation event
         eventResponder.AddAction("StartPillars", () => { StartCoroutine(DoAttack()); });
+        eventResponder.AddSoundEffect("HandSound", handInGround, gameObject);
         eventResponder.AddAction("ExitState", boss.ReturnToMainState);
     }
 }
