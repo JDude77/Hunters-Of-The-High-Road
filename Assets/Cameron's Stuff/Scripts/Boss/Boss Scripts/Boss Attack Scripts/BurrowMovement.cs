@@ -58,4 +58,14 @@ public class BurrowMovement : MonoBehaviour
     {
         targetPosition = position;
     }//End SetPlayerPosition
+
+    public void OnTriggerEnter(Collider other)
+    {
+        IDestructible obj = other.GetComponent<IDestructible>();
+
+        if (obj != null)
+        {
+            obj.DestroyObject();
+        }
+    }
 }

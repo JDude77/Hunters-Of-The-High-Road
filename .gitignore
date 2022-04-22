@@ -66,3 +66,7 @@ crashlytics-build.properties
 
 # Packed Addressables
 /[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+ProjectSettings/Packages/com.unity.probuilder/Settings.json
+Assets/Cameron's Stuff/Scripts/Interfaces/IDestructible.cs.meta
+Assets/Cameron's Stuff/Scripts/Interfaces.meta
+ProjectSettings/Packages/com.unity.probuilder/Settings.json

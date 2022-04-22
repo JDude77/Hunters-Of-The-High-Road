@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestructibleTombstone : MonoBehaviour
+public class DestructibleTombstone : MonoBehaviour, IDestructible
 {
     [SerializeField]
     private GameObject[] graveVariants;
 
     [SerializeField]
     private GameObject DestroyedVersion;
+    [SerializeField] 
     private GameObject normalVersion;
 
     private Collider boxCollider;
@@ -23,10 +24,13 @@ public class DestructibleTombstone : MonoBehaviour
             grave.SetActive(false);
         }
 
-        int ranNum = Random.Range(0, graveVariants.Length);
-        graveVariants[ranNum].SetActive(true);
+        if (graveVariants.Length > 0) {
+            int ranNum = Random.Range(0, graveVariants.Length);
+            graveVariants[ranNum].SetActive(true);
 
-        normalVersion = graveVariants[ranNum];
+            normalVersion = graveVariants[ranNum];
+        }
+        
         boxCollider = GetComponent<Collider>();
     }
 
@@ -43,4 +47,13 @@ public class DestructibleTombstone : MonoBehaviour
             FindObjectOfType<PlayerEventsHandler>().OnHitGravestone -= DestroyTombstone;
         }//End if
     }//End DestroyTombstone
+
+    public void DestroyObject()
+    {
+        DestroyedVersion.transform.parent = null;
+        DestroyedVersion.SetActive(true);
+        normalVersion.SetActive(false);
+        //TODO: remove this once full transition to interface is done
+        FindObjectOfType<PlayerEventsHandler>().OnHitGravestone -= DestroyTombstone;
+    }    
 }
