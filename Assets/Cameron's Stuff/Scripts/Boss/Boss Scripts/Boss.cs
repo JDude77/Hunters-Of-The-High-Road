@@ -75,7 +75,7 @@ public class Boss : Character
     protected override void Start()
     {
         base.Start();
-        FindObjectOfType<BossTrigger>().TriggerActivated = () => { if (currentState is BossStateIdle) ChangeState(mainState); };
+        FindObjectOfType<BossTrigger>().TriggerActivated += () => { if (currentState is BossStateIdle) ChangeState(mainState); };
     } //End Start
 
     //Update is called once per frame
