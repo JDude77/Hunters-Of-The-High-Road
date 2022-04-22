@@ -8882,7 +8882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d31f2ff724401441b14b627b9dd5d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 10
+  movementSpeed: 8
 --- !u!114 &3831958134231935418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8896,8 +8896,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   staminaCost: 20
-  rollTime: 1.2
-  rollingSpeedBoost: 12
+  rollTime: 1
+  rollingSpeedBoost: 16
   rollCurve:
     serializedVersion: 2
     m_Curve:

@@ -12,7 +12,13 @@ public class ChainDoorScript : MonoBehaviour
     void Start()
     {
         FindObjectOfType<PlayerEventsHandler>().OnHitChain += OpenDoor;
+        FindObjectOfType<BossTrigger>().TriggerActivated += SlamDoor;
         ani = GetComponent<Animator>();
+    }
+
+    public void SlamDoor()
+    {
+        ani.Play("SlamDoor");
     }
 
     public void OpenDoor(GameObject instance)
