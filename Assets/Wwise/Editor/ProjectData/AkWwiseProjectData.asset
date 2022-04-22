@@ -429,7 +429,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: fb0dbcfe02547c49afbe650cce855735
     GuidInternal: 
-    m_lastTime: -8585509931424224831
+    m_lastTime: -8585509912829932784
     List:
     - name: Attacks sounds
       guid: 1c4bc2c32d9f7e4fa4cb7d34a0bde9f0
@@ -532,8 +532,8 @@ MonoBehaviour:
         guid: 4ed93c6ff4182145a5e464f6a60a147c
       Path: Events\Default Work Unit\boss sounds\Attacks sounds\hand roots\grunt
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.658701
+      minDuration: 0
     - name: hand roots
       guid: 8d0e4dc16da16945b5cf6e899810fb26
       id: 2415149733
@@ -581,8 +581,8 @@ MonoBehaviour:
         guid: 4f707d97845a6f4889885e77ad045178
       Path: Events\Default Work Unit\boss sounds\Attacks sounds\hand roots\hands_in
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.839212
+      minDuration: 0.470992
     - name: Play_boss_movement
       guid: b1a2aa1731c894458687bb9bd4d8d56b
       id: 1677138927
@@ -647,8 +647,8 @@ MonoBehaviour:
         guid: 70b5541f8f788a43a8f49ca5ec45368a
       Path: Events\Default Work Unit\boss sounds\Attacks sounds\Burrow\Play_Dig_down
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.767092
+      minDuration: 0.350794
     - name: Play_dig_up
       guid: 8a3eac4766bb4b46838a28a6961635dc
       id: 990938754
@@ -673,8 +673,8 @@ MonoBehaviour:
         guid: 8a3eac4766bb4b46838a28a6961635dc
       Path: Events\Default Work Unit\boss sounds\Attacks sounds\Burrow\Play_dig_up
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1.264286
+      minDuration: 0.592394
     - name: Play_digging
       guid: 03fb83e611030440843cee821a2dd79e
       id: 813141615
@@ -699,8 +699,8 @@ MonoBehaviour:
         guid: 03fb83e611030440843cee821a2dd79e
       Path: Events\Default Work Unit\boss sounds\Attacks sounds\Burrow\Play_digging
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 4.366508
+      minDuration: 1.864789
     - name: Play_environment_grave
       guid: 3c18ac02ae9e8f498be0bd117b96be72
       id: 4166756183
@@ -825,8 +825,8 @@ MonoBehaviour:
         guid: 3f88a4f93b202448b864d08cea67d87f
       Path: Events\Default Work Unit\boss sounds\Attacks sounds\swipe\Play_hit_sound
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.112993
+      minDuration: 0
     - name: Play_land_roots_attack
       guid: bfd0bdf5c3b9a246bc77901aa3f52a4d
       id: 2599551658
@@ -934,8 +934,8 @@ MonoBehaviour:
         guid: 877b8750038eee469c68820fb1782d15
       Path: Events\Default Work Unit\boss sounds\Attacks sounds\uproot\Play_pillersup
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 2.485224
+      minDuration: 0.734532
     - name: Play_Player_movement
       guid: 4259cbb772d5b743ae1409200a366a08
       id: 3879190359
@@ -1143,8 +1143,8 @@ MonoBehaviour:
         guid: 060f57c49278a44d8b4463831be4dd7a
       Path: Events\Default Work Unit\boss sounds\Attacks sounds\swipe\Play_Swing_attack
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1.121943
+      minDuration: 0.580393
     - name: Play_sword_full
       guid: 034e9b2cd58b184daacb209fae502c16
       id: 858025235
@@ -1186,8 +1186,8 @@ MonoBehaviour:
         guid: c6a0caeabbecca4ba9e9dafdc99d54c2
       Path: Events\Default Work Unit\boss sounds\Attacks sounds\Play_Uproot_Attack
       maxAttenuation: 0
-      maxDuration: 3.210122
-      minDuration: 1.960965
+      maxDuration: 3.833532
+      minDuration: 1.715014
     - name: Play_UpRootStomp
       guid: 07d24f626ec8ff469ffb4a250e7f0aa7
       id: 4184561336
@@ -1212,8 +1212,8 @@ MonoBehaviour:
         guid: 07d24f626ec8ff469ffb4a250e7f0aa7
       Path: Events\Default Work Unit\boss sounds\Attacks sounds\uproot\Play_UpRootStomp
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1.348307
+      minDuration: 0.980482
     - name: Player sounds
       guid: 65a5e046ab1a8d4a9fb8ba5e00253a95
       id: 136533858
@@ -1272,8 +1272,8 @@ MonoBehaviour:
         guid: 91f01a3e1fc7d1488f2f887212db091d
       Path: Events\Default Work Unit\boss sounds\Attacks sounds\hand roots\roots_up
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1.861814
+      minDuration: 1.004767
     - name: swipe
       guid: fa78dec37984e34491148350578b29e9
       id: 2420075157
@@ -1719,9 +1719,9 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8585548625492553666
     List: []
-  ExpandedFileSystemItemIds: 0100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000f00000010000000110000001600000017000000190000002e0000002f000000
-  ExpandedWaapiItemIds: 01000000020000000300000004000000050000000600000007000000080000000f00000010000000110000001600000017000000190000002e0000002f00000038000000660000007b0000006c5005002fb30600
+  ExpandedFileSystemItemIds: 0100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000f0000001000000011000000150000001600000017000000190000002e0000002f000000
+  ExpandedWaapiItemIds: 0100000002000000030000000400000005000000060000000700000008000000090000000f00000010000000110000001600000017000000190000002e0000002f00000038000000660000007b0000006c5005002fb30600
   AutoSyncSelection: 1
   autoPopulateEnabled: 1
-  currentDataSource: 0
+  currentDataSource: 1
   CurrentPluginConfig: 
