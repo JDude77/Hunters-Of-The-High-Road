@@ -11000,16 +11000,56 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1253557579509811496, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
       propertyPath: health
-      value: 150
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1253557579509811496, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
       propertyPath: maxHealth
-      value: 0
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4391661727102193929, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
+      propertyPath: windUpTime
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 4391661727102193929, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
+      propertyPath: pillarCount
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4391661727102193929, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
+      propertyPath: attackDistance
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4391661727102193929, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
+      propertyPath: pillarStayTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4391661727102193929, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
+      propertyPath: pillarAscendSpeed
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 4391661727102193929, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
+      propertyPath: pillarDescendSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4391661727102193929, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
+      propertyPath: delayBetweenPillars
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 4391661727102193929, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
       propertyPath: stomp.WwiseObjectReference
       value: 
       objectReference: {fileID: 11400000, guid: cb5dd4a3648661940afee150c1438c3a, type: 2}
+    - target: {fileID: 5737708253282028240, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
+      propertyPath: digUpDelay
+      value: 0.0005
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737708253282028240, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
+      propertyPath: burrowSpeed
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737708253282028240, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
+      propertyPath: inRangeDistance
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5737708253282028240, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
       propertyPath: digUpSound.WwiseObjectReference
       value: 
@@ -11741,6 +11781,30 @@ PrefabInstance:
     - target: {fileID: 6365468787684214129, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 179.26447
+      objectReference: {fileID: 0}
+    - target: {fileID: 7393394392463716624, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
+      propertyPath: chargeInRange
+      value: 38
+      objectReference: {fileID: 0}
+    - target: {fileID: 7393394392463716624, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
+      propertyPath: landsRootsInRange
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 7435550965853241673, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
+      propertyPath: windUpTime
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7435550965853241673, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
+      propertyPath: pillarWaitTime
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7435550965853241673, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
+      propertyPath: pillarAscendSpeed
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 7435550965853241673, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
+      propertyPath: delayBetweenPillars
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7435550965853241673, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
       propertyPath: windUp.WwiseObjectReference
