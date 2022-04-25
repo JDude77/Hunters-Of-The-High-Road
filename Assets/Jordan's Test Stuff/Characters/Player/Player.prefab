@@ -8769,6 +8769,7 @@ GameObject:
   - component: {fileID: 1308971567384822845}
   - component: {fileID: 3831958134231935418}
   - component: {fileID: 1751596697220758066}
+  - component: {fileID: 581693128303526763}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -8866,7 +8867,7 @@ MonoBehaviour:
   faithRegenerationRate: 0.05
   currentState: 5
   currentStateScript: {fileID: 0}
-  states: 050000000000000001000000020000000300000004000000
+  states: 0500000000000000010000000200000003000000040000000700000006000000
   items:
   - {fileID: 8853730488035434460}
   - {fileID: 8222388916313748077}
@@ -8946,6 +8947,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   staminaCost: 40
+--- !u!114 &581693128303526763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6588245090983104080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea9035ec0778b5e4f844170a59bd6afb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stunTime: 1
 --- !u!1 &6588245091291026269
 GameObject:
   m_ObjectHideFlags: 0

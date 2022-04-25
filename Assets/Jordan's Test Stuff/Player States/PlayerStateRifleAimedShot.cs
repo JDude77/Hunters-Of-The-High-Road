@@ -47,6 +47,8 @@ public class PlayerStateRifleAimedShot : PlayerState
 
         playerReference.RegenerateFaith();
 
+        if (playerReference.GetHealth() <= 0) playerReference.ChangeState(Player.State.Dead);
+
         MakePlayerLookAtAimLocation();
         rifle.UpdateLinePosition();
     }//End UpdateState

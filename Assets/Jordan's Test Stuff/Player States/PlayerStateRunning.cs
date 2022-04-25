@@ -27,6 +27,8 @@ public class PlayerStateRunning : PlayerState
 
         playerReference.RegenerateFaith();
 
+        if (playerReference.GetHealth() <= 0) playerReference.ChangeState(Player.State.Dead);
+
         PlayerMovement();
     }//End UpdateState
 

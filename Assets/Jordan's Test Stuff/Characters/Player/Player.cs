@@ -87,7 +87,9 @@ public class Player : Character
         Dodging,
         RifleAimedShot,
         ExecutionerSwordAttack,
-        GameStart
+        GameStart,
+        Dead,
+        Stunned
     }//End States
 
     [Header("State Options")]
@@ -142,6 +144,9 @@ public class Player : Character
 
         //Allow the boss to hit the player
         BossEventsHandler.current.OnHitPlayer += ReduceHealthByAmount;
+
+        //Allow the boss to stun the player
+        BossEventsHandler.current.OnStunPlayer += StunPlayer;
     }//End Start
 
     protected override void Update()
@@ -318,6 +323,12 @@ public class Player : Character
     {
         ChangeState(State.Idle);
     }//End ChangeState
+
+    //A workaround function for subscribing a ChangeState to Stunned for the boss stunning action
+    private void StunPlayer()
+    {
+        ChangeState(State.Stunned);
+    }//End StunPlayer
     #endregion
 
     #region Item Management
