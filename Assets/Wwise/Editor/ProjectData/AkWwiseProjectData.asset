@@ -345,7 +345,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: f29db30d3de19b4ab8585db4572c3287
     GuidInternal: 
-    m_lastTime: -8585510558549488755
+    m_lastTime: -8585507304387376033
     List:
     - name: Boss
       guid: 98b33e5d7b53c94e8d716db6ebe49152
@@ -429,7 +429,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: fb0dbcfe02547c49afbe650cce855735
     GuidInternal: 
-    m_lastTime: -8585509912829932784
+    m_lastTime: -8585507307958449474
     List:
     - name: Attacks sounds
       guid: 1c4bc2c32d9f7e4fa4cb7d34a0bde9f0
@@ -867,7 +867,27 @@ MonoBehaviour:
         ObjectType: 3
         guid: bbc4697dc2469c4d9d51add72b7748a0
       Path: Events\Default Work Unit\environment\Play_night_forrest
-      maxAttenuation: 0
+      maxAttenuation: 100
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_owl
+      guid: 80dcbdf7c55c044a8f08ac872d42dacb
+      id: 2859161640
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: environment
+        ObjectType: 4
+        guid: 4dfa3e976c15d449957f82f440590fe2
+      - ElementName: Play_owl
+        ObjectType: 3
+        guid: 80dcbdf7c55c044a8f08ac872d42dacb
+      Path: Events\Default Work Unit\environment\Play_owl
+      maxAttenuation: 25
       maxDuration: -1
       minDuration: -1
     - name: Play_Padlock_Brake
@@ -1720,7 +1740,7 @@ MonoBehaviour:
     m_lastTime: -8585548625492553666
     List: []
   ExpandedFileSystemItemIds: 01000000020000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000f0000001000000011000000150000001600000017000000190000002600000027000000280000002e0000002f0000004f0000005c000000
-  ExpandedWaapiItemIds: 0100000002000000030000000400000005000000060000000700000008000000090000000f0000001000000011000000160000001700000019000000260000002700000028000000290000002a0000002b0000002c0000002e0000002f000000380000004b0000004c0000004f00000050000000510000005c0000005d0000006100000062000000660000007b0000006c5005002fb30600
+  ExpandedWaapiItemIds: 01000000020000000300000004000000050000000600000007000000090000000f0000001000000011000000160000001700000019000000260000002700000028000000290000002a0000002b0000002c0000002e0000002f000000380000004b0000004c0000004f00000050000000510000005c0000005d0000006100000062000000660000007b0000006c5005002fb30600
   AutoSyncSelection: 1
   autoPopulateEnabled: 1
   currentDataSource: 0
