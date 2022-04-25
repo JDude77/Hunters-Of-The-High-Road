@@ -28,8 +28,6 @@ public class Boss : Character
     public BossEventsHandler eventsHandler;
     public BossState currentState { get; private set; }
     public Animator animator;
-    private BoxCollider rightHand;
-    private BoxCollider leftHand; 
     //Start is called before the first frame update
 
     void Awake()
@@ -66,9 +64,7 @@ public class Boss : Character
         else if(!animatedChild.GetComponent<BossAnimationEventsHandler>())
         {
             animatedChild.AddComponent<BossAnimationEventsHandler>();
-        }
-
-        
+        }        
 
         mainState = State.Decision;
     }

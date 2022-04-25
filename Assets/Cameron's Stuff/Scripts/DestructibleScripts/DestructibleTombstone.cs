@@ -12,7 +12,7 @@ public class DestructibleTombstone : MonoBehaviour, IDestructible
     [SerializeField] 
     private GameObject normalVersion;
 
-    private Collider boxCollider;
+    private BoxCollider boxCollider;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +31,7 @@ public class DestructibleTombstone : MonoBehaviour, IDestructible
             normalVersion = graveVariants[ranNum];
         }
         
-        boxCollider = GetComponent<Collider>();
+        boxCollider = GetComponent<BoxCollider>();
     }
 
     public void DestroyTombstone(GameObject instance)

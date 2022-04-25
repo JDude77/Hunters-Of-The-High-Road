@@ -8,8 +8,6 @@ public class BossStateScream : AttackState
     [SerializeField] private float radius;
     [Header("Sounds")]
     [SerializeField] private AK.Wwise.Event screamNoise;
-    [Header("Animation Names")]
-    [SerializeField] private string animationName;
 
     #region Anim Event Params
     //[SerializeField] [ReadOnlyProperty] private string[] AnimationEventParameters = new string[] { "ScreamSound", "AnimationEnd", "DamageCheck" };
@@ -54,7 +52,6 @@ public class BossStateScream : AttackState
     public override void SetDefaultValues()
     {
         radius = 6f;
-        animationName = "Boss_Scream";
     }//End SetDefaultValues
     
     private void InitEvents()

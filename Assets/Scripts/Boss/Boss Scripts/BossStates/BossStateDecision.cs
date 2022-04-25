@@ -29,7 +29,9 @@ public class BossStateDecision : BossState
     [SerializeField] private BoxCollider uprootBox;
 
     [Header("Decision Delay Settings")]
+    [Tooltip("The maximum time the boss will wait before changing to a new attack")]
     [SerializeField] private float maxDecisionTime;
+    [Tooltip("The minimum time the boss will wait before changing to a new attack")]
     [SerializeField] private float minDecisionTime;
         
     private void Awake()
@@ -145,7 +147,9 @@ public class BossStateDecision : BossState
 
     IEnumerator wait(float time)
     {
-        yield return new WaitForSeconds(time);
+        if(time > 0f) 
+            yield return new WaitForSeconds(time);
+
         boss.ChangeState(ChooseState());
     }
 

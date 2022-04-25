@@ -65,17 +65,17 @@ public class BossStateLandsRoots : BossStatePillarAttack
     IEnumerator DoAttack()
     {
         //Spawn a new pillar if we're under the cound
-        while (spawnedPillars < pillarCount)
+        while (base.spawnedPillars < base.pillarCount)
         {
-            Vector3 predictedPosition = player.transform.position + (playerVelocity * pillarWaitTime);
+            Vector3 predictedPosition = player.transform.position + (playerVelocity * base.pillarWaitTime);
             SpawnPillar(predictedPosition);
 
             if (addRandomWaitTime)
             {
-                yield return new WaitForSeconds(delayBetweenPillars + Random.Range(0, randomWaitTimeMaxRange));
+                yield return new WaitForSeconds(base.delayBetweenPillars + Random.Range(0, randomWaitTimeMaxRange));
             }
 
-            yield return new WaitForSeconds(delayBetweenPillars);
+            yield return new WaitForSeconds(base.delayBetweenPillars);
         }
         boss.animator.SetTrigger("DoEndLandsRoots");
         windDown.Post(gameObject);

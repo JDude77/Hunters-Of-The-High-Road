@@ -80,5 +80,10 @@ public class Pillar : MonoBehaviour
             hitPlayer?.Invoke();
             hitSound.Post(gameObject);
         }
+
+        IDestructible obj = other.GetComponent<IDestructible>();
+        if(obj != null) {
+            obj.DestroyObject();
+        }
     }
 }
