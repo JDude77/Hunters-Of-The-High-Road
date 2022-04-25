@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.003996269, g: 0.0049507767, b: 0.00655262, a: 1}
+  m_IndirectSpecularColor: {r: 0.0040029436, g: 0.0049598664, b: 0.0065646246, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -32797,12 +32797,12 @@ GameObject:
   - component: {fileID: 1808594451}
   - component: {fileID: 1808594452}
   - component: {fileID: 1808594453}
+  - component: {fileID: 1808594456}
   - component: {fileID: 1808594455}
   - component: {fileID: 1808594454}
   - component: {fileID: 1808594449}
   - component: {fileID: 1808594448}
   - component: {fileID: 1808594447}
-  - component: {fileID: 1808594456}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -32827,7 +32827,7 @@ MonoBehaviour:
   data:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 648008de3c3e7db4586e0c52f98c2747, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 6e37ca6241091da4992f393c4ae06484, type: 2}
   decodeBank: 0
   loadAsynchronous: 0
   saveDecodedBank: 0
@@ -32851,7 +32851,7 @@ MonoBehaviour:
   data:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 08072cd0327a23241b10a02804bdd896, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 648008de3c3e7db4586e0c52f98c2747, type: 2}
   decodeBank: 0
   loadAsynchronous: 0
   saveDecodedBank: 0
@@ -32875,7 +32875,7 @@ MonoBehaviour:
   data:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: da5e837fa49a0f24686a99ebf3d3b06c, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 08072cd0327a23241b10a02804bdd896, type: 2}
   decodeBank: 0
   loadAsynchronous: 0
   saveDecodedBank: 0
@@ -33026,7 +33026,7 @@ MonoBehaviour:
   data:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 1d0c711cb38de5a4ab2918f5c22e93c2, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: da5e837fa49a0f24686a99ebf3d3b06c, type: 2}
   decodeBank: 0
   loadAsynchronous: 0
   saveDecodedBank: 0
@@ -33050,7 +33050,7 @@ MonoBehaviour:
   data:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 6e37ca6241091da4992f393c4ae06484, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 1d0c711cb38de5a4ab2918f5c22e93c2, type: 2}
   decodeBank: 0
   loadAsynchronous: 0
   saveDecodedBank: 0
