@@ -78721,6 +78721,13 @@ AnimationClip:
   m_Events:
   - time: 0.7
     functionName: ActivateAction
+    data: StopRotateBoss
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.7
+    functionName: ActivateAction
     data: DoAttack
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

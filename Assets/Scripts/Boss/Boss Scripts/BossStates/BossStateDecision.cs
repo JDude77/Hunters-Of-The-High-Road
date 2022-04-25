@@ -100,10 +100,8 @@ public class BossStateDecision : BossState
             previousAttack = attackPool[UnityEngine.Random.Range(0, attackPool.Count)]; ;
             return previousAttack;
         }
-        else
-        {
-            return Boss.State.Idle;
-        }
+
+        return Boss.State.Idle;        
     }
 
     bool SetAttackPool()
@@ -136,7 +134,7 @@ public class BossStateDecision : BossState
             return true;
 
         //If the previous attack is the only available attack, It's not idle, and it's condition is met re-add it to the pool
-        if (previousAttack != Boss.State.Idle && attackDictionary[previousAttack].Invoke())
+        if ((previousAttack != Boss.State.Idle) && attackDictionary[previousAttack].Invoke())
         {
             attackPool.Add(previousAttack);
             return true;
@@ -156,7 +154,9 @@ public class BossStateDecision : BossState
     //Remove the non attack states from the list
     void InitAttacks()
     {
-        for(int i = 0; i < attacks.Count;i++)
+        previousAttack = Boss.State.Idle;
+
+        for (int i = 0; i < attacks.Count;i++)
         {
             //Get the type of the state
             Type type = Type.GetType("BossState" + attacks[i].ToString());
