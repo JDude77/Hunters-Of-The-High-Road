@@ -345,7 +345,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: f29db30d3de19b4ab8585db4572c3287
     GuidInternal: 
-    m_lastTime: -8585507181180332974
+    m_lastTime: -8585507045399738063
     List:
     - name: Boss
       guid: 98b33e5d7b53c94e8d716db6ebe49152
@@ -443,7 +443,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: fb0dbcfe02547c49afbe650cce855735
     GuidInternal: 
-    m_lastTime: -8585507201061930949
+    m_lastTime: -8585507045399867338
     List:
     - name: Attacks sounds
       guid: 1c4bc2c32d9f7e4fa4cb7d34a0bde9f0
@@ -772,6 +772,26 @@ MonoBehaviour:
       maxAttenuation: 6
       maxDuration: -1
       minDuration: -1
+    - name: Play_frogs
+      guid: 53eb33adfa700544ba044d8151074b62
+      id: 1337894487
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: environment
+        ObjectType: 4
+        guid: 4dfa3e976c15d449957f82f440590fe2
+      - ElementName: Play_frogs
+        ObjectType: 3
+        guid: 53eb33adfa700544ba044d8151074b62
+      Path: Events\Default Work Unit\environment\Play_frogs
+      maxAttenuation: 5
+      maxDuration: -1
+      minDuration: -1
     - name: Play_gate_open
       guid: 523b16f872035f44967915e5a08ce93d
       id: 4089264814
@@ -1088,8 +1108,8 @@ MonoBehaviour:
         guid: 7a442408a1329941b7d6a7831f423845
       Path: Events\Default Work Unit\boss sounds\Attacks sounds\Play_scream_attack
       maxAttenuation: 0
-      maxDuration: 3.731934
-      minDuration: 2.793559
+      maxDuration: 2.3001
+      minDuration: 2.037924
     - name: Play_sfx_environment_fire_tourch_01
       guid: de5554c6bec3da498fc734efaa9229bc
       id: 282408186
@@ -1791,8 +1811,8 @@ MonoBehaviour:
     m_lastTime: -8585548625492553666
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 06000000070000000a00000010000000110000001200000018000000190000001b000000
-  AutoSyncSelection: 0
+  ExpandedWaapiItemIds: 010000000600000007000000080000000a00000010000000110000001200000018000000190000001b000000
+  AutoSyncSelection: 1
   autoPopulateEnabled: 1
   currentDataSource: 0
   CurrentPluginConfig: 
