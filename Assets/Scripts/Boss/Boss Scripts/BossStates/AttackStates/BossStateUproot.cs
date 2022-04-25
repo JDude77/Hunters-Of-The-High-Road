@@ -10,9 +10,20 @@ public class BossStateUproot : BossStatePillarAttack
     [SerializeField] private float attackDistance;
     [Tooltip("Position of the first pillar that will be spawned")]
     [SerializeField] private float attackStartOffset;
+    [Tooltip("Time the boss will wait AFTER spawning all the pillars before exiting the state")]
+    [SerializeField] private float windDownTime;
+    [Space(5)]
+    [Tooltip("if true, the pillars will be able to rotate towards the player even if the boss has stopped rotating")]
+    [SerializeField] private bool rotateAttackSeperately;
+    [Tooltip("Maximum speed that the attack can rotate towards the player")]
+    [SerializeField] private float attackRotationSpeed;
+    [Tooltip("After this time, the pillars will stop rotating, meaning they will move in a straight line")]
+    [SerializeField] private float attackRotationTime;
     [Tooltip("The sound of the boss stomping - For pillar sound effects, see 'URPillar' prefab")]
     [SerializeField] private AK.Wwise.Event stomp;
-
+    private Transform attackTransform;
+    private bool rotateBoss;
+    private bool rotateAttack;
     //Used for initialising uproot trigger box
     [HideInInspector] public float rangeEnd { 
         get { 
@@ -37,7 +48,10 @@ public class BossStateUproot : BossStatePillarAttack
     public override void OnEnter()
     {
         base.OnEnter();
-        StartCoroutine(StartWindUp());
+        rotateBoss = true;
+        rotateAttack = true;
+        //StartCoroutine(StartWindUp());
+        boss.animator.SetTrigger("DoStomp");
     }//End OnEnter
 
     public override void OnExit()
@@ -45,6 +59,29 @@ public class BossStateUproot : BossStatePillarAttack
         base.OnExit();
         StopAllCoroutines();
     }//End OnExit
+
+    public override void FixedRun() {
+        base.FixedRun();
+
+        if (rotateBoss || rotateAttack) {
+            //Get the player's X and Z position
+            Vector3 playerXZ = player.transform.position;
+            playerXZ.y = transform.position.y;
+            //Get the direction to that position
+            Vector3 targetDir = playerXZ - transform.position;
+            //Rotate towards that direction
+            Quaternion targetRot = Quaternion.LookRotation(targetDir, Vector3.up);
+
+            if (rotateBoss) {
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRot, 360f * Time.deltaTime);
+                attackTransform = transform;
+            }
+
+            if (rotateAttack && rotateAttackSeperately) {
+                attackTransform.rotation = Quaternion.RotateTowards(attackTransform.rotation, targetRot, attackRotationSpeed * 360f * Time.deltaTime);
+            }
+        }
+    }
 
     IEnumerator StartWindUp()
     {
@@ -63,24 +100,32 @@ public class BossStateUproot : BossStatePillarAttack
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRot, 360f * Time.deltaTime);
             yield return null;
         }
-        //Set the start position of the attack
         startPosition = transform.position + attackStartOffset * transform.forward;
         boss.animator.SetTrigger("DoStomp");        
     }//End StartWindUp
 
-    IEnumerator DoAttack()
+    IEnumerator DoAttack() 
     {
+        StartCoroutine(RotateAttackTimer());
+        startPosition = transform.position + attackStartOffset * transform.forward;
         //While there are pillars to be spawned
-        while (base.spawnedPillars < base.pillarCount)
+        while (spawnedPillars < pillarCount)
         {
-            Vector3 position = startPosition + transform.forward * (attackDistance * base.spawnedPillars / base.pillarCount);
+            Vector3 position = startPosition + attackTransform.forward * (attackDistance * spawnedPillars / pillarCount);
 
             SpawnPillar(position);
             //Wait
-            yield return new WaitForSeconds(base.delayBetweenPillars);
+            yield return new WaitForSeconds(delayBetweenPillars);
         }
+
+        yield return new WaitForSeconds(windDownTime);
         //Change state back to idle
         boss.ReturnToMainState();
+    }
+
+    IEnumerator RotateAttackTimer() {
+        yield return new WaitForSeconds(attackRotationTime);
+        rotateAttack = false;
     }
 
     private void OnDrawGizmos()
@@ -94,5 +139,7 @@ public class BossStateUproot : BossStatePillarAttack
     {
         eventResponder.AddSoundEffect("StompSound", stomp, gameObject);
         eventResponder.AddAction("DoAttack", () => StartCoroutine(DoAttack()));
+        eventResponder.AddAction("StopRotateBoss", () => { rotateBoss = false; });
+        eventResponder.AddAction("StopRotateAttack", () => { rotateAttack = false; });
     }//End InitEvents
 }

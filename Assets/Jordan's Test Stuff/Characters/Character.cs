@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using System;
 public class Character : MonoBehaviour
 {
     #region Health
@@ -11,12 +11,16 @@ public class Character : MonoBehaviour
     [SerializeField]
     protected float maxHealth = 100.0f;
 
+    public Action OnDeath { get; private set; }
+
     public void SetHealth(float health)
     {
         this.health = health;
 
         //Stop health going below zero
-        if (this.health < 0.0f) this.health = 0.0f;
+        if (this.health < 0.0f) {
+            this.health = 0.0f;
+        }
 
         //Stop health going above max health
         else if (this.health > maxHealth) this.health = maxHealth;
@@ -26,6 +30,10 @@ public class Character : MonoBehaviour
     public void ReduceHealthByAmount(GameObject self, float health)
     {
         SetHealth(this.health - Mathf.Abs(health));
+
+        if (health <= 0f) 
+            OnDeath?.Invoke();        
+
     }//End ReduceHealthByAmount
 
     //Shortcut function, equivalent to SetHealth(health + x)
@@ -51,6 +59,7 @@ public class Character : MonoBehaviour
     public void DrainAllHealth()
     {
         health = 0.0f;
+        OnDeath?.Invoke();
     }//End DrainAllHealth
 
     //Shortcut function, gets the normalized health value

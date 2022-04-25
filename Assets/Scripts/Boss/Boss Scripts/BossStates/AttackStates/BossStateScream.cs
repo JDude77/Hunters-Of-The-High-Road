@@ -39,6 +39,7 @@ public class BossStateScream : AttackState
         {
             print("Hit player");
             BossEventsHandler.current.HitPlayer(GetDamageValue());
+            BossEventsHandler.current.StunPlayer();
         }
     }//End DoSphereCast
 
