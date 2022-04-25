@@ -5,8 +5,9 @@ using UnityEngine;
 public class BossStateBurrow : AttackState
 {
     #region Attack Variables
-    [Header("Particle Prefab")]
-    [SerializeField] private BurrowMovement particlesPrefab;
+    [Header("Burrow Prefab Settings")]
+    [SerializeField] private BurrowMovement burrowMovementPrefab;
+    [SerializeField] private float timeBetweenParticleBursts;
 
     [Header("Attack Settings")]
     [Tooltip("This should be the y position of the boss when it plays its dig up and dig down animations")]
@@ -16,13 +17,17 @@ public class BossStateBurrow : AttackState
     [Tooltip("The position of the particles as they are moving")]
     [SerializeField] private float particleYPosition;
     [Tooltip("Higher max rotation speed means the boss will align itself with the direction to the player faster")]
+    [Space(5)]
     [SerializeField] private float startRotationSpeed;
     [Tooltip("Rate at which the rotation speed increases")]
     [SerializeField] private float rotationSpeedIncreaseRate;
+    [Space(5)]
     [Tooltip("Forward movement speed of the boss")]
     [SerializeField] private float burrowSpeed;
+    [Space(5)]
     [Tooltip("The distance to the player that the boss must be to activate the dig up animation")]
     [SerializeField] private float inRangeDistance;
+    [Space(5)]
     [Tooltip("The time the boss will wait before jumping up")]
     [SerializeField] private float digUpDelay;
     #endregion
@@ -72,7 +77,7 @@ public class BossStateBurrow : AttackState
         pos.y = particleYPosition;
 
         //Spawn particles
-        BurrowMovement burrower = Instantiate(particlesPrefab, pos, transform.rotation);
+        BurrowMovement burrower = Instantiate(burrowMovementPrefab, pos, transform.rotation);
         
         //Set the target position to the player with the same y position as the particles
         Vector3 targetPosition = player.transform.position;
@@ -81,7 +86,7 @@ public class BossStateBurrow : AttackState
         //Initialise the distance to the player
         float distance = (burrower.transform.position - targetPosition).magnitude;
         //Give the particle object the rotation speed and movement speed
-        burrower.Init(startRotationSpeed, rotationSpeedIncreaseRate, burrowSpeed);
+        burrower.Init(startRotationSpeed, rotationSpeedIncreaseRate, burrowSpeed, timeBetweenParticleBursts);
 
         //Update the target position while out of range
         while (distance > inRangeDistance)
@@ -123,7 +128,8 @@ public class BossStateBurrow : AttackState
         startRotationSpeed = 5f;
         burrowSpeed = 10f;
         inRangeDistance = 1f;
-        digUpDelay = 0.5f;
+        digUpDelay = 0.5f; 
+        timeBetweenParticleBursts = 0.5f;
     }//End SetDefaultValues
 
     void InitEvents()

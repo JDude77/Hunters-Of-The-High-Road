@@ -9,16 +9,14 @@ public class BurrowMovement : MonoBehaviour
     private float rotationSpeed;
     private float rotationSpeedIncreaseRate;
     private float speed;
+    private float particleTimer;
+    private float timeBetweenParticleBursts;
     private Vector3 targetPosition;
+    [SerializeField] GameObject particles;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (!GetComponent<ParticleSystem>())
-        {
-            Debug.LogWarning("WARNING: No particle system detected on burrow movement object.");
-        }
-
         //Set up the rigidbody
         body = GetComponent<Rigidbody>();
         if (body == null)
@@ -31,6 +29,15 @@ public class BurrowMovement : MonoBehaviour
         body.useGravity = false;
         body.isKinematic = false;
     }//End Start
+
+    private void Update() {
+        particleTimer += Time.deltaTime;
+        if(particleTimer >= timeBetweenParticleBursts && particles) {
+
+            Instantiate(particles, transform.position, Quaternion.AngleAxis(180f, Vector3.up) * transform.rotation);
+            particleTimer = 0;
+        }
+    }//End Update
 
     // Update is called once per frame
     void FixedUpdate()
@@ -46,11 +53,13 @@ public class BurrowMovement : MonoBehaviour
         rotationSpeed += rotationSpeedIncreaseRate;
     }//End FixedUpdate
 
-    public void Init(float rotationSpeed,float rotationSpeedIncreaseRate, float speed)
+    public void Init(float rotationSpeed,float rotationSpeedIncreaseRate, float speed, float timeBetweenParticleBursts)
     {
         this.rotationSpeed = rotationSpeed;
         this.rotationSpeedIncreaseRate = rotationSpeedIncreaseRate;
         this.speed = speed;
+        this.timeBetweenParticleBursts = timeBetweenParticleBursts;
+        particleTimer = 0f;
     }//End Init
 
     //Called every frame in the boss's burrow state script
