@@ -1043,8 +1043,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2416bd1a1833cd4890ce572be6be5c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  maxHealth: 100
+  health: 200
+  maxHealth: 200
   stamina: 0
   maxStamina: 100
   staminaRegenerationRate: 1
@@ -1070,8 +1070,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attacks: 03000000020000000400000007000000
   priorityAttacksInOrder: 
-  chargeInRange: 9.54
-  landsRootsInRange: 36.68
+  chargeInRange: 38
+  landsRootsInRange: 36
   burrowInRange: 36.78
   screamInRange: 7.78
   uprootBox: {fileID: 0}
@@ -1123,30 +1123,26 @@ MonoBehaviour:
   minDamage: 50
   checkForStunEvent: 0
   particlesPrefab: {fileID: 4600948011345183027, guid: 702070ee8107ec34193436b314ee5ffb, type: 3}
-  windUpTime: 0
   goundedYPosition: 8.03
   burrowYPosition: 1
   particleYPosition: 8
   startRotationSpeed: 1
   rotationSpeedIncreaseRate: 0.05
-  burrowSpeed: 10
-  inRangeDistance: 1
-  digUpDelay: 0.5
+  burrowSpeed: 60
+  inRangeDistance: 2
+  digUpDelay: 0.0005
   digDownSound:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 84ec8056d773c3f4fa15276f057fb5fb, type: 2}
   digToPlayerSound:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: b8d4827dca7e68d4d8943b184e96df8c, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 891e60c128b8a9347b74440ee287b88e, type: 2}
   digUpSound:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
-  AnimationEventParameters:
-  - DigDownSound
-  - DigUpSound
+    WwiseObjectReference: {fileID: 11400000, guid: a35d34935d8143c40b1208ed6ae64fae, type: 2}
 --- !u!114 &8904018477277698663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1183,29 +1179,23 @@ MonoBehaviour:
   windUpSound:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 4ea10210b1f88774fab28a45112c5b18, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: db25ee4ee2953584f97daa31f1a09b62, type: 2}
   lightFootstepSound:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: de6bb4cdd664c3f47b12571958c370fe, type: 2}
   heavyFootstepSound:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: de6bb4cdd664c3f47b12571958c370fe, type: 2}
   swipeSound:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 32c8a1de081f99f45b4390a89ded3837, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 83f8e089ad81813499aedaff7e2ba694, type: 2}
   hitSound:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
-  AnimationEventParameters:
-  - LightFootStepSound
-  - HeavyFootStepSound
-  - SwipeSound
-  - DamageCheck
-  - SwipeEnd
+    WwiseObjectReference: {fileID: 11400000, guid: 678ceb359e61b214893c360b1db45c99, type: 2}
 --- !u!114 &7435550965853241673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1225,20 +1215,20 @@ MonoBehaviour:
   pillar: {fileID: 868277590454778659, guid: 1e14d765cacb20b4eaa34fb1b25858a5, type: 3}
   pillarCount: 5
   stopAttackOnHit: 0
-  windUpTime: 1
-  delayBetweenPillars: 0.8
-  pillarWaitTime: 0.3
-  pillarAscendSpeed: 20
+  windUpTime: 1.2
+  delayBetweenPillars: 1
+  pillarWaitTime: 0.35
+  pillarAscendSpeed: 27
   pillarDescendSpeed: 10
   pillarStayTime: 0.5
   startYPos: 5
   finalYPos: 9
   addRandomWaitTime: 0
-  randomWaitTimeRange: 0
+  randomWaitTimeMaxRange: 0
   windUp:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 008d91053c7714e44b20ac2429bcf29e, type: 2}
   handInGround:
     idInternal: 0
     valueGuidInternal: 
@@ -1247,9 +1237,6 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
-  AnimationEventParameters:
-  - StartPillars
-  - ExitState
 --- !u!114 &4391661727102193929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1267,22 +1254,22 @@ MonoBehaviour:
   minDamage: 10
   checkForStunEvent: 0
   pillar: {fileID: 868277590454778659, guid: 1e14d765cacb20b4eaa34fb1b25858a5, type: 3}
-  pillarCount: 10
+  pillarCount: 18
   stopAttackOnHit: 0
-  windUpTime: 0.2
-  delayBetweenPillars: 0.1
+  windUpTime: 0.005
+  delayBetweenPillars: 0.05
   pillarWaitTime: 0
-  pillarAscendSpeed: 40
+  pillarAscendSpeed: 60
   pillarDescendSpeed: 30
   pillarStayTime: 0.5
   startYPos: 5
   finalYPos: 9
-  attackDistance: 9.35
+  attackDistance: 30
   attackStartOffset: 1.6
   stomp:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 18a50e418585c7a489ecd7a4d8ee3f4b, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: cb5dd4a3648661940afee150c1438c3a, type: 2}
 --- !u!114 &4998765539327302574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1304,11 +1291,6 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: db25ee4ee2953584f97daa31f1a09b62, type: 2}
-  animationName: 
-  AnimationEventParameters:
-  - ScreamSound
-  - AnimationEnd
-  - DamageCheck
 --- !u!1 &4069570270971474802
 GameObject:
   m_ObjectHideFlags: 0
