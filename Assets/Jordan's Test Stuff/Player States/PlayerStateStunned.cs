@@ -32,8 +32,6 @@ public class PlayerStateStunned : PlayerState
 
         if(regenerateFaith) playerReference.RegenerateFaith();
 
-        if (playerReference.GetHealth() <= 0) playerReference.ChangeState(Player.State.Dead);
-
         //Basic stun timer
         if (currentStunTime < stunTime)
         {

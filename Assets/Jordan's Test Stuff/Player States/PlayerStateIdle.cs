@@ -22,8 +22,6 @@ public class PlayerStateIdle : PlayerState
         base.UpdateState();
 
         playerReference.RegenerateFaith();
-
-        if (playerReference.GetHealth() <= 0) playerReference.ChangeState(Player.State.Dead);
     }//End UpdateState
 
     protected override void UpdateStateInputs()

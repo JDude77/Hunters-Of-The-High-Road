@@ -54,8 +54,6 @@ public class PlayerStateExecutionerSwordAttack : PlayerState
     {
         base.UpdateState();
 
-        if (playerReference.GetHealth() <= 0) playerReference.ChangeState(Player.State.Dead);
-
         if (animationDone)
         {
             playerReference.ChangeState(Player.State.Idle);

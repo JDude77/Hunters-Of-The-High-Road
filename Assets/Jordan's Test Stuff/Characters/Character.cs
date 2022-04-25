@@ -11,7 +11,7 @@ public class Character : MonoBehaviour
     [SerializeField]
     protected float maxHealth = 100.0f;
 
-    public Action OnDeath { get; private set; }
+    public Action OnDeath { get; set; }
 
     public void SetHealth(float health)
     {

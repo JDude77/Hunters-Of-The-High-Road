@@ -147,6 +147,9 @@ public class Player : Character
 
         //Allow the boss to stun the player
         BossEventsHandler.current.OnStunPlayer += StunPlayer;
+
+        //Make the appropriate function set to run when the player dies
+        OnDeath += PlayerDeath;
     }//End Start
 
     protected override void Update()
@@ -155,6 +158,18 @@ public class Player : Character
 
         currentStateScript.UpdateState();
     }//End Update
+
+    private void PlayerDeath()
+    {
+        //Unsubscribe from being hit by boss
+        BossEventsHandler.current.OnHitPlayer -= ReduceHealthByAmount;
+
+        //Unsubscribe from being stunned by boss
+        BossEventsHandler.current.OnStunPlayer -= StunPlayer;
+
+        //Make sure the state is definitely set to the dead state
+        if (currentState != State.Dead) ChangeState(State.Dead);
+    }//End PlayerDeath
 
     #region State Managemenet
     private void InitializePlayerStates()

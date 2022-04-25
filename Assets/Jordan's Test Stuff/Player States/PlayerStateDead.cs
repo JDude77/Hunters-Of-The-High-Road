@@ -12,8 +12,6 @@ public class PlayerStateDead : PlayerState
     {
         base.EnterState();
 
-        playerReference.OnDeath.Invoke();
-
         return true;
     }//End EnterState
 }

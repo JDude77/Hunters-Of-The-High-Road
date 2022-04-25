@@ -72,8 +72,6 @@ public class PlayerStateDodging : PlayerState
     {
         base.UpdateState();
 
-        if (playerReference.GetHealth() <= 0) playerReference.ChangeState(Player.State.Dead);
-
         if (!isRolling)
         {
             if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
