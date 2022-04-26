@@ -3,7 +3,7 @@
 	<RootPaths>
 		<ProjectRoot>D:\unity Projects\Hunters-Of-The-High-Road_WwiseProject\</ProjectRoot>
 		<SourceFilesRoot>D:\unity Projects\Hunters-Of-The-High-Road_WwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>D:\Hunters-Of-The-High-Road\Assets\StreamingAssets\</SoundBanksRoot>
+		<SoundBanksRoot>D:\unity Projects\Hunters-Of-The-High-Road\Assets\StreamingAssets\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
 		<ExternalSourcesOutputRoot>D:\unity Projects\Hunters-Of-The-High-Road_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
@@ -985,7 +985,12 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3991942870" Language="SFX" Hash="917009299">
+		<SoundBank Id="1842718300" Language="SFX" Hash="88127425">
+			<ObjectPath>\SoundBanks\Default Work Unit\demo</ObjectPath>
+			<ShortName>demo</ShortName>
+			<Path>demo.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="3991942870" Language="SFX" Hash="1843268082">
 			<ObjectPath>\SoundBanks\Default Work Unit\music</ObjectPath>
 			<ShortName>music</ShortName>
 			<Path>music.bnk</Path>

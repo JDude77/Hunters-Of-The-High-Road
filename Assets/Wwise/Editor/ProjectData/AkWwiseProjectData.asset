@@ -345,7 +345,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: f29db30d3de19b4ab8585db4572c3287
     GuidInternal: 
-    m_lastTime: -8585507045399738063
+    m_lastTime: -8585506267721251625
     List:
     - name: Boss
       guid: 98b33e5d7b53c94e8d716db6ebe49152
@@ -403,6 +403,20 @@ MonoBehaviour:
         ObjectType: 7
         guid: 6d0ed16015fced4d9bb770595284826e
       Path: SoundBanks\Default Work Unit\Player
+    - name: test
+      guid: b7a1c26ec7794b46baf25efcf405ba41
+      id: 3157003241
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f29db30d3de19b4ab8585db4572c3287
+      - ElementName: test
+        ObjectType: 7
+        guid: b7a1c26ec7794b46baf25efcf405ba41
+      Path: SoundBanks\Default Work Unit\test
     - name: UI
       guid: 6edccbeb54b5b54089a2dc58fdaf2be4
       id: 1551306167
@@ -1811,7 +1825,7 @@ MonoBehaviour:
     m_lastTime: -8585548625492553666
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 010000000600000007000000090000000a00000010000000110000001200000018000000190000001b000000
+  ExpandedWaapiItemIds: 01000000060000000700000008000000090000000a00000010000000110000001200000018000000190000001b000000
   AutoSyncSelection: 1
   autoPopulateEnabled: 1
   currentDataSource: 0
