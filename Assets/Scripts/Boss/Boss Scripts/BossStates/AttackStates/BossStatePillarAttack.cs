@@ -46,7 +46,7 @@ public class BossStatePillarAttack : AttackState
         base.OnExit();
     }//End OnExit
 
-    protected virtual void SpawnPillar(Vector3 startPos)
+    protected virtual void SpawnPillar(Vector3 startPos, Quaternion rotation)
     {
         //Set the pillar's start position to the predicted position of the player
         Vector3 spawnPos = startPos;
@@ -56,7 +56,7 @@ public class BossStatePillarAttack : AttackState
         Vector3 endPos = startPos;
         endPos.y = finalYPos;
 
-        Pillar newPillar = Instantiate(pillar, spawnPos, Quaternion.identity);
+        Pillar newPillar = Instantiate(pillar, spawnPos, rotation);
         newPillar.hitPlayer += OnPillarHit;
         //Initialise the pillar
         newPillar.Initialise(pillarWaitTime, pillarAscendSpeed, pillarDescendSpeed, pillarStayTime, spawnPos, endPos);

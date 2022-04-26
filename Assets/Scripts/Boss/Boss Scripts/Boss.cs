@@ -10,6 +10,7 @@ public class Boss : Character
         Charging,
         LandsRoots,
         Uproot,
+        RadialUproot,
         Scream,
         Decision,
         Stunned,

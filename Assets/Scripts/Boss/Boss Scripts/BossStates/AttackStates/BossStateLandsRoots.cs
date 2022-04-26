@@ -68,7 +68,7 @@ public class BossStateLandsRoots : BossStatePillarAttack
         while (base.spawnedPillars < base.pillarCount)
         {
             Vector3 predictedPosition = player.transform.position + (playerVelocity * base.pillarWaitTime);
-            SpawnPillar(predictedPosition);
+            SpawnPillar(predictedPosition, transform.rotation);
 
             if (addRandomWaitTime)
             {

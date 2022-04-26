@@ -113,7 +113,7 @@ public class BossStateUproot : BossStatePillarAttack
         {
             Vector3 position = startPosition + attackTransform.forward * (attackDistance * spawnedPillars / pillarCount);
 
-            SpawnPillar(position);
+            SpawnPillar(position, attackTransform.rotation);
             //Wait
             yield return new WaitForSeconds(delayBetweenPillars);
         }

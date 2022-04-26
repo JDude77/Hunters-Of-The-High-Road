@@ -958,6 +958,7 @@ GameObject:
   - component: {fileID: 8904018477277698663}
   - component: {fileID: 7435550965853241673}
   - component: {fileID: 4391661727102193929}
+  - component: {fileID: -5465039514879592315}
   - component: {fileID: 4998765539327302574}
   m_Layer: 0
   m_Name: BossOBJ
@@ -1068,12 +1069,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2ba5e46f54414847a9494e1466d6be8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attacks: 0300000004000000
+  attacks: 0400000008000000050000000300000002000000
   priorityAttacksInOrder: 
   chargeInRange: 38
   landsRootsInRange: 36
   burrowInRange: 36.78
   screamInRange: 7.78
+  radialUprootInRange: 24.65
   uprootBox: {fileID: 0}
   maxDecisionTime: 1
   minDecisionTime: 1
@@ -1275,6 +1277,40 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: cb5dd4a3648661940afee150c1438c3a, type: 2}
+--- !u!114 &-5465039514879592315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3909928400629596449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c77fe60df8b1f14a999d748f7f08b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomizeDamage: 0
+  maxDamage: 0
+  minDamage: 0
+  checkForStunEvent: 0
+  pillar: {fileID: 868277590454778659, guid: 5f1b333149fa13c47b4038852341b235, type: 3}
+  pillarCount: 0
+  stopAttackOnHit: 0
+  windUpTime: 0
+  delayBetweenPillars: 0.15
+  pillarWaitTime: 0
+  pillarAscendSpeed: 45
+  pillarDescendSpeed: 30
+  pillarStayTime: 0.3
+  startYPos: 5
+  finalYPos: 9
+  pillarCountPerCircle: 08000000100000001800000020000000
+  innerRadius: 5
+  outerRadius: 15
+  attackSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!114 &4998765539327302574
 MonoBehaviour:
   m_ObjectHideFlags: 0

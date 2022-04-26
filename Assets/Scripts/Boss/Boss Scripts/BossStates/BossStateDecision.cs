@@ -25,6 +25,7 @@ public class BossStateDecision : BossState
     [SerializeField] private float landsRootsInRange;
     [SerializeField] private float burrowInRange;
     [SerializeField] private float screamInRange;
+    [SerializeField] private float radialUprootInRange;
     [Tooltip("Uproot is an eligible attack if the player is within this area")]
     [SerializeField] private BoxCollider uprootBox;
 
@@ -178,6 +179,8 @@ public class BossStateDecision : BossState
 
         if (attacks.Contains(Boss.State.Scream)) attackDictionary.Add(Boss.State.Scream, () => playerDistance < screamInRange);
 
+        if (attacks.Contains(Boss.State.RadialUproot)) attackDictionary.Add(Boss.State.RadialUproot, () => playerDistance < radialUprootInRange);
+
         if (attacks.Contains(Boss.State.Uproot)) attackDictionary.Add(Boss.State.Uproot, () => {
             Bounds col = FindObjectOfType<Player>().GetComponent<CharacterController>().bounds;
             return uprootBox.bounds.Intersects(col);
@@ -193,5 +196,6 @@ public class BossStateDecision : BossState
         Gizmos.DrawWireSphere(transform.position, landsRootsInRange);
         Gizmos.DrawWireSphere(transform.position, screamInRange);
         Gizmos.DrawWireSphere(transform.position, chargeInRange);
+        Gizmos.DrawWireSphere(transform.position, radialUprootInRange);
     }
 }
