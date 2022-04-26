@@ -1069,7 +1069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2ba5e46f54414847a9494e1466d6be8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attacks: 0400000008000000050000000300000002000000
+  attacks: 0400000002000000080000000500000003000000
   priorityAttacksInOrder: 
   chargeInRange: 38
   landsRootsInRange: 36
@@ -1124,14 +1124,14 @@ MonoBehaviour:
   maxDamage: 0
   minDamage: 50
   checkForStunEvent: 0
-  burrowMovementPrefab: {fileID: 0}
+  burrowMovementPrefab: {fileID: 4600948011345183027, guid: 702070ee8107ec34193436b314ee5ffb, type: 3}
   timeBetweenParticleBursts: 0
   goundedYPosition: 8.03
   burrowYPosition: 1
   particleYPosition: 8
   startRotationSpeed: 1
   rotationSpeedIncreaseRate: 0.05
-  burrowSpeed: 60
+  burrowSpeed: 20
   inRangeDistance: 2
   digUpDelay: 0.0005
   digDownSound:
@@ -1291,7 +1291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomizeDamage: 0
   maxDamage: 0
-  minDamage: 0
+  minDamage: 10
   checkForStunEvent: 0
   pillar: {fileID: 868277590454778659, guid: 5f1b333149fa13c47b4038852341b235, type: 3}
   pillarCount: 0

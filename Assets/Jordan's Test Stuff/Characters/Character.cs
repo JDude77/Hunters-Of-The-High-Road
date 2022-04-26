@@ -31,7 +31,7 @@ public class Character : MonoBehaviour
     {
         SetHealth(this.health - Mathf.Abs(health));
 
-        if (health <= 0f) 
+        if (this.health <= 0f) 
             OnDeath?.Invoke();        
 
     }//End ReduceHealthByAmount
