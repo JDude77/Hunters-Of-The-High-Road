@@ -1,0 +1,40 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "12",
+  "SoundbankVersion": "140",
+  "RootPaths": {
+   "ProjectRoot": "D:\\unity Projects\\Hunters-Of-The-High-Road_WwiseProject\\",
+   "SourceFilesRoot": "D:\\unity Projects\\Hunters-Of-The-High-Road_WwiseProject\\.cache\\Windows\\",
+   "SoundBanksRoot": "D:\\Hunters-Of-The-High-Road\\Assets\\StreamingAssets\\Audio\\GeneratedSoundBanks\\",
+   "ExternalSourcesInputFile": "",
+   "ExternalSourcesOutputRoot": "D:\\unity Projects\\Hunters-Of-The-High-Road_WwiseProject\\GeneratedSoundBanks\\Windows"
+  },
+  "SoundBanks": [
+   {
+    "Id": "3991942870",
+    "Language": "SFX",
+    "Hash": "1843268082",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\music",
+    "ShortName": "music",
+    "Path": "music.bnk",
+    "IncludedEvents": [
+     {
+      "Id": "1041001914",
+      "Name": "Play_music_battle_01",
+      "ObjectPath": "\\Events\\Default Work Unit\\music\\Play_music_battle_01",
+      "IncludedMemoryFiles": [
+       {
+        "Id": "411059738",
+        "Language": "SFX",
+        "ShortName": "music_battle_01.wav",
+        "Path": "SFX\\music_battle_01_D79FB2B7.wem"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

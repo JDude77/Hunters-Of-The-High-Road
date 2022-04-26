@@ -345,7 +345,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: f29db30d3de19b4ab8585db4572c3287
     GuidInternal: 
-    m_lastTime: -8585507304387376033
+    m_lastTime: -8585507045399738063
     List:
     - name: Boss
       guid: 98b33e5d7b53c94e8d716db6ebe49152
@@ -375,6 +375,20 @@ MonoBehaviour:
         ObjectType: 7
         guid: ceea2e7c09b4634481f536b47d7cbb94
       Path: SoundBanks\Default Work Unit\environment
+    - name: music
+      guid: 38691d1d22af2044bb9cd08fa8783150
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f29db30d3de19b4ab8585db4572c3287
+      - ElementName: music
+        ObjectType: 7
+        guid: 38691d1d22af2044bb9cd08fa8783150
+      Path: SoundBanks\Default Work Unit\music
     - name: Player
       guid: 6d0ed16015fced4d9bb770595284826e
       id: 1069431850
@@ -429,7 +443,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: fb0dbcfe02547c49afbe650cce855735
     GuidInternal: 
-    m_lastTime: -8585507307958449474
+    m_lastTime: -8585507045399867338
     List:
     - name: Attacks sounds
       guid: 1c4bc2c32d9f7e4fa4cb7d34a0bde9f0
@@ -583,6 +597,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.839212
       minDuration: 0.470992
+    - name: music
+      guid: 441408fc7fb46e428914a589b4855f77
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: music
+        ObjectType: 4
+        guid: 441408fc7fb46e428914a589b4855f77
+      Path: Events\Default Work Unit\music
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_boss_movement
       guid: b1a2aa1731c894458687bb9bd4d8d56b
       id: 1677138927
@@ -741,6 +772,26 @@ MonoBehaviour:
       maxAttenuation: 6
       maxDuration: -1
       minDuration: -1
+    - name: Play_frogs
+      guid: 53eb33adfa700544ba044d8151074b62
+      id: 1337894487
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: environment
+        ObjectType: 4
+        guid: 4dfa3e976c15d449957f82f440590fe2
+      - ElementName: Play_frogs
+        ObjectType: 3
+        guid: 53eb33adfa700544ba044d8151074b62
+      Path: Events\Default Work Unit\environment\Play_frogs
+      maxAttenuation: 5
+      maxDuration: -1
+      minDuration: -1
     - name: Play_gate_open
       guid: 523b16f872035f44967915e5a08ce93d
       id: 4089264814
@@ -850,6 +901,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 3.359728
       minDuration: 2.050301
+    - name: Play_music_battle_01
+      guid: 6d377896f11e724cba652ebbe9459e05
+      id: 1041001914
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: music
+        ObjectType: 4
+        guid: 441408fc7fb46e428914a589b4855f77
+      - ElementName: Play_music_battle_01
+        ObjectType: 3
+        guid: 6d377896f11e724cba652ebbe9459e05
+      Path: Events\Default Work Unit\music\Play_music_battle_01
+      maxAttenuation: 0
+      maxDuration: 128.8098
+      minDuration: 128.8098
     - name: Play_night_forrest
       guid: bbc4697dc2469c4d9d51add72b7748a0
       id: 3778516394
@@ -1014,8 +1085,8 @@ MonoBehaviour:
         guid: 1c904ebc52ba014ba2c29968ee0f761b
       Path: Events\Default Work Unit\Player weapons\Play_Rifle_Shoot
       maxAttenuation: 0
-      maxDuration: 4.987375
-      minDuration: 4.205906
+      maxDuration: 7.916964
+      minDuration: 2.649555
     - name: Play_scream_attack
       guid: 7a442408a1329941b7d6a7831f423845
       id: 2779817312
@@ -1037,8 +1108,8 @@ MonoBehaviour:
         guid: 7a442408a1329941b7d6a7831f423845
       Path: Events\Default Work Unit\boss sounds\Attacks sounds\Play_scream_attack
       maxAttenuation: 0
-      maxDuration: 3.731934
-      minDuration: 2.793559
+      maxDuration: 2.3001
+      minDuration: 2.037924
     - name: Play_sfx_environment_fire_tourch_01
       guid: de5554c6bec3da498fc734efaa9229bc
       id: 282408186
@@ -1739,8 +1810,8 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8585548625492553666
     List: []
-  ExpandedFileSystemItemIds: 01000000020000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000f0000001000000011000000150000001600000017000000190000002600000027000000280000002e0000002f0000004f0000005c000000
-  ExpandedWaapiItemIds: 01000000020000000300000004000000050000000600000007000000090000000f0000001000000011000000160000001700000019000000260000002700000028000000290000002a0000002b0000002c0000002e0000002f000000380000004b0000004c0000004f00000050000000510000005c0000005d0000006100000062000000660000007b0000006c5005002fb30600
+  ExpandedFileSystemItemIds: 
+  ExpandedWaapiItemIds: 010000000600000007000000090000000a00000010000000110000001200000018000000190000001b000000
   AutoSyncSelection: 1
   autoPopulateEnabled: 1
   currentDataSource: 0

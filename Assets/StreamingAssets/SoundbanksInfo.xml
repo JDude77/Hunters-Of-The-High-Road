@@ -1,0 +1,1004 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
+	<RootPaths>
+		<ProjectRoot>D:\unity Projects\Hunters-Of-The-High-Road_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>D:\unity Projects\Hunters-Of-The-High-Road_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>D:\Hunters-Of-The-High-Road\Assets\StreamingAssets\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>D:\unity Projects\Hunters-Of-The-High-Road_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1069431850" Language="SFX" Hash="1618383971">
+			<ObjectPath>\SoundBanks\Default Work Unit\Player</ObjectPath>
+			<ShortName>Player</ShortName>
+			<Path>Player.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3879190359" Name="Play_Player_movement" ObjectPath="\Events\Default Work Unit\Player sounds\Play_Player_movement" DurationType="OneShot" DurationMin="0.235189" DurationMax="0.529689">
+					<IncludedMemoryFiles>
+						<File Id="20253490" Language="SFX">
+							<ShortName>sfx_footstep_toe_gravel_03.wav</ShortName>
+							<Path>SFX\sfx_footstep_toe_gravel_03_A2309B1D.wem</Path>
+						</File>
+						<File Id="43852155" Language="SFX">
+							<ShortName>sfx_movement_impact_cloth_04.wav</ShortName>
+							<Path>SFX\sfx_movement_impact_cloth_04_48EF2683.wem</Path>
+						</File>
+						<File Id="79295484" Language="SFX">
+							<ShortName>sfx_movement_impact_gear_04.wav</ShortName>
+							<Path>SFX\sfx_movement_impact_gear_04_B4DA62D8.wem</Path>
+						</File>
+						<File Id="179099409" Language="SFX">
+							<ShortName>sfx_movement_impact_gear_03.wav</ShortName>
+							<Path>SFX\sfx_movement_impact_gear_03_E3603C6B.wem</Path>
+						</File>
+						<File Id="179981855" Language="SFX">
+							<ShortName>sfx_footstep_heel_dirt_02.wav</ShortName>
+							<Path>SFX\sfx_footstep_heel_dirt_02_C422B8E8.wem</Path>
+						</File>
+						<File Id="219031143" Language="SFX">
+							<ShortName>sfx_footstep_heel_dirt_04.wav</ShortName>
+							<Path>SFX\sfx_footstep_heel_dirt_04_51009E1C.wem</Path>
+						</File>
+						<File Id="219369402" Language="SFX">
+							<ShortName>sfx_footstep_toe_dirt_02.wav</ShortName>
+							<Path>SFX\sfx_footstep_toe_dirt_02_CA5610EA.wem</Path>
+						</File>
+						<File Id="220426203" Language="SFX">
+							<ShortName>sfx_footstep_toe_dirt_03.wav</ShortName>
+							<Path>SFX\sfx_footstep_toe_dirt_03_5AE2C7B5.wem</Path>
+						</File>
+						<File Id="278221202" Language="SFX">
+							<ShortName>sfx_footstep_heel_dirt_06.wav</ShortName>
+							<Path>SFX\sfx_footstep_heel_dirt_06_5B1B16DA.wem</Path>
+						</File>
+						<File Id="287705754" Language="SFX">
+							<ShortName>sfx_footstep_toe_grass_01.wav</ShortName>
+							<Path>SFX\sfx_footstep_toe_grass_01_F16D9C9E.wem</Path>
+						</File>
+						<File Id="293642792" Language="SFX">
+							<ShortName>sfx_footstep_toe_gravel_02.wav</ShortName>
+							<Path>SFX\sfx_footstep_toe_gravel_02_B471DD4F.wem</Path>
+						</File>
+						<File Id="345523713" Language="SFX">
+							<ShortName>sfx_footstep_toe_dirt_05.wav</ShortName>
+							<Path>SFX\sfx_footstep_toe_dirt_05_54472CFA.wem</Path>
+						</File>
+						<File Id="382401977" Language="SFX">
+							<ShortName>sfx_footstep_heel_grass_03.wav</ShortName>
+							<Path>SFX\sfx_footstep_heel_grass_03_8C801EA8.wem</Path>
+						</File>
+						<File Id="414685005" Language="SFX">
+							<ShortName>sfx_footstep_heel_grass_04.wav</ShortName>
+							<Path>SFX\sfx_footstep_heel_grass_04_6443072A.wem</Path>
+						</File>
+						<File Id="422285275" Language="SFX">
+							<ShortName>sfx_footstep_heel_dirt_03.wav</ShortName>
+							<Path>SFX\sfx_footstep_heel_dirt_03_708CDA47.wem</Path>
+						</File>
+						<File Id="486239904" Language="SFX">
+							<ShortName>sfx_footstep_toe_dirt_01.wav</ShortName>
+							<Path>SFX\sfx_footstep_toe_dirt_01_61B385C8.wem</Path>
+						</File>
+						<File Id="508255165" Language="SFX">
+							<ShortName>sfx_movement_impact_gear_02.wav</ShortName>
+							<Path>SFX\sfx_movement_impact_gear_02_0E0D07D7.wem</Path>
+						</File>
+						<File Id="510115693" Language="SFX">
+							<ShortName>sfx_footstep_heel_dirt_05.wav</ShortName>
+							<Path>SFX\sfx_footstep_heel_dirt_05_C107D374.wem</Path>
+						</File>
+						<File Id="534356979" Language="SFX">
+							<ShortName>sfx_footstep_toe_gravel_01.wav</ShortName>
+							<Path>SFX\sfx_footstep_toe_gravel_01_A6FCDB6A.wem</Path>
+						</File>
+						<File Id="551518977" Language="SFX">
+							<ShortName>sfx_footstep_heel_grass_02.wav</ShortName>
+							<Path>SFX\sfx_footstep_heel_grass_02_A8589B5D.wem</Path>
+						</File>
+						<File Id="552543826" Language="SFX">
+							<ShortName>sfx_footstep_toe_dirt_06.wav</ShortName>
+							<Path>SFX\sfx_footstep_toe_dirt_06_603D3863.wem</Path>
+						</File>
+						<File Id="596243774" Language="SFX">
+							<ShortName>sfx_footstep_heel_gravel_03.wav</ShortName>
+							<Path>SFX\sfx_footstep_heel_gravel_03_FFDC1CAF.wem</Path>
+						</File>
+						<File Id="624879225" Language="SFX">
+							<ShortName>sfx_movement_impact_cloth_05.wav</ShortName>
+							<Path>SFX\sfx_movement_impact_cloth_05_6EBD967D.wem</Path>
+						</File>
+						<File Id="629102556" Language="SFX">
+							<ShortName>sfx_movement_impact_cloth_01.wav</ShortName>
+							<Path>SFX\sfx_movement_impact_cloth_01_2037F205.wem</Path>
+						</File>
+						<File Id="661921055" Language="SFX">
+							<ShortName>sfx_footstep_toe_grass_04.wav</ShortName>
+							<Path>SFX\sfx_footstep_toe_grass_04_F4C4E597.wem</Path>
+						</File>
+						<File Id="681242018" Language="SFX">
+							<ShortName>sfx_footstep_heel_gravel_01.wav</ShortName>
+							<Path>SFX\sfx_footstep_heel_gravel_01_AC8A9E7D.wem</Path>
+						</File>
+						<File Id="733033656" Language="SFX">
+							<ShortName>sfx_footstep_heel_gravel_02.wav</ShortName>
+							<Path>SFX\sfx_footstep_heel_gravel_02_4E9C1046.wem</Path>
+						</File>
+						<File Id="744794876" Language="SFX">
+							<ShortName>sfx_footstep_toe_grass_03.wav</ShortName>
+							<Path>SFX\sfx_footstep_toe_grass_03_776251D2.wem</Path>
+						</File>
+						<File Id="745215095" Language="SFX">
+							<ShortName>sfx_footstep_heel_grass_01.wav</ShortName>
+							<Path>SFX\sfx_footstep_heel_grass_01_73AC7B1A.wem</Path>
+						</File>
+						<File Id="747350714" Language="SFX">
+							<ShortName>sfx_footstep_heel_dirt_01.wav</ShortName>
+							<Path>SFX\sfx_footstep_heel_dirt_01_7EA1C73B.wem</Path>
+						</File>
+						<File Id="762607600" Language="SFX">
+							<ShortName>sfx_footstep_heel_gravel_04.wav</ShortName>
+							<Path>SFX\sfx_footstep_heel_gravel_04_5C12B0A8.wem</Path>
+						</File>
+						<File Id="853849588" Language="SFX">
+							<ShortName>sfx_movement_impact_cloth_06.wav</ShortName>
+							<Path>SFX\sfx_movement_impact_cloth_06_1F64F468.wem</Path>
+						</File>
+						<File Id="876002809" Language="SFX">
+							<ShortName>sfx_footstep_toe_dirt_04.wav</ShortName>
+							<Path>SFX\sfx_footstep_toe_dirt_04_B372E765.wem</Path>
+						</File>
+						<File Id="901022272" Language="SFX">
+							<ShortName>sfx_movement_impact_gear_01.wav</ShortName>
+							<Path>SFX\sfx_movement_impact_gear_01_61BC1ACC.wem</Path>
+						</File>
+						<File Id="904644262" Language="SFX">
+							<ShortName>sfx_footstep_toe_grass_02.wav</ShortName>
+							<Path>SFX\sfx_footstep_toe_grass_02_400C273E.wem</Path>
+						</File>
+						<File Id="946272394" Language="SFX">
+							<ShortName>sfx_footstep_toe_gravel_04.wav</ShortName>
+							<Path>SFX\sfx_footstep_toe_gravel_04_9669B7B3.wem</Path>
+						</File>
+						<File Id="991683098" Language="SFX">
+							<ShortName>sfx_movement_impact_cloth_03.wav</ShortName>
+							<Path>SFX\sfx_movement_impact_cloth_03_95CD55CE.wem</Path>
+						</File>
+						<File Id="998645187" Language="SFX">
+							<ShortName>sfx_movement_impact_cloth_02.wav</ShortName>
+							<Path>SFX\sfx_movement_impact_cloth_02_D7264255.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<DefaultSwitchValue>{AB97A551-E4C9-4635-A887-4FDD3A97BD17}</DefaultSwitchValue>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{7D66B425-56D4-4B5B-89EB-EBA8859E9F4D}">
+							<Media>
+								<File Id="20253490"/>
+								<File Id="293642792"/>
+								<File Id="534356979"/>
+								<File Id="596243774"/>
+								<File Id="681242018"/>
+								<File Id="733033656"/>
+								<File Id="762607600"/>
+								<File Id="946272394"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{F987222C-2F2E-4159-92BD-606E29EEE51A}">
+							<Media>
+								<File Id="287705754"/>
+								<File Id="382401977"/>
+								<File Id="414685005"/>
+								<File Id="551518977"/>
+								<File Id="661921055"/>
+								<File Id="744794876"/>
+								<File Id="745215095"/>
+								<File Id="904644262"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{AB97A551-E4C9-4635-A887-4FDD3A97BD17}">
+							<Media>
+								<File Id="179981855"/>
+								<File Id="219031143"/>
+								<File Id="219369402"/>
+								<File Id="220426203"/>
+								<File Id="278221202"/>
+								<File Id="345523713"/>
+								<File Id="422285275"/>
+								<File Id="486239904"/>
+								<File Id="510115693"/>
+								<File Id="552543826"/>
+								<File Id="747350714"/>
+								<File Id="876002809"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="2370959289" Name="Play_player_Roll" ObjectPath="\Events\Default Work Unit\Player sounds\Play_player_Roll" DurationType="OneShot" DurationMin="0.757707" DurationMax="1.270286">
+					<IncludedMemoryFiles>
+						<File Id="43852155" Language="SFX">
+							<ShortName>sfx_movement_impact_cloth_04.wav</ShortName>
+							<Path>SFX\sfx_movement_impact_cloth_04_48EF2683.wem</Path>
+						</File>
+						<File Id="79295484" Language="SFX">
+							<ShortName>sfx_movement_impact_gear_04.wav</ShortName>
+							<Path>SFX\sfx_movement_impact_gear_04_B4DA62D8.wem</Path>
+						</File>
+						<File Id="179099409" Language="SFX">
+							<ShortName>sfx_movement_impact_gear_03.wav</ShortName>
+							<Path>SFX\sfx_movement_impact_gear_03_E3603C6B.wem</Path>
+						</File>
+						<File Id="508255165" Language="SFX">
+							<ShortName>sfx_movement_impact_gear_02.wav</ShortName>
+							<Path>SFX\sfx_movement_impact_gear_02_0E0D07D7.wem</Path>
+						</File>
+						<File Id="624879225" Language="SFX">
+							<ShortName>sfx_movement_impact_cloth_05.wav</ShortName>
+							<Path>SFX\sfx_movement_impact_cloth_05_6EBD967D.wem</Path>
+						</File>
+						<File Id="629102556" Language="SFX">
+							<ShortName>sfx_movement_impact_cloth_01.wav</ShortName>
+							<Path>SFX\sfx_movement_impact_cloth_01_2037F205.wem</Path>
+						</File>
+						<File Id="699554060" Language="SFX">
+							<ShortName>sfx_movement_roll_player_02.wav</ShortName>
+							<Path>SFX\sfx_movement_roll_player_02_0F7715D7.wem</Path>
+						</File>
+						<File Id="853849588" Language="SFX">
+							<ShortName>sfx_movement_impact_cloth_06.wav</ShortName>
+							<Path>SFX\sfx_movement_impact_cloth_06_1F64F468.wem</Path>
+						</File>
+						<File Id="901022272" Language="SFX">
+							<ShortName>sfx_movement_impact_gear_01.wav</ShortName>
+							<Path>SFX\sfx_movement_impact_gear_01_61BC1ACC.wem</Path>
+						</File>
+						<File Id="926559169" Language="SFX">
+							<ShortName>sfx_movement_roll_player_03.wav</ShortName>
+							<Path>SFX\sfx_movement_roll_player_03_147937D7.wem</Path>
+						</File>
+						<File Id="991683098" Language="SFX">
+							<ShortName>sfx_movement_impact_cloth_03.wav</ShortName>
+							<Path>SFX\sfx_movement_impact_cloth_03_95CD55CE.wem</Path>
+						</File>
+						<File Id="998645187" Language="SFX">
+							<ShortName>sfx_movement_impact_cloth_02.wav</ShortName>
+							<Path>SFX\sfx_movement_impact_cloth_02_D7264255.wem</Path>
+						</File>
+						<File Id="1057947403" Language="SFX">
+							<ShortName>sfx_movement_roll_player_01.wav</ShortName>
+							<Path>SFX\sfx_movement_roll_player_01_409B5F85.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
+			<SwitchGroups>
+				<SwitchGroup Id="2385628198" Name="footsteps" ObjectPath="\Switches\Default Work Unit\footsteps" GUID="{75660003-1E15-42AB-9D4C-BE72C4B3A161}">
+					<Switches>
+						<Switch Id="4248645337" Name="grass" ObjectPath="\Switches\Default Work Unit\footsteps\grass" GUID="{F987222C-2F2E-4159-92BD-606E29EEE51A}"/>
+						<Switch Id="2195636714" Name="dirt" ObjectPath="\Switches\Default Work Unit\footsteps\dirt" GUID="{AB97A551-E4C9-4635-A887-4FDD3A97BD17}"/>
+						<Switch Id="2185786256" Name="gravel" ObjectPath="\Switches\Default Work Unit\footsteps\gravel" GUID="{7D66B425-56D4-4B5B-89EB-EBA8859E9F4D}"/>
+						<Switch Id="2026920480" Name="roll" ObjectPath="\Switches\Default Work Unit\footsteps\roll" GUID="{A03A62F6-A7FE-43AF-8ED4-CBA3C608944F}"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
+		</SoundBank>
+		<SoundBank Id="1229948536" Language="SFX" Hash="882743423">
+			<ObjectPath>\SoundBanks\Default Work Unit\environment</ObjectPath>
+			<ShortName>environment</ShortName>
+			<Path>environment.bnk</Path>
+			<IncludedEvents>
+				<Event Id="1293037340" Name="Play_camp_fire" ObjectPath="\Events\Default Work Unit\environment\Play_camp_fire" MaxAttenuation="10." DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="169922276" Language="SFX">
+							<ShortName>sfx_environment_camp_fire_01.wav</ShortName>
+							<Path>SFX\sfx_environment_camp_fire_01_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="4166756183" Name="Play_environment_grave" ObjectPath="\Events\Default Work Unit\environment\Play_environment_grave" MaxAttenuation="40." DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="763286601" Language="SFX">
+							<ShortName>sfx_environment_trees_01.wav</ShortName>
+							<Path>SFX\sfx_environment_trees_01_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3450565664" Name="Play_Flys_buzzing" ObjectPath="\Events\Default Work Unit\environment\Play_Flys_buzzing" MaxAttenuation="6." DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="753792408" Language="SFX">
+							<ShortName>500482-Single_Fly_Buzzing_-One_Fly_or_Insect_Flying_Buzz_Noise_-Loop_-Panned_Version_009530_.wav</ShortName>
+							<Path>SFX\500482-Single_Fly_Buzzing_-One_Fly_or_Insect_Flying_Buzz_Noise_-Loop_-Panned_Version_009530__D79FB2B7.wem</Path>
+						</File>
+						<File Id="853204105" Language="SFX">
+							<ShortName>500482-Single_Fly_Buzzing_-One_Fly_or_Insect_Flying_Buzz_Noise_-Loop_-Panned_Version_009530_.wav</ShortName>
+							<Path>SFX\500482-Single_Fly_Buzzing_-One_Fly_or_Insect_Flying_Buzz_Noise_-Loop_-Panned_Version_009530__68505EEF.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1337894487" Name="Play_frogs" ObjectPath="\Events\Default Work Unit\environment\Play_frogs" MaxAttenuation="5." DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="974370809" Language="SFX">
+							<ShortName>frog.wav</ShortName>
+							<Path>SFX\frog_1703E515.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="4089264814" Name="Play_gate_open" ObjectPath="\Events\Default Work Unit\environment\Play_gate_open" DurationType="OneShot" DurationMin="3.355855" DurationMax="4.228112">
+					<IncludedMemoryFiles>
+						<File Id="967804768" Language="SFX">
+							<ShortName>sfx_environment_gate_01.wav</ShortName>
+							<Path>SFX\sfx_environment_gate_01_B977240E.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2038828501" Name="Play_Glass_Bottle_Brake" ObjectPath="\Events\Default Work Unit\environment\Play_Glass_Bottle_Brake" DurationType="OneShot" DurationMin="0.671533" DurationMax="1.270229">
+					<IncludedMemoryFiles>
+						<File Id="86351964" Language="SFX">
+							<ShortName>sfx_environment_brake_glassbottle_02.wav</ShortName>
+							<Path>SFX\sfx_environment_brake_glassbottle_02_10C4C929.wem</Path>
+						</File>
+						<File Id="345289398" Language="SFX">
+							<ShortName>sfx_environment_brake_glassbottle_01.wav</ShortName>
+							<Path>SFX\sfx_environment_brake_glassbottle_01_10C4C929.wem</Path>
+						</File>
+						<File Id="589988285" Language="SFX">
+							<ShortName>sfx_environment_brake_glassbottle_03.wav</ShortName>
+							<Path>SFX\sfx_environment_brake_glassbottle_03_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2115375931" Name="Play_Grave_Damage" ObjectPath="\Events\Default Work Unit\environment\Play_Grave_Damage" DurationType="OneShot" DurationMin="0.981743" DurationMax="2.41273">
+					<IncludedMemoryFiles>
+						<File Id="35998100" Language="SFX">
+							<ShortName>sfx_environment_stonecrumble_03.wav</ShortName>
+							<Path>SFX\sfx_environment_stonecrumble_03_237AACB6.wem</Path>
+						</File>
+						<File Id="99127446" Language="SFX">
+							<ShortName>sfx_environment_stonecrumble_01.wav</ShortName>
+							<Path>SFX\sfx_environment_stonecrumble_01_E6AE66E3.wem</Path>
+						</File>
+						<File Id="295957430" Language="SFX">
+							<ShortName>sfx_environment_stonecrumble_05.wav</ShortName>
+							<Path>SFX\sfx_environment_stonecrumble_05_638A2E46.wem</Path>
+						</File>
+						<File Id="758807149" Language="SFX">
+							<ShortName>sfx_environment_stonecrumble_02.wav</ShortName>
+							<Path>SFX\sfx_environment_stonecrumble_02_D5079771.wem</Path>
+						</File>
+						<File Id="1042370722" Language="SFX">
+							<ShortName>sfx_environment_stonecrumble_04.wav</ShortName>
+							<Path>SFX\sfx_environment_stonecrumble_04_CC94760C.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3778516394" Name="Play_night_forrest" ObjectPath="\Events\Default Work Unit\environment\Play_night_forrest" MaxAttenuation="100." DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="410717211" Language="SFX">
+							<ShortName>sfx_environment_night_01.wav</ShortName>
+							<Path>SFX\sfx_environment_night_01_CBCC2486.wem</Path>
+						</File>
+						<File Id="651605714" Language="SFX">
+							<ShortName>sfx_environment_nightsquirl_01.wav</ShortName>
+							<Path>SFX\sfx_environment_nightsquirl_01_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2859161640" Name="Play_owl" ObjectPath="\Events\Default Work Unit\environment\Play_owl" MaxAttenuation="25." DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="423329924" Language="SFX">
+							<ShortName>sfx_environment_owl_01.wav</ShortName>
+							<Path>SFX\sfx_environment_owl_01_B874437B.wem</Path>
+						</File>
+						<File Id="482793642" Language="SFX">
+							<ShortName>sfx_environment_owl_01.wav</ShortName>
+							<Path>SFX\sfx_environment_owl_01_CCAD54BC.wem</Path>
+						</File>
+						<File Id="861427743" Language="SFX">
+							<ShortName>sfx_environment_owl_01.wav</ShortName>
+							<Path>SFX\sfx_environment_owl_01_E5E119CE.wem</Path>
+						</File>
+						<File Id="1029190902" Language="SFX">
+							<ShortName>sfx_environment_owl_01.wav</ShortName>
+							<Path>SFX\sfx_environment_owl_01_7524817A.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3390075432" Name="Play_Padlock_Brake" ObjectPath="\Events\Default Work Unit\environment\Play_Padlock_Brake" DurationType="OneShot" DurationMin="0.82412" DurationMax="1.044929">
+					<IncludedMemoryFiles>
+						<File Id="84890005" Language="SFX">
+							<ShortName>sfx_environment_brake_padlock_03.wav</ShortName>
+							<Path>SFX\sfx_environment_brake_padlock_03_029A284A.wem</Path>
+						</File>
+						<File Id="309760380" Language="SFX">
+							<ShortName>sfx_environment_brake_padlock_02.wav</ShortName>
+							<Path>SFX\sfx_environment_brake_padlock_02_7B48F3BF.wem</Path>
+						</File>
+						<File Id="349766689" Language="SFX">
+							<ShortName>sfx_environment_brake_padlock_01.wav</ShortName>
+							<Path>SFX\sfx_environment_brake_padlock_01_BC28169D.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="282408186" Name="Play_sfx_environment_fire_tourch_01" ObjectPath="\Events\Default Work Unit\environment\Play_sfx_environment_fire_tourch_01" MaxAttenuation="6." DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="409183702" Language="SFX">
+							<ShortName>sfx_environment_fire_tourch_01.wav</ShortName>
+							<Path>SFX\sfx_environment_fire_tourch_01_CEF40DE1.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="282408185" Name="Play_sfx_environment_fire_tourch_02" ObjectPath="\Events\Default Work Unit\environment\Play_sfx_environment_fire_tourch_02" MaxAttenuation="6." DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="261067370" Language="SFX">
+							<ShortName>sfx_environment_fire_tourch_02.wav</ShortName>
+							<Path>SFX\sfx_environment_fire_tourch_02_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
+		</SoundBank>
+		<SoundBank Id="1355168291" Language="SFX" Hash="1958929096">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="1467963052" Language="SFX" Hash="825341325">
+			<ObjectPath>\SoundBanks\Default Work Unit\Weapons</ObjectPath>
+			<ShortName>Weapons</ShortName>
+			<Path>Weapons.bnk</Path>
+			<IncludedEvents>
+				<Event Id="1967888440" Name="Play_Rifle_Shoot" ObjectPath="\Events\Default Work Unit\Player weapons\Play_Rifle_Shoot" DurationType="OneShot" DurationMin="2.649555" DurationMax="7.916964">
+					<IncludedMemoryFiles>
+						<File Id="153752956" Language="SFX">
+							<ShortName>sfx_weapon_rifle_reloadclick_01.wav</ShortName>
+							<Path>SFX\sfx_weapon_rifle_reloadclick_01_10C4C929.wem</Path>
+						</File>
+						<File Id="181635655" Language="SFX">
+							<ShortName>sfx_weapon_rifle_shoot_04.wav</ShortName>
+							<Path>SFX\sfx_weapon_rifle_shoot_04_65E96FB4.wem</Path>
+						</File>
+						<File Id="352362709" Language="SFX">
+							<ShortName>sfx_weapon_rifle_shoot_01.wav</ShortName>
+							<Path>SFX\sfx_weapon_rifle_shoot_01_C2101D1F.wem</Path>
+						</File>
+						<File Id="809742197" Language="SFX">
+							<ShortName>sfx_weapon_rifle_trigerpull_01.WAV</ShortName>
+							<Path>SFX\sfx_weapon_rifle_trigerpull_01_F92F67CC.wem</Path>
+						</File>
+						<File Id="818144569" Language="SFX">
+							<ShortName>sfx_weapon_rifle_shoot_02.wav</ShortName>
+							<Path>SFX\sfx_weapon_rifle_shoot_02_3B1C5ED7.wem</Path>
+						</File>
+						<File Id="927481850" Language="SFX">
+							<ShortName>sfx_weapon_rifle_shoot_03.wav</ShortName>
+							<Path>SFX\sfx_weapon_rifle_shoot_03_B126AF28.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="858025235" Name="Play_sword_full" ObjectPath="\Events\Default Work Unit\Player weapons\Play_sword_full" DurationType="OneShot" DurationMin="3.532517" DurationMax="3.873754">
+					<IncludedMemoryFiles>
+						<File Id="243304111" Language="SFX">
+							<ShortName>sward pull.wav</ShortName>
+							<Path>SFX\sward pull_89EBE3D3.wem</Path>
+						</File>
+						<File Id="282849044" Language="SFX">
+							<ShortName>sfx_weapon_sword_metal_01.wav</ShortName>
+							<Path>SFX\sfx_weapon_sword_metal_01_10C4C929.wem</Path>
+						</File>
+						<File Id="284620773" Language="SFX">
+							<ShortName>sfx_weapon_sword_metal_03.wav</ShortName>
+							<Path>SFX\sfx_weapon_sword_metal_03_10C4C929.wem</Path>
+						</File>
+						<File Id="342281756" Language="SFX">
+							<ShortName>sfx_weapon_sword_slash_01.wav</ShortName>
+							<Path>SFX\sfx_weapon_sword_slash_01_10C4C929.wem</Path>
+						</File>
+						<File Id="356225369" Language="SFX">
+							<ShortName>sfx_weapon_sword_slash_02.wav</ShortName>
+							<Path>SFX\sfx_weapon_sword_slash_02_10C4C929.wem</Path>
+						</File>
+						<File Id="547661489" Language="SFX">
+							<ShortName>sfx_weapon_sword_metal_02.wav</ShortName>
+							<Path>SFX\sfx_weapon_sword_metal_02_10C4C929.wem</Path>
+						</File>
+						<File Id="658589117" Language="SFX">
+							<ShortName>sfx_weapon_sword_blessedmetal_01.wav</ShortName>
+							<Path>SFX\sfx_weapon_sword_blessedmetal_01_40300E98.wem</Path>
+						</File>
+						<File Id="956961059" Language="SFX">
+							<ShortName>sfx_weapon_sword_metal_04.wav</ShortName>
+							<Path>SFX\sfx_weapon_sword_metal_04_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
+		</SoundBank>
+		<SoundBank Id="1551306167" Language="SFX" Hash="1422870862">
+			<ObjectPath>\SoundBanks\Default Work Unit\UI</ObjectPath>
+			<ShortName>UI</ShortName>
+			<Path>UI.bnk</Path>
+			<IncludedEvents>
+				<Event Id="786024383" Name="Play_page_turn" ObjectPath="\Events\Default Work Unit\UI\Play_page_turn" DurationType="OneShot" DurationMin="0.479035" DurationMax="0.846598">
+					<IncludedMemoryFiles>
+						<File Id="552280281" Language="SFX">
+							<ShortName>sfx_ui_pageturn_01.wav</ShortName>
+							<Path>SFX\sfx_ui_pageturn_01_0AEAA22F.wem</Path>
+						</File>
+						<File Id="592074442" Language="SFX">
+							<ShortName>sfx_ui_pageturn_03.wav</ShortName>
+							<Path>SFX\sfx_ui_pageturn_03_76A0958A.wem</Path>
+						</File>
+						<File Id="1031358545" Language="SFX">
+							<ShortName>sfx_ui_pageturn_02.wav</ShortName>
+							<Path>SFX\sfx_ui_pageturn_02_D7A15F15.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1198841816" Name="Play_sfx_ui_back_01" ObjectPath="\Events\Default Work Unit\UI\Play_sfx_ui_back_01" DurationType="OneShot" DurationMin="1.35" DurationMax="1.35">
+					<IncludedMemoryFiles>
+						<File Id="694767111" Language="SFX">
+							<ShortName>sfx_ui_back_01.wav</ShortName>
+							<Path>SFX\sfx_ui_back_01_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3633800886" Name="Play_sfx_ui_move_01" ObjectPath="\Events\Default Work Unit\UI\Play_sfx_ui_move_01" DurationType="OneShot" DurationMin="0.961973" DurationMax="0.961973">
+					<IncludedMemoryFiles>
+						<File Id="426194716" Language="SFX">
+							<ShortName>sfx_ui_move_01.wav</ShortName>
+							<Path>SFX\sfx_ui_move_01_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="631659255" Name="Play_sfx_ui_select_01" ObjectPath="\Events\Default Work Unit\UI\Play_sfx_ui_select_01" DurationType="OneShot" DurationMin="1.68" DurationMax="1.68">
+					<IncludedMemoryFiles>
+						<File Id="751707267" Language="SFX">
+							<ShortName>sfx_ui_select_01.wav</ShortName>
+							<Path>SFX\sfx_ui_select_01_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
+		</SoundBank>
+		<SoundBank Id="1560169506" Language="SFX" Hash="3039786223">
+			<ObjectPath>\SoundBanks\Default Work Unit\Boss</ObjectPath>
+			<ShortName>Boss</ShortName>
+			<Path>Boss.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3797621065" Name="grunt" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\hand roots\grunt" DurationType="OneShot" DurationMin="0." DurationMax="0.658701">
+					<IncludedMemoryFiles>
+						<File Id="155062614" Language="SFX">
+							<ShortName>sfx_boss_attack_grunt_03.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_grunt_03_42F2BC79.wem</Path>
+						</File>
+						<File Id="225506425" Language="SFX">
+							<ShortName>sfx_boss_attack_grunt_02.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_grunt_02_EEBFBC77.wem</Path>
+						</File>
+						<File Id="571547885" Language="SFX">
+							<ShortName>sfx_boss_attack_grunt_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_grunt_01_10C4C929.wem</Path>
+						</File>
+						<File Id="590982211" Language="SFX">
+							<ShortName>sfx_boss_attack_grunt_04.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_grunt_04_47619B6A.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="919531205" Name="hands_in" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\hand roots\hands_in" DurationType="OneShot" DurationMin="0.470992" DurationMax="0.839212">
+					<IncludedMemoryFiles>
+						<File Id="763859046" Language="SFX">
+							<ShortName>sfx_boss_impact_ground_01.wav</ShortName>
+							<Path>SFX\sfx_boss_impact_ground_01_39E56F4B.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1677138927" Name="Play_boss_movement" ObjectPath="\Events\Default Work Unit\boss sounds\Play_boss_movement" DurationType="OneShot" DurationMin="0.218211" DurationMax="0.501708">
+					<IncludedMemoryFiles>
+						<File Id="31148998" Language="SFX">
+							<ShortName>63759-Wig_big_clown_hair_adjust_on_head-BLASTWAVEFX-02183.wav</ShortName>
+							<Path>SFX\63759-Wig_big_clown_hair_adjust_on_head-BLASTWAVEFX-02183_9F1588A1.wem</Path>
+						</File>
+						<File Id="51742120" Language="SFX">
+							<ShortName>sfx_footstep_heel_hoofsdirt_02.wav</ShortName>
+							<Path>SFX\sfx_footstep_heel_hoofsdirt_02_7A502747.wem</Path>
+						</File>
+						<File Id="62105963" Language="SFX">
+							<ShortName>sfx_footstep_heel_hoofsdirt_04.wav</ShortName>
+							<Path>SFX\sfx_footstep_heel_hoofsdirt_04_5459C8CD.wem</Path>
+						</File>
+						<File Id="65470196" Language="SFX">
+							<ShortName>76891-Wig_big_clown_hair_handle_movement-BLASTWAVEFX-12899.wav</ShortName>
+							<Path>SFX\76891-Wig_big_clown_hair_handle_movement-BLASTWAVEFX-12899_30797343.wem</Path>
+						</File>
+						<File Id="217997662" Language="SFX">
+							<ShortName>sfx_footstep_heel_hoofsdirt_01.wav</ShortName>
+							<Path>SFX\sfx_footstep_heel_hoofsdirt_01_836C91F9.wem</Path>
+						</File>
+						<File Id="428089676" Language="SFX">
+							<ShortName>sfx_footstep_heel_hoofsdirt_06.wav</ShortName>
+							<Path>SFX\sfx_footstep_heel_hoofsdirt_06_427F4D34.wem</Path>
+						</File>
+						<File Id="490012333" Language="SFX">
+							<ShortName>sfx_footstep_heel_hoofsdirt_05.wav</ShortName>
+							<Path>SFX\sfx_footstep_heel_hoofsdirt_05_9E211C46.wem</Path>
+						</File>
+						<File Id="534701636" Language="SFX">
+							<ShortName>sfx_footstep_heel_hoofsdirt_04.wav</ShortName>
+							<Path>SFX\sfx_footstep_heel_hoofsdirt_04_9F295E97.wem</Path>
+						</File>
+						<File Id="552707256" Language="SFX">
+							<ShortName>sfx_footstep_heel_hoofsdirt_03.wav</ShortName>
+							<Path>SFX\sfx_footstep_heel_hoofsdirt_03_AED8FCCA.wem</Path>
+						</File>
+						<File Id="587608525" Language="SFX">
+							<ShortName>76891-Wig_big_clown_hair_handle_movement-BLASTWAVEFX-12899.wav</ShortName>
+							<Path>SFX\76891-Wig_big_clown_hair_handle_movement-BLASTWAVEFX-12899_66ABE5C9.wem</Path>
+						</File>
+						<File Id="670958212" Language="SFX">
+							<ShortName>sfx_footstep_heel_hoofsdirt_03.wav</ShortName>
+							<Path>SFX\sfx_footstep_heel_hoofsdirt_03_74C151E6.wem</Path>
+						</File>
+						<File Id="686681099" Language="SFX">
+							<ShortName>sfx_footstep_heel_hoofsdirt_02.wav</ShortName>
+							<Path>SFX\sfx_footstep_heel_hoofsdirt_02_4E638286.wem</Path>
+						</File>
+						<File Id="727258973" Language="SFX">
+							<ShortName>sfx_footstep_heel_hoofsdirt_01.wav</ShortName>
+							<Path>SFX\sfx_footstep_heel_hoofsdirt_01_9994CAE2.wem</Path>
+						</File>
+						<File Id="787252066" Language="SFX">
+							<ShortName>63759-Wig_big_clown_hair_adjust_on_head-BLASTWAVEFX-02183.wav</ShortName>
+							<Path>SFX\63759-Wig_big_clown_hair_adjust_on_head-BLASTWAVEFX-02183_9E4605C7.wem</Path>
+						</File>
+						<File Id="942729810" Language="SFX">
+							<ShortName>sfx_footstep_heel_hoofsdirt_05.wav</ShortName>
+							<Path>SFX\sfx_footstep_heel_hoofsdirt_05_153626D1.wem</Path>
+						</File>
+						<File Id="976664943" Language="SFX">
+							<ShortName>sfx_footstep_heel_hoofsdirt_06.wav</ShortName>
+							<Path>SFX\sfx_footstep_heel_hoofsdirt_06_068AD4A0.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<DefaultSwitchValue>{AB97A551-E4C9-4635-A887-4FDD3A97BD17}</DefaultSwitchValue>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{AB97A551-E4C9-4635-A887-4FDD3A97BD17}">
+							<Media>
+								<File Id="51742120"/>
+								<File Id="62105963"/>
+								<File Id="217997662"/>
+								<File Id="428089676"/>
+								<File Id="490012333"/>
+								<File Id="534701636"/>
+								<File Id="552707256"/>
+								<File Id="670958212"/>
+								<File Id="686681099"/>
+								<File Id="727258973"/>
+								<File Id="942729810"/>
+								<File Id="976664943"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="3936914037" Name="Play_Dig_down" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Burrow\Play_Dig_down" DurationType="OneShot" DurationMin="0.350794" DurationMax="0.767092">
+					<IncludedMemoryFiles>
+						<File Id="471210075" Language="SFX">
+							<ShortName>sfx_boss_attack_digdown_03.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_digdown_03_10C4C929.wem</Path>
+						</File>
+						<File Id="612623315" Language="SFX">
+							<ShortName>sfx_boss_attack_digdown_02.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_digdown_02_10C4C929.wem</Path>
+						</File>
+						<File Id="946470933" Language="SFX">
+							<ShortName>sfx_boss_attack_digdown_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_digdown_01_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="990938754" Name="Play_dig_up" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Burrow\Play_dig_up" DurationType="OneShot" DurationMin="0.592394" DurationMax="1.264286">
+					<IncludedMemoryFiles>
+						<File Id="86039684" Language="SFX">
+							<ShortName>sfx_boss_attack_digup_02.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_digup_02_DA8550E9.wem</Path>
+						</File>
+						<File Id="154975497" Language="SFX">
+							<ShortName>sfx_boss_attack_digup_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_digup_01_813358E4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="813141615" Name="Play_digging" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Burrow\Play_digging" DurationType="OneShot" DurationMin="1.864789" DurationMax="4.366508">
+					<IncludedMemoryFiles>
+						<File Id="82444583" Language="SFX">
+							<ShortName>sfx_boss_attack_digging_03.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_digging_03_04319DFE.wem</Path>
+						</File>
+						<File Id="387731555" Language="SFX">
+							<ShortName>sfx_boss_attack_digging_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_digging_01_57457BDC.wem</Path>
+						</File>
+						<File Id="857458611" Language="SFX">
+							<ShortName>sfx_boss_attack_digging_02.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_digging_02_A8A593B2.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1741081981" Name="Play_hit_sound" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\swipe\Play_hit_sound" DurationType="OneShot" DurationMin="0." DurationMax="0.112993">
+					<IncludedMemoryFiles>
+						<File Id="622216869" Language="SFX">
+							<ShortName>sfx_boss_attack_swing_03.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_swing_03_95DB850A.wem</Path>
+						</File>
+						<File Id="654923840" Language="SFX">
+							<ShortName>sfx_boss_attack_swing_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_swing_01_4A32AD7F.wem</Path>
+						</File>
+						<File Id="903526883" Language="SFX">
+							<ShortName>sfx_boss_attack_swing_04.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_swing_04_EED9C6BB.wem</Path>
+						</File>
+						<File Id="940954914" Language="SFX">
+							<ShortName>sfx_boss_attack_swing_02.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_swing_02_76353BB4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2599551658" Name="Play_land_roots_attack" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Play_land_roots_attack" DurationType="OneShot" DurationMin="2.050301" DurationMax="3.359728">
+					<IncludedMemoryFiles>
+						<File Id="155062614" Language="SFX">
+							<ShortName>sfx_boss_attack_grunt_03.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_grunt_03_42F2BC79.wem</Path>
+						</File>
+						<File Id="225506425" Language="SFX">
+							<ShortName>sfx_boss_attack_grunt_02.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_grunt_02_EEBFBC77.wem</Path>
+						</File>
+						<File Id="295087768" Language="SFX">
+							<ShortName>sfx_boss_attack_pillars_03.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_pillars_03_D29FF5A2.wem</Path>
+						</File>
+						<File Id="571547885" Language="SFX">
+							<ShortName>sfx_boss_attack_grunt_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_grunt_01_10C4C929.wem</Path>
+						</File>
+						<File Id="590982211" Language="SFX">
+							<ShortName>sfx_boss_attack_grunt_04.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_grunt_04_47619B6A.wem</Path>
+						</File>
+						<File Id="763859046" Language="SFX">
+							<ShortName>sfx_boss_impact_ground_01.wav</ShortName>
+							<Path>SFX\sfx_boss_impact_ground_01_39E56F4B.wem</Path>
+						</File>
+						<File Id="949080387" Language="SFX">
+							<ShortName>sfx_boss_attack_pillars_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_pillars_01_60F97F09.wem</Path>
+						</File>
+						<File Id="1057579346" Language="SFX">
+							<ShortName>sfx_boss_attack_pillars_02.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_pillars_02_372AA902.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2860663338" Name="Play_pillersup" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\uproot\Play_pillersup" DurationType="OneShot" DurationMin="0.734532" DurationMax="2.485224">
+					<IncludedMemoryFiles>
+						<File Id="295087768" Language="SFX">
+							<ShortName>sfx_boss_attack_pillars_03.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_pillars_03_D29FF5A2.wem</Path>
+						</File>
+						<File Id="382482348" Language="SFX">
+							<ShortName>sfx_boss_attack_dirtdebris_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_dirtdebris_01_43421C9E.wem</Path>
+						</File>
+						<File Id="385143009" Language="SFX">
+							<ShortName>sfx_boss_attack_dirtdebris_02.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_dirtdebris_02_299CA992.wem</Path>
+						</File>
+						<File Id="1057579346" Language="SFX">
+							<ShortName>sfx_boss_attack_pillars_02.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_pillars_02_372AA902.wem</Path>
+						</File>
+						<File Id="1059656706" Language="SFX">
+							<ShortName>sfx_boss_attack_pillars_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_pillars_01_413C334E.wem</Path>
+						</File>
+						<File Id="1061007027" Language="SFX">
+							<ShortName>sfx_boss_attack_dirtdebris_03.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_dirtdebris_03_C6392C56.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2779817312" Name="Play_scream_attack" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Play_scream_attack" DurationType="OneShot" DurationMin="2.037924" DurationMax="2.3001">
+					<IncludedMemoryFiles>
+						<File Id="354529564" Language="SFX">
+							<ShortName>sfx_boss_attack_scream_02.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_scream_02_FFFDC25C.wem</Path>
+						</File>
+						<File Id="450421673" Language="SFX">
+							<ShortName>506834-Small-Creature-Vocal-Mad-Scream-Curse-Dammed.wav</ShortName>
+							<Path>SFX\506834-Small-Creature-Vocal-Mad-Scream-Curse-Dammed_E6003509.wem</Path>
+						</File>
+						<File Id="461171482" Language="SFX">
+							<ShortName>sfx_boss_attack_scream_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_scream_01_8D10A271.wem</Path>
+						</File>
+						<File Id="704304611" Language="SFX">
+							<ShortName>sfx_boss_attack_scream_03.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_scream_03_10AE8C61.wem</Path>
+						</File>
+						<File Id="711033090" Language="SFX">
+							<ShortName>462378-ANIMAL_FARM_Pig-Baby-Scream-Shrill-City_Street_01.wav</ShortName>
+							<Path>SFX\462378-ANIMAL_FARM_Pig-Baby-Scream-Shrill-City_Street_01_62EEDACF.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="495359303" Name="Play_Swing_attack" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\swipe\Play_Swing_attack" DurationType="OneShot" DurationMin="0.580393" DurationMax="1.121943">
+					<IncludedMemoryFiles>
+						<File Id="49360364" Language="SFX">
+							<ShortName>sfx_boss_attack__05.wav</ShortName>
+							<Path>SFX\sfx_boss_attack__05_015BFF9E.wem</Path>
+						</File>
+						<File Id="101982553" Language="SFX">
+							<ShortName>sfx_boss_attack_swing_02.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_swing_02_913230C8.wem</Path>
+						</File>
+						<File Id="109734831" Language="SFX">
+							<ShortName>sfx_boss_attack_swing_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_swing_01_0E7A7F71.wem</Path>
+						</File>
+						<File Id="131001721" Language="SFX">
+							<ShortName>sfx_boss_attack__03.wav</ShortName>
+							<Path>SFX\sfx_boss_attack__03_1B62D577.wem</Path>
+						</File>
+						<File Id="433508468" Language="SFX">
+							<ShortName>sfx_boss_attack_swing_04.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_swing_04_76B12647.wem</Path>
+						</File>
+						<File Id="538157863" Language="SFX">
+							<ShortName>sfx_boss_attack__04.wav</ShortName>
+							<Path>SFX\sfx_boss_attack__04_3844E5A0.wem</Path>
+						</File>
+						<File Id="619175511" Language="SFX">
+							<ShortName>sfx_boss_attack__02.wav</ShortName>
+							<Path>SFX\sfx_boss_attack__02_8AF07023.wem</Path>
+						</File>
+						<File Id="693164142" Language="SFX">
+							<ShortName>sfx_boss_attack_swing_03.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_swing_03_03833FF1.wem</Path>
+						</File>
+						<File Id="874802181" Language="SFX">
+							<ShortName>sfx_boss_attack__01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack__01_DFDCADCB.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2956397052" Name="Play_Uproot_Attack" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Play_Uproot_Attack" DurationType="OneShot" DurationMin="1.715014" DurationMax="3.833532">
+					<IncludedMemoryFiles>
+						<File Id="205365064" Language="SFX">
+							<ShortName>sfx_boss_attack_stomp_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_stomp_01_49EBBB37.wem</Path>
+						</File>
+						<File Id="295087768" Language="SFX">
+							<ShortName>sfx_boss_attack_pillars_03.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_pillars_03_D29FF5A2.wem</Path>
+						</File>
+						<File Id="382482348" Language="SFX">
+							<ShortName>sfx_boss_attack_dirtdebris_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_dirtdebris_01_43421C9E.wem</Path>
+						</File>
+						<File Id="385143009" Language="SFX">
+							<ShortName>sfx_boss_attack_dirtdebris_02.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_dirtdebris_02_299CA992.wem</Path>
+						</File>
+						<File Id="657166689" Language="SFX">
+							<ShortName>sfx_boss_attack_stomp_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_stomp_01_2FA828CF.wem</Path>
+						</File>
+						<File Id="746852970" Language="SFX">
+							<ShortName>sfx_boss_attack_stomp_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_stomp_01_3D533492.wem</Path>
+						</File>
+						<File Id="1046182162" Language="SFX">
+							<ShortName>sfx_boss_attack_groundtump_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_groundtump_01_E7F850F1.wem</Path>
+						</File>
+						<File Id="1057579346" Language="SFX">
+							<ShortName>sfx_boss_attack_pillars_02.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_pillars_02_372AA902.wem</Path>
+						</File>
+						<File Id="1059656706" Language="SFX">
+							<ShortName>sfx_boss_attack_pillars_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_pillars_01_413C334E.wem</Path>
+						</File>
+						<File Id="1061007027" Language="SFX">
+							<ShortName>sfx_boss_attack_dirtdebris_03.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_dirtdebris_03_C6392C56.wem</Path>
+						</File>
+						<File Id="1069427337" Language="SFX">
+							<ShortName>sfx_boss_attack_stomp_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_stomp_01_7EA7F852.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="4184561336" Name="Play_UpRootStomp" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\uproot\Play_UpRootStomp" DurationType="OneShot" DurationMin="0.980482" DurationMax="1.348307">
+					<IncludedMemoryFiles>
+						<File Id="205365064" Language="SFX">
+							<ShortName>sfx_boss_attack_stomp_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_stomp_01_49EBBB37.wem</Path>
+						</File>
+						<File Id="382482348" Language="SFX">
+							<ShortName>sfx_boss_attack_dirtdebris_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_dirtdebris_01_43421C9E.wem</Path>
+						</File>
+						<File Id="385143009" Language="SFX">
+							<ShortName>sfx_boss_attack_dirtdebris_02.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_dirtdebris_02_299CA992.wem</Path>
+						</File>
+						<File Id="657166689" Language="SFX">
+							<ShortName>sfx_boss_attack_stomp_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_stomp_01_2FA828CF.wem</Path>
+						</File>
+						<File Id="746852970" Language="SFX">
+							<ShortName>sfx_boss_attack_stomp_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_stomp_01_3D533492.wem</Path>
+						</File>
+						<File Id="1046182162" Language="SFX">
+							<ShortName>sfx_boss_attack_groundtump_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_groundtump_01_E7F850F1.wem</Path>
+						</File>
+						<File Id="1061007027" Language="SFX">
+							<ShortName>sfx_boss_attack_dirtdebris_03.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_dirtdebris_03_C6392C56.wem</Path>
+						</File>
+						<File Id="1069427337" Language="SFX">
+							<ShortName>sfx_boss_attack_stomp_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_stomp_01_7EA7F852.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="948909352" Name="roots_up" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\hand roots\roots_up" DurationType="OneShot" DurationMin="1.004767" DurationMax="1.861814">
+					<IncludedMemoryFiles>
+						<File Id="295087768" Language="SFX">
+							<ShortName>sfx_boss_attack_pillars_03.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_pillars_03_D29FF5A2.wem</Path>
+						</File>
+						<File Id="949080387" Language="SFX">
+							<ShortName>sfx_boss_attack_pillars_01.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_pillars_01_60F97F09.wem</Path>
+						</File>
+						<File Id="1057579346" Language="SFX">
+							<ShortName>sfx_boss_attack_pillars_02.wav</ShortName>
+							<Path>SFX\sfx_boss_attack_pillars_02_372AA902.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
+			<SwitchGroups>
+				<SwitchGroup Id="2385628198" Name="footsteps" ObjectPath="\Switches\Default Work Unit\footsteps" GUID="{75660003-1E15-42AB-9D4C-BE72C4B3A161}">
+					<Switches>
+						<Switch Id="4248645337" Name="grass" ObjectPath="\Switches\Default Work Unit\footsteps\grass" GUID="{F987222C-2F2E-4159-92BD-606E29EEE51A}"/>
+						<Switch Id="2195636714" Name="dirt" ObjectPath="\Switches\Default Work Unit\footsteps\dirt" GUID="{AB97A551-E4C9-4635-A887-4FDD3A97BD17}"/>
+						<Switch Id="2185786256" Name="gravel" ObjectPath="\Switches\Default Work Unit\footsteps\gravel" GUID="{7D66B425-56D4-4B5B-89EB-EBA8859E9F4D}"/>
+						<Switch Id="2026920480" Name="roll" ObjectPath="\Switches\Default Work Unit\footsteps\roll" GUID="{A03A62F6-A7FE-43AF-8ED4-CBA3C608944F}"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
+		</SoundBank>
+		<SoundBank Id="3991942870" Language="SFX" Hash="917009299">
+			<ObjectPath>\SoundBanks\Default Work Unit\music</ObjectPath>
+			<ShortName>music</ShortName>
+			<Path>music.bnk</Path>
+			<IncludedEvents>
+				<Event Id="1041001914" Name="Play_music_battle_01" ObjectPath="\Events\Default Work Unit\music\Play_music_battle_01" DurationType="OneShot" DurationMin="128.809799" DurationMax="128.809799">
+					<IncludedMemoryFiles>
+						<File Id="411059738" Language="SFX">
+							<ShortName>music_battle_01.wav</ShortName>
+							<Path>SFX\music_battle_01_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

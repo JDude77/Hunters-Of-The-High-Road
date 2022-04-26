@@ -70,7 +70,9 @@ public class PlayerStateDodging : PlayerState
 
     public override void UpdateState()
     {
-        if(!isRolling)
+        base.UpdateState();
+
+        if (!isRolling)
         {
             if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
             {
