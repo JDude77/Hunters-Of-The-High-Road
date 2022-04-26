@@ -13,7 +13,7 @@
 			<ShortName>environment</ShortName>
 			<Path>environment.bnk</Path>
 			<IncludedEvents>
-				<Event Id="1293037340" Name="Play_camp_fire" ObjectPath="\Events\Default Work Unit\environment\Play_camp_fire" MaxAttenuation="10.">
+				<Event Id="1293037340" Name="Play_camp_fire" ObjectPath="\Events\Default Work Unit\environment\Play_camp_fire" MaxAttenuation="10." DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="169922276" Language="SFX">
 							<ShortName>sfx_environment_camp_fire_01.wav</ShortName>
@@ -21,7 +21,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="4166756183" Name="Play_environment_grave" ObjectPath="\Events\Default Work Unit\environment\Play_environment_grave" MaxAttenuation="40.">
+				<Event Id="4166756183" Name="Play_environment_grave" ObjectPath="\Events\Default Work Unit\environment\Play_environment_grave" MaxAttenuation="40." DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="763286601" Language="SFX">
 							<ShortName>sfx_environment_trees_01.wav</ShortName>
@@ -29,7 +29,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3450565664" Name="Play_Flys_buzzing" ObjectPath="\Events\Default Work Unit\environment\Play_Flys_buzzing" MaxAttenuation="6.">
+				<Event Id="3450565664" Name="Play_Flys_buzzing" ObjectPath="\Events\Default Work Unit\environment\Play_Flys_buzzing" MaxAttenuation="6." DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="753792408" Language="SFX">
 							<ShortName>500482-Single_Fly_Buzzing_-One_Fly_or_Insect_Flying_Buzz_Noise_-Loop_-Panned_Version_009530_.wav</ShortName>
@@ -41,7 +41,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1337894487" Name="Play_frogs" ObjectPath="\Events\Default Work Unit\environment\Play_frogs" MaxAttenuation="5.">
+				<Event Id="1337894487" Name="Play_frogs" ObjectPath="\Events\Default Work Unit\environment\Play_frogs" MaxAttenuation="5." DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="974370809" Language="SFX">
 							<ShortName>frog.wav</ShortName>
@@ -49,7 +49,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="4089264814" Name="Play_gate_open" ObjectPath="\Events\Default Work Unit\environment\Play_gate_open">
+				<Event Id="4089264814" Name="Play_gate_open" ObjectPath="\Events\Default Work Unit\environment\Play_gate_open" DurationType="OneShot" DurationMin="3.355855" DurationMax="4.228112">
 					<IncludedMemoryFiles>
 						<File Id="967804768" Language="SFX">
 							<ShortName>sfx_environment_gate_01.wav</ShortName>
@@ -57,7 +57,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2038828501" Name="Play_Glass_Bottle_Brake" ObjectPath="\Events\Default Work Unit\environment\Play_Glass_Bottle_Brake">
+				<Event Id="2038828501" Name="Play_Glass_Bottle_Brake" ObjectPath="\Events\Default Work Unit\environment\Play_Glass_Bottle_Brake" DurationType="OneShot" DurationMin="0.671533" DurationMax="1.270229">
 					<IncludedMemoryFiles>
 						<File Id="86351964" Language="SFX">
 							<ShortName>sfx_environment_brake_glassbottle_02.wav</ShortName>
@@ -73,7 +73,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2115375931" Name="Play_Grave_Damage" ObjectPath="\Events\Default Work Unit\environment\Play_Grave_Damage">
+				<Event Id="2115375931" Name="Play_Grave_Damage" ObjectPath="\Events\Default Work Unit\environment\Play_Grave_Damage" DurationType="OneShot" DurationMin="0.981743" DurationMax="2.41273">
 					<IncludedMemoryFiles>
 						<File Id="35998100" Language="SFX">
 							<ShortName>sfx_environment_stonecrumble_03.wav</ShortName>
@@ -97,7 +97,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3778516394" Name="Play_night_forrest" ObjectPath="\Events\Default Work Unit\environment\Play_night_forrest" MaxAttenuation="100.">
+				<Event Id="3778516394" Name="Play_night_forrest" ObjectPath="\Events\Default Work Unit\environment\Play_night_forrest" MaxAttenuation="100." DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="410717211" Language="SFX">
 							<ShortName>sfx_environment_night_01.wav</ShortName>
@@ -109,7 +109,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2859161640" Name="Play_owl" ObjectPath="\Events\Default Work Unit\environment\Play_owl" MaxAttenuation="25.">
+				<Event Id="2859161640" Name="Play_owl" ObjectPath="\Events\Default Work Unit\environment\Play_owl" MaxAttenuation="25." DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="423329924" Language="SFX">
 							<ShortName>sfx_environment_owl_01.wav</ShortName>
@@ -129,7 +129,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3390075432" Name="Play_Padlock_Brake" ObjectPath="\Events\Default Work Unit\environment\Play_Padlock_Brake">
+				<Event Id="3390075432" Name="Play_Padlock_Brake" ObjectPath="\Events\Default Work Unit\environment\Play_Padlock_Brake" DurationType="OneShot" DurationMin="0.82412" DurationMax="1.044929">
 					<IncludedMemoryFiles>
 						<File Id="84890005" Language="SFX">
 							<ShortName>sfx_environment_brake_padlock_03.wav</ShortName>
@@ -145,7 +145,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="282408186" Name="Play_sfx_environment_fire_tourch_01" ObjectPath="\Events\Default Work Unit\environment\Play_sfx_environment_fire_tourch_01" MaxAttenuation="6.">
+				<Event Id="282408186" Name="Play_sfx_environment_fire_tourch_01" ObjectPath="\Events\Default Work Unit\environment\Play_sfx_environment_fire_tourch_01" MaxAttenuation="6." DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="409183702" Language="SFX">
 							<ShortName>sfx_environment_fire_tourch_01.wav</ShortName>
@@ -153,7 +153,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="282408185" Name="Play_sfx_environment_fire_tourch_02" ObjectPath="\Events\Default Work Unit\environment\Play_sfx_environment_fire_tourch_02" MaxAttenuation="6.">
+				<Event Id="282408185" Name="Play_sfx_environment_fire_tourch_02" ObjectPath="\Events\Default Work Unit\environment\Play_sfx_environment_fire_tourch_02" MaxAttenuation="6." DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="261067370" Language="SFX">
 							<ShortName>sfx_environment_fire_tourch_02.wav</ShortName>

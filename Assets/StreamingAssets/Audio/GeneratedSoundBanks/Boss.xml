@@ -8,12 +8,12 @@
 		<ExternalSourcesOutputRoot>D:\unity Projects\Hunters-Of-The-High-Road_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<SoundBanks>
-		<SoundBank Id="1560169506" Language="SFX" Hash="3039786223">
+		<SoundBank Id="1560169506" Language="SFX" Hash="1088582226">
 			<ObjectPath>\SoundBanks\Default Work Unit\Boss</ObjectPath>
 			<ShortName>Boss</ShortName>
 			<Path>Boss.bnk</Path>
 			<IncludedEvents>
-				<Event Id="3797621065" Name="grunt" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\hand roots\grunt">
+				<Event Id="3797621065" Name="grunt" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\hand roots\grunt" DurationType="OneShot" DurationMin="0." DurationMax="0.658701">
 					<IncludedMemoryFiles>
 						<File Id="155062614" Language="SFX">
 							<ShortName>sfx_boss_attack_grunt_03.wav</ShortName>
@@ -33,7 +33,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="919531205" Name="hands_in" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\hand roots\hands_in">
+				<Event Id="919531205" Name="hands_in" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\hand roots\hands_in" DurationType="OneShot" DurationMin="0.470992" DurationMax="0.839212">
 					<IncludedMemoryFiles>
 						<File Id="763859046" Language="SFX">
 							<ShortName>sfx_boss_impact_ground_01.wav</ShortName>
@@ -41,7 +41,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1677138927" Name="Play_boss_movement" ObjectPath="\Events\Default Work Unit\boss sounds\Play_boss_movement">
+				<Event Id="1677138927" Name="Play_boss_movement" ObjectPath="\Events\Default Work Unit\boss sounds\Play_boss_movement" DurationType="OneShot" DurationMin="0.218211" DurationMax="0.501708">
 					<IncludedMemoryFiles>
 						<File Id="31148998" Language="SFX">
 							<ShortName>63759-Wig_big_clown_hair_adjust_on_head-BLASTWAVEFX-02183.wav</ShortName>
@@ -128,7 +128,7 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="3936914037" Name="Play_Dig_down" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Burrow\Play_Dig_down">
+				<Event Id="3936914037" Name="Play_Dig_down" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Burrow\Play_Dig_down" DurationType="OneShot" DurationMin="0.350794" DurationMax="0.767092">
 					<IncludedMemoryFiles>
 						<File Id="471210075" Language="SFX">
 							<ShortName>sfx_boss_attack_digdown_03.wav</ShortName>
@@ -144,7 +144,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="990938754" Name="Play_dig_up" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Burrow\Play_dig_up">
+				<Event Id="990938754" Name="Play_dig_up" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Burrow\Play_dig_up" DurationType="OneShot" DurationMin="0.592394" DurationMax="1.264286">
 					<IncludedMemoryFiles>
 						<File Id="86039684" Language="SFX">
 							<ShortName>sfx_boss_attack_digup_02.wav</ShortName>
@@ -156,7 +156,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="813141615" Name="Play_digging" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Burrow\Play_digging">
+				<Event Id="813141615" Name="Play_digging" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Burrow\Play_digging" DurationType="OneShot" DurationMin="1.864789" DurationMax="4.366508">
 					<IncludedMemoryFiles>
 						<File Id="82444583" Language="SFX">
 							<ShortName>sfx_boss_attack_digging_03.wav</ShortName>
@@ -172,7 +172,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1741081981" Name="Play_hit_sound" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\swipe\Play_hit_sound">
+				<Event Id="1741081981" Name="Play_hit_sound" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\swipe\Play_hit_sound" DurationType="OneShot" DurationMin="0." DurationMax="0.112993">
 					<IncludedMemoryFiles>
 						<File Id="622216869" Language="SFX">
 							<ShortName>sfx_boss_attack_swing_03.wav</ShortName>
@@ -192,7 +192,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2599551658" Name="Play_land_roots_attack" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Play_land_roots_attack">
+				<Event Id="2599551658" Name="Play_land_roots_attack" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Play_land_roots_attack" DurationType="OneShot" DurationMin="2.050301" DurationMax="3.359728">
 					<IncludedMemoryFiles>
 						<File Id="155062614" Language="SFX">
 							<ShortName>sfx_boss_attack_grunt_03.wav</ShortName>
@@ -228,7 +228,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2860663338" Name="Play_pillersup" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\uproot\Play_pillersup">
+				<Event Id="2860663338" Name="Play_pillersup" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\uproot\Play_pillersup" DurationType="OneShot" DurationMin="0.734532" DurationMax="2.485224">
 					<IncludedMemoryFiles>
 						<File Id="295087768" Language="SFX">
 							<ShortName>sfx_boss_attack_pillars_03.wav</ShortName>
@@ -256,7 +256,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2779817312" Name="Play_scream_attack" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Play_scream_attack">
+				<Event Id="2779817312" Name="Play_scream_attack" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Play_scream_attack" DurationType="OneShot" DurationMin="2.037924" DurationMax="2.3001">
 					<IncludedMemoryFiles>
 						<File Id="354529564" Language="SFX">
 							<ShortName>sfx_boss_attack_scream_02.wav</ShortName>
@@ -280,7 +280,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="495359303" Name="Play_Swing_attack" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\swipe\Play_Swing_attack">
+				<Event Id="495359303" Name="Play_Swing_attack" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\swipe\Play_Swing_attack" DurationType="OneShot" DurationMin="0.580393" DurationMax="1.121943">
 					<IncludedMemoryFiles>
 						<File Id="49360364" Language="SFX">
 							<ShortName>sfx_boss_attack__05.wav</ShortName>
@@ -292,7 +292,7 @@
 						</File>
 						<File Id="109734831" Language="SFX">
 							<ShortName>sfx_boss_attack_swing_01.wav</ShortName>
-							<Path>SFX\sfx_boss_attack_swing_01_0E7A7F71.wem</Path>
+							<Path>SFX\sfx_boss_attack_swing_01_89C82331.wem</Path>
 						</File>
 						<File Id="131001721" Language="SFX">
 							<ShortName>sfx_boss_attack__03.wav</ShortName>
@@ -320,7 +320,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2956397052" Name="Play_Uproot_Attack" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Play_Uproot_Attack">
+				<Event Id="2956397052" Name="Play_Uproot_Attack" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Play_Uproot_Attack" DurationType="OneShot" DurationMin="1.715014" DurationMax="3.833532">
 					<IncludedMemoryFiles>
 						<File Id="205365064" Language="SFX">
 							<ShortName>sfx_boss_attack_stomp_01.wav</ShortName>
@@ -368,7 +368,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="4184561336" Name="Play_UpRootStomp" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\uproot\Play_UpRootStomp">
+				<Event Id="4184561336" Name="Play_UpRootStomp" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\uproot\Play_UpRootStomp" DurationType="OneShot" DurationMin="0.980482" DurationMax="1.348307">
 					<IncludedMemoryFiles>
 						<File Id="205365064" Language="SFX">
 							<ShortName>sfx_boss_attack_stomp_01.wav</ShortName>
@@ -404,7 +404,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="948909352" Name="roots_up" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\hand roots\roots_up">
+				<Event Id="948909352" Name="roots_up" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\hand roots\roots_up" DurationType="OneShot" DurationMin="1.004767" DurationMax="1.861814">
 					<IncludedMemoryFiles>
 						<File Id="295087768" Language="SFX">
 							<ShortName>sfx_boss_attack_pillars_03.wav</ShortName>

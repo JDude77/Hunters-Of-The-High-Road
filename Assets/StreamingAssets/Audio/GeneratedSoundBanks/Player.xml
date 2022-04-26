@@ -13,7 +13,7 @@
 			<ShortName>Player</ShortName>
 			<Path>Player.bnk</Path>
 			<IncludedEvents>
-				<Event Id="3879190359" Name="Play_Player_movement" ObjectPath="\Events\Default Work Unit\Player sounds\Play_Player_movement">
+				<Event Id="3879190359" Name="Play_Player_movement" ObjectPath="\Events\Default Work Unit\Player sounds\Play_Player_movement" DurationType="OneShot" DurationMin="0.235189" DurationMax="0.529689">
 					<IncludedMemoryFiles>
 						<File Id="20253490" Language="SFX">
 							<ShortName>sfx_footstep_toe_gravel_03.wav</ShortName>
@@ -212,7 +212,7 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="2370959289" Name="Play_player_Roll" ObjectPath="\Events\Default Work Unit\Player sounds\Play_player_Roll">
+				<Event Id="2370959289" Name="Play_player_Roll" ObjectPath="\Events\Default Work Unit\Player sounds\Play_player_Roll" DurationType="OneShot" DurationMin="0.757707" DurationMax="1.270286">
 					<IncludedMemoryFiles>
 						<File Id="43852155" Language="SFX">
 							<ShortName>sfx_movement_impact_cloth_04.wav</ShortName>

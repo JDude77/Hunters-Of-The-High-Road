@@ -13,7 +13,7 @@
 			<ShortName>music</ShortName>
 			<Path>music.bnk</Path>
 			<IncludedEvents>
-				<Event Id="1041001914" Name="Play_music_battle_01" ObjectPath="\Events\Default Work Unit\music\Play_music_battle_01">
+				<Event Id="1041001914" Name="Play_music_battle_01" ObjectPath="\Events\Default Work Unit\music\Play_music_battle_01" DurationType="OneShot" DurationMin="128.809799" DurationMax="128.809799">
 					<IncludedMemoryFiles>
 						<File Id="411059738" Language="SFX">
 							<ShortName>music_battle_01.wav</ShortName>

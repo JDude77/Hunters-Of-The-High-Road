@@ -13,7 +13,7 @@
 			<ShortName>Weapons</ShortName>
 			<Path>Weapons.bnk</Path>
 			<IncludedEvents>
-				<Event Id="1967888440" Name="Play_Rifle_Shoot" ObjectPath="\Events\Default Work Unit\Player weapons\Play_Rifle_Shoot">
+				<Event Id="1967888440" Name="Play_Rifle_Shoot" ObjectPath="\Events\Default Work Unit\Player weapons\Play_Rifle_Shoot" DurationType="OneShot" DurationMin="2.649555" DurationMax="7.916964">
 					<IncludedMemoryFiles>
 						<File Id="153752956" Language="SFX">
 							<ShortName>sfx_weapon_rifle_reloadclick_01.wav</ShortName>
@@ -41,7 +41,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="858025235" Name="Play_sword_full" ObjectPath="\Events\Default Work Unit\Player weapons\Play_sword_full">
+				<Event Id="858025235" Name="Play_sword_full" ObjectPath="\Events\Default Work Unit\Player weapons\Play_sword_full" DurationType="OneShot" DurationMin="3.532517" DurationMax="3.873754">
 					<IncludedMemoryFiles>
 						<File Id="243304111" Language="SFX">
 							<ShortName>sward pull.wav</ShortName>

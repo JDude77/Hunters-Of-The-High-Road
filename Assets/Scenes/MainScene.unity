@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.003996269, g: 0.0049507767, b: 0.00655262, a: 1}
+  m_IndirectSpecularColor: {r: 0.0040029436, g: 0.0049598664, b: 0.0065646246, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10998,6 +10998,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5465039514879592315, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
+      propertyPath: attackSound.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 360b6348d024be54bb86f258643f0446, type: 2}
     - target: {fileID: 3909928400629596449, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
       propertyPath: m_Name
       value: BossOBJ

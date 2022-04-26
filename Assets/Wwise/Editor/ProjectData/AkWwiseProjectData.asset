@@ -345,7 +345,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: f29db30d3de19b4ab8585db4572c3287
     GuidInternal: 
-    m_lastTime: -8585506267721251625
+    m_lastTime: -8585506163868996678
     List:
     - name: Boss
       guid: 98b33e5d7b53c94e8d716db6ebe49152
@@ -361,6 +361,20 @@ MonoBehaviour:
         ObjectType: 7
         guid: 98b33e5d7b53c94e8d716db6ebe49152
       Path: SoundBanks\Default Work Unit\Boss
+    - name: demo
+      guid: 417bc5ee7e3acb4dbf3a884e4f61dab8
+      id: 1842718300
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f29db30d3de19b4ab8585db4572c3287
+      - ElementName: demo
+        ObjectType: 7
+        guid: 417bc5ee7e3acb4dbf3a884e4f61dab8
+      Path: SoundBanks\Default Work Unit\demo
     - name: environment
       guid: ceea2e7c09b4634481f536b47d7cbb94
       id: 1229948536
@@ -403,20 +417,6 @@ MonoBehaviour:
         ObjectType: 7
         guid: 6d0ed16015fced4d9bb770595284826e
       Path: SoundBanks\Default Work Unit\Player
-    - name: test
-      guid: b7a1c26ec7794b46baf25efcf405ba41
-      id: 3157003241
-      PathAndIcons:
-      - ElementName: SoundBanks
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: f29db30d3de19b4ab8585db4572c3287
-      - ElementName: test
-        ObjectType: 7
-        guid: b7a1c26ec7794b46baf25efcf405ba41
-      Path: SoundBanks\Default Work Unit\test
     - name: UI
       guid: 6edccbeb54b5b54089a2dc58fdaf2be4
       id: 1551306167
@@ -1824,8 +1824,8 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8585548625492553666
     List: []
-  ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 01000000060000000700000008000000090000000a00000010000000110000001200000018000000190000001b000000
+  ExpandedFileSystemItemIds: 01000000020000000300000004000000050000000600000007000000080000000a00000010000000110000001200000018000000190000001b0000003e0000003f000000
+  ExpandedWaapiItemIds: 01000000020000000300000004000000050000000600000007000000080000000a00000010000000110000001200000018000000190000001b0000003e0000003f000000
   AutoSyncSelection: 1
   autoPopulateEnabled: 1
   currentDataSource: 0

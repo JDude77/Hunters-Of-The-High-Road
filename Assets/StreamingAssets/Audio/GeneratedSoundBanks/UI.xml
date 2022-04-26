@@ -13,7 +13,7 @@
 			<ShortName>UI</ShortName>
 			<Path>UI.bnk</Path>
 			<IncludedEvents>
-				<Event Id="786024383" Name="Play_page_turn" ObjectPath="\Events\Default Work Unit\UI\Play_page_turn">
+				<Event Id="786024383" Name="Play_page_turn" ObjectPath="\Events\Default Work Unit\UI\Play_page_turn" DurationType="OneShot" DurationMin="0.479035" DurationMax="0.846598">
 					<IncludedMemoryFiles>
 						<File Id="552280281" Language="SFX">
 							<ShortName>sfx_ui_pageturn_01.wav</ShortName>
@@ -29,7 +29,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1198841816" Name="Play_sfx_ui_back_01" ObjectPath="\Events\Default Work Unit\UI\Play_sfx_ui_back_01">
+				<Event Id="1198841816" Name="Play_sfx_ui_back_01" ObjectPath="\Events\Default Work Unit\UI\Play_sfx_ui_back_01" DurationType="OneShot" DurationMin="1.35" DurationMax="1.35">
 					<IncludedMemoryFiles>
 						<File Id="694767111" Language="SFX">
 							<ShortName>sfx_ui_back_01.wav</ShortName>
@@ -37,7 +37,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3633800886" Name="Play_sfx_ui_move_01" ObjectPath="\Events\Default Work Unit\UI\Play_sfx_ui_move_01">
+				<Event Id="3633800886" Name="Play_sfx_ui_move_01" ObjectPath="\Events\Default Work Unit\UI\Play_sfx_ui_move_01" DurationType="OneShot" DurationMin="0.961973" DurationMax="0.961973">
 					<IncludedMemoryFiles>
 						<File Id="426194716" Language="SFX">
 							<ShortName>sfx_ui_move_01.wav</ShortName>
@@ -45,7 +45,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="631659255" Name="Play_sfx_ui_select_01" ObjectPath="\Events\Default Work Unit\UI\Play_sfx_ui_select_01">
+				<Event Id="631659255" Name="Play_sfx_ui_select_01" ObjectPath="\Events\Default Work Unit\UI\Play_sfx_ui_select_01" DurationType="OneShot" DurationMin="1.68" DurationMax="1.68">
 					<IncludedMemoryFiles>
 						<File Id="751707267" Language="SFX">
 							<ShortName>sfx_ui_select_01.wav</ShortName>
