@@ -13,11 +13,41 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID PLAY_FOOT_STEPS_BLEND_CONTAINER = 3655442102U;
-        static const AkUniqueID PLAY_MAIN_FOREST_BLEND_CONTAINER = 185960795U;
-        static const AkUniqueID PLAY_RIFLE_BLEND_CONTAINER = 1620154736U;
-        static const AkUniqueID PLAY_SFX_ENVIRONMENT_TREES_01 = 2569274399U;
-        static const AkUniqueID PLAY_SWARD_FULL = 2602512053U;
+        static const AkUniqueID GRUNT = 3797621065U;
+        static const AkUniqueID HANDS_IN = 919531205U;
+        static const AkUniqueID PLAY_BOSS_MOVEMENT = 1677138927U;
+        static const AkUniqueID PLAY_CAMP_FIRE = 1293037340U;
+        static const AkUniqueID PLAY_DIG_DOWN = 3936914037U;
+        static const AkUniqueID PLAY_DIG_UP = 990938754U;
+        static const AkUniqueID PLAY_DIGGING = 813141615U;
+        static const AkUniqueID PLAY_ENVIRONMENT_GRAVE = 4166756183U;
+        static const AkUniqueID PLAY_FLYS_BUZZING = 3450565664U;
+        static const AkUniqueID PLAY_FROGS = 1337894487U;
+        static const AkUniqueID PLAY_GATE_OPEN = 4089264814U;
+        static const AkUniqueID PLAY_GLASS_BOTTLE_BRAKE = 2038828501U;
+        static const AkUniqueID PLAY_GRAVE_DAMAGE = 2115375931U;
+        static const AkUniqueID PLAY_HIT_SOUND = 1741081981U;
+        static const AkUniqueID PLAY_LAND_ROOTS_ATTACK = 2599551658U;
+        static const AkUniqueID PLAY_MUSIC_BATTLE_01 = 1041001914U;
+        static const AkUniqueID PLAY_NIGHT_FORREST = 3778516394U;
+        static const AkUniqueID PLAY_OWL = 2859161640U;
+        static const AkUniqueID PLAY_PADLOCK_BRAKE = 3390075432U;
+        static const AkUniqueID PLAY_PAGE_TURN = 786024383U;
+        static const AkUniqueID PLAY_PILLERSUP = 2860663338U;
+        static const AkUniqueID PLAY_PLAYER_MOVEMENT = 3879190359U;
+        static const AkUniqueID PLAY_PLAYER_ROLL = 2370959289U;
+        static const AkUniqueID PLAY_RIFLE_SHOOT = 1967888440U;
+        static const AkUniqueID PLAY_SCREAM_ATTACK = 2779817312U;
+        static const AkUniqueID PLAY_SFX_ENVIRONMENT_FIRE_TOURCH_01 = 282408186U;
+        static const AkUniqueID PLAY_SFX_ENVIRONMENT_FIRE_TOURCH_02 = 282408185U;
+        static const AkUniqueID PLAY_SFX_UI_BACK_01 = 1198841816U;
+        static const AkUniqueID PLAY_SFX_UI_MOVE_01 = 3633800886U;
+        static const AkUniqueID PLAY_SFX_UI_SELECT_01 = 631659255U;
+        static const AkUniqueID PLAY_SWING_ATTACK = 495359303U;
+        static const AkUniqueID PLAY_SWORD_FULL = 858025235U;
+        static const AkUniqueID PLAY_UPROOT_ATTACK = 2956397052U;
+        static const AkUniqueID PLAY_UPROOTSTOMP = 4184561336U;
+        static const AkUniqueID ROOTS_UP = 948909352U;
     } // namespace EVENTS
 
     namespace SWITCHES
@@ -67,8 +97,11 @@ namespace AK
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
+        static const AkUniqueID BOSS = 1560169506U;
         static const AkUniqueID ENVIRONMENT = 1229948536U;
+        static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID PLAYER = 1069431850U;
+        static const AkUniqueID UI = 1551306167U;
         static const AkUniqueID WEAPONS = 1467963052U;
     } // namespace BANKS
 
