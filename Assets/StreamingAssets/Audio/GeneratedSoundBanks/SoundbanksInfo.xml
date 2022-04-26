@@ -16,7 +16,7 @@
 			<ShortName>Player</ShortName>
 			<Path>Player.bnk</Path>
 			<IncludedEvents>
-				<Event Id="3879190359" Name="Play_Player_movement" ObjectPath="\Events\Default Work Unit\Player sounds\Play_Player_movement">
+				<Event Id="3879190359" Name="Play_Player_movement" ObjectPath="\Events\Default Work Unit\Player sounds\Play_Player_movement" DurationType="OneShot" DurationMin="0.235189" DurationMax="0.529689">
 					<IncludedMemoryFiles>
 						<File Id="20253490" Language="SFX">
 							<ShortName>sfx_footstep_toe_gravel_03.wav</ShortName>
@@ -215,7 +215,7 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="2370959289" Name="Play_player_Roll" ObjectPath="\Events\Default Work Unit\Player sounds\Play_player_Roll">
+				<Event Id="2370959289" Name="Play_player_Roll" ObjectPath="\Events\Default Work Unit\Player sounds\Play_player_Roll" DurationType="OneShot" DurationMin="0.757707" DurationMax="1.270286">
 					<IncludedMemoryFiles>
 						<File Id="43852155" Language="SFX">
 							<ShortName>sfx_movement_impact_cloth_04.wav</ShortName>
@@ -288,7 +288,7 @@
 			<ShortName>environment</ShortName>
 			<Path>environment.bnk</Path>
 			<IncludedEvents>
-				<Event Id="1293037340" Name="Play_camp_fire" ObjectPath="\Events\Default Work Unit\environment\Play_camp_fire" MaxAttenuation="10.">
+				<Event Id="1293037340" Name="Play_camp_fire" ObjectPath="\Events\Default Work Unit\environment\Play_camp_fire" MaxAttenuation="10." DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="169922276" Language="SFX">
 							<ShortName>sfx_environment_camp_fire_01.wav</ShortName>
@@ -296,7 +296,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="4166756183" Name="Play_environment_grave" ObjectPath="\Events\Default Work Unit\environment\Play_environment_grave" MaxAttenuation="40.">
+				<Event Id="4166756183" Name="Play_environment_grave" ObjectPath="\Events\Default Work Unit\environment\Play_environment_grave" MaxAttenuation="40." DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="763286601" Language="SFX">
 							<ShortName>sfx_environment_trees_01.wav</ShortName>
@@ -304,7 +304,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3450565664" Name="Play_Flys_buzzing" ObjectPath="\Events\Default Work Unit\environment\Play_Flys_buzzing" MaxAttenuation="6.">
+				<Event Id="3450565664" Name="Play_Flys_buzzing" ObjectPath="\Events\Default Work Unit\environment\Play_Flys_buzzing" MaxAttenuation="6." DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="753792408" Language="SFX">
 							<ShortName>500482-Single_Fly_Buzzing_-One_Fly_or_Insect_Flying_Buzz_Noise_-Loop_-Panned_Version_009530_.wav</ShortName>
@@ -316,7 +316,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1337894487" Name="Play_frogs" ObjectPath="\Events\Default Work Unit\environment\Play_frogs" MaxAttenuation="5.">
+				<Event Id="1337894487" Name="Play_frogs" ObjectPath="\Events\Default Work Unit\environment\Play_frogs" MaxAttenuation="5." DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="974370809" Language="SFX">
 							<ShortName>frog.wav</ShortName>
@@ -324,7 +324,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="4089264814" Name="Play_gate_open" ObjectPath="\Events\Default Work Unit\environment\Play_gate_open">
+				<Event Id="4089264814" Name="Play_gate_open" ObjectPath="\Events\Default Work Unit\environment\Play_gate_open" DurationType="OneShot" DurationMin="3.355855" DurationMax="4.228112">
 					<IncludedMemoryFiles>
 						<File Id="967804768" Language="SFX">
 							<ShortName>sfx_environment_gate_01.wav</ShortName>
@@ -332,7 +332,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2038828501" Name="Play_Glass_Bottle_Brake" ObjectPath="\Events\Default Work Unit\environment\Play_Glass_Bottle_Brake">
+				<Event Id="2038828501" Name="Play_Glass_Bottle_Brake" ObjectPath="\Events\Default Work Unit\environment\Play_Glass_Bottle_Brake" DurationType="OneShot" DurationMin="0.671533" DurationMax="1.270229">
 					<IncludedMemoryFiles>
 						<File Id="86351964" Language="SFX">
 							<ShortName>sfx_environment_brake_glassbottle_02.wav</ShortName>
@@ -348,7 +348,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2115375931" Name="Play_Grave_Damage" ObjectPath="\Events\Default Work Unit\environment\Play_Grave_Damage">
+				<Event Id="2115375931" Name="Play_Grave_Damage" ObjectPath="\Events\Default Work Unit\environment\Play_Grave_Damage" DurationType="OneShot" DurationMin="0.981743" DurationMax="2.41273">
 					<IncludedMemoryFiles>
 						<File Id="35998100" Language="SFX">
 							<ShortName>sfx_environment_stonecrumble_03.wav</ShortName>
@@ -372,7 +372,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3778516394" Name="Play_night_forrest" ObjectPath="\Events\Default Work Unit\environment\Play_night_forrest" MaxAttenuation="100.">
+				<Event Id="3778516394" Name="Play_night_forrest" ObjectPath="\Events\Default Work Unit\environment\Play_night_forrest" MaxAttenuation="100." DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="410717211" Language="SFX">
 							<ShortName>sfx_environment_night_01.wav</ShortName>
@@ -384,7 +384,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2859161640" Name="Play_owl" ObjectPath="\Events\Default Work Unit\environment\Play_owl" MaxAttenuation="25.">
+				<Event Id="2859161640" Name="Play_owl" ObjectPath="\Events\Default Work Unit\environment\Play_owl" MaxAttenuation="25." DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="423329924" Language="SFX">
 							<ShortName>sfx_environment_owl_01.wav</ShortName>
@@ -404,7 +404,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3390075432" Name="Play_Padlock_Brake" ObjectPath="\Events\Default Work Unit\environment\Play_Padlock_Brake">
+				<Event Id="3390075432" Name="Play_Padlock_Brake" ObjectPath="\Events\Default Work Unit\environment\Play_Padlock_Brake" DurationType="OneShot" DurationMin="0.82412" DurationMax="1.044929">
 					<IncludedMemoryFiles>
 						<File Id="84890005" Language="SFX">
 							<ShortName>sfx_environment_brake_padlock_03.wav</ShortName>
@@ -420,7 +420,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="282408186" Name="Play_sfx_environment_fire_tourch_01" ObjectPath="\Events\Default Work Unit\environment\Play_sfx_environment_fire_tourch_01" MaxAttenuation="6.">
+				<Event Id="282408186" Name="Play_sfx_environment_fire_tourch_01" ObjectPath="\Events\Default Work Unit\environment\Play_sfx_environment_fire_tourch_01" MaxAttenuation="6." DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="409183702" Language="SFX">
 							<ShortName>sfx_environment_fire_tourch_01.wav</ShortName>
@@ -428,7 +428,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="282408185" Name="Play_sfx_environment_fire_tourch_02" ObjectPath="\Events\Default Work Unit\environment\Play_sfx_environment_fire_tourch_02" MaxAttenuation="6.">
+				<Event Id="282408185" Name="Play_sfx_environment_fire_tourch_02" ObjectPath="\Events\Default Work Unit\environment\Play_sfx_environment_fire_tourch_02" MaxAttenuation="6." DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="261067370" Language="SFX">
 							<ShortName>sfx_environment_fire_tourch_02.wav</ShortName>
@@ -448,7 +448,7 @@
 			<ShortName>Weapons</ShortName>
 			<Path>Weapons.bnk</Path>
 			<IncludedEvents>
-				<Event Id="1967888440" Name="Play_Rifle_Shoot" ObjectPath="\Events\Default Work Unit\Player weapons\Play_Rifle_Shoot">
+				<Event Id="1967888440" Name="Play_Rifle_Shoot" ObjectPath="\Events\Default Work Unit\Player weapons\Play_Rifle_Shoot" DurationType="OneShot" DurationMin="2.649555" DurationMax="7.916964">
 					<IncludedMemoryFiles>
 						<File Id="153752956" Language="SFX">
 							<ShortName>sfx_weapon_rifle_reloadclick_01.wav</ShortName>
@@ -476,7 +476,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="858025235" Name="Play_sword_full" ObjectPath="\Events\Default Work Unit\Player weapons\Play_sword_full">
+				<Event Id="858025235" Name="Play_sword_full" ObjectPath="\Events\Default Work Unit\Player weapons\Play_sword_full" DurationType="OneShot" DurationMin="3.532517" DurationMax="3.873754">
 					<IncludedMemoryFiles>
 						<File Id="243304111" Language="SFX">
 							<ShortName>sward pull.wav</ShortName>
@@ -519,7 +519,7 @@
 			<ShortName>UI</ShortName>
 			<Path>UI.bnk</Path>
 			<IncludedEvents>
-				<Event Id="786024383" Name="Play_page_turn" ObjectPath="\Events\Default Work Unit\UI\Play_page_turn">
+				<Event Id="786024383" Name="Play_page_turn" ObjectPath="\Events\Default Work Unit\UI\Play_page_turn" DurationType="OneShot" DurationMin="0.479035" DurationMax="0.846598">
 					<IncludedMemoryFiles>
 						<File Id="552280281" Language="SFX">
 							<ShortName>sfx_ui_pageturn_01.wav</ShortName>
@@ -535,7 +535,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1198841816" Name="Play_sfx_ui_back_01" ObjectPath="\Events\Default Work Unit\UI\Play_sfx_ui_back_01">
+				<Event Id="1198841816" Name="Play_sfx_ui_back_01" ObjectPath="\Events\Default Work Unit\UI\Play_sfx_ui_back_01" DurationType="OneShot" DurationMin="1.35" DurationMax="1.35">
 					<IncludedMemoryFiles>
 						<File Id="694767111" Language="SFX">
 							<ShortName>sfx_ui_back_01.wav</ShortName>
@@ -543,7 +543,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3633800886" Name="Play_sfx_ui_move_01" ObjectPath="\Events\Default Work Unit\UI\Play_sfx_ui_move_01">
+				<Event Id="3633800886" Name="Play_sfx_ui_move_01" ObjectPath="\Events\Default Work Unit\UI\Play_sfx_ui_move_01" DurationType="OneShot" DurationMin="0.961973" DurationMax="0.961973">
 					<IncludedMemoryFiles>
 						<File Id="426194716" Language="SFX">
 							<ShortName>sfx_ui_move_01.wav</ShortName>
@@ -551,7 +551,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="631659255" Name="Play_sfx_ui_select_01" ObjectPath="\Events\Default Work Unit\UI\Play_sfx_ui_select_01">
+				<Event Id="631659255" Name="Play_sfx_ui_select_01" ObjectPath="\Events\Default Work Unit\UI\Play_sfx_ui_select_01" DurationType="OneShot" DurationMin="1.68" DurationMax="1.68">
 					<IncludedMemoryFiles>
 						<File Id="751707267" Language="SFX">
 							<ShortName>sfx_ui_select_01.wav</ShortName>
@@ -566,7 +566,7 @@
 			<ShortName>Boss</ShortName>
 			<Path>Boss.bnk</Path>
 			<IncludedEvents>
-				<Event Id="3797621065" Name="grunt" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\hand roots\grunt">
+				<Event Id="3797621065" Name="grunt" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\hand roots\grunt" DurationType="OneShot" DurationMin="0." DurationMax="0.658701">
 					<IncludedMemoryFiles>
 						<File Id="155062614" Language="SFX">
 							<ShortName>sfx_boss_attack_grunt_03.wav</ShortName>
@@ -586,7 +586,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="919531205" Name="hands_in" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\hand roots\hands_in">
+				<Event Id="919531205" Name="hands_in" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\hand roots\hands_in" DurationType="OneShot" DurationMin="0.470992" DurationMax="0.839212">
 					<IncludedMemoryFiles>
 						<File Id="763859046" Language="SFX">
 							<ShortName>sfx_boss_impact_ground_01.wav</ShortName>
@@ -594,7 +594,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1677138927" Name="Play_boss_movement" ObjectPath="\Events\Default Work Unit\boss sounds\Play_boss_movement">
+				<Event Id="1677138927" Name="Play_boss_movement" ObjectPath="\Events\Default Work Unit\boss sounds\Play_boss_movement" DurationType="OneShot" DurationMin="0.218211" DurationMax="0.501708">
 					<IncludedMemoryFiles>
 						<File Id="31148998" Language="SFX">
 							<ShortName>63759-Wig_big_clown_hair_adjust_on_head-BLASTWAVEFX-02183.wav</ShortName>
@@ -681,7 +681,7 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="3936914037" Name="Play_Dig_down" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Burrow\Play_Dig_down">
+				<Event Id="3936914037" Name="Play_Dig_down" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Burrow\Play_Dig_down" DurationType="OneShot" DurationMin="0.350794" DurationMax="0.767092">
 					<IncludedMemoryFiles>
 						<File Id="471210075" Language="SFX">
 							<ShortName>sfx_boss_attack_digdown_03.wav</ShortName>
@@ -697,7 +697,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="990938754" Name="Play_dig_up" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Burrow\Play_dig_up">
+				<Event Id="990938754" Name="Play_dig_up" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Burrow\Play_dig_up" DurationType="OneShot" DurationMin="0.592394" DurationMax="1.264286">
 					<IncludedMemoryFiles>
 						<File Id="86039684" Language="SFX">
 							<ShortName>sfx_boss_attack_digup_02.wav</ShortName>
@@ -709,7 +709,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="813141615" Name="Play_digging" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Burrow\Play_digging">
+				<Event Id="813141615" Name="Play_digging" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Burrow\Play_digging" DurationType="OneShot" DurationMin="1.864789" DurationMax="4.366508">
 					<IncludedMemoryFiles>
 						<File Id="82444583" Language="SFX">
 							<ShortName>sfx_boss_attack_digging_03.wav</ShortName>
@@ -725,7 +725,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1741081981" Name="Play_hit_sound" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\swipe\Play_hit_sound">
+				<Event Id="1741081981" Name="Play_hit_sound" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\swipe\Play_hit_sound" DurationType="OneShot" DurationMin="0." DurationMax="0.112993">
 					<IncludedMemoryFiles>
 						<File Id="622216869" Language="SFX">
 							<ShortName>sfx_boss_attack_swing_03.wav</ShortName>
@@ -745,7 +745,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2599551658" Name="Play_land_roots_attack" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Play_land_roots_attack">
+				<Event Id="2599551658" Name="Play_land_roots_attack" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Play_land_roots_attack" DurationType="OneShot" DurationMin="2.050301" DurationMax="3.359728">
 					<IncludedMemoryFiles>
 						<File Id="155062614" Language="SFX">
 							<ShortName>sfx_boss_attack_grunt_03.wav</ShortName>
@@ -781,7 +781,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2860663338" Name="Play_pillersup" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\uproot\Play_pillersup">
+				<Event Id="2860663338" Name="Play_pillersup" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\uproot\Play_pillersup" DurationType="OneShot" DurationMin="0.734532" DurationMax="2.485224">
 					<IncludedMemoryFiles>
 						<File Id="295087768" Language="SFX">
 							<ShortName>sfx_boss_attack_pillars_03.wav</ShortName>
@@ -809,7 +809,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2779817312" Name="Play_scream_attack" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Play_scream_attack">
+				<Event Id="2779817312" Name="Play_scream_attack" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Play_scream_attack" DurationType="OneShot" DurationMin="2.037924" DurationMax="2.3001">
 					<IncludedMemoryFiles>
 						<File Id="354529564" Language="SFX">
 							<ShortName>sfx_boss_attack_scream_02.wav</ShortName>
@@ -833,7 +833,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="495359303" Name="Play_Swing_attack" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\swipe\Play_Swing_attack">
+				<Event Id="495359303" Name="Play_Swing_attack" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\swipe\Play_Swing_attack" DurationType="OneShot" DurationMin="0.580393" DurationMax="1.121943">
 					<IncludedMemoryFiles>
 						<File Id="49360364" Language="SFX">
 							<ShortName>sfx_boss_attack__05.wav</ShortName>
@@ -873,7 +873,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2956397052" Name="Play_Uproot_Attack" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Play_Uproot_Attack">
+				<Event Id="2956397052" Name="Play_Uproot_Attack" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\Play_Uproot_Attack" DurationType="OneShot" DurationMin="1.715014" DurationMax="3.833532">
 					<IncludedMemoryFiles>
 						<File Id="205365064" Language="SFX">
 							<ShortName>sfx_boss_attack_stomp_01.wav</ShortName>
@@ -921,7 +921,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="4184561336" Name="Play_UpRootStomp" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\uproot\Play_UpRootStomp">
+				<Event Id="4184561336" Name="Play_UpRootStomp" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\uproot\Play_UpRootStomp" DurationType="OneShot" DurationMin="0.980482" DurationMax="1.348307">
 					<IncludedMemoryFiles>
 						<File Id="205365064" Language="SFX">
 							<ShortName>sfx_boss_attack_stomp_01.wav</ShortName>
@@ -957,7 +957,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="948909352" Name="roots_up" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\hand roots\roots_up">
+				<Event Id="948909352" Name="roots_up" ObjectPath="\Events\Default Work Unit\boss sounds\Attacks sounds\hand roots\roots_up" DurationType="OneShot" DurationMin="1.004767" DurationMax="1.861814">
 					<IncludedMemoryFiles>
 						<File Id="295087768" Language="SFX">
 							<ShortName>sfx_boss_attack_pillars_03.wav</ShortName>
@@ -995,7 +995,7 @@
 			<ShortName>music</ShortName>
 			<Path>music.bnk</Path>
 			<IncludedEvents>
-				<Event Id="1041001914" Name="Play_music_battle_01" ObjectPath="\Events\Default Work Unit\music\Play_music_battle_01">
+				<Event Id="1041001914" Name="Play_music_battle_01" ObjectPath="\Events\Default Work Unit\music\Play_music_battle_01" DurationType="OneShot" DurationMin="128.809799" DurationMax="128.809799">
 					<IncludedMemoryFiles>
 						<File Id="411059738" Language="SFX">
 							<ShortName>music_battle_01.wav</ShortName>
