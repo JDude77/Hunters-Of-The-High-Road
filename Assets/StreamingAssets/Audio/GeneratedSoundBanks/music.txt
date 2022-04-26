@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1041001914	Play_music_battle_01			\Default Work Unit\music\Play_music_battle_01	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	411059738	music_battle_01	D:\unity Projects\Hunters-Of-The-High-Road_WwiseProject\.cache\Windows\SFX\music_battle_01_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\boss fight\music_battle_01\music_battle_01		22722112
+
