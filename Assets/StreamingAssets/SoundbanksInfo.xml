@@ -561,7 +561,7 @@
 				</Event>
 			</IncludedEvents>
 		</SoundBank>
-		<SoundBank Id="1560169506" Language="SFX" Hash="3039786223">
+		<SoundBank Id="1560169506" Language="SFX" Hash="1139731065">
 			<ObjectPath>\SoundBanks\Default Work Unit\Boss</ObjectPath>
 			<ShortName>Boss</ShortName>
 			<Path>Boss.bnk</Path>
@@ -845,7 +845,7 @@
 						</File>
 						<File Id="109734831" Language="SFX">
 							<ShortName>sfx_boss_attack_swing_01.wav</ShortName>
-							<Path>SFX\sfx_boss_attack_swing_01_0E7A7F71.wem</Path>
+							<Path>SFX\sfx_boss_attack_swing_01_3C66F934.wem</Path>
 						</File>
 						<File Id="131001721" Language="SFX">
 							<ShortName>sfx_boss_attack__03.wav</ShortName>
