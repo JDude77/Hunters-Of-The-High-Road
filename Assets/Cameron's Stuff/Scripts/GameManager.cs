@@ -42,9 +42,12 @@ public class GameManager : MonoBehaviour
     {
         for(int i = 0; i < tutorialBottlesForBreakSoundOnRestartFix.Length; i++)
         {
-            tutorialBottlesForBreakSoundOnRestartFix[i].GetComponentInChildren<AkGameObj>().enabled = false;
-            tutorialBottlesForBreakSoundOnRestartFix[i].GetComponentInChildren<AkEvent>().data.ObjectReference = null;
-            tutorialBottlesForBreakSoundOnRestartFix[i].GetComponentInChildren<AkEvent>().enabled = false;
+            if(tutorialBottlesForBreakSoundOnRestartFix[i] != null)
+            {
+                tutorialBottlesForBreakSoundOnRestartFix[i].GetComponentInChildren<AkGameObj>().enabled = false;
+                tutorialBottlesForBreakSoundOnRestartFix[i].GetComponentInChildren<AkEvent>().data.ObjectReference = null;
+                tutorialBottlesForBreakSoundOnRestartFix[i].GetComponentInChildren<AkEvent>().enabled = false;
+            }//End if
         }//End for
 
         //reloads the current scene

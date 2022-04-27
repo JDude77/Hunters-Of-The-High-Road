@@ -12,6 +12,8 @@ public class PlayerStateDead : PlayerState
     {
         base.EnterState();
 
+        playerAnimator.Play("Dying");
+
         return true;
     }//End EnterState
 }

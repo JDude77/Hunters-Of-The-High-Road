@@ -23,6 +23,8 @@ public class PlayerStateStunned : PlayerState
 
         currentStunTime = 0.0f;
 
+        playerAnimator.Play("Stunned");
+
         return true;
     }//End EnterState
 
@@ -43,7 +45,14 @@ public class PlayerStateStunned : PlayerState
         }//End else
     }//End UpdateState
 
+    public override bool ExitState()
+    {
+        base.ExitState();
 
+        playerAnimator.SetTrigger("LeaveStunned");
+
+        return true;
+    }//End ExitState
 
     //To add the stunned animation -
     //1. In OnEnter, play the stunned animation
