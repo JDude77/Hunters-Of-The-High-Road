@@ -42,4 +42,14 @@ public class PlayerStateStunned : PlayerState
             playerReference.ChangeState(Player.State.Idle);
         }//End else
     }//End UpdateState
+
+
+
+    //To add the stunned animation -
+    //1. In OnEnter, play the stunned animation
+    //2. In OnExit, call the "LeaveStunned" trigger on the animator
+    //   this should transition back to the normal movement tree
+
+
+    //if it breaks, lol xd
 }
