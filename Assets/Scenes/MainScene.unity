@@ -10123,6 +10123,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossOBJ
       objectReference: {fileID: 0}
+    - target: {fileID: 4998765539327302574, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
+      propertyPath: radius
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 8063009632887527617, guid: fb182e84603fa9f46bb061f335ec9877, type: 3}
       propertyPath: m_RootOrder
       value: 1
