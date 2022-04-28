@@ -33,6 +33,9 @@ public class BossStateBurrow : AttackState
     [Space(5)]
     [Tooltip("The time the boss will wait before jumping up")]
     [SerializeField] private float digUpDelay;
+    [Space(5)]
+    [Tooltip("The radius that the player must be inside when the boss checks to deal damage")]
+    [SerializeField] private float damageRadius;
     #endregion
 
     #region Sound & Animation
@@ -123,6 +126,19 @@ public class BossStateBurrow : AttackState
         boss.animator.SetTrigger("DoJumpUp");
         digUpSound.Post(gameObject);
     }
+    public void DoSphereCast() {
+        //Store the intersections with the 'Player' layer
+        Collider[] collisions = Physics.OverlapSphere(transform.position, damageRadius, boss.attackLayer);
+
+        if (collisions.Length > 0) {
+            BossEventsHandler.current.HitPlayer(GetDamageValue());
+        }
+    }//End DoSphereCast
+
+    public void OnDrawGizmos() {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, damageRadius);
+    }//End OnDrawGizmos
 
     [ContextMenu("Fill default values")]
     public override void SetDefaultValues()
@@ -146,5 +162,6 @@ public class BossStateBurrow : AttackState
         eventResponder.AddAction("StartBurrow", () => StartCoroutine(StartBurrow()));
         eventResponder.AddAction("DisableStun", () => { canBeStunned = false; });
         eventResponder.AddAction("EnableStun", () => { canBeStunned = true; });
+        eventResponder.AddAction("DamageCheck", DoSphereCast);
     }//End InitEvents
 }

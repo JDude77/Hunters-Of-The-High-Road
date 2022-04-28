@@ -49,7 +49,7 @@ public class BossStateRadialUproot : BossStatePillarAttack
 
     void SpawnCircle(int pCount, float radius) {
         float rotationInterval = 1f / (float)pCount;
-        Vector3 dir = transform.forward;
+        Vector3 dir;
         float rot;
         //spawn all of its pillars
         for (int i = 0; i < pCount; i++) {

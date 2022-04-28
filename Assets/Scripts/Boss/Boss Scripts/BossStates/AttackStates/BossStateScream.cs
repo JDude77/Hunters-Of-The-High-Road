@@ -30,6 +30,18 @@ public class BossStateScream : AttackState
         base.OnExit();
     }//End OnExit
 
+    public override void FixedRun() {
+        base.FixedRun();
+        //Get the player's X and Z position
+        Vector3 playerXZ = player.transform.position;
+        playerXZ.y = transform.position.y;
+        //Get the direction to that position
+        Vector3 targetDir = playerXZ - transform.position;
+        //Rotate towards that direction
+        Quaternion targetRot = Quaternion.LookRotation(targetDir, Vector3.up);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRot, 360f * Time.deltaTime);
+    }
+
     public void DoSphereCast()
     {
         //Store the intersections with the 'Player' layer
@@ -37,7 +49,6 @@ public class BossStateScream : AttackState
 
         if (collisions.Length > 0)
         {
-            print("Hit player");
             BossEventsHandler.current.HitPlayer(GetDamageValue());
             BossEventsHandler.current.StunPlayer();
         }
