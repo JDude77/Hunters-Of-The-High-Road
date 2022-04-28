@@ -48,6 +48,7 @@ public class BossStateUproot : BossStatePillarAttack
     public override void OnEnter()
     {
         base.OnEnter();
+        canBeStunned = true;
         rotateBoss = true;
         rotateAttack = true;
         //StartCoroutine(StartWindUp());
@@ -58,6 +59,9 @@ public class BossStateUproot : BossStatePillarAttack
     {
         base.OnExit();
         StopAllCoroutines();
+        rotateBoss = false;
+        rotateAttack = false;
+        spawnedPillars = pillarCount;
     }//End OnExit
 
     public override void FixedRun() {

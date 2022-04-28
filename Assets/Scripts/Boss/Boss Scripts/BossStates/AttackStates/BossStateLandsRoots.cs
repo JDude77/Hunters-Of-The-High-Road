@@ -46,6 +46,7 @@ public class BossStateLandsRoots : BossStatePillarAttack
     public override void OnEnter()
     {
         base.OnEnter();
+        canBeStunned = true;
         previousPosition = player.transform.position;
         windUp.Post(gameObject);        
 

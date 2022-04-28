@@ -22,12 +22,13 @@ public class BossStateRadialUproot : BossStatePillarAttack
 
     public override void OnEnter() {
         base.OnEnter();
-        eventResponder.ActivateAction("DoAttack");
+        canBeStunned = true;
+        boss.animator.SetTrigger("DoRadialUproot");
     }
 
     public override void OnExit() {
         base.OnExit();
-
+        StopAllCoroutines();
     }
 
     IEnumerator DoAttack() {
@@ -64,5 +65,6 @@ public class BossStateRadialUproot : BossStatePillarAttack
 
     void InitEvents() {
         eventResponder.AddAction("DoAttack", () => { StartCoroutine(DoAttack()); });
+        eventResponder.AddSoundEffect("AttackSound", attackSound, gameObject);
     }
 }

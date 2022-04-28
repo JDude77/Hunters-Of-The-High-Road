@@ -31,7 +31,6 @@ public class Boss : Character
     public Animator animator;
     //Start is called before the first frame update
 
-    private Action OnDeathAction;
     private Action OnTriggerAction;
 
     void Awake()
@@ -83,15 +82,9 @@ public class Boss : Character
         //Subscribe to the hit enemy action
         if (PlayerEventsHandler.current != null) {
             PlayerEventsHandler.current.OnHitEnemy += ReduceHealthByAmount;
-        }
+        }        
 
-        //Subscribe to the OnDeath action
-        OnDeathAction = () => { 
-            animator.SetTrigger("DoDie");
-            ChangeState(State.Dead);
-        };
-
-        OnDeath += OnDeathAction;
+        OnDeath += Death;
     } //End Start
 
     //Update is called once per frame
@@ -99,7 +92,6 @@ public class Boss : Character
     {
         //Runs the current state's update
         currentState.Run();
-
     } //End Update
 
     private void FixedUpdate()
@@ -108,16 +100,21 @@ public class Boss : Character
         currentState.FixedRun();
     } //End FixedUpdate
 
-    private void OnDestroy() {
-        OnDeath -= OnDeathAction;
-        OnDeathAction = null;
+    private void Death() {
+        OnDeath -= Death;
 
         if (PlayerEventsHandler.current != null) {
             PlayerEventsHandler.current.OnHitEnemy -= ReduceHealthByAmount;
         }
 
-        FindObjectOfType<BossTrigger>().TriggerActivated -= OnTriggerAction;
+        BossTrigger trig = FindObjectOfType<BossTrigger>();
+        if (trig != null)
+            trig.TriggerActivated -= OnTriggerAction;
+
         OnTriggerAction = null;
+
+        animator.SetTrigger("DoDie");
+        ChangeState(State.Dead);
     }
 
     #region States

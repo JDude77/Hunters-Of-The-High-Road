@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class BossState : MonoBehaviour
+public abstract class BossState : MonoBehaviour
 {
     protected static Boss boss;
     protected static GameObject player;
+    protected bool canBeStunned = false;
     public EventResponder<string> eventResponder { get; private set; }
 
     public void Awake()
@@ -33,6 +34,8 @@ public class BossState : MonoBehaviour
         {
             eventResponder = new EventResponder<string>(a);
         }
+
+        PlayerEventsHandler.current.OnStaggerEnemy += StunnedResponse;
     }//End Start
 
     public virtual void OnEnter() 
@@ -42,16 +45,26 @@ public class BossState : MonoBehaviour
     public virtual void OnExit()
     {
         enabled = false;
+        StopAllCoroutines();
     }//End OnExit
     public virtual void Run() 
     {
     }
     public virtual void FixedRun()
     {
-
     }
 
     public virtual void SetDefaultValues()
     {
+    }
+
+    private void StunnedResponse(GameObject obj) {
+        //Change the boss's state
+        if (canBeStunned)
+            boss.ChangeState(Boss.State.Stunned);
+    }
+
+    private void OnDestroy() {
+        PlayerEventsHandler.current.OnStaggerEnemy -= StunnedResponse;
     }
 }

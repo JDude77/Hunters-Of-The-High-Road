@@ -35,6 +35,8 @@ public class BossStateDecision : BossState
     [Tooltip("The minimum time the boss will wait before changing to a new attack")]
     [SerializeField] private float minDecisionTime;
         
+    private bool attackChosen = false;
+
     private void Awake()
     {        
         base.Awake();
@@ -76,22 +78,30 @@ public class BossStateDecision : BossState
     public override void OnEnter()
     {
         base.OnEnter();
-
+        //Toggle can be stunned
+        canBeStunned = true;
+        //Activate the idle animation
+        boss.animator.SetTrigger("DoReturnToIdle");
+        //Get the player's position with a y axis offset
         playerCenter = player.transform.position;
         playerCenter.y += 5f;
-
+        //Get the distance to the player
         playerDistance = (player.transform.position - transform.position).magnitude;
-
+        //Get a random decision time
         float rand = UnityEngine.Random.Range(minDecisionTime, maxDecisionTime);
+        //If an attack has already been chosen, change to the attack 
+        // (this is true in the event that the boss is stunned during the decision timer coroutine)
+        if (attackChosen)
+            boss.ChangeState(previousAttack);
 
-        boss.animator.SetTrigger("DoReturnToIdle");
-
-        StartCoroutine(wait(rand));
+        Boss.State newState = ChooseState();
+        StartCoroutine(wait(rand, newState));
     }
 
     public override void OnExit()
     {
-        base.OnExit();        
+        base.OnExit();
+        StopAllCoroutines();
     }
 
     Boss.State ChooseState()
@@ -144,12 +154,15 @@ public class BossStateDecision : BossState
         return false;
     }
 
-    IEnumerator wait(float time)
+    IEnumerator wait(float time, Boss.State state)
     {
+        attackChosen = true;
+
         if(time > 0f) 
             yield return new WaitForSeconds(time);
 
-        boss.ChangeState(ChooseState());
+        attackChosen = false;
+        boss.ChangeState(state);
     }
 
     //Remove the non attack states from the list

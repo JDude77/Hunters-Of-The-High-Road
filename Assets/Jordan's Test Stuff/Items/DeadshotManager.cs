@@ -150,6 +150,7 @@ public class DeadshotManager : MonoBehaviour
 
     public bool CanStagger()
     {
+        return true;
         return currentDeadshotTokens == deadshotTokensRequiredToStagger;
     }//End CanStagger
 

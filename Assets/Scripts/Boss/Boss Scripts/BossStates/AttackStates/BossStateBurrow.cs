@@ -24,6 +24,9 @@ public class BossStateBurrow : AttackState
     [Space(5)]
     [Tooltip("Forward movement speed of the boss")]
     [SerializeField] private float burrowSpeed;
+    [Tooltip("Maximum amount of time the boss will burrow for")]
+    [SerializeField] private float burrowTime;
+    private float burrowTimer;
     [Space(5)]
     [Tooltip("The distance to the player that the boss must be to activate the dig up animation")]
     [SerializeField] private float inRangeDistance;
@@ -52,6 +55,7 @@ public class BossStateBurrow : AttackState
     public override void OnEnter()
     {
         base.OnEnter();
+        burrowTimer = 0;
         //Look at the player's XZ position
         Vector3 newPosition = player.transform.position;
         newPosition.y = transform.position.y;
@@ -89,8 +93,9 @@ public class BossStateBurrow : AttackState
         burrower.Init(startRotationSpeed, rotationSpeedIncreaseRate, burrowSpeed, timeBetweenParticleBursts);
 
         //Update the target position while out of range
-        while (distance > inRangeDistance)
+        while (distance > inRangeDistance && burrowTimer < burrowTime)
         {
+            burrowTimer += Time.deltaTime;
             digToPlayerSound.Post(gameObject);
             //Update the target position
             targetPosition.x = player.transform.position.x;
@@ -139,5 +144,7 @@ public class BossStateBurrow : AttackState
         eventResponder.AddSoundEffect("DigUpSound", digUpSound, gameObject);
         eventResponder.AddAction("ExitAttack", boss.ReturnToMainState);
         eventResponder.AddAction("StartBurrow", () => StartCoroutine(StartBurrow()));
+        eventResponder.AddAction("DisableStun", () => { canBeStunned = false; });
+        eventResponder.AddAction("EnableStun", () => { canBeStunned = true; });
     }//End InitEvents
 }
