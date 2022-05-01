@@ -39,6 +39,8 @@ public class Rifle : Weapon
 
     #region FX/Polish Variables
     private LineRenderer shotPathLineRenderer;
+    private Material lineRendererMaterial; //Need to alter the alpha directly on the material
+
     public LineRenderer GetShotLineRenderer() { return shotPathLineRenderer; }//End ShotPathLineRenderer
     [Header("FX Settings")]
     [SerializeField]
@@ -75,6 +77,7 @@ public class Rifle : Weapon
         playerState = (PlayerState)GetComponentInParent(PlayerState.stateDictionary[Player.State.RifleAimedShot]);
         deadshot = FindObjectOfType<DeadshotManager>();
         shotPathLineRenderer = GetComponent<LineRenderer>();
+        lineRendererMaterial = shotPathLineRenderer.material; //Getting the material from the shot renderer to directly change the alpha
         shotParticleSystem = GetComponentInChildren<ParticleSystem>();
         gunAnimator = GetComponentInChildren<Animator>();
 
@@ -255,13 +258,17 @@ public class Rifle : Weapon
     private IEnumerator FadeShotLine()
     {
         shotPathLineRenderer.colorGradient =  shotLineDefaultColour;
+        lineRendererMaterial.SetFloat("_Alpha", 1); //sets the alpha to 1 after firing
+
         yield return new WaitForSeconds(shotLineFadeDelay);
 
         Color oldStartColour = shotPathLineRenderer.startColor;
         Color oldEndColour = shotPathLineRenderer.endColor;
+        float oldAlpha = oldStartColour.a; //Getting the alpha from the startcolour - if we add a alpha gradient, this will only affect the first colour in the gradient
 
         Color newStartColour = new Color(shotPathLineRenderer.startColor.r, shotPathLineRenderer.startColor.g, shotPathLineRenderer.endColor.b, 0);
         Color newEndColour = new Color(shotPathLineRenderer.endColor.r, shotPathLineRenderer.endColor.g, shotPathLineRenderer.endColor.b, 0);
+        float newAlpha = newStartColour.a;
 
         float secondsElapsed = 0.0f;
 
@@ -269,12 +276,16 @@ public class Rifle : Weapon
         {
             shotPathLineRenderer.startColor = Color.Lerp(oldStartColour, newStartColour, secondsElapsed / shotLineFadeTime);
             shotPathLineRenderer.endColor = Color.Lerp(oldEndColour, newEndColour, secondsElapsed / shotLineFadeTime);
+            lineRendererMaterial.SetFloat("_Alpha", Mathf.Lerp(oldAlpha, newAlpha, secondsElapsed / shotLineFadeDelay)); //Because shader graph is amazing, we need to set a custom float to the desired alpha value
+
             secondsElapsed += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }//End while
 
         shotPathLineRenderer.startColor = newStartColour;
         shotPathLineRenderer.endColor = newEndColour;
+        lineRendererMaterial.SetFloat("_Alpha", newStartColour.a);
+
         shotPathLineRenderer.enabled = false;
     }//End FadeShotLine
 
