@@ -916,8 +916,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Use "E" to swing your sword
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f3d001d7e696eb2498a79f623b6c3f40, type: 2}
+  m_sharedMaterial: {fileID: 6585949558818541929, guid: f3d001d7e696eb2498a79f623b6c3f40, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1005,7 +1005,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 6585949558818541929, guid: f3d001d7e696eb2498a79f623b6c3f40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9358,8 +9358,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Use WASD to move
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f3d001d7e696eb2498a79f623b6c3f40, type: 2}
+  m_sharedMaterial: {fileID: 6585949558818541929, guid: f3d001d7e696eb2498a79f623b6c3f40, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9447,7 +9447,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 6585949558818541929, guid: f3d001d7e696eb2498a79f623b6c3f40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -23202,8 +23202,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Press SHIFT to roll
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f3d001d7e696eb2498a79f623b6c3f40, type: 2}
+  m_sharedMaterial: {fileID: 6585949558818541929, guid: f3d001d7e696eb2498a79f623b6c3f40, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -23291,7 +23291,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 6585949558818541929, guid: f3d001d7e696eb2498a79f623b6c3f40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -29259,8 +29259,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Use right-click to aim your rifle
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f3d001d7e696eb2498a79f623b6c3f40, type: 2}
+  m_sharedMaterial: {fileID: 6585949558818541929, guid: f3d001d7e696eb2498a79f623b6c3f40, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -29348,7 +29348,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 6585949558818541929, guid: f3d001d7e696eb2498a79f623b6c3f40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -33959,8 +33959,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Left-click to fire your rifle
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f3d001d7e696eb2498a79f623b6c3f40, type: 2}
+  m_sharedMaterial: {fileID: 6585949558818541929, guid: f3d001d7e696eb2498a79f623b6c3f40, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -34048,7 +34048,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 6585949558818541929, guid: f3d001d7e696eb2498a79f623b6c3f40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
