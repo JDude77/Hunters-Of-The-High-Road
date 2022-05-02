@@ -7,11 +7,10 @@ public class DestructibleTombstone : MonoBehaviour, IDestructible
     [SerializeField]
     private GameObject[] graveVariants;
 
-    [SerializeField]
-    private GameObject DestroyedVersion;
     [SerializeField] 
     private GameObject normalVersion;
 
+    private GameObject DestroyedVersion;
     private BoxCollider boxCollider;
 
     // Start is called before the first frame update
@@ -29,6 +28,7 @@ public class DestructibleTombstone : MonoBehaviour, IDestructible
             graveVariants[ranNum].SetActive(true);
 
             normalVersion = graveVariants[ranNum];
+            DestroyedVersion = normalVersion.transform.Find("DestroyedVersion").gameObject;
         }
         
         boxCollider = GetComponent<BoxCollider>();
