@@ -98,7 +98,7 @@ public class BossStateDecision : BossState
         foreach(Boss.State attack in recentAttacks) {
             print(attack.ToString());
         }
-        print(" ");
+
         //If an attack has already been chosen, change to the attack 
         // (this is true in the event that the boss is stunned during the decision timer coroutine)
         if (attackChosen)

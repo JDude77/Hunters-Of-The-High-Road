@@ -3,25 +3,9 @@ using UnityEngine;
 
 public class DeadshotManager : MonoBehaviour
 {
-    private Camera mainCamera;
     private bool deadshotActive = false;
     [Header("Required Reticle Reference Objects")]
-    [SerializeField]
-    private GameObject deadshotReticleObject;
-    [SerializeField]
-    private Transform rotatingSkillCheckPiece;
-
-    private Vector3 currentReticleRotation = Vector3.zero;
-
-    [Header("Skill Angle Settings")]
-    [SerializeField]
-    private float skillCheckAngleCentrePoint;
-    [SerializeField]
-    private float skillCheckAngleSize;
-    [SerializeField]
-    private float rotationSpeed;
-
-    private float maxSuccessAngle, minSuccessAngle;
+    [SerializeField] private Reticle reticle;
 
     private LineRenderer shotLineRenderer;
     private Gradient defaultLineColour;
@@ -38,30 +22,18 @@ public class DeadshotManager : MonoBehaviour
     }//End GetTokenCount
     private bool deadshotSkillCheckPassed = false;
 
-    private void Awake()
-    {
-        mainCamera = Camera.main;
-
-        maxSuccessAngle = skillCheckAngleCentrePoint + (skillCheckAngleSize / 2.0f);
-        minSuccessAngle = skillCheckAngleCentrePoint - (skillCheckAngleSize / 2.0f);
-    }//End Awake
-
-    private void Update()
-    {
-        deadshotReticleObject.transform.LookAt(mainCamera.transform, transform.up);
-
-        if(deadshotActive)
-        {
-            UpdateDeadshot();
-        }//End if
-    }//End Update
+    private void Start() {
+        if (!reticle) {
+            reticle = FindObjectOfType<Reticle>();
+        }
+    }
 
     public void DeactivateDeadshot()
     {
         deadshotActive = false;
 
         shotLineRenderer.enabled = false;
-        deadshotReticleObject.SetActive(false);
+        reticle.Deactivate();
     }//End DeactivateDeadshot
 
     public void Deadshot()
@@ -69,36 +41,14 @@ public class DeadshotManager : MonoBehaviour
         deadshotActive = true;
 
         shotLineRenderer.enabled = true;
-        deadshotReticleObject.SetActive(true);
-    }//End Deadshot
-
-    private void UpdateDeadshot()
-    {
-        MoveReticleToMousePosition();
-        RotateReticle();
-        DeadshotSkillCheck();
-    }//End UpdateDeadshot
-
-    private void MoveReticleToMousePosition()
-    {
-        Vector3 mousePos = Vector3.zero;
-
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Physics.Raycast(ray, out RaycastHit hit);
-
-        if (hit.transform != null)
-        {
-            mousePos = hit.point;
-        }//End if
-
-        deadshotReticleObject.transform.position = mousePos;
-    }//End MoveReticleToMousePosition
+        reticle.Activate();        
+    }//End Deadshot    
 
     private void DeadshotSkillCheck()
     {
-        deadshotSkillCheckPassed = currentReticleRotation.y >= minSuccessAngle && currentReticleRotation.y <= maxSuccessAngle;
+        deadshotSkillCheckPassed = reticle.IsSuccessful();
 
-        if(deadshotSkillCheckPassed)
+        if (deadshotSkillCheckPassed)
         {
             shotLineRenderer.colorGradient = deadshotLineColour;
         }//End if
@@ -108,18 +58,7 @@ public class DeadshotManager : MonoBehaviour
 
             gunAnimator.SetBool("CanDeadshot", false);
         }//End else
-    }//End DeadshotSkillCheck
-
-    private void RotateReticle()
-    {
-        //Keep rotation bound between 0 and 180
-        currentReticleRotation.y = currentReticleRotation.y > 180 ? currentReticleRotation.y - 180 : currentReticleRotation.y;
-        //Continue rotation
-        currentReticleRotation.y += rotationSpeed * Time.deltaTime;
-
-        //Update object's rotation
-        rotatingSkillCheckPiece.localEulerAngles = currentReticleRotation;
-    }//End RotateReticle
+    }//End DeadshotSkillCheck    
 
     public void SetShotLineRenderer(LineRenderer shotLineRenderer)
     {
@@ -143,6 +82,7 @@ public class DeadshotManager : MonoBehaviour
 
     public bool DeadshotSkillCheckPassed()
     {
+        DeadshotSkillCheck();
         bool checkPassed = deadshotSkillCheckPassed;
         deadshotSkillCheckPassed = false;
         return checkPassed;
@@ -170,4 +110,29 @@ public class DeadshotManager : MonoBehaviour
         currentDeadshotTokens -= 1;
         if (currentDeadshotTokens < 0) currentDeadshotTokens = 0;
     }//End RemoveToken
+
+    //private void MoveReticleToMousePosition()
+    //{
+    //    Vector3 mousePos = Vector3.zero;
+
+    //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+    //    Physics.Raycast(ray, out RaycastHit hit);
+
+    //    if (hit.transform != null)
+    //    {
+    //        mousePos = hit.point;
+    //    }//End if
+
+    //    deadshotReticleObject.transform.position = mousePos;
+    //}//End MoveReticleToMousePosition
+
+    //private void RotateReticle() {
+    //    //Keep rotation bound between 0 and 180
+    //    currentReticleRotation.y = currentReticleRotation.y > 180 ? currentReticleRotation.y - 180 : currentReticleRotation.y;
+    //    //Continue rotation
+    //    currentReticleRotation.y += rotationSpeed * Time.deltaTime;
+
+    //    //Update object's rotation
+    //    rotatingSkillCheckPiece.localEulerAngles = currentReticleRotation;
+    //}//End RotateReticle
 }

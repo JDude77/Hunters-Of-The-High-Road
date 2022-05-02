@@ -32,6 +32,7 @@ public class BossStateStunned : BossState
     IEnumerator timer()
     {
         yield return new WaitForSeconds(stunnedTime);
+        boss.animator.SetTrigger("DoFinishStun");
         boss.ReturnToMainState();
     }
 
