@@ -53,7 +53,7 @@ MonoBehaviour:
   background: {fileID: 2457821197608148484}
   rotator: {fileID: 2457821196645361219}
   rotationSpeed: 60
-  skillCheckAngleSizeGizmo: 25.62
+  skillCheckAngleSize: 20
 --- !u!1 &2457821196645361221
 GameObject:
   m_ObjectHideFlags: 0

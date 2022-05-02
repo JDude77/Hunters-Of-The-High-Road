@@ -4,6 +4,11 @@ using UnityEngine;
 public class DeadshotManager : MonoBehaviour
 {
     private bool deadshotActive = false;
+    [Header("Reticle Overrides")]
+    [SerializeField] private bool overrideReticleValues;
+    [SerializeField] private float rotationSpeed;
+    [SerializeField] private float skillCheckAngleSize;
+
     [Header("Required Reticle Reference Objects")]
     [SerializeField] private Reticle reticle;
 
@@ -25,6 +30,10 @@ public class DeadshotManager : MonoBehaviour
     private void Start() {
         if (!reticle) {
             reticle = FindObjectOfType<Reticle>();
+        }
+
+        if (overrideReticleValues) {
+            reticle.OverrideValues(rotationSpeed, skillCheckAngleSize);
         }
     }
 
