@@ -1078,6 +1078,7 @@ MonoBehaviour:
   screamInRange: 7.78
   radialUprootInRange: 24.65
   uprootBox: {fileID: 0}
+  maxAttacksBetweenBurrows: 3
   maxDecisionTime: 1
   minDecisionTime: 1
 --- !u!114 &1354802117201642784
@@ -1134,7 +1135,8 @@ MonoBehaviour:
   burrowSpeed: 20
   burrowTime: 3
   inRangeDistance: 2
-  digUpDelay: 0.0005
+  digUpDelay: 0
+  damageRadius: 0
   digDownSound:
     idInternal: 0
     valueGuidInternal: 
@@ -1226,7 +1228,8 @@ MonoBehaviour:
   startYPos: 5
   finalYPos: 9
   addRandomWaitTime: 0
-  randomWaitTimeMaxRange: 0
+  randomWaitTimeMax: 1
+  randomWaitTimeMin: 0.3
   windUp:
     idInternal: 0
     valueGuidInternal: 

@@ -6,10 +6,11 @@ using UnityEngine;
 public class BossStateLandsRoots : BossStatePillarAttack
 {
     [Space(5)]
-    [Tooltip("If true, each pillar will wait for a random amount of time between 'delayBetweenPillars' as the min and 'randomWaitTimeMaxRange' as the max")]
+    [Tooltip("If true, each pillar will wait for a random amount of time between 'randomWaitTimeMin' and 'randomWaitTimeMax'")]
     [SerializeField] private bool addRandomWaitTime;
-    [Tooltip("Amount that is added to 'delayBetweenPillars'. A random value is then picked using these values as the range")]
-    [SerializeField] private float randomWaitTimeMaxRange;
+    [Tooltip("A random value is then picked using these values as the range")]
+    [SerializeField] private float randomWaitTimeMax;
+    [SerializeField] private float randomWaitTimeMin;
 
     #region Sounds
     [Header("Sounds")]
@@ -73,7 +74,7 @@ public class BossStateLandsRoots : BossStatePillarAttack
 
             if (addRandomWaitTime)
             {
-                yield return new WaitForSeconds(base.delayBetweenPillars + Random.Range(0, randomWaitTimeMaxRange));
+                yield return new WaitForSeconds(Random.Range(randomWaitTimeMax, randomWaitTimeMin));
             }
 
             yield return new WaitForSeconds(base.delayBetweenPillars);
