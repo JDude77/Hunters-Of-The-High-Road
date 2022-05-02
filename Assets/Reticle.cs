@@ -21,7 +21,7 @@ public class Reticle : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         //Move to mouse position
         transform.position = Input.mousePosition;

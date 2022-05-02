@@ -92,15 +92,25 @@ public class Rifle : Weapon
             StopCoroutine(fadeFunctionCopy);
             fadeFunctionCopy = null;
         }//End if
+
+        if (deadshot.DeadshotSkillCheckPassed()) {
+            gunAnimator.SetBool("CanDeadshot", true);
+        } else { 
+            gunAnimator.SetBool("CanDeadshot", false);
+        }
     }//End Update
 
     public void DeactivateDeadshot()
     {
+        shotPathLineRenderer.colorGradient = shotLineDefaultColour;
+        shotPathLineRenderer.enabled = false;
         deadshot.DeactivateDeadshot();
     }//End DeactivateDeadshot
 
-    public void Deadshot()
+    public void Deadshot() 
     {
+        lineRendererMaterial.SetFloat("_Alpha", 1);
+        shotPathLineRenderer.enabled = true;
         deadshot.Deadshot();
     }//End Deadshot
 
@@ -303,9 +313,8 @@ public class Rifle : Weapon
 
     public void SetDeadshotValues()
     {
-        deadshot.SetShotLineRenderer(shotPathLineRenderer);
-        deadshot.SetDefaultLineColour(shotLineDefaultColour);
-        deadshot.SetDeadshotLineColour(shotLineDeadshotColour);
-        deadshot.SetGunAnimator(gunAnimator);
+        //deadshot.SetShotLineRenderer(shotPathLineRenderer);
+        //deadshot.SetDefaultLineColour(shotLineDefaultColour);
+        //deadshot.SetDeadshotLineColour(shotLineDeadshotColour);
     }//End SetDeadshotValues
 }

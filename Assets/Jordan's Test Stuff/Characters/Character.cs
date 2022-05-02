@@ -11,8 +11,8 @@ public class Character : MonoBehaviour
     [SerializeField]
     protected float maxHealth = 100.0f;
 
-    public Action OnDeath { get; set; }
-
+    public Action OnDeath;
+    public Action OnHit;
     public void SetHealth(float health)
     {
         this.health = health;
@@ -31,8 +31,10 @@ public class Character : MonoBehaviour
     {
         SetHealth(this.health - Mathf.Abs(health));
 
+        OnHit?.Invoke();
+
         if (this.health <= 0f) 
-            OnDeath?.Invoke();        
+            OnDeath?.Invoke();   
 
     }//End ReduceHealthByAmount
 
