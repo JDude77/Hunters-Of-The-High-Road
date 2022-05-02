@@ -32,7 +32,7 @@ public class BossStateDecision : BossState
     [SerializeField] private BoxCollider uprootBox;
     [Space(5)]
     [Tooltip("The amount of attacks that can be between two burrow attacks")]
-    [SerializeField] private float attackMemoryLength;
+    [SerializeField] private float maxAttacksBetweenBurrows;
 
     [Header("Decision Delay Settings")]
     [Tooltip("The maximum time the boss will wait before changing to a new attack")]
@@ -126,7 +126,7 @@ public class BossStateDecision : BossState
             //Add it to the recent attacks list
             recentAttacks.Enqueue(previousAttack);
             //Remove the oldest recent attacks
-            if (recentAttacks.Count > attackMemoryLength)
+            if (recentAttacks.Count > maxAttacksBetweenBurrows)
                 recentAttacks.Dequeue();
 
             return previousAttack;
@@ -140,7 +140,7 @@ public class BossStateDecision : BossState
         attackPool.Clear();
 
         //Prioritise burrow if the boss hasn't moved in recent memory
-        if (!recentAttacks.Contains(Boss.State.Burrow)) {
+        if (maxAttacksBetweenBurrows > 0 && !recentAttacks.Contains(Boss.State.Burrow)) {
             attackPool.Add(Boss.State.Burrow);
             return;
         }
