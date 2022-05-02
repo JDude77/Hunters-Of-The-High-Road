@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using System.Collections.Generic;
 public class DeadshotManager : MonoBehaviour
 {
     private bool deadshotActive = false;
@@ -19,17 +17,22 @@ public class DeadshotManager : MonoBehaviour
         return currentDeadshotTokens;
     }//End GetTokenCount
 
-    private void Start() {
-        if (!reticle) {
+    private void Start()
+    {
+        if (!reticle)
+        {
             reticle = FindObjectOfType<Reticle>();
-        } else {
+        }//End if
+        else
+        {
             Debug.LogError("No reticle HUD object found");
-        }
+        }//End else
 
-        if (overrideReticleValues) {
+        if (overrideReticleValues)
+        {
             reticle.OverrideValues(rotationSpeed, skillCheckAngleSize);
-        }
-    }
+        }//End if
+    }//End Start
 
     public void DeactivateDeadshot()
     {
@@ -67,9 +70,10 @@ public class DeadshotManager : MonoBehaviour
     [ContextMenu("Remove Token")]
     public void RemoveToken()
     {
-        if (currentDeadshotTokens > 0) {
+        if (currentDeadshotTokens > 0)
+        {
             currentDeadshotTokens--;
-        }
+        }//End if
     }//End RemoveToken
 
     //private void MoveReticleToMousePosition()
