@@ -31,6 +31,8 @@ public class Boss : Character
     public Animator animator;
     //Start is called before the first frame update
 
+    private Action OnTriggerAction;
+
     void Awake()
     {
         //Get the collider if it exists
@@ -73,11 +75,16 @@ public class Boss : Character
     protected override void Start()
     {
         base.Start();
-        FindObjectOfType<BossTrigger>().TriggerActivated += () => { if (currentState is BossStateIdle) ChangeState(mainState); };
+        //Subscribe to the trigger
+        OnTriggerAction = () => { if (currentState is BossStateIdle) ChangeState(mainState); };
+        FindObjectOfType<BossTrigger>().TriggerActivated += OnTriggerAction;
 
+        //Subscribe to the hit enemy action
         if (PlayerEventsHandler.current != null) {
             PlayerEventsHandler.current.OnHitEnemy += ReduceHealthByAmount;
-        }
+        }        
+
+        OnDeath += Death;
     } //End Start
 
     //Update is called once per frame
@@ -85,7 +92,6 @@ public class Boss : Character
     {
         //Runs the current state's update
         currentState.Run();
-
     } //End Update
 
     private void FixedUpdate()
@@ -93,6 +99,23 @@ public class Boss : Character
         //Runs the curren't state's fixed update
         currentState.FixedRun();
     } //End FixedUpdate
+
+    private void Death() {
+        OnDeath -= Death;
+
+        if (PlayerEventsHandler.current != null) {
+            PlayerEventsHandler.current.OnHitEnemy -= ReduceHealthByAmount;
+        }
+
+        BossTrigger trig = FindObjectOfType<BossTrigger>();
+        if (trig != null)
+            trig.TriggerActivated -= OnTriggerAction;
+
+        OnTriggerAction = null;
+
+        animator.SetTrigger("DoDie");
+        ChangeState(State.Dead);
+    }
 
     #region States
     //Deletes the current state component and adds the new state

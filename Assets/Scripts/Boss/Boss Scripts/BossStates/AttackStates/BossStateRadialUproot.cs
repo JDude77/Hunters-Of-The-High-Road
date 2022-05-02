@@ -22,12 +22,13 @@ public class BossStateRadialUproot : BossStatePillarAttack
 
     public override void OnEnter() {
         base.OnEnter();
-        eventResponder.ActivateAction("DoAttack");
+        canBeStunned = true;
+        boss.animator.SetTrigger("DoRadialUproot");
     }
 
     public override void OnExit() {
         base.OnExit();
-
+        StopAllCoroutines();
     }
 
     IEnumerator DoAttack() {
@@ -48,7 +49,7 @@ public class BossStateRadialUproot : BossStatePillarAttack
 
     void SpawnCircle(int pCount, float radius) {
         float rotationInterval = 1f / (float)pCount;
-        Vector3 dir = transform.forward;
+        Vector3 dir;
         float rot;
         //spawn all of its pillars
         for (int i = 0; i < pCount; i++) {
@@ -64,5 +65,6 @@ public class BossStateRadialUproot : BossStatePillarAttack
 
     void InitEvents() {
         eventResponder.AddAction("DoAttack", () => { StartCoroutine(DoAttack()); });
+        eventResponder.AddSoundEffect("AttackSound", attackSound, gameObject);
     }
 }
