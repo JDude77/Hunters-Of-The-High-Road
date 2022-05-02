@@ -93,11 +93,14 @@ public class Rifle : Weapon
             fadeFunctionCopy = null;
         }//End if
 
-        if (deadshot.DeadshotSkillCheckPassed()) {
+        if (deadshot.DeadshotSkillCheckPassed())
+        {
             gunAnimator.SetBool("CanDeadshot", true);
-        } else { 
+        }//End if
+        else
+        { 
             gunAnimator.SetBool("CanDeadshot", false);
-        }
+        }//End else
     }//End Update
 
     public void DeactivateDeadshot()
