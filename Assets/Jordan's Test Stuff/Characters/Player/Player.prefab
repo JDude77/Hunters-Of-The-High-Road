@@ -8351,8 +8351,8 @@ MonoBehaviour:
   deadshot: {fileID: 129407998}
   shotLineDefaultColour:
     serializedVersion: 2
-    key0: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 0.78431374}
-    key1: {r: 0.6901961, g: 0.6901961, b: 0.6901961, a: 0.78431374}
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -8408,7 +8408,7 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   shotLineFadeTime: 1
-  shotLineFadeDelay: 0.5
+  shotLineFadeDelay: 0.2
   muzzleFlashObject: {fileID: 2103483271276636215}
   muzzleFlashTime: 0.1
 --- !u!1 &6318356560866142807
