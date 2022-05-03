@@ -26,7 +26,8 @@ public class ChainDoorScript : MonoBehaviour
         if (instance == chain)
         {
             ani.Play("OpenDoor");
-            chain.SetActive(false);
+            Destroy(chain);
+            //chain.SetActive(false);
             FindObjectOfType<PlayerEventsHandler>().OnHitChain -= OpenDoor;
         }//End if
     }//End OpenDoor

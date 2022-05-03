@@ -10,6 +10,9 @@ public class DestructibleTombstone : MonoBehaviour, IDestructible
     [SerializeField] 
     private GameObject normalVersion;
 
+    [SerializeField]
+    private AK.Wwise.Event soundOnDestroy;
+
     private GameObject DestroyedVersion;
     private BoxCollider boxCollider;
 
@@ -43,7 +46,8 @@ public class DestructibleTombstone : MonoBehaviour, IDestructible
             boxCollider.enabled = false;
 
             normalVersion.SetActive(false);
-            
+            soundOnDestroy.Post(gameObject);
+
             FindObjectOfType<PlayerEventsHandler>().OnHitGravestone -= DestroyTombstone;
         }//End if
     }//End DestroyTombstone
@@ -54,6 +58,7 @@ public class DestructibleTombstone : MonoBehaviour, IDestructible
         DestroyedVersion.SetActive(true);
         normalVersion.SetActive(false);
         //TODO: remove this once full transition to interface is done
+        soundOnDestroy.Post(gameObject);
         FindObjectOfType<PlayerEventsHandler>().OnHitGravestone -= DestroyTombstone;
     }    
 }
