@@ -45,10 +45,6 @@ public class BossStateBurrow : AttackState
     [SerializeField] private AK.Wwise.Event digUpSound;
     #endregion
 
-    #region Anim Event Params
-    //[SerializeField] [ReadOnlyProperty] private string[] AnimationEventParameters = new string[] { "DigDownSound", "DigUpSound", "StartBurrow", "ExitAttack" };
-    #endregion
-
     public void Start()
     {
         base.Start();

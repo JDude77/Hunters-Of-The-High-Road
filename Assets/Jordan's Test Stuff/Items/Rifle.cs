@@ -80,8 +80,6 @@ public class Rifle : Weapon
         lineRendererMaterial = shotPathLineRenderer.material; //Getting the material from the shot renderer to directly change the alpha
         shotParticleSystem = GetComponentInChildren<ParticleSystem>();
         gunAnimator = GetComponentInChildren<Animator>();
-
-        if (deadshot) SetDeadshotValues();
     }//End Start
 
     //Not ideal to use this here, but it'll fix an issue with aiming after shooting until I can refactor it elsewhere
@@ -92,17 +90,61 @@ public class Rifle : Weapon
             StopCoroutine(fadeFunctionCopy);
             fadeFunctionCopy = null;
         }//End if
+
+        if (deadshot.DeadshotSkillCheckPassed())
+        {
+            gunAnimator.SetBool("CanDeadshot", true);
+        }//End if
+        else
+        { 
+            gunAnimator.SetBool("CanDeadshot", false);
+        }//End else
     }//End Update
 
     public void DeactivateDeadshot()
     {
+        shotPathLineRenderer.colorGradient = shotLineDefaultColour;
+        shotPathLineRenderer.enabled = false;
         deadshot.DeactivateDeadshot();
     }//End DeactivateDeadshot
 
-    public void Deadshot()
+    public void Deadshot() 
     {
+        lineRendererMaterial.SetFloat("_Alpha", 1);
+        shotPathLineRenderer.enabled = true;
         deadshot.Deadshot();
     }//End Deadshot
+
+    private Vector3 GetShotLocation()
+    {
+        Vector3 start = muzzle.position;
+        start.y = shotHeight;
+
+        //Get the clicked position on the screen
+        Vector2 mouseClickPosition = Input.mousePosition;
+
+        //Create a ray from the camera to the clicked point
+        Ray cameraRay = Camera.main.ScreenPointToRay(mouseClickPosition);
+
+        //Get world location of clicked point from ray hit position
+        Physics.Raycast(cameraRay, out RaycastHit cameraRayHitInfo);
+        Vector3 mouseClickWorldPosition = cameraRayHitInfo.point;
+
+        //Fix the player's rotation to face the shot location
+        FixPlayerRotation(mouseClickWorldPosition);
+
+        //Fix world location of clicked point to be desired y-position
+        mouseClickWorldPosition.y = shotHeight;
+
+        //Create ray going in direction from gun to mouse click location
+        Ray gunToMousePointRay = new Ray(start, (mouseClickWorldPosition - start).normalized);
+
+        //Get first hit location of gun to mouse ray
+        Physics.Raycast(gunToMousePointRay, out RaycastHit shotHitInfo);
+        Vector3 hitLocation = shotHitInfo.point;
+
+        return hitLocation;
+    }//End GetShotLocationNew
 
     public override void Use()
     {
@@ -214,33 +256,12 @@ public class Rifle : Weapon
         shotPathLineRenderer.SetPosition(1, shotHitLocation);
     }//End UpdateShotLineRenderer
 
-    private Vector3 GetShotLocation()
+    private static void FixPlayerRotation(Vector3 shotLocation)
     {
-        //Currently just Cameron's code copied and pasted in with variables renamed
-        Vector3 shotLocation = Vector3.zero;
-
-        Ray hitRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Physics.Raycast(hitRay, out RaycastHit hitLocation);
-
-        if (hitLocation.transform != null)
-        {
-            shotLocation = hitLocation.point;
-        }//End if
-
         Vector3 playerLookAtLocation = shotLocation - playerReference.transform.position;
         playerLookAtLocation.y = 0;
         playerTransform.rotation = Quaternion.LookRotation(playerLookAtLocation);
-
-        Ray shotRay = new Ray(muzzle.position, shotLocation - muzzle.position);
-
-        if (Physics.Raycast(shotRay, out hitLocation, maxRange))
-        {
-            shotLocation = hitLocation.point;
-            shotLocation.y = shotHeight;
-        }//End if
-
-        return shotLocation;
-    }//End GetShotLocation
+    }//End FixPlayerRotation
 
     public void UpdateLinePosition()
     {
@@ -258,13 +279,15 @@ public class Rifle : Weapon
     private IEnumerator FadeShotLine()
     {
         shotPathLineRenderer.colorGradient =  shotLineDefaultColour;
-        lineRendererMaterial.SetFloat("_Alpha", 1); //sets the alpha to 1 after firing
+        //sets the alpha to 1 after firing
+        lineRendererMaterial.SetFloat("_Alpha", 1); 
 
         yield return new WaitForSeconds(shotLineFadeDelay);
 
         Color oldStartColour = shotPathLineRenderer.startColor;
         Color oldEndColour = shotPathLineRenderer.endColor;
-        float oldAlpha = oldStartColour.a; //Getting the alpha from the startcolour - if we add a alpha gradient, this will only affect the first colour in the gradient
+        //Getting the alpha from the startcolour - if we add an alpha gradient, this will only affect the first colour in the gradient
+        float oldAlpha = oldStartColour.a; 
 
         Color newStartColour = new Color(shotPathLineRenderer.startColor.r, shotPathLineRenderer.startColor.g, shotPathLineRenderer.endColor.b, 0);
         Color newEndColour = new Color(shotPathLineRenderer.endColor.r, shotPathLineRenderer.endColor.g, shotPathLineRenderer.endColor.b, 0);
@@ -276,7 +299,8 @@ public class Rifle : Weapon
         {
             shotPathLineRenderer.startColor = Color.Lerp(oldStartColour, newStartColour, secondsElapsed / shotLineFadeTime);
             shotPathLineRenderer.endColor = Color.Lerp(oldEndColour, newEndColour, secondsElapsed / shotLineFadeTime);
-            lineRendererMaterial.SetFloat("_Alpha", Mathf.Lerp(oldAlpha, newAlpha, secondsElapsed / shotLineFadeDelay)); //Because shader graph is amazing, we need to set a custom float to the desired alpha value
+            //Because shader graph is amazing, we need to set a custom float to the desired alpha value
+            lineRendererMaterial.SetFloat("_Alpha", Mathf.Lerp(oldAlpha, newAlpha, secondsElapsed / shotLineFadeDelay)); 
 
             secondsElapsed += Time.deltaTime;
             yield return new WaitForEndOfFrame();
@@ -300,12 +324,4 @@ public class Rifle : Weapon
     {
         return isReloaded;
     }//End GetIsReloaded
-
-    public void SetDeadshotValues()
-    {
-        deadshot.SetShotLineRenderer(shotPathLineRenderer);
-        deadshot.SetDefaultLineColour(shotLineDefaultColour);
-        deadshot.SetDeadshotLineColour(shotLineDeadshotColour);
-        deadshot.SetGunAnimator(gunAnimator);
-    }//End SetDeadshotValues
 }

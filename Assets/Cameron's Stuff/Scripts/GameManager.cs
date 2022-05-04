@@ -11,7 +11,11 @@ public class GameManager : MonoBehaviour
 
     //Please ignore my horrendous placeholder audio bug fix code - Jordan
     private TutorialBottle[] tutorialBottlesForBreakSoundOnRestartFix;
-
+    private ChainDoorScript[] chainDoorScriptsForBreakSoundOnRestartFix;
+    [SerializeField]
+    private AK.Wwise.Event bossMusic;
+    [SerializeField]
+    private GameObject bossMusicTrigger;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +24,7 @@ public class GameManager : MonoBehaviour
         player = FindObjectOfType<Player>();
         boss = FindObjectOfType<Boss>();
         tutorialBottlesForBreakSoundOnRestartFix = FindObjectsOfType<TutorialBottle>();
+        chainDoorScriptsForBreakSoundOnRestartFix = FindObjectsOfType<ChainDoorScript>();
     }
 
     // Update is called once per frame
@@ -49,6 +54,22 @@ public class GameManager : MonoBehaviour
                 tutorialBottlesForBreakSoundOnRestartFix[i].GetComponentInChildren<AkEvent>().enabled = false;
             }//End if
         }//End for
+
+        for (int i = 0; i < chainDoorScriptsForBreakSoundOnRestartFix.Length; i++)
+        {
+            if(chainDoorScriptsForBreakSoundOnRestartFix[i].GetComponentInChildren<AkGameObj>() != null)
+            {
+                chainDoorScriptsForBreakSoundOnRestartFix[i].GetComponentInChildren<AkGameObj>().enabled = false;
+                AkEvent[] events = chainDoorScriptsForBreakSoundOnRestartFix[i].GetComponentsInChildren<AkEvent>();
+                for (int j = 0; j < events.Length; j++)
+                {
+                    events[j].data.ObjectReference = null;
+                    events[j].enabled = false;
+                }//End for
+            }//End if
+        }//End for
+
+        bossMusic.Stop(bossMusicTrigger);
 
         //reloads the current scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

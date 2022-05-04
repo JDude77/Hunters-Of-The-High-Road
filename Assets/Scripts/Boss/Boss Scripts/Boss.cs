@@ -18,20 +18,23 @@ public class Boss : Character
         Dead
     }
 
+    [Header("States")]
     public State state;
     [SerializeField] public State mainState { get; private set; }
 
+    [Header("Player layer")]
     public LayerMask attackLayer;
 
+    [Header("Component references")]
     public Rigidbody body;
-    private CapsuleCollider capsuleCollider;
-
     public BossEventsHandler eventsHandler;
-    public BossState currentState { get; private set; }
+    private CapsuleCollider capsuleCollider;
     public Animator animator;
-    //Start is called before the first frame update
-
+    public BossState currentState { get; private set; }
     private Action OnTriggerAction;
+
+    [Header("Sounds")]
+    [SerializeField] private AK.Wwise.Event OnHitSound;
 
     void Awake()
     {
@@ -82,8 +85,9 @@ public class Boss : Character
         //Subscribe to the hit enemy action
         if (PlayerEventsHandler.current != null) {
             PlayerEventsHandler.current.OnHitEnemy += ReduceHealthByAmount;
-        }        
+        }
 
+        OnHit += BossHit;
         OnDeath += Death;
     } //End Start
 
@@ -102,6 +106,7 @@ public class Boss : Character
 
     private void Death() {
         OnDeath -= Death;
+        OnHit -= BossHit;
 
         if (PlayerEventsHandler.current != null) {
             PlayerEventsHandler.current.OnHitEnemy -= ReduceHealthByAmount;
@@ -115,6 +120,10 @@ public class Boss : Character
 
         animator.SetTrigger("DoDie");
         ChangeState(State.Dead);
+    }
+
+    private void BossHit() {
+        OnHitSound.Post(gameObject);
     }
 
     #region States

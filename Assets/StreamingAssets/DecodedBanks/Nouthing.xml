@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
+	<RootPaths>
+		<ProjectRoot>D:\unity Projects\Hunters-Of-The-High-Road_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>D:\unity Projects\Hunters-Of-The-High-Road_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>D:\Hunters-Of-The-High-Road\Assets\StreamingAssets\Audio\GeneratedSoundBanks\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>D:\unity Projects\Hunters-Of-The-High-Road_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<SoundBanks>
+		<SoundBank Id="1697447083" Language="SFX" Hash="2776269799">
+			<ObjectPath>\SoundBanks\Default Work Unit\Nouthing</ObjectPath>
+			<ShortName>Nouthing</ShortName>
+			<Path>Nouthing.bnk</Path>
+			<IncludedEvents>
+				<Event Id="1311866180" Name="Play_nouthing" ObjectPath="\Events\Default Work Unit\nouthing\Play_nouthing" DurationType="OneShot" DurationMin="1." DurationMax="1."/>
+			</IncludedEvents>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

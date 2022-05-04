@@ -12,7 +12,7 @@ public class BurrowMovement : MonoBehaviour
     private float particleTimer;
     private float timeBetweenParticleBursts;
     private Vector3 targetPosition;
-    [SerializeField] GameObject particles;
+    [SerializeField] private GameObject particles;
 
     // Start is called before the first frame update
     void Start()

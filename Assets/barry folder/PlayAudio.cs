@@ -7,7 +7,6 @@ public class PlayAudio : MonoBehaviour
 
     public void SelectSound(string id)
     {
-        
         //Long story short, this line of code converts the ID to the variable name, then gets the value of the variable.
         sound = (AK.Wwise.Event) GetType().GetField(id).GetValue(this);
         PlaySound();

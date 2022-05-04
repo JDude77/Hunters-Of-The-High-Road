@@ -15,6 +15,7 @@ namespace AK
     {
         static const AkUniqueID GRUNT = 3797621065U;
         static const AkUniqueID HANDS_IN = 919531205U;
+        static const AkUniqueID PLAY_BOSS_FIGHT_LOOP = 3819554723U;
         static const AkUniqueID PLAY_BOSS_MOVEMENT = 1677138927U;
         static const AkUniqueID PLAY_CAMP_FIRE = 1293037340U;
         static const AkUniqueID PLAY_DIG_DOWN = 3936914037U;
@@ -28,8 +29,8 @@ namespace AK
         static const AkUniqueID PLAY_GRAVE_DAMAGE = 2115375931U;
         static const AkUniqueID PLAY_HIT_SOUND = 1741081981U;
         static const AkUniqueID PLAY_LAND_ROOTS_ATTACK = 2599551658U;
-        static const AkUniqueID PLAY_MUSIC_BATTLE_01 = 1041001914U;
         static const AkUniqueID PLAY_NIGHT_FORREST = 3778516394U;
+        static const AkUniqueID PLAY_NOUTHING = 1311866180U;
         static const AkUniqueID PLAY_OWL = 2859161640U;
         static const AkUniqueID PLAY_PADLOCK_BRAKE = 3390075432U;
         static const AkUniqueID PLAY_PAGE_TURN = 786024383U;
@@ -98,9 +99,9 @@ namespace AK
     {
         static const AkUniqueID INIT = 1355168291U;
         static const AkUniqueID BOSS = 1560169506U;
-        static const AkUniqueID DEMO = 1842718300U;
         static const AkUniqueID ENVIRONMENT = 1229948536U;
         static const AkUniqueID MUSIC = 3991942870U;
+        static const AkUniqueID NOUTHING = 1697447083U;
         static const AkUniqueID PLAYER = 1069431850U;
         static const AkUniqueID UI = 1551306167U;
         static const AkUniqueID WEAPONS = 1467963052U;
