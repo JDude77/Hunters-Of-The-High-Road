@@ -243,7 +243,6 @@ public class Rifle : Weapon
     public IEnumerator UpdateShotLineRenderer(Vector3 shotHitLocation)
     {
         yield return new WaitForEndOfFrame();
-        shotPathLineRenderer.enabled = true;
         if(gunAnimator.GetBool("CanDeadshot"))
         {
             shotPathLineRenderer.colorGradient = shotLineDeadshotColour;
@@ -254,6 +253,7 @@ public class Rifle : Weapon
         }//End else
         shotPathLineRenderer.SetPosition(0, muzzle.position);
         shotPathLineRenderer.SetPosition(1, shotHitLocation);
+        shotPathLineRenderer.enabled = true;
     }//End UpdateShotLineRenderer
 
     private static void FixPlayerRotation(Vector3 shotLocation)
