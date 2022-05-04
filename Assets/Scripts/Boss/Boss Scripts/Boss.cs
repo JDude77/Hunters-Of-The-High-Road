@@ -87,6 +87,7 @@ public class Boss : Character
         //Subscribe to the hit enemy action
         if (PlayerEventsHandler.current != null) {
             PlayerEventsHandler.current.OnHitEnemy += ReduceHealthByAmount;
+            PlayerEventsHandler.current.OnStaggerEnemy += StunnedResponse;
         }
 
         OnHit += BossHit;
@@ -112,6 +113,7 @@ public class Boss : Character
 
         if (PlayerEventsHandler.current != null) {
             PlayerEventsHandler.current.OnHitEnemy -= ReduceHealthByAmount;
+            PlayerEventsHandler.current.OnStaggerEnemy -= StunnedResponse;
         }
 
         BossTrigger trig = FindObjectOfType<BossTrigger>();
@@ -126,9 +128,13 @@ public class Boss : Character
         canTakeDamage = true;
         if (currentState is BossStateIdle) ChangeState(mainState);
     }
-
     private void BossHit() {
         OnHitSound.Post(gameObject);
+    }
+    private void StunnedResponse(GameObject obj) {
+        //Change the boss's state
+        if (currentState.stunnable)
+            ChangeState(State.Stunned);
     }
 
     #region States

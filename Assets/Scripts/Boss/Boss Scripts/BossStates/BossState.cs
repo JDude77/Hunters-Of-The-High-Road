@@ -8,6 +8,7 @@ public abstract class BossState : MonoBehaviour
     protected static Boss boss;
     protected static GameObject player;
     protected bool canBeStunned = false;
+    public bool stunnable { get { return canBeStunned; } }
     public EventResponder<string> eventResponder { get; private set; }
 
     public void Awake()
@@ -34,8 +35,6 @@ public abstract class BossState : MonoBehaviour
         {
             eventResponder = new EventResponder<string>(a);
         }
-
-        PlayerEventsHandler.current.OnStaggerEnemy += StunnedResponse;
     }//End Start
 
     public virtual void OnEnter() 
@@ -56,15 +55,5 @@ public abstract class BossState : MonoBehaviour
 
     public virtual void SetDefaultValues()
     {
-    }
-
-    private void StunnedResponse(GameObject obj) {
-        //Change the boss's state
-        if (canBeStunned)
-            boss.ChangeState(Boss.State.Stunned);
-    }
-
-    private void OnDestroy() {
-        PlayerEventsHandler.current.OnStaggerEnemy -= StunnedResponse;
     }
 }
