@@ -1,11 +1,16 @@
 using UnityEngine;
 public class DeadshotManager : MonoBehaviour
 {
-    private bool deadshotActive = false;
     [Header("Reticle Overrides")]
-    [SerializeField] private bool overrideReticleValues;
-    [SerializeField] private float rotationSpeed;
-    [SerializeField] private float skillCheckAngleSize;
+    [SerializeField]
+    private bool overrideReticleValues;
+    [SerializeField]
+    private float rotationSpeed;
+    [SerializeField]
+    private float skillCheckAngleSize;
+
+    [Header("Reticle")]
+    [SerializeField]
     private Reticle reticle;
 
     [Header("Stagger Shot Settings")]
@@ -23,10 +28,6 @@ public class DeadshotManager : MonoBehaviour
         {
             reticle = FindObjectOfType<Reticle>();
         }//End if
-        else
-        {
-            Debug.LogError("No reticle HUD object found");
-        }//End else
 
         if (overrideReticleValues)
         {
@@ -36,19 +37,21 @@ public class DeadshotManager : MonoBehaviour
 
     public void DeactivateDeadshot()
     {
-        deadshotActive = false;
         reticle.Deactivate();
     }//End DeactivateDeadshot
 
     public void Deadshot()
-    {
-        deadshotActive = true;    
+    {  
         reticle.Activate();        
     }//End Deadshot    
 
     public bool DeadshotSkillCheckPassed()
     {
-        return reticle.IsSuccessful();
+        if(reticle)
+        {
+            return reticle.IsSuccessful();
+        }//End if
+        return false;
     }//End DeadshotSkillCheckPassed
 
     public bool CanStagger()
@@ -75,55 +78,4 @@ public class DeadshotManager : MonoBehaviour
             currentDeadshotTokens--;
         }//End if
     }//End RemoveToken
-
-    //private void MoveReticleToMousePosition()
-    //{
-    //    Vector3 mousePos = Vector3.zero;
-
-    //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-    //    Physics.Raycast(ray, out RaycastHit hit);
-
-    //    if (hit.transform != null)
-    //    {
-    //        mousePos = hit.point;
-    //    }//End if
-
-    //    deadshotReticleObject.transform.position = mousePos;
-    //}//End MoveReticleToMousePosition
-
-    //private void RotateReticle() {
-    //    //Keep rotation bound between 0 and 180
-    //    currentReticleRotation.y = currentReticleRotation.y > 180 ? currentReticleRotation.y - 180 : currentReticleRotation.y;
-    //    //Continue rotation
-    //    currentReticleRotation.y += rotationSpeed * Time.deltaTime;
-
-    //    //Update object's rotation
-    //    rotatingSkillCheckPiece.localEulerAngles = currentReticleRotation;
-    //}//End RotateReticle
-
-    //private void DeadshotSkillCheck() {
-    //    deadshotSkillCheckPassed = reticle.IsSuccessful();
-
-    //    if (deadshotSkillCheckPassed) {
-    //        shotLineRenderer.colorGradient = deadshotLineColour;
-    //    }//End if
-    //    else {
-    //        shotLineRenderer.colorGradient = defaultLineColour;
-    //    }//End else
-    //}//End DeadshotSkillCheck      
-    
-    //public void SetShotLineRenderer(LineRenderer shotLineRenderer)
-    //{
-    //    this.shotLineRenderer = shotLineRenderer;
-    //}//End SetShotLineRenderer
-
-    //public void SetDefaultLineColour(Gradient defaultLineColour)
-    //{
-    //    this.defaultLineColour = defaultLineColour;
-    //}//End SetDefaultLineColour
-
-    //public void SetDeadshotLineColour(Gradient deadshotLineColour)
-    //{
-    //    this.deadshotLineColour = deadshotLineColour;
-    //}//End SetDeadshotLineColour
 }

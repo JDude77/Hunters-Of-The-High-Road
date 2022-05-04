@@ -104,7 +104,7 @@ public class Rifle : Weapon
             gunAnimator.SetBool("CanDeadshot", true);
         }//End if
         else
-        { 
+        {
             gunAnimator.SetBool("CanDeadshot", false);
         }//End else
     }//End Update
