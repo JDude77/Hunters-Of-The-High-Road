@@ -13,6 +13,9 @@ public class BossStatePillarAttack : AttackState
     [Space(10)]
     [Tooltip("If true, the attack will stop once the player has been hit by a pillar")]
     [SerializeField] private bool stopAttackOnHit;
+    [Tooltip("If true, the attack will only apply the damage from the first pillar to hit the player, all other pillars will be ignored")]
+    [SerializeField] private bool applyDamageOnce;
+    private bool damageOnce;
     [Space(10)]
     [Tooltip("The boss's wait time before attacking")]
     [SerializeField] protected float windUpTime;
@@ -38,6 +41,7 @@ public class BossStatePillarAttack : AttackState
     public override void OnEnter()
     {        
         base.OnEnter();
+        applyDamageOnce = true;
         spawnedPillars = 0;
     }//End OnEnter
 
@@ -68,7 +72,14 @@ public class BossStatePillarAttack : AttackState
         //Stop spawning pillars
         if (stopAttackOnHit)
             spawnedPillars = pillarCount;
-        //Call the hitplayer event
-        BossEventsHandler.current.HitPlayer(GetDamageValue());
+
+        if (applyDamageOnce) {
+            if (damageOnce) {
+                damageOnce = false;
+                BossEventsHandler.current.HitPlayer(GetDamageValue());
+            }
+        } else {
+            BossEventsHandler.current.HitPlayer(GetDamageValue());
+        }
     }//End OnPillarHit
 }

@@ -11,6 +11,8 @@ public class Character : MonoBehaviour
     [SerializeField]
     protected float maxHealth = 100.0f;
 
+    protected bool canTakeDamage = true;
+
     public Action OnDeath;
     public Action OnHit;
     public void SetHealth(float health)
@@ -29,13 +31,14 @@ public class Character : MonoBehaviour
     //Shortcut function, equivalent to SetHealth(health - x)
     public void ReduceHealthByAmount(GameObject self, float health)
     {
-        SetHealth(this.health - Mathf.Abs(health));
+        if (canTakeDamage) {
+            SetHealth(this.health - Mathf.Abs(health));
 
-        OnHit?.Invoke();
+            OnHit?.Invoke();
 
-        if (this.health <= 0f) 
-            OnDeath?.Invoke();   
-
+            if (this.health <= 0f)
+                OnDeath?.Invoke();
+        }
     }//End ReduceHealthByAmount
 
     //Shortcut function, equivalent to SetHealth(health + x)

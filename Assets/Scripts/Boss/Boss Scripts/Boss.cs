@@ -31,7 +31,6 @@ public class Boss : Character
     private CapsuleCollider capsuleCollider;
     public Animator animator;
     public BossState currentState { get; private set; }
-    private Action OnTriggerAction;
 
     [Header("Sounds")]
     [SerializeField] private AK.Wwise.Event OnHitSound;
@@ -70,7 +69,11 @@ public class Boss : Character
         else if(!animatedChild.GetComponent<BossAnimationEventsHandler>())
         {
             animatedChild.AddComponent<BossAnimationEventsHandler>();
-        }        
+        }
+
+        BossTrigger trig = FindObjectOfType<BossTrigger>();
+        if (trig != null)
+            trig.TriggerActivated += Trigger;
 
         mainState = State.Decision;
     }
@@ -78,9 +81,8 @@ public class Boss : Character
     protected override void Start()
     {
         base.Start();
-        //Subscribe to the trigger
-        OnTriggerAction = () => { if (currentState is BossStateIdle) ChangeState(mainState); };
-        FindObjectOfType<BossTrigger>().TriggerActivated += OnTriggerAction;
+
+        canTakeDamage = false;
 
         //Subscribe to the hit enemy action
         if (PlayerEventsHandler.current != null) {
@@ -114,12 +116,15 @@ public class Boss : Character
 
         BossTrigger trig = FindObjectOfType<BossTrigger>();
         if (trig != null)
-            trig.TriggerActivated -= OnTriggerAction;
-
-        OnTriggerAction = null;
+            trig.TriggerActivated -= Trigger;
 
         animator.SetTrigger("DoDie");
         ChangeState(State.Dead);
+    }
+
+    private void Trigger() {
+        canTakeDamage = true;
+        if (currentState is BossStateIdle) ChangeState(mainState);
     }
 
     private void BossHit() {

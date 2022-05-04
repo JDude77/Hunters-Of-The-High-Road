@@ -35,20 +35,16 @@ public class DestructibleTombstone : MonoBehaviour, IDestructible
         }
         
         boxCollider = GetComponent<BoxCollider>();
+        if (!boxCollider) {
+            Debug.LogWarning("Grave without boxcollider detected");
+        }
     }
 
     public void DestroyTombstone(GameObject instance)
     {
         if(instance == gameObject)
         {
-            DestroyedVersion.transform.parent = null;
-            DestroyedVersion.SetActive(true);
-            boxCollider.enabled = false;
-
-            normalVersion.SetActive(false);
-            soundOnDestroy.Post(gameObject);
-
-            FindObjectOfType<PlayerEventsHandler>().OnHitGravestone -= DestroyTombstone;
+            DestroyObject();
         }//End if
     }//End DestroyTombstone
 
@@ -57,8 +53,9 @@ public class DestructibleTombstone : MonoBehaviour, IDestructible
         DestroyedVersion.transform.parent = null;
         DestroyedVersion.SetActive(true);
         normalVersion.SetActive(false);
-        //TODO: remove this once full transition to interface is done
+        boxCollider.enabled = false;
         soundOnDestroy.Post(gameObject);
+        //TODO: remove this once full transition to interface is done
         FindObjectOfType<PlayerEventsHandler>().OnHitGravestone -= DestroyTombstone;
     }    
 }
