@@ -13,7 +13,9 @@ public class BurrowMovement : MonoBehaviour
     private float timeBetweenParticleBursts;
     private Vector3 targetPosition;
     [SerializeField] private GameObject particles;
-
+    [SerializeField] private GameObject mesh;
+    [SerializeField] private float materialRotationSpeed;
+    private float rot;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +39,9 @@ public class BurrowMovement : MonoBehaviour
             Instantiate(particles, transform.position, Quaternion.AngleAxis(180f, Vector3.up) * transform.rotation);
             particleTimer = 0;
         }
+
+        rot -= materialRotationSpeed * Time.deltaTime;
+        mesh.transform.rotation = Quaternion.AngleAxis(rot, Vector3.right);
     }//End Update
 
     // Update is called once per frame
@@ -60,6 +65,7 @@ public class BurrowMovement : MonoBehaviour
         this.speed = speed;
         this.timeBetweenParticleBursts = timeBetweenParticleBursts;
         particleTimer = 0f;
+        rot = 0;
     }//End Init
 
     //Called every frame in the boss's burrow state script
