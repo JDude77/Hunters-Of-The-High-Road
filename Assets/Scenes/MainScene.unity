@@ -14965,6 +14965,10 @@ PrefabInstance:
       propertyPath: data.WwiseObjectReference
       value: 
       objectReference: {fileID: 11400000, guid: 31e9c19c06a9ecf4e8c3bd9146921430, type: 2}
+    - target: {fileID: 2260812697424041313, guid: 4ac6a6dac6bb97044b58882298edc28f, type: 3}
+      propertyPath: data.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: c19a801e80532ac49a766e2b457936a0, type: 2}
     - target: {fileID: 3417881228620526437, guid: 4ac6a6dac6bb97044b58882298edc28f, type: 3}
       propertyPath: data.WwiseObjectReference
       value: 
@@ -70096,7 +70100,7 @@ PrefabInstance:
     - target: {fileID: 6705719242088631735, guid: d72c9cfa708d9b94a94f1e2b7d8a03a8, type: 3}
       propertyPath: bossMusic.WwiseObjectReference
       value: 
-      objectReference: {fileID: 11400000, guid: f7032a257ab328441bd1f91eba961600, type: 2}
+      objectReference: {fileID: 11400000, guid: c19a801e80532ac49a766e2b457936a0, type: 2}
     - target: {fileID: 6705719242297717238, guid: d72c9cfa708d9b94a94f1e2b7d8a03a8, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0

@@ -345,7 +345,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: f29db30d3de19b4ab8585db4572c3287
     GuidInternal: 
-    m_lastTime: -8585506163868996678
+    m_lastTime: -8585499449593454225
     List:
     - name: Boss
       guid: 98b33e5d7b53c94e8d716db6ebe49152
@@ -361,20 +361,6 @@ MonoBehaviour:
         ObjectType: 7
         guid: 98b33e5d7b53c94e8d716db6ebe49152
       Path: SoundBanks\Default Work Unit\Boss
-    - name: demo
-      guid: 417bc5ee7e3acb4dbf3a884e4f61dab8
-      id: 1842718300
-      PathAndIcons:
-      - ElementName: SoundBanks
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: f29db30d3de19b4ab8585db4572c3287
-      - ElementName: demo
-        ObjectType: 7
-        guid: 417bc5ee7e3acb4dbf3a884e4f61dab8
-      Path: SoundBanks\Default Work Unit\demo
     - name: environment
       guid: ceea2e7c09b4634481f536b47d7cbb94
       id: 1229948536
@@ -403,6 +389,20 @@ MonoBehaviour:
         ObjectType: 7
         guid: 38691d1d22af2044bb9cd08fa8783150
       Path: SoundBanks\Default Work Unit\music
+    - name: Nouthing
+      guid: 00d040bd5399e845a1e66370fb5e83c3
+      id: 1697447083
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f29db30d3de19b4ab8585db4572c3287
+      - ElementName: Nouthing
+        ObjectType: 7
+        guid: 00d040bd5399e845a1e66370fb5e83c3
+      Path: SoundBanks\Default Work Unit\Nouthing
     - name: Player
       guid: 6d0ed16015fced4d9bb770595284826e
       id: 1069431850
@@ -457,7 +457,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: fb0dbcfe02547c49afbe650cce855735
     GuidInternal: 
-    m_lastTime: -8585507045399867338
+    m_lastTime: -8585499449593609411
     List:
     - name: Attacks sounds
       guid: 1c4bc2c32d9f7e4fa4cb7d34a0bde9f0
@@ -625,6 +625,43 @@ MonoBehaviour:
         ObjectType: 4
         guid: 441408fc7fb46e428914a589b4855f77
       Path: Events\Default Work Unit\music
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: nouthing
+      guid: dd01ff3dc1af6c48a292ab39b7d7e60e
+      id: 1697447083
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: nouthing
+        ObjectType: 4
+        guid: dd01ff3dc1af6c48a292ab39b7d7e60e
+      Path: Events\Default Work Unit\nouthing
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_boss_fight_loop
+      guid: 2c6a1cb1d1462141b9cc9d7cc238e142
+      id: 3819554723
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: music
+        ObjectType: 4
+        guid: 441408fc7fb46e428914a589b4855f77
+      - ElementName: Play_boss_fight_loop
+        ObjectType: 3
+        guid: 2c6a1cb1d1462141b9cc9d7cc238e142
+      Path: Events\Default Work Unit\music\Play_boss_fight_loop
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -915,26 +952,6 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 3.359728
       minDuration: 2.050301
-    - name: Play_music_battle_01
-      guid: 6d377896f11e724cba652ebbe9459e05
-      id: 1041001914
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: fb0dbcfe02547c49afbe650cce855735
-      - ElementName: music
-        ObjectType: 4
-        guid: 441408fc7fb46e428914a589b4855f77
-      - ElementName: Play_music_battle_01
-        ObjectType: 3
-        guid: 6d377896f11e724cba652ebbe9459e05
-      Path: Events\Default Work Unit\music\Play_music_battle_01
-      maxAttenuation: 0
-      maxDuration: 128.8098
-      minDuration: 128.8098
     - name: Play_night_forrest
       guid: bbc4697dc2469c4d9d51add72b7748a0
       id: 3778516394
@@ -955,6 +972,26 @@ MonoBehaviour:
       maxAttenuation: 100
       maxDuration: -1
       minDuration: -1
+    - name: Play_nouthing
+      guid: 2ce55e5fa5630846b38ef1ac62ee5c87
+      id: 1311866180
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: nouthing
+        ObjectType: 4
+        guid: dd01ff3dc1af6c48a292ab39b7d7e60e
+      - ElementName: Play_nouthing
+        ObjectType: 3
+        guid: 2ce55e5fa5630846b38ef1ac62ee5c87
+      Path: Events\Default Work Unit\nouthing\Play_nouthing
+      maxAttenuation: 0
+      maxDuration: 1
+      minDuration: 1
     - name: Play_owl
       guid: 80dcbdf7c55c044a8f08ac872d42dacb
       id: 2859161640
@@ -1662,7 +1699,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 36dfd18b685dea41b71add1929d942e5
     GuidInternal: 
-    m_lastTime: -8585548625492583552
+    m_lastTime: -8585500353939366973
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
@@ -1825,7 +1862,7 @@ MonoBehaviour:
     m_lastTime: -8585548625492553666
     List: []
   ExpandedFileSystemItemIds: 01000000020000000300000004000000050000000600000007000000080000000a00000010000000110000001200000018000000190000001b0000003e0000003f000000
-  ExpandedWaapiItemIds: 01000000020000000300000004000000050000000600000007000000080000000a00000010000000110000001200000018000000190000001b0000003e0000003f000000
+  ExpandedWaapiItemIds: 010000000600000007000000080000000a0000000b000000110000001200000013000000
   AutoSyncSelection: 1
   autoPopulateEnabled: 1
   currentDataSource: 0
