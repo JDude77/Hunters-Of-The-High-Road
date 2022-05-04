@@ -195,8 +195,10 @@ public class Rifle : Weapon
                         PlayerEventsHandler.current.HitBottle(hit.gameObject);
                         break;
                     case "Enemy":
+                        break;
                     case "Boss":
-                        PlayerEventsHandler.current.HitEnemy(hit.gameObject, damage);
+                        float damageToDo = isBeingAimed && deadshot.DeadshotSkillCheckPassed() ? aimedShotDamage : damage;
+                        PlayerEventsHandler.current.HitEnemy(hit.gameObject, damageToDo);
                         //Below pieces for deadshot
                         hitEnemy = true;
                         enemyInstance = hit.gameObject;
