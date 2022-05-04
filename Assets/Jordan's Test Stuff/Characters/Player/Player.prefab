@@ -8725,8 +8725,8 @@ MonoBehaviour:
   staminaRegenerationRate: 3.5
   regenerateStamina: 1
   faith: 0
-  maxFaith: 10
-  faithRegenerationRate: 0.15
+  maxFaith: 30
+  faithRegenerationRate: 0.25
   currentState: 5
   currentStateScript: {fileID: 0}
   states: 0500000000000000010000000200000003000000040000000700000006000000

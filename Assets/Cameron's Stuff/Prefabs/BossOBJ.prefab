@@ -1221,12 +1221,12 @@ MonoBehaviour:
   maxDamage: 0
   minDamage: 10
   pillar: {fileID: 868277590454778659, guid: 1e14d765cacb20b4eaa34fb1b25858a5, type: 3}
-  pillarCount: 5
+  pillarCount: 6
   stopAttackOnHit: 0
   windUpTime: 1.2
-  delayBetweenPillars: 0.3
+  delayBetweenPillars: 0.15
   pillarWaitTime: 0.35
-  pillarAscendSpeed: 27
+  pillarAscendSpeed: 37
   pillarDescendSpeed: 10
   pillarStayTime: 0.5
   startYPos: 5
@@ -1267,7 +1267,7 @@ MonoBehaviour:
   windUpTime: 0.005
   delayBetweenPillars: 0.05
   pillarWaitTime: 0
-  pillarAscendSpeed: 60
+  pillarAscendSpeed: 80
   pillarDescendSpeed: 30
   pillarStayTime: 0.5
   startYPos: 5
@@ -1301,7 +1301,7 @@ MonoBehaviour:
   pillarCount: 0
   stopAttackOnHit: 0
   windUpTime: 0
-  delayBetweenPillars: 0.15
+  delayBetweenPillars: 0.4
   pillarWaitTime: 0
   pillarAscendSpeed: 45
   pillarDescendSpeed: 30
