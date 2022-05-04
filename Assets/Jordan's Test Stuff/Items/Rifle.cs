@@ -242,6 +242,8 @@ public class Rifle : Weapon
     //Made a coroutine to delay line appearance by a frame, making it align with muzzle better
     public IEnumerator UpdateShotLineRenderer(Vector3 shotHitLocation)
     {
+        shotPathLineRenderer.enabled = false;
+
         yield return new WaitForEndOfFrame();
         if(gunAnimator.GetBool("CanDeadshot"))
         {
