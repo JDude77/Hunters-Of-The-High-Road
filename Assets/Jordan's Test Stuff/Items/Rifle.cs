@@ -63,10 +63,12 @@ public class Rifle : Weapon
     [Tooltip("The length of time to show the muzzle flash for in seconds.")]
     private float muzzleFlashTime;
     [SerializeField]
-    [Tooltip("The length of time to show the muzzle flash for in seconds.")]
+    private float shotScreenShakeIntensity;
+    [SerializeField]
+    private float shotScreenShakeTime;
+    [SerializeField]
     private float deadShotScreenShakeIntensity;
     [SerializeField]
-    [Tooltip("The length of time to show the muzzle flash for in seconds.")]
     private float deadShotScreenShakeTime;
     #endregion
 
@@ -205,7 +207,11 @@ public class Rifle : Weapon
                         PlayerEventsHandler.current.HitEnemy(hit.gameObject, damageToDo);
                         //Below pieces for deadshot
                         hitEnemy = true;
-                        enemyInstance = hit.gameObject;
+                        enemyInstance = hit.gameObject; 
+                        
+                        if (CameraShakeScript.Instance)
+                            CameraShakeScript.Instance.ShakeCamera(shotScreenShakeIntensity, shotScreenShakeTime);
+
                         break;
                 }//End switch
             }//End if

@@ -14990,6 +14990,10 @@ MonoBehaviour:
   - {fileID: 7904269033198271011}
   - {fileID: 1291215418603963218}
   normalVersion: {fileID: 0}
+  soundOnDestroy:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f8b08875a13f5ce41aaadaf0485e8365, type: 2}
 --- !u!1 &3901206457188083194
 GameObject:
   m_ObjectHideFlags: 0

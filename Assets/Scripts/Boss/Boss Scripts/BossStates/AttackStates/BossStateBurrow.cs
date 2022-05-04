@@ -72,7 +72,8 @@ public class BossStateBurrow : AttackState
         digDownSound.Post(gameObject);
 
         //Set the y position of the boss after the animation plays
-        Vector3 pos = transform.position;
+        GameObject modelBody = transform.Find("T-Posed Boss/body_low").gameObject;
+        Vector3 pos = modelBody.transform.position;
         pos.y = burrowYPosition;
         transform.position = pos;
 
