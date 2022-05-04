@@ -5,32 +5,22 @@ using System;
 
 public class BossStateIdle : BossState
 {
-    // Start is called before the first frame update
-
-    float retryTime = 0.5f;
+    private float retryTime = 0.5f;
 
     public override void OnEnter()
     {
         base.OnEnter();
-        StartCoroutine(exitState());
-    }
-
-    public override void Run()
-    {
-
-    }
-    public override void FixedRun()
-    {
-
-    }   
+        StartCoroutine(TryExit());
+    }//End OnEnter
 
     public override void OnExit()
     {
         base.OnExit();
-    }
+    }//End OnExit
 
-    IEnumerator exitState() {
+    private IEnumerator TryExit() {
         yield return new WaitForSeconds(retryTime);
         boss.ReturnToMainState();
-    }
-}
+    }//End ExitState
+    
+}//End BossStateIdle

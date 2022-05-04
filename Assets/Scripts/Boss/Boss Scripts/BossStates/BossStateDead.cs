@@ -10,7 +10,4 @@ public class BossStateDead : BossState
         canBeStunned = false;
         base.Start();
     }
-    public override void Run() {
-        base.Run();
-    }
 }

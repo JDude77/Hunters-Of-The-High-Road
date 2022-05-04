@@ -1058,6 +1058,10 @@ MonoBehaviour:
   body: {fileID: 0}
   eventsHandler: {fileID: 0}
   animator: {fileID: 0}
+  OnHitSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!114 &7393394392463716624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1070,7 +1074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2ba5e46f54414847a9494e1466d6be8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attacks: 0800000002000000030000000400000005000000
+  allAttacks: 0200000003000000040000000500000008000000
   priorityAttacksInOrder: 
   chargeInRange: 38
   landsRootsInRange: 36
@@ -1220,14 +1224,14 @@ MonoBehaviour:
   pillarCount: 5
   stopAttackOnHit: 0
   windUpTime: 1.2
-  delayBetweenPillars: 1
+  delayBetweenPillars: 0.3
   pillarWaitTime: 0.35
   pillarAscendSpeed: 27
   pillarDescendSpeed: 10
   pillarStayTime: 0.5
   startYPos: 5
   finalYPos: 9
-  addRandomWaitTime: 0
+  addRandomWaitTime: 1
   randomWaitTimeMax: 1
   randomWaitTimeMin: 0.3
   windUp:

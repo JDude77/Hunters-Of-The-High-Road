@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-
 [DisallowMultipleComponent]
 public class BossStateDecision : BossState
 {
     //Attacks and their activation condition
     private Dictionary<Boss.State, Func<bool>> attackDictionary = new Dictionary<Boss.State, Func<bool>>();
     //List of desired attacks in the inspector
-    [SerializeField] private List<Boss.State> attacks;
-    List<Boss.State> attackPool = new List<Boss.State>();
+    [SerializeField] private List<Boss.State> allAttacks;
+    private List<Boss.State> availableAttackPool = new List<Boss.State>();
     private Queue<Boss.State> recentAttacks = new Queue<Boss.State>();
 
     [HideInInspector] public List<Boss.State> priorityAttacksInOrder = new List<Boss.State>();
@@ -32,7 +31,7 @@ public class BossStateDecision : BossState
     [SerializeField] private BoxCollider uprootBox;
     [Space(5)]
     [Tooltip("The amount of attacks that can be between two burrow attacks")]
-    [SerializeField] private float maxAttacksBetweenBurrows;
+    [SerializeField] private int maxAttacksBetweenBurrows;
 
     [Header("Decision Delay Settings")]
     [Tooltip("The maximum time the boss will wait before changing to a new attack")]
@@ -95,17 +94,13 @@ public class BossStateDecision : BossState
         //Get a random decision time
         float rand = UnityEngine.Random.Range(minDecisionTime, maxDecisionTime);
 
-        foreach(Boss.State attack in recentAttacks) {
-            print(attack.ToString());
-        }
-
         //If an attack has already been chosen, change to the attack 
         // (this is true in the event that the boss is stunned during the decision timer coroutine)
         if (attackChosen)
             boss.ChangeState(previousAttack);
 
         Boss.State newState = ChooseState();
-        StartCoroutine(wait(rand, newState));
+        StartCoroutine(WaitThenSwitch(rand, newState));
     }
 
     public override void OnExit()
@@ -114,15 +109,15 @@ public class BossStateDecision : BossState
         StopAllCoroutines();
     }
 
-    Boss.State ChooseState()
+    private Boss.State ChooseState()
     {
         //Set the list of available attacks
         SetAttackPool();
         //If there are available attacks
-        if (attackPool.Count > 0)
+        if (availableAttackPool.Count > 0)
         {
             //Pick one at random
-            previousAttack = attackPool[UnityEngine.Random.Range(0, attackPool.Count)];
+            previousAttack = availableAttackPool[UnityEngine.Random.Range(0, availableAttackPool.Count)];
             //Add it to the recent attacks list
             recentAttacks.Enqueue(previousAttack);
             //Remove the oldest recent attacks
@@ -135,33 +130,33 @@ public class BossStateDecision : BossState
         return Boss.State.Idle;        
     }
 
-    void SetAttackPool()
+    private void SetAttackPool()
     {        
-        attackPool.Clear();
+        availableAttackPool.Clear();
 
         //Prioritise burrow if the boss hasn't moved in recent memory
         if (maxAttacksBetweenBurrows > 0 && !recentAttacks.Contains(Boss.State.Burrow)) {
-            attackPool.Add(Boss.State.Burrow);
+            availableAttackPool.Add(Boss.State.Burrow);
             return;
         }
 
-        foreach (Boss.State attack in attacks)
+        foreach (Boss.State attack in allAttacks)
         {
             //If the condition for an attack is met
             if (attackDictionary[attack].Invoke() && attack != previousAttack/* && !recentAttacks.Contains(attack)*/)
             {
-                attackPool.Add(attack);
+                availableAttackPool.Add(attack);
             }//End if
         }//End Foreach
 
         //If there is an available attack that is a priority
         foreach (Boss.State attack in priorityAttacksInOrder)
         {
-            if (attackPool.Contains(attack) && !recentAttacks.Contains(attack))
+            if (availableAttackPool.Contains(attack) && !recentAttacks.Contains(attack))
             {
                 //If we find a priority attack, clear the attack pool of all other attacks and return
-                attackPool.Clear();
-                attackPool.Add(attack);
+                availableAttackPool.Clear();
+                availableAttackPool.Add(attack);
                 return;
             }
         }
@@ -185,11 +180,11 @@ public class BossStateDecision : BossState
         //If the previous attack is the only available attack, It's not idle, and it's condition is met re-add it to the pool
         if ((previousAttack != Boss.State.Idle) && attackDictionary[previousAttack].Invoke())
         {
-            attackPool.Add(previousAttack);
+            availableAttackPool.Add(previousAttack);
         }//End if
     }//End SetAttackPool
 
-    IEnumerator wait(float time, Boss.State state)
+    private IEnumerator WaitThenSwitch(float time, Boss.State state)
     {
         attackChosen = true;
 
@@ -201,35 +196,35 @@ public class BossStateDecision : BossState
     }
 
     //Remove the non attack states from the list
-    void InitAttacks()
+    private void InitAttacks()
     {
         previousAttack = Boss.State.Idle;
 
-        for (int i = 0; i < attacks.Count;i++)
+        for (int i = 0; i < allAttacks.Count;i++)
         {
             //Get the type of the state
-            Type type = Type.GetType("BossState" + attacks[i].ToString());
+            Type type = Type.GetType("BossState" + allAttacks[i].ToString());
             BossState bossState = (BossState)GetComponent(type);
             //If the type is an attack state and is present on the object
             if (!(bossState is AttackState))
             {
-                attacks.Remove(attacks[i]);
+                allAttacks.Remove(allAttacks[i]);
                 i--;
             }
         }
 
         //Add all the attacks to the dictionary along with their activation condition
-        if (attacks.Contains(Boss.State.Charging)) attackDictionary.Add(Boss.State.Charging, () => playerDistance < chargeInRange);
+        if (allAttacks.Contains(Boss.State.Charging)) attackDictionary.Add(Boss.State.Charging, () => playerDistance < chargeInRange);
 
-        if (attacks.Contains(Boss.State.Burrow)) attackDictionary.Add(Boss.State.Burrow, () => playerDistance < burrowInRange);
+        if (allAttacks.Contains(Boss.State.Burrow)) attackDictionary.Add(Boss.State.Burrow, () => playerDistance < burrowInRange);
 
-        if (attacks.Contains(Boss.State.LandsRoots)) attackDictionary.Add(Boss.State.LandsRoots, () => playerDistance < landsRootsInRange);
+        if (allAttacks.Contains(Boss.State.LandsRoots)) attackDictionary.Add(Boss.State.LandsRoots, () => playerDistance < landsRootsInRange);
 
-        if (attacks.Contains(Boss.State.Scream)) attackDictionary.Add(Boss.State.Scream, () => playerDistance < screamInRange);
+        if (allAttacks.Contains(Boss.State.Scream)) attackDictionary.Add(Boss.State.Scream, () => playerDistance < screamInRange);
 
-        if (attacks.Contains(Boss.State.RadialUproot)) attackDictionary.Add(Boss.State.RadialUproot, () => playerDistance < radialUprootInRange);
+        if (allAttacks.Contains(Boss.State.RadialUproot)) attackDictionary.Add(Boss.State.RadialUproot, () => playerDistance < radialUprootInRange);
 
-        if (attacks.Contains(Boss.State.Uproot)) attackDictionary.Add(Boss.State.Uproot, () => {
+        if (allAttacks.Contains(Boss.State.Uproot)) attackDictionary.Add(Boss.State.Uproot, () => {
             Bounds col = FindObjectOfType<Player>().GetComponent<CharacterController>().bounds;
             return uprootBox.bounds.Intersects(col);
             }

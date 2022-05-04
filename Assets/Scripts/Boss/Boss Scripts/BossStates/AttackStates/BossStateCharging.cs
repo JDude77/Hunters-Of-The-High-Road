@@ -47,9 +47,6 @@ public class BossStateCharging : AttackState
     [SerializeField] private AK.Wwise.Event hitSound;    
     #endregion
 
-    #region Anim Event Params
-    //[SerializeField] [ReadOnlyProperty] private string[] AnimationEventParameters = new string[] { "LightFootStepSound", "HeavyFootStepSound", "SwipeSound","DamageCheck", "SwipeEnd" };
-    #endregion
 
     enum SubState
     {

@@ -21,7 +21,7 @@ public class BossStateStunned : BossState
         stunned.Post(gameObject);
         boss.animator.SetTrigger("DoStunned");
         StopAllCoroutines();
-        StartCoroutine(timer());
+        StartCoroutine(Timer());
     }//End OnEnter
 
     public override void OnExit()
@@ -29,7 +29,7 @@ public class BossStateStunned : BossState
         base.OnExit();
     }//End OnExit
 
-    IEnumerator timer()
+    IEnumerator Timer()
     {
         yield return new WaitForSeconds(stunnedTime);
         boss.animator.SetTrigger("DoFinishStun");

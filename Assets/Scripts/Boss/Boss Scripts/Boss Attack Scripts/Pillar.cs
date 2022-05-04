@@ -1,12 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
 public class Pillar : MonoBehaviour
 {
     private float waitTime, ascendSpeed, descendSpeed, stayTime;
     private Vector3 startPos, endPos;
-    public event Action hitPlayer;
+    public Action hitPlayer;
 
     [SerializeField] private AK.Wwise.Event spawnSound;
     [SerializeField] private AK.Wwise.Event breachGroundSound;
@@ -31,7 +30,7 @@ public class Pillar : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, endPos, ascendSpeed * Time.deltaTime); 
 
-            if(gameObject.transform.position.y > groundPosition && doOnce)
+            if(doOnce && gameObject.transform.position.y > groundPosition)
             {
                 doOnce = false;
                 breachGroundSound.Post(gameObject);
