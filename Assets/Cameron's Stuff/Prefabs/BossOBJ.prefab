@@ -1083,8 +1083,8 @@ MonoBehaviour:
   radialUprootInRange: 24.65
   uprootBox: {fileID: 0}
   maxAttacksBetweenBurrows: 3
-  maxDecisionTime: 3
-  minDecisionTime: 3
+  maxDecisionTime: 1.5
+  minDecisionTime: 1.5
 --- !u!114 &1354802117201642784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1113,7 +1113,7 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
-  stunnedTime: 3
+  stunnedTime: 6
 --- !u!114 &5737708253282028240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1139,7 +1139,7 @@ MonoBehaviour:
   burrowSpeed: 20
   burrowTime: 3
   inRangeDistance: 2
-  digUpDelay: 0
+  digUpDelay: 0.2
   damageRadius: 3.9
   digDownSound:
     idInternal: 0
