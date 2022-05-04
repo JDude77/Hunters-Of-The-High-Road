@@ -122,7 +122,6 @@ public class Rifle : Weapon
 
         //Get the clicked position on the screen
         Vector2 mouseClickPosition = Input.mousePosition;
-        print(mouseClickPosition);
 
         //Create a ray from the camera to the clicked point
         Ray cameraRay = Camera.main.ScreenPointToRay(mouseClickPosition);
@@ -130,7 +129,6 @@ public class Rifle : Weapon
         //Get world location of clicked point from ray hit position
         Physics.Raycast(cameraRay, out RaycastHit cameraRayHitInfo);
         Vector3 mouseClickWorldPosition = cameraRayHitInfo.point;
-        print("MCWP " + mouseClickWorldPosition);
         //Fix the player's rotation to face the shot location
         FixPlayerRotation(mouseClickWorldPosition);
 
