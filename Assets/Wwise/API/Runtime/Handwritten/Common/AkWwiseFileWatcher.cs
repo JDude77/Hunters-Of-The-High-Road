@@ -52,10 +52,7 @@ public class AkWwiseFileWatcher
 
 		try
 		{
-			if (XmlWatcher != null)
-			{
-				XmlWatcher.Dispose();
-			}
+			XmlWatcher?.Dispose();
 
 			XmlWatcher = new System.IO.FileSystemWatcher(generatedSoundbanksPath) {Filter = "*.xml", IncludeSubdirectories = true, };
 			// Event handlers that are watching for specific event
@@ -77,10 +74,7 @@ public class AkWwiseFileWatcher
 
 		try
 		{
-			if (XmlWatcher != null)
-			{
-				WprojWatcher.Dispose();
-			}
+			WprojWatcher?.Dispose();
 
 			WprojWatcher = new System.IO.FileSystemWatcher(wwiseProjectPath) { Filter = "*.wproj", IncludeSubdirectories = false, };
 			// Event handlers that are watching for specific event
