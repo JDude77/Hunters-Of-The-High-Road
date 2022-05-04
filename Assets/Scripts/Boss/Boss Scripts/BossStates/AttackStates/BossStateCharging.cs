@@ -96,7 +96,7 @@ public class BossStateCharging : AttackState
 
             Quaternion targetRot = Quaternion.LookRotation(targetDir, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRot, 360f * Time.deltaTime);
-        }
+        }//End if
     }//End Run
 
     public override void FixedRun()
@@ -111,7 +111,7 @@ public class BossStateCharging : AttackState
         if (currentCoroutine != null)
         {
             StopCoroutine(currentCoroutine);
-        }
+        }//End if
 
         currentCoroutine = StartCoroutine(newCoroutine);
     } //End ChangeCoroutine
@@ -135,7 +135,7 @@ public class BossStateCharging : AttackState
             //Get the vector from the boss to the player
             distanceToPlayer = player.transform.position - transform.position;
             yield return null;
-        }
+        }//End while
 
         //Start the wind up
         ChangeCoroutineTo(WindUp(windUpTime));
@@ -191,7 +191,7 @@ public class BossStateCharging : AttackState
             //Charge to the charge point
             transform.position = Vector3.MoveTowards(transform.position, chargePoint, maxChargeSpeed * Time.deltaTime);// * speedMultiplier);
             yield return null;
-        }
+        }//End while
 
         chargesCompleted++;
         Swipe();
@@ -218,11 +218,11 @@ public class BossStateCharging : AttackState
         if(chargesCompleted < totalConsecutiveCharges)
         {
             ChangeCoroutineTo(WindUp(consecutiveWindUpTime));
-        }
+        }//End if
         else
         {
             boss.ReturnToMainState();
-        }
+        }//End else
     }//End CheckChargeCondition
 
     public void DoSphereCast()
@@ -238,7 +238,7 @@ public class BossStateCharging : AttackState
             hitSound.Post(gameObject);
             BossEventsHandler.current.HitPlayer(GetDamageValue());
             chargesCompleted = totalConsecutiveCharges;
-        }
+        }//End if
     }//End DoSphereCast
 
     private void OnDrawGizmos()
@@ -246,21 +246,7 @@ public class BossStateCharging : AttackState
         Vector3 sphereCenter = transform.forward * swipeRadius + transform.position;
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(sphereCenter, swipeRadius);
-    }
-
-    [ContextMenu("Fill default values")]
-    public override void SetDefaultValues()
-    {
-        inRangeDistance = 15f;
-        stopDistance = 3f;
-        runSpeed = 15f;
-        windUpTime = 1f;
-        windDownTime = 1f;
-        consecutiveWindUpTime = 0.8f;
-        maxChargeSpeed = 30f;
-        totalConsecutiveCharges = 3;
-        swipeRadius = 2f;
-    }//End SetDefaultValues
+    }//End OnDrawGizmos
 
     private void InitEvents()
     {

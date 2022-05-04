@@ -75,27 +75,14 @@ public class BossStateLandsRoots : BossStatePillarAttack
             if (addRandomWaitTime)
             {
                 yield return new WaitForSeconds(Random.Range(randomWaitTimeMax, randomWaitTimeMin));
-            }
+            }//End if
 
             yield return new WaitForSeconds(base.delayBetweenPillars);
-        }
+        }//End while
+
         boss.animator.SetTrigger("DoEndLandsRoots");
         windDown.Post(gameObject);
     }//End DoAttack
-
-    [ContextMenu("Fill Default Values")]
-    public override void SetDefaultValues()
-    {
-        pillarCount = 5;
-        windUpTime = 1f;
-        delayBetweenPillars = 0.8f;
-        pillarWaitTime = 0.8f;
-        pillarAscendSpeed = 20f;
-        pillarDescendSpeed = 10f;
-        pillarStayTime = 0.5f;
-        startYPos = 5f;
-        finalYPos = 9f;
-    }
 
     private void InitEvents()
     {
@@ -103,5 +90,5 @@ public class BossStateLandsRoots : BossStatePillarAttack
         eventResponder.AddAction("StartPillars", () => { StartCoroutine(DoAttack()); });
         eventResponder.AddSoundEffect("HandSound", handInGround, gameObject);
         eventResponder.AddAction("ExitState", boss.ReturnToMainState);
-    }
+    }//End InitEvents
 }

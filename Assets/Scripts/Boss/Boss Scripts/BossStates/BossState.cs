@@ -18,15 +18,15 @@ public abstract class BossState : MonoBehaviour
         if (boss == null)
         {
             Debug.LogError("ERROR: No Boss component detected");
-        }
+        }//End if
 
         //Get a reference to the player
         player = GameObject.FindGameObjectWithTag("Player");
         if (player == null)
         {
             Debug.LogError("Error: No object of type Player found");
-        }
-    }
+        }//End if
+    }//End Awake
 
     protected void Start()
     {
@@ -34,7 +34,7 @@ public abstract class BossState : MonoBehaviour
         if (a != null)
         {
             eventResponder = new EventResponder<string>(a);
-        }
+        }//End if
     }//End Start
 
     public virtual void OnEnter() 
@@ -48,12 +48,8 @@ public abstract class BossState : MonoBehaviour
     }//End OnExit
     public virtual void Run() 
     {
-    }
+    }//End Run
     public virtual void FixedRun()
     {
-    }
-
-    public virtual void SetDefaultValues()
-    {
-    }
+    }//End FixedRun
 }

@@ -12,7 +12,7 @@ public class BossStateStunned : BossState
     private void Start()
     {
         base.Start();
-    }
+    }//End Start
 
     public override void OnEnter()
     {
@@ -34,11 +34,5 @@ public class BossStateStunned : BossState
         yield return new WaitForSeconds(stunnedTime);
         boss.animator.SetTrigger("DoFinishStun");
         boss.ReturnToMainState();
-    }
-
-    [ContextMenu("Fill Default Values")]
-    public override void SetDefaultValues()
-    {
-        stunnedTime = 2f;
-    }//End SetDefaultValues
-}
+    }//End Timer
+}//End BossStateStunned

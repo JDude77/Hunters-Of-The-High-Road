@@ -9,5 +9,5 @@ public class BossStateDead : BossState
     {
         canBeStunned = false;
         base.Start();
-    }
+    }//End Start
 }

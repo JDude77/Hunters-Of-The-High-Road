@@ -40,7 +40,7 @@ public class BossStateScream : AttackState
         //Rotate towards that direction
         Quaternion targetRot = Quaternion.LookRotation(targetDir, Vector3.up);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRot, 360f * Time.deltaTime);
-    }
+    }//End FixedRun
 
     public void DoSphereCast()
     {
@@ -51,7 +51,7 @@ public class BossStateScream : AttackState
         {
             BossEventsHandler.current.HitPlayer(GetDamageValue());
             BossEventsHandler.current.StunPlayer();
-        }
+        }//End if
     }//End DoSphereCast
 
     public void OnDrawGizmos()
@@ -59,18 +59,12 @@ public class BossStateScream : AttackState
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, radius);
     }//End OnDrawGizmos
-
-    [ContextMenu("Fill default values")]    
-    public override void SetDefaultValues()
-    {
-        radius = 6f;
-    }//End SetDefaultValues
-    
+        
     private void InitEvents()
     {
         //Animation events
         eventResponder.AddSoundEffect("ScreamSound", screamNoise, gameObject);
         eventResponder.AddAction("AnimationEnd", boss.ReturnToMainState);
         eventResponder.AddAction("DamageCheck", DoSphereCast);
-    }
+    }//End InitEvents
 }

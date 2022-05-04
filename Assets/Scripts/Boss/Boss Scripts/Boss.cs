@@ -37,61 +37,21 @@ public class Boss : Character
 
     void Awake()
     {
-        //Get the collider if it exists
-        capsuleCollider = GetComponent<CapsuleCollider>();
-        if (capsuleCollider == null) capsuleCollider = gameObject.AddComponent<CapsuleCollider>();
-        //Get the current state
-        currentState = GetComponent<BossStateIdle>();
-        if (currentState == null) currentState = gameObject.AddComponent<BossStateIdle>();
-        if (!GetComponent<BossStateDecision>()) gameObject.AddComponent<BossStateDecision>();
-        if (!GetComponent<BossStateCharging>()) gameObject.AddComponent<BossStateCharging>();
-        if (!GetComponent<BossStateLandsRoots>()) gameObject.AddComponent<BossStateLandsRoots>();
-        if (!GetComponent<BossStateUproot>()) gameObject.AddComponent<BossStateUproot>();
-        if (!GetComponent<BossStateScream>()) gameObject.AddComponent<BossStateScream>();
-        if (!GetComponent<BossStateBurrow>()) gameObject.AddComponent<BossStateBurrow>();
-        if (!GetComponent<BossEventsHandler>()) gameObject.AddComponent<BossEventsHandler>();
-        if (GetComponentInChildren<Animator>()) animator = GetComponentInChildren<Animator>();
-        else Debug.LogError("No Animator detected on boss child");
-
-        //Get the rigidbody
-        body = GetComponent<Rigidbody>();
-        if (body == null) body = gameObject.AddComponent<Rigidbody>();
-
-        //Add rotation constraints
-        body.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
-        body.isKinematic = true;
-
-        GameObject animatedChild = GetComponentInChildren<Animator>().gameObject;
-        if (animatedChild == null)
-        {
-            Debug.LogError("No animator detected on Boss child");
-        }
-        else if(!animatedChild.GetComponent<BossAnimationEventsHandler>())
-        {
-            animatedChild.AddComponent<BossAnimationEventsHandler>();
-        }
-
-        BossTrigger trig = FindObjectOfType<BossTrigger>();
-        if (trig != null)
-            trig.TriggerActivated += Trigger;
-
+        //Check that the boss contains all required components to function
+        InitialiseComponents();
+        //Initialise the main state
         mainState = State.Decision;
-    }
+    }//End Awake
 
     protected override void Start()
     {
         base.Start();
-
+        //Prevent damage until trigger
         canTakeDamage = false;
-
-        //Subscribe to the hit enemy action
-        if (PlayerEventsHandler.current != null) {
-            PlayerEventsHandler.current.OnHitEnemy += ReduceHealthByAmount;
-            PlayerEventsHandler.current.OnStaggerEnemy += StunnedResponse;
-        }
-
-        OnHit += BossHit;
-        OnDeath += Death;
+        //Check that the boss's children have the required components
+        InitialiseChildComponents();
+        //Subscribe the required functions to the events the boss needs to respond to
+        InitialiseEventResponses();
     } //End Start
 
     //Update is called once per frame
@@ -114,7 +74,7 @@ public class Boss : Character
         if (PlayerEventsHandler.current != null) {
             PlayerEventsHandler.current.OnHitEnemy -= ReduceHealthByAmount;
             PlayerEventsHandler.current.OnStaggerEnemy -= StunnedResponse;
-        }
+        }//End if
 
         BossTrigger trig = FindObjectOfType<BossTrigger>();
         if (trig != null)
@@ -122,25 +82,11 @@ public class Boss : Character
 
         animator.SetTrigger("DoDie");
         ChangeState(State.Dead);
-    }
-
-    private void Trigger() {
-        canTakeDamage = true;
-        if (currentState is BossStateIdle) ChangeState(mainState);
-    }
-    private void BossHit() {
-        OnHitSound.Post(gameObject);
-    }
-    private void StunnedResponse(GameObject obj) {
-        //Change the boss's state
-        if (currentState.stunnable)
-            ChangeState(State.Stunned);
-    }
+    }//End Death
 
     #region States
     //Deletes the current state component and adds the new state
-    public State ChangeState(State state_)
-    {
+    public State ChangeState(State state_) {
         //Exits the current state
         currentState.OnExit();
         //Get the type of the state
@@ -154,8 +100,7 @@ public class Boss : Character
         return state;
     } //End ChangeState
 
-    public void ReturnToMainState()
-    {
+    public void ReturnToMainState() {
         //Exits the current state
         currentState.OnExit();
         //Get the type of the state
@@ -165,6 +110,96 @@ public class Boss : Character
         state = mainState;
         //Enter the new state
         currentState.OnEnter();
-    }
+    }//End ReturnToMainState
     #endregion
+
+    #region Event Responses
+    private void Trigger() {
+        canTakeDamage = true;
+        if (currentState is BossStateIdle) ChangeState(mainState);
+    }//End Trigger
+
+    private void BossHit() {
+        OnHitSound.Post(gameObject);
+    }//End BossHit
+
+    private void StunnedResponse(GameObject obj) {
+        //Change the boss's state
+        if (currentState.stunnable)
+            ChangeState(State.Stunned);
+    }//End Stunnedresponse
+    #endregion
+
+    #region Initialisation
+    private void InitialiseComponents() 
+    {
+        //Get the collider if it exists
+        capsuleCollider = GetComponent<CapsuleCollider>();
+
+        if (capsuleCollider == null) capsuleCollider = gameObject.AddComponent<CapsuleCollider>();
+        //Get the current state
+        currentState = GetComponent<BossStateIdle>();
+
+        if (currentState == null) currentState = gameObject.AddComponent<BossStateIdle>();
+
+        if (!GetComponent<BossStateDecision>()) gameObject.AddComponent<BossStateDecision>();
+
+        if (!GetComponent<BossStateCharging>()) gameObject.AddComponent<BossStateCharging>();
+
+        if (!GetComponent<BossStateLandsRoots>()) gameObject.AddComponent<BossStateLandsRoots>();
+
+        if (!GetComponent<BossStateUproot>()) gameObject.AddComponent<BossStateUproot>();
+
+        if (!GetComponent<BossStateScream>()) gameObject.AddComponent<BossStateScream>();
+
+        if (!GetComponent<BossStateBurrow>()) gameObject.AddComponent<BossStateBurrow>();
+
+        if (!GetComponent<BossEventsHandler>()) gameObject.AddComponent<BossEventsHandler>();
+
+        if (GetComponentInChildren<Animator>()) animator = GetComponentInChildren<Animator>();
+        else Debug.LogError("No Animator detected on boss child");
+
+        //Get the rigidbody
+        body = GetComponent<Rigidbody>();
+        if (body == null) body = gameObject.AddComponent<Rigidbody>();
+
+        //Add rotation constraints
+        body.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+        body.isKinematic = true;
+    }//End InitialiseComponents
+
+    private void InitialiseChildComponents() 
+    {
+        //Get the child object with an animator
+        GameObject animatedChild = GetComponentInChildren<Animator>().gameObject;
+
+        if (animatedChild == null) 
+        {
+            Debug.LogError("No child with animator detected");
+        }//End if
+        else if (!animatedChild.GetComponent<BossAnimationEventsHandler>()) 
+        {
+            animatedChild.AddComponent<BossAnimationEventsHandler>();
+        }//End else if
+    }//End InitialiseChildComponents
+
+    private void InitialiseEventResponses() 
+    {
+
+        BossTrigger trig = FindObjectOfType<BossTrigger>();
+
+        if (trig != null)
+            trig.TriggerActivated += Trigger;
+
+        //Subscribe to the hit enemy action
+        if (PlayerEventsHandler.current != null) {
+            PlayerEventsHandler.current.OnHitEnemy += ReduceHealthByAmount;
+            PlayerEventsHandler.current.OnStaggerEnemy += StunnedResponse;
+        }//End if
+
+        OnHit += BossHit;
+        OnDeath += Death;
+    }//End InitialiseEventResponses
+    #endregion
+
 }

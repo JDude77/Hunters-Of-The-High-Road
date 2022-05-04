@@ -51,7 +51,6 @@ public class BossStateUproot : BossStatePillarAttack
         canBeStunned = true;
         rotateBoss = true;
         rotateAttack = true;
-        //StartCoroutine(StartWindUp());
         boss.animator.SetTrigger("DoStomp");
     }//End OnEnter
 
@@ -79,34 +78,13 @@ public class BossStateUproot : BossStatePillarAttack
             if (rotateBoss) {
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRot, 360f * Time.deltaTime);
                 attackTransform = transform;
-            }
+            }//End if
 
             if (rotateAttack && rotateAttackSeperately) {
                 attackTransform.rotation = Quaternion.RotateTowards(attackTransform.rotation, targetRot, attackRotationSpeed * 360f * Time.deltaTime);
-            }
-        }
-    }
-
-    IEnumerator StartWindUp()
-    {
-        float timer = 0.0f;
-        while (timer < windUpTime)
-        {
-            //Update the timer
-            timer += Time.deltaTime;
-            //Get the player's X and Z position
-            Vector3 playerXZ = player.transform.position;
-            playerXZ.y = transform.position.y;
-            //Get the direction to that position
-            Vector3 targetDir = playerXZ - transform.position;
-            //Rotate towards that direction
-            Quaternion targetRot = Quaternion.LookRotation(targetDir, Vector3.up);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRot, 360f * Time.deltaTime);
-            yield return null;
-        }
-        startPosition = transform.position + attackStartOffset * transform.forward;
-        boss.animator.SetTrigger("DoStomp");        
-    }//End StartWindUp
+            }//End if
+        }//End if
+    }//End FixedRun
 
     IEnumerator DoAttack() 
     {
@@ -120,17 +98,17 @@ public class BossStateUproot : BossStatePillarAttack
             SpawnPillar(position, attackTransform.rotation);
             //Wait
             yield return new WaitForSeconds(delayBetweenPillars);
-        }
+        }//End while
 
         yield return new WaitForSeconds(windDownTime);
         //Change state back to idle
         boss.ReturnToMainState();
-    }
+    }//End DoAttack
 
     IEnumerator RotateAttackTimer() {
         yield return new WaitForSeconds(attackRotationTime);
         rotateAttack = false;
-    }
+    }//End RotateAttackTimer
 
     private void OnDrawGizmos()
     {

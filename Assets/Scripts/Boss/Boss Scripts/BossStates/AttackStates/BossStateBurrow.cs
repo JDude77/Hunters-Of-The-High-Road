@@ -106,7 +106,7 @@ public class BossStateBurrow : AttackState
             //Update the target position on the particle object
             burrower.SetPlayerPosition(targetPosition);
             yield return null;
-        }
+        }//End While
 
         Vector3 particlePos = burrower.transform.position;
         Destroy(burrower.gameObject);
@@ -122,33 +122,20 @@ public class BossStateBurrow : AttackState
 
         boss.animator.SetTrigger("DoJumpUp");
         digUpSound.Post(gameObject);
-    }
+    }//End StartBurrow
     public void DoSphereCast() {
         //Store the intersections with the 'Player' layer
         Collider[] collisions = Physics.OverlapSphere(transform.position, damageRadius, boss.attackLayer);
 
         if (collisions.Length > 0) {
             BossEventsHandler.current.HitPlayer(GetDamageValue());
-        }
+        }//End if
     }//End DoSphereCast
 
     public void OnDrawGizmos() {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, damageRadius);
     }//End OnDrawGizmos
-
-    [ContextMenu("Fill default values")]
-    public override void SetDefaultValues()
-    {
-        goundedYPosition = 9f;
-        burrowYPosition = 1f;
-        particleYPosition = 8f;
-        startRotationSpeed = 5f;
-        burrowSpeed = 10f;
-        inRangeDistance = 1f;
-        digUpDelay = 0.5f; 
-        timeBetweenParticleBursts = 0.5f;
-    }//End SetDefaultValues
 
     void InitEvents()
     {
