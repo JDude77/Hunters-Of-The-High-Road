@@ -122,6 +122,7 @@ public class Rifle : Weapon
 
         //Get the clicked position on the screen
         Vector2 mouseClickPosition = Input.mousePosition;
+        print(mouseClickPosition);
 
         //Create a ray from the camera to the clicked point
         Ray cameraRay = Camera.main.ScreenPointToRay(mouseClickPosition);
@@ -129,21 +130,23 @@ public class Rifle : Weapon
         //Get world location of clicked point from ray hit position
         Physics.Raycast(cameraRay, out RaycastHit cameraRayHitInfo);
         Vector3 mouseClickWorldPosition = cameraRayHitInfo.point;
-
+        print("MCWP " + mouseClickWorldPosition);
         //Fix the player's rotation to face the shot location
         FixPlayerRotation(mouseClickWorldPosition);
 
         //Fix world location of clicked point to be desired y-position
         mouseClickWorldPosition.y = shotHeight;
-
+        //Get the direction from the start point to the mouse click
+        Vector3 dir = (mouseClickWorldPosition - start).normalized;
         //Create ray going in direction from gun to mouse click location
-        Ray gunToMousePointRay = new Ray(start, (mouseClickWorldPosition - start).normalized);
+        Ray gunToMousePointRay = new Ray(start, dir);
 
         //Get first hit location of gun to mouse ray
-        Physics.Raycast(gunToMousePointRay, out RaycastHit shotHitInfo);
-        Vector3 hitLocation = shotHitInfo.point;
+        if(Physics.Raycast(gunToMousePointRay, out RaycastHit shotHitInfo, maxRange))
+            return shotHitInfo.point;
 
-        return hitLocation;
+        //Return the mouse click direction * max range
+        return dir * maxRange;
     }//End GetShotLocationNew
 
     public override void Use()
@@ -192,8 +195,10 @@ public class Rifle : Weapon
                         PlayerEventsHandler.current.HitBottle(hit.gameObject);
                         break;
                     case "Enemy":
+                        break;
                     case "Boss":
-                        PlayerEventsHandler.current.HitEnemy(hit.gameObject, damage);
+                        float damageToDo = isBeingAimed && deadshot.DeadshotSkillCheckPassed() ? aimedShotDamage : damage;
+                        PlayerEventsHandler.current.HitEnemy(hit.gameObject, damageToDo);
                         //Below pieces for deadshot
                         hitEnemy = true;
                         enemyInstance = hit.gameObject;
@@ -242,8 +247,9 @@ public class Rifle : Weapon
     //Made a coroutine to delay line appearance by a frame, making it align with muzzle better
     public IEnumerator UpdateShotLineRenderer(Vector3 shotHitLocation)
     {
+        shotPathLineRenderer.enabled = false;
+
         yield return new WaitForEndOfFrame();
-        shotPathLineRenderer.enabled = true;
         if(gunAnimator.GetBool("CanDeadshot"))
         {
             shotPathLineRenderer.colorGradient = shotLineDeadshotColour;
@@ -254,6 +260,7 @@ public class Rifle : Weapon
         }//End else
         shotPathLineRenderer.SetPosition(0, muzzle.position);
         shotPathLineRenderer.SetPosition(1, shotHitLocation);
+        shotPathLineRenderer.enabled = true;
     }//End UpdateShotLineRenderer
 
     private static void FixPlayerRotation(Vector3 shotLocation)

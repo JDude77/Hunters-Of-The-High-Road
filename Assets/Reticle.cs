@@ -20,7 +20,7 @@ public class Reticle : MonoBehaviour
         rotator.transform.rotation = Quaternion.identity;
     }
 
-    // Update is called once per frame
+    // LateUpdate is called once per frame after the frame has been drawn
     void LateUpdate()
     {
         //Move to mouse position
