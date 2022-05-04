@@ -62,6 +62,12 @@ public class Rifle : Weapon
     [SerializeField]
     [Tooltip("The length of time to show the muzzle flash for in seconds.")]
     private float muzzleFlashTime;
+    [SerializeField]
+    [Tooltip("The length of time to show the muzzle flash for in seconds.")]
+    private float deadShotScreenShakeIntensity;
+    [SerializeField]
+    [Tooltip("The length of time to show the muzzle flash for in seconds.")]
+    private float deadShotScreenShakeTime;
     #endregion
 
     protected override void Awake()
@@ -222,6 +228,9 @@ public class Rifle : Weapon
                 //If the deadshot hit an enemy
                 if (hitWasEnemy)
                 {
+                    if (CameraShakeScript.Instance)
+                        CameraShakeScript.Instance.ShakeCamera(deadShotScreenShakeIntensity, deadShotScreenShakeTime);
+
                     if (deadshot.CanStagger())
                     {
                         PlayerEventsHandler.current.StaggerEnemy(enemyInstance);
