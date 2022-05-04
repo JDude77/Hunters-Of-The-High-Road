@@ -10,7 +10,10 @@ public class PlayerStateDead : PlayerState
 
     public override bool EnterState()
     {
-        //CAMERON CAN PUT GAME OVER STUFF TO RUN ONCE HERE
+        base.EnterState();
+
+        playerAnimator.Play("Dying");
+
         return true;
     }//End EnterState
 }

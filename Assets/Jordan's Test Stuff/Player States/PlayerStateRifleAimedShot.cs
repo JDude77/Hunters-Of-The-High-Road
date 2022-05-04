@@ -4,6 +4,7 @@ public class PlayerStateRifleAimedShot : PlayerState
 {
     private Rifle rifle;
     private Transform playerTransform;
+    private bool gunHasBeenShot = false;
 
     protected override void Awake()
     {
@@ -33,7 +34,7 @@ public class PlayerStateRifleAimedShot : PlayerState
     {
         rifle.DeactivateDeadshot();
         rifle.SetIsBeingAimed(false);
-        playerAnimator.Play("HipFiring");
+        if(gunHasBeenShot) playerAnimator.Play("HipFiring");
         playerAnimator.SetBool("isAiming", false);
         playerAnimator.SetLayerWeight(1, 1);
 
@@ -78,6 +79,7 @@ public class PlayerStateRifleAimedShot : PlayerState
         {
             //Shoot
             rifle.Use();
+            gunHasBeenShot = true;
 
             //Then change state
             ChangePlayerStateToIdleOrRun();
@@ -86,12 +88,14 @@ public class PlayerStateRifleAimedShot : PlayerState
         //Dodging overrides aiming
         if(Input.GetKeyDown(KeyCode.LeftShift))
         {
+            gunHasBeenShot = false;
             playerReference.ChangeState(Player.State.Dodging);
         }//End if
 
         //When the aim button is released
         if (Input.GetMouseButtonUp(1))
         {
+            gunHasBeenShot = false;
             ChangePlayerStateToIdleOrRun();
         }//End if
     }//End UpdateStateInputs

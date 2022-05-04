@@ -12,7 +12,13 @@ public class ChainDoorScript : MonoBehaviour
     void Start()
     {
         FindObjectOfType<PlayerEventsHandler>().OnHitChain += OpenDoor;
+        FindObjectOfType<BossTrigger>().TriggerActivated += SlamDoor;
         ani = GetComponent<Animator>();
+    }
+
+    public void SlamDoor()
+    {
+        ani.Play("SlamDoor");
     }
 
     public void OpenDoor(GameObject instance)
@@ -20,7 +26,8 @@ public class ChainDoorScript : MonoBehaviour
         if (instance == chain)
         {
             ani.Play("OpenDoor");
-            chain.SetActive(false);
+            Destroy(chain);
+            //chain.SetActive(false);
             FindObjectOfType<PlayerEventsHandler>().OnHitChain -= OpenDoor;
         }//End if
     }//End OpenDoor

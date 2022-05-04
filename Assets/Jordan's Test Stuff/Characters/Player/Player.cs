@@ -88,7 +88,8 @@ public class Player : Character
         RifleAimedShot,
         ExecutionerSwordAttack,
         GameStart,
-        Dead
+        Dead,
+        Stunned
     }//End States
 
     [Header("State Options")]
@@ -143,17 +144,32 @@ public class Player : Character
 
         //Allow the boss to hit the player
         BossEventsHandler.current.OnHitPlayer += ReduceHealthByAmount;
+
+        //Allow the boss to stun the player
+        BossEventsHandler.current.OnStunPlayer += StunPlayer;
+
+        //Make the appropriate function set to run when the player dies
+        OnDeath += PlayerDeath;
     }//End Start
 
     protected override void Update()
     {
         base.Update();
 
-        //Quick and dirty code to make sure the player state is "dead" if they lose all health
-        if (health <= 0) ChangeState(State.Dead);
-
         currentStateScript.UpdateState();
     }//End Update
+
+    private void PlayerDeath()
+    {
+        //Unsubscribe from being hit by boss
+        BossEventsHandler.current.OnHitPlayer -= ReduceHealthByAmount;
+
+        //Unsubscribe from being stunned by boss
+        BossEventsHandler.current.OnStunPlayer -= StunPlayer;
+
+        //Make sure the state is definitely set to the dead state
+        if (currentState != State.Dead) ChangeState(State.Dead);
+    }//End PlayerDeath
 
     #region State Managemenet
     private void InitializePlayerStates()
@@ -322,6 +338,12 @@ public class Player : Character
     {
         ChangeState(State.Idle);
     }//End ChangeState
+
+    //A workaround function for subscribing a ChangeState to Stunned for the boss stunning action
+    private void StunPlayer()
+    {
+        ChangeState(State.Stunned);
+    }//End StunPlayer
     #endregion
 
     #region Item Management

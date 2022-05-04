@@ -54,7 +54,7 @@ public class PlayerStateExecutionerSwordAttack : PlayerState
     {
         base.UpdateState();
 
-        if(animationDone)
+        if (animationDone)
         {
             playerReference.ChangeState(Player.State.Idle);
         }//End if
