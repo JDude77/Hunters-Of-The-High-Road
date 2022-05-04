@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
+	<RootPaths>
+		<ProjectRoot>D:\unity Projects\Hunters-Of-The-High-Road_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>D:\unity Projects\Hunters-Of-The-High-Road_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>D:\Hunters-Of-The-High-Road\Assets\StreamingAssets\Audio\GeneratedSoundBanks\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>D:\unity Projects\Hunters-Of-The-High-Road_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<SoundBanks>
+		<SoundBank Id="3991942870" Language="SFX" Hash="491902846">
+			<ObjectPath>\SoundBanks\Default Work Unit\music</ObjectPath>
+			<ShortName>music</ShortName>
+			<Path>music.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3819554723" Name="Play_boss_fight_loop" ObjectPath="\Events\Default Work Unit\music\Play_boss_fight_loop" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="411059738" Language="SFX">
+							<ShortName>music_battle_01.wav</ShortName>
+							<Path>SFX\music_battle_01_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1311866180	Play_nouthing			\Default Work Unit\nouthing\Play_nouthing	
+
+Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
+	335002	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\nouthing\nouthing\Wwise Silence	
+
