@@ -8770,7 +8770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5135915dd0b214489ebb746d7e3de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 3
   weaponType: 0
   muzzle: {fileID: 1569265033636043684}
   aimedShotDamage: 15
@@ -8842,7 +8842,7 @@ MonoBehaviour:
   muzzleFlashObject: {fileID: 2103483271276636215}
   muzzleFlashTime: 0.1
   deadShotScreenShakeIntensity: 1
-  deadShotScreenShakeTime: 0.2
+  deadShotScreenShakeTime: 0.6
 --- !u!1 &6318356560866142807
 GameObject:
   m_ObjectHideFlags: 0
