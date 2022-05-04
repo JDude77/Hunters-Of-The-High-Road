@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0040029436, g: 0.0049598664, b: 0.0065646246, a: 1}
+  m_IndirectSpecularColor: {r: 0.003996269, g: 0.0049507767, b: 0.00655262, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8590,7 +8590,7 @@ GameObject:
   - component: {fileID: 448456780}
   - component: {fileID: 448456781}
   - component: {fileID: 448456782}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BossTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
