@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1609504523076834027}
   - component: {fileID: 1609504523076834025}
   - component: {fileID: 1609504523076834024}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 1609504523688771489}
   - component: {fileID: 1609504523688771488}
   - component: {fileID: 1609504523688771491}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -323,7 +323,7 @@ GameObject:
   - component: {fileID: 1287082450530489975}
   - component: {fileID: 2770691503537609170}
   - component: {fileID: 114716960639266072}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TempTorch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
