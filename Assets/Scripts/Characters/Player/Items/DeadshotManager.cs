@@ -17,6 +17,8 @@ public class DeadshotManager : MonoBehaviour
     [SerializeField]
     private int deadshotTokensRequiredToStagger;
     private int currentDeadshotTokens = 0;
+    [HideInInspector] public bool deadShotReady { get { return currentDeadshotTokens >= deadshotTokensRequiredToStagger; } }
+
     public int GetTokenCount()
     {
         return currentDeadshotTokens;
