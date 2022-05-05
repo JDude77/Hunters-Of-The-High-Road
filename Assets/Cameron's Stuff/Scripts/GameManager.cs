@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.HighDefinition;
 
 public class GameManager : MonoBehaviour
 {
     private Animator ani;
     private Player player;
+    private DeadshotManager deadshotManager;
     private Boss boss;
 
     //Please ignore my horrendous placeholder audio bug fix code - Jordan
@@ -17,14 +20,21 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject bossMusicTrigger;
 
+    [SerializeField]
+    private Volume postProcessing;
+    private Vignette vignette;
+
     // Start is called before the first frame update
     void Start()
     {
         ani = GetComponent<Animator>();
         player = FindObjectOfType<Player>();
+        deadshotManager = FindObjectOfType<DeadshotManager>();
         boss = FindObjectOfType<Boss>();
         tutorialBottlesForBreakSoundOnRestartFix = FindObjectsOfType<TutorialBottle>();
         chainDoorScriptsForBreakSoundOnRestartFix = FindObjectsOfType<ChainDoorScript>();
+
+        postProcessing.profile.TryGet<Vignette>(out vignette);
     }
 
     // Update is called once per frame
@@ -39,6 +49,22 @@ public class GameManager : MonoBehaviour
         if(boss.GetHealth() <= 0)
         {
             ani.Play("BossDeathTransition");
+        }
+
+        DeadshotVignette();
+    }
+
+    private void DeadshotVignette()
+    {
+        
+        if (deadshotManager.deadShotReady == true)
+        {
+            //hardcoded value that sets the vignette to the deadshot opacity
+            vignette.opacity.value = 0.72f;
+        }
+        else
+        {
+            vignette.opacity.value = 0;
         }
     }
 

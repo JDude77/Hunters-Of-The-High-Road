@@ -8,6 +8,9 @@ public class PauseMenuScript : MonoBehaviour
     private GameObject PauseCanvas;
 
     [SerializeField]
+    private bool isMainMenu;
+
+    [SerializeField]
     private GameObject[] AdditionalMenus;
     private GameObject CurrentMenu;
 
@@ -17,6 +20,7 @@ public class PauseMenuScript : MonoBehaviour
     void Start()
     {
         //Deactivate the menus
+        if(!isMainMenu)
         DeactivateMenus();
     }
 
@@ -25,7 +29,7 @@ public class PauseMenuScript : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            if(initialPause == false)
+            if(initialPause == false && !isMainMenu)
             {
                 PauseGame();
                 //sets CurrentMenu to the pause menu gameobject. This is needed for checking if the current menu has a "ReturnToMenu" component
