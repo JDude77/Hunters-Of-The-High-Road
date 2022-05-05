@@ -7,10 +7,10 @@ public class BossStateLandsRoots : BossStatePillarAttack
 {
     [Space(5)]
     [Tooltip("If true, each pillar will wait for a random amount of time between 'randomWaitTimeMin' and 'randomWaitTimeMax'")]
-    [SerializeField] private bool addRandomWaitTime;
+    [SerializeField] private bool randomDelay;
     [Tooltip("A random value is then picked using these values as the range")]
-    [SerializeField] private float randomWaitTimeMax;
-    [SerializeField] private float randomWaitTimeMin;
+    [SerializeField] private float randomDelayMax;
+    [SerializeField] private float randomDelayMin;
 
     #region Sounds
     [Header("Sounds")]
@@ -67,17 +67,18 @@ public class BossStateLandsRoots : BossStatePillarAttack
     IEnumerator DoAttack()
     {
         //Spawn a new pillar if we're under the cound
-        while (base.spawnedPillars < base.pillarCount)
+        while (spawnedPillars < pillarCount)
         {
-            Vector3 predictedPosition = player.transform.position + (playerVelocity * base.pillarWaitTime);
+            Vector3 predictedPosition = player.transform.position + (playerVelocity * pillarWaitTime);
             SpawnPillar(predictedPosition, transform.rotation);
 
-            if (addRandomWaitTime)
+            if (randomDelay)
             {
-                yield return new WaitForSeconds(Random.Range(randomWaitTimeMax, randomWaitTimeMin));
+                float time = Random.Range(randomDelayMax, randomDelayMin);
+                yield return new WaitForSeconds(time);
             }//End if
 
-            yield return new WaitForSeconds(base.delayBetweenPillars);
+            yield return new WaitForSeconds(delayBetweenPillars);
         }//End while
 
         boss.animator.SetTrigger("DoEndLandsRoots");

@@ -1074,7 +1074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2ba5e46f54414847a9494e1466d6be8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allAttacks: 0200000003000000040000000500000008000000
+  allAttacks: 0200000005000000030000000800000004000000
   priorityAttacksInOrder: 
   chargeInRange: 38
   landsRootsInRange: 36
@@ -1223,6 +1223,7 @@ MonoBehaviour:
   pillar: {fileID: 868277590454778659, guid: 1e14d765cacb20b4eaa34fb1b25858a5, type: 3}
   pillarCount: 6
   stopAttackOnHit: 0
+  applyDamageOnce: 0
   windUpTime: 1.2
   delayBetweenPillars: 0.15
   pillarWaitTime: 0.35
@@ -1231,9 +1232,9 @@ MonoBehaviour:
   pillarStayTime: 0.5
   startYPos: 5
   finalYPos: 9
-  addRandomWaitTime: 1
-  randomWaitTimeMax: 1
-  randomWaitTimeMin: 0.3
+  randomDelay: 1
+  randomDelayMax: 1
+  randomDelayMin: 0.3
   windUp:
     idInternal: 0
     valueGuidInternal: 
@@ -1264,6 +1265,7 @@ MonoBehaviour:
   pillar: {fileID: 868277590454778659, guid: 249ed8e037eb10248a911a4c42715175, type: 3}
   pillarCount: 18
   stopAttackOnHit: 0
+  applyDamageOnce: 0
   windUpTime: 0.005
   delayBetweenPillars: 0.05
   pillarWaitTime: 0
@@ -1300,6 +1302,7 @@ MonoBehaviour:
   pillar: {fileID: 868277590454778659, guid: 5f1b333149fa13c47b4038852341b235, type: 3}
   pillarCount: 0
   stopAttackOnHit: 0
+  applyDamageOnce: 0
   windUpTime: 0
   delayBetweenPillars: 0.4
   pillarWaitTime: 0

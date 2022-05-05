@@ -128,7 +128,7 @@ public class BossStateDecision : BossState
         availableAttackPool.Clear();
 
         //Prioritise burrow if the boss hasn't moved in recent memory
-        if (maxAttacksBetweenBurrows > 0 && !recentAttacks.Contains(Boss.State.Burrow)) {
+        if (maxAttacksBetweenBurrows > 0 && !recentAttacks.Contains(Boss.State.Burrow) && allAttacks.Contains(Boss.State.Burrow)) {
             availableAttackPool.Add(Boss.State.Burrow);
             return;
         }//End if

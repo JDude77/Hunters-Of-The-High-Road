@@ -72,9 +72,11 @@ public class BossStatePillarAttack : AttackState
         if (stopAttackOnHit)
             spawnedPillars = pillarCount;
 
-        if (applyDamageOnce && damageOnce) {
-            damageOnce = false;
-            BossEventsHandler.current.HitPlayer(GetDamageValue());
+        if (applyDamageOnce) {
+            if (damageOnce) {
+                damageOnce = false;
+                BossEventsHandler.current.HitPlayer(GetDamageValue());
+            }//End if
         } //End if
         else 
         {
