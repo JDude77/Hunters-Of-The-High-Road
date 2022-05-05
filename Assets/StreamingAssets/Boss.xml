@@ -8,7 +8,7 @@
 		<ExternalSourcesOutputRoot>D:\unity Projects\Hunters-Of-The-High-Road_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<SoundBanks>
-		<SoundBank Id="1560169506" Language="SFX" Hash="1139731065">
+		<SoundBank Id="1560169506" Language="SFX" Hash="1978505140">
 			<ObjectPath>\SoundBanks\Default Work Unit\Boss</ObjectPath>
 			<ShortName>Boss</ShortName>
 			<Path>Boss.bnk</Path>
@@ -38,6 +38,26 @@
 						<File Id="763859046" Language="SFX">
 							<ShortName>sfx_boss_impact_ground_01.wav</ShortName>
 							<Path>SFX\sfx_boss_impact_ground_01_39E56F4B.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1972916787" Name="Play_Boss_damage" ObjectPath="\Events\Default Work Unit\boss sounds\Play_Boss_damage" DurationType="OneShot" DurationMin="0.273958" DurationMax="0.613582">
+					<IncludedMemoryFiles>
+						<File Id="172322772" Language="SFX">
+							<ShortName>sfx_boss_impact_damage_02.wav</ShortName>
+							<Path>SFX\sfx_boss_impact_damage_02_10C4C929.wem</Path>
+						</File>
+						<File Id="298544106" Language="SFX">
+							<ShortName>sfx_boss_impact_damage_04.wav</ShortName>
+							<Path>SFX\sfx_boss_impact_damage_04_10C4C929.wem</Path>
+						</File>
+						<File Id="676038459" Language="SFX">
+							<ShortName>sfx_boss_impact_damage_01.wav</ShortName>
+							<Path>SFX\sfx_boss_impact_damage_01_10C4C929.wem</Path>
+						</File>
+						<File Id="801393723" Language="SFX">
+							<ShortName>sfx_boss_impact_damage_03.wav</ShortName>
+							<Path>SFX\sfx_boss_impact_damage_03_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

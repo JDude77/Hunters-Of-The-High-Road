@@ -15,6 +15,7 @@ namespace AK
     {
         static const AkUniqueID GRUNT = 3797621065U;
         static const AkUniqueID HANDS_IN = 919531205U;
+        static const AkUniqueID PLAY_BOSS_DAMAGE = 1972916787U;
         static const AkUniqueID PLAY_BOSS_FIGHT_LOOP = 3819554723U;
         static const AkUniqueID PLAY_BOSS_MOVEMENT = 1677138927U;
         static const AkUniqueID PLAY_CAMP_FIRE = 1293037340U;

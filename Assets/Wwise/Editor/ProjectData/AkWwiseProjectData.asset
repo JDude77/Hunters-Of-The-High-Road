@@ -457,7 +457,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: fb0dbcfe02547c49afbe650cce855735
     GuidInternal: 
-    m_lastTime: -8585499449593609411
+    m_lastTime: -8585498464339732122
     List:
     - name: Attacks sounds
       guid: 1c4bc2c32d9f7e4fa4cb7d34a0bde9f0
@@ -645,6 +645,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_Boss_damage
+      guid: 0901aa5b51d6ec4c88f8ea2f79ddc70e
+      id: 1972916787
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: fb0dbcfe02547c49afbe650cce855735
+      - ElementName: boss sounds
+        ObjectType: 4
+        guid: dade6bf5c1313b4cae34771ebb8d137d
+      - ElementName: Play_Boss_damage
+        ObjectType: 3
+        guid: 0901aa5b51d6ec4c88f8ea2f79ddc70e
+      Path: Events\Default Work Unit\boss sounds\Play_Boss_damage
+      maxAttenuation: 0
+      maxDuration: 0.613582
+      minDuration: 0.273958
     - name: Play_boss_fight_loop
       guid: 2c6a1cb1d1462141b9cc9d7cc238e142
       id: 3819554723
@@ -1306,7 +1326,7 @@ MonoBehaviour:
       Path: Events\Default Work Unit\Player weapons\Play_sword_full
       maxAttenuation: 0
       maxDuration: 3.873754
-      minDuration: 3.532517
+      minDuration: 3.352875
     - name: Play_Uproot_Attack
       guid: c6a0caeabbecca4ba9e9dafdc99d54c2
       id: 2956397052
@@ -1862,7 +1882,7 @@ MonoBehaviour:
     m_lastTime: -8585548625492553666
     List: []
   ExpandedFileSystemItemIds: 01000000020000000300000004000000050000000600000007000000080000000a00000010000000110000001200000018000000190000001b0000003e0000003f000000
-  ExpandedWaapiItemIds: 010000000600000007000000080000000a0000000b000000110000001200000013000000
+  ExpandedWaapiItemIds: 010000000600000007000000080000000b0000000e00000011000000120000001300000034000000
   AutoSyncSelection: 1
   autoPopulateEnabled: 1
   currentDataSource: 0
