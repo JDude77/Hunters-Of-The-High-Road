@@ -88,4 +88,11 @@ public class PauseMenuScript : MonoBehaviour
             menu.SetActive(false);
         }
     }
+
+    //Used by buttons to close the game. Does not work in editor, so a debug message will be posted to the log instead
+    public void CloseGame()
+    {
+        Debug.Log("Game has been closed");
+        Application.Quit();
+    }
 }
