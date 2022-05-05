@@ -44,14 +44,17 @@ public class PauseMenuScript : MonoBehaviour
 
     private void CheckEscInput()
     {
-        //if the current menu has a ReturnToMenu component, activate the menu attached to the script
-        if(CurrentMenu.GetComponent<ReturnToMenu>() == true)
+        if (CurrentMenu != null)
         {
-            ActivateMenu(CurrentMenu.GetComponent<ReturnToMenu>().getReturnMenu());
-        }
-        else
-        {
-            UnPauseGame();
+            //if the current menu has a ReturnToMenu component, activate the menu attached to the script
+            if (CurrentMenu.GetComponent<ReturnToMenu>() == true)
+            {
+                ActivateMenu(CurrentMenu.GetComponent<ReturnToMenu>().getReturnMenu());
+            }
+            else if (!isMainMenu)
+            {
+                UnPauseGame();
+            }
         }
         
     }

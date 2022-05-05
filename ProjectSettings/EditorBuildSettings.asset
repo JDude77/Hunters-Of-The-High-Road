@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Cameron's Stuff/Scene/CamsScreen.unity
-    guid: 8a701632d1eb78249ac3f20456b7e103
+    path: Assets/Scenes/MainScene.unity
+    guid: 6baec04a5cde1774d8d8efd61a8c3b15
+  - enabled: 1
+    path: Assets/Scenes/CreditsScene.unity
+    guid: 2ddc54ea54717b94898f841e3146c3be
   m_configObjects: {}

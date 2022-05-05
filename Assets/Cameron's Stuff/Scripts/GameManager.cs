@@ -101,6 +101,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    public void LoadCredits(string creditsScene)
+    {
+        SceneManager.LoadScene(creditsScene);
+    }
+
     public void CloseGame()
     {
         //Closes the game - this does not work in editor

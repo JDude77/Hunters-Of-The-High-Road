@@ -1128,7 +1128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomizeDamage: 0
   maxDamage: 0
-  minDamage: 50
+  minDamage: 30
   burrowMovementPrefab: {fileID: 4600948011345183027, guid: 702070ee8107ec34193436b314ee5ffb, type: 3}
   timeBetweenParticleBursts: 0.05
   goundedYPosition: 8.03
