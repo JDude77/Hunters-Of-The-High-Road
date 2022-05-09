@@ -5066,6 +5066,7 @@ GameObject:
   - component: {fileID: 609453581666782743}
   - component: {fileID: 609453581666782739}
   - component: {fileID: 609453581666782738}
+  - component: {fileID: 9183766765489478184}
   m_Layer: 5
   m_Name: MonsterTomeCanvas
   m_TagString: Untagged
@@ -5188,6 +5189,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   returnToMenu: {fileID: 609453582806362334}
+--- !u!114 &9183766765489478184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609453581666782740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7da3e87359aff604a949a64a3e5afcd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UISound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: b2d20792953a3d94587f7b319b826de1, type: 2}
+  PageSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: b7bd890a14e066a4b88acf4eaad189dc, type: 2}
+  CloseSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!1 &609453581723673136
 GameObject:
   m_ObjectHideFlags: 0
@@ -6921,6 +6946,7 @@ GameObject:
   m_Component:
   - component: {fileID: 609453582066664596}
   - component: {fileID: 609453582066664599}
+  - component: {fileID: 7585314203364287898}
   m_Layer: 0
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -6968,6 +6994,30 @@ MonoBehaviour:
   - {fileID: 609453582480738454}
   - {fileID: 609453582771016979}
   - {fileID: 609453581130497824}
+--- !u!114 &7585314203364287898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609453582066664597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7da3e87359aff604a949a64a3e5afcd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UISound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: b2d20792953a3d94587f7b319b826de1, type: 2}
+  PageSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: b7bd890a14e066a4b88acf4eaad189dc, type: 2}
+  CloseSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 95fd58512ba2db2479df65d1f4a61a37, type: 2}
 --- !u!1 &609453582078417285
 GameObject:
   m_ObjectHideFlags: 0
@@ -13017,13 +13067,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
---- !u!1 &545548858798296111 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1145914342944074987, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
-  m_PrefabInstance: {fileID: 609453582877335748}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &545548858798296110 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1145914342944074986, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+  m_PrefabInstance: {fileID: 609453582877335748}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &545548858798296111 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1145914342944074987, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
   m_PrefabInstance: {fileID: 609453582877335748}
   m_PrefabAsset: {fileID: 0}

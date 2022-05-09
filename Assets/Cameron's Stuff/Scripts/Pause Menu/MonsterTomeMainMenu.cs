@@ -8,6 +8,12 @@ public class MonsterTomeMainMenu : MonoBehaviour
     private GameObject[] Pages;
 
     private int currentPage = 0;
+    private UISounds Sounds;
+
+    private void Start()
+    {
+        Sounds = GetComponent<UISounds>();
+    }
 
     public void changePage(int increment)
     {
@@ -30,17 +36,18 @@ public class MonsterTomeMainMenu : MonoBehaviour
 
         
         Pages[currentPage].SetActive(true);
+        Sounds.PlayPageSound();
     }
 
     public void linkToPage(int link)
     {
-        Debug.Log("Click, tee hee!");
         foreach (var page in Pages)
         {
             page.SetActive(false);
         }
         currentPage = link;
         Pages[currentPage].SetActive(true);
+        Sounds.PlayPageSound();
     }
 
     public void returnToMenu()
@@ -51,5 +58,6 @@ public class MonsterTomeMainMenu : MonoBehaviour
         }
         currentPage = 0;
         Pages[currentPage].SetActive(true);
+        Sounds.PlayPageSound();
     }
 }

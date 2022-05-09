@@ -14,6 +14,8 @@ public class PauseMenuScript : MonoBehaviour
     private GameObject[] AdditionalMenus;
     private GameObject CurrentMenu;
 
+    private UISounds Sounds;
+
     private bool isOnPauseMenu = false, initialPause = false;
 
     // Start is called before the first frame update
@@ -22,6 +24,8 @@ public class PauseMenuScript : MonoBehaviour
         //Deactivate the menus
         if(!isMainMenu)
         DeactivateMenus();
+
+        Sounds = GetComponent<UISounds>();
     }
 
     // Update is called once per frame
@@ -71,6 +75,7 @@ public class PauseMenuScript : MonoBehaviour
         DeactivateMenus();
         menu.SetActive(true);
         CurrentMenu = menu;
+        Sounds.PlayUISound();
     }
 
     //Used by the "Resume" button
@@ -79,6 +84,7 @@ public class PauseMenuScript : MonoBehaviour
         DeactivateMenus();
         Time.timeScale = 1;
         initialPause = false;
+        Sounds.PlayCloseSound();
     }
 
     //deactivates all menus
