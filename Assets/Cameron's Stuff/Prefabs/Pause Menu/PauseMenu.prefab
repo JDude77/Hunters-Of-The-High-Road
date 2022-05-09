@@ -12453,12 +12453,17 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: b4b448d7ace7a1b44a233612e55d7bce, type: 3}
     - target: {fileID: 1145914342944074983, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
       propertyPath: LeftMonsterDesc
-      value: A big gal who swims around Loch Ness. Kinda just vibes but because she
-        hates Christianity we must kill her lol
+      value: "The Niseag is a gigantic sea serpent, frequenting Loch Ness where it
+        preys on local fishermen. Whispers and rumors of its existence have been
+        spread within the local area, leading to hunters braving it; however, The
+        Church have been aggressive in their suppression of this creature\u2019s
+        existence spreading. Its existence is documented across The Church\u2019s
+        history extensively, however no Apostle has truly been able to rid of it
+        for good. "
       objectReference: {fileID: 0}
     - target: {fileID: 1145914342944074983, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
       propertyPath: LeftMonsterName
-      value: Nessie
+      value: The Niseag
       objectReference: {fileID: 0}
     - target: {fileID: 1145914342944074983, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
       propertyPath: RightMonsterImg
@@ -12466,7 +12471,13 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 561dab3f71571a145aeaf570e7e6d4c9, type: 3}
     - target: {fileID: 1145914342944074983, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
       propertyPath: RightMonsterDesc
-      value: Big scary horse dude that is scared of water lol
+      value: "The Nuckelavee is a demon who takes on the appearance of a skinless
+        rider fused to a horse, composed of nothing but muscle and bone. Their breath
+        spreads sickness and disease, infecting livestock, crops and driving people
+        to madness. They were also responsible for droughts and many people are afraid
+        to say its name.  The Wrath\u2019s Apostles have fought the Nuckelavee throughout
+        many generations. It is said the Nuckelavee reincarnates every time a horse
+        rider meets a terrible fate by the ocean\u2019s abyss."
       objectReference: {fileID: 0}
     - target: {fileID: 1145914342944074983, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
       propertyPath: RightMonsterName
@@ -12666,7 +12677,15 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 02cedea703530fd409b6bbfcc51954ab, type: 3}
     - target: {fileID: 1145914342944074983, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
       propertyPath: RightMonsterDesc
-      value: Pengu is out for blood. Do not approach this absolute beast
+      value: "The Boobrie is a demonic shapeshifting creature, said to be Hell incarnate
+        by those unlucky enough to encounter one. They commonly take on the appearance
+        of a water bird, with the aim to be as innocuous as possible however this
+        demon targets livestock and humans, devouring them and leaving no trace. 
+        Commonly underestimated by Wrath\u2019s Apostles, these creatures have taken
+        the life of many and often shape shift as their victims to taunt new Apostles.
+        They are also known to shape shift as other monsters to trick Apostles. It
+        is said they are rooted in the origins of the initial organizations' formation;
+        thus, a great deal of counter methods have been developed."
       objectReference: {fileID: 0}
     - target: {fileID: 1145914342944074983, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
       propertyPath: RightMonsterName
@@ -12858,7 +12877,7 @@ PrefabInstance:
     - target: {fileID: 1145914342944074983, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
       propertyPath: LeftMonsterImg
       value: 
-      objectReference: {fileID: 21300000, guid: 725a88d2644caff4c85e203e3432c7f9, type: 3}
+      objectReference: {fileID: 21300000, guid: 7f863b7ca2cce4b4fbfc371a6b3672b5, type: 3}
     - target: {fileID: 1145914342944074983, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
       propertyPath: LeftMonsterDesc
       value: "The Teran is a horrific beast from the depths of the seas, wreaking
@@ -12979,6 +12998,22 @@ PrefabInstance:
     - target: {fileID: 1145914343853207668, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
       propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914343944462003, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914343944462003, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7f863b7ca2cce4b4fbfc371a6b3672b5, type: 3}
+    - target: {fileID: 1145914343944462005, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -291.156
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145914343944462005, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -145.5791
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1268d774720c4df4fb1fd690ce6835f2, type: 3}
