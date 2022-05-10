@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,9 +11,17 @@ public class Reticle : MonoBehaviour
     [Tooltip("Speed at which the rotator will rotate")]
     [SerializeField]
     private float rotationSpeed;
+    [Tooltip("Speed that the successful shots zones will flash")]
+    [SerializeField]
+    private float fastFlashSpeed;
     [Tooltip("The angle from 90 degrees at which the deadshot will return true")]
     [SerializeField]
     private float skillCheckAngleSize;
+    [SerializeField]
+    private Color spriteWhite, spriteRed;
+
+    private bool canFlash = true;
+    private float flashTimer = 0;
 
     private void Start()
     {
@@ -30,6 +39,14 @@ public class Reticle : MonoBehaviour
         float currentRot = rotator.rectTransform.rotation.eulerAngles.z;
         rotator.rectTransform.rotation = Quaternion.AngleAxis(currentRot + rotationSpeed * Time.deltaTime, Vector3.forward);
 
+
+        if (IsSuccessful())
+            FlashingColour();
+        else rotator.color = spriteWhite;
+
+        
+
+
         //Reset the rotation
         if(Mathf.Abs(rotator.rectTransform.rotation.eulerAngles.z) >= 180f)
         {
@@ -45,6 +62,7 @@ public class Reticle : MonoBehaviour
         enabled = true;
         background.gameObject.SetActive(true);
         rotator.gameObject.SetActive(true);
+        rotator.color = spriteRed;
     }//End Activate
 
     public void Deactivate()
@@ -68,6 +86,23 @@ public class Reticle : MonoBehaviour
         skillCheckAngleSize = angle;
         this.rotationSpeed = rotationSpeed;
     }//End OverrideValues
+
+    private void FlashingColour()
+    {
+        flashTimer += Time.deltaTime;
+        if(flashTimer > fastFlashSpeed)
+        {
+            flashTimer = 0;
+            if (rotator.color == spriteWhite)
+            {
+                rotator.color = spriteRed;
+            }
+            else
+            {
+                rotator.color = spriteWhite;
+            }
+        }   
+    }
 
     private void OnDrawGizmos()
     {
