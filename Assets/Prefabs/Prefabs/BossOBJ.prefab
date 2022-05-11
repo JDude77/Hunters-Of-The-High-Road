@@ -1007,20 +1007,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3909928400629596449}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9e1dfff3a3032f488724b0d2ec267fd, type: 3}
+  m_Script: {fileID: 11500000, guid: 179888c7b623a5f498e867ba6038c8c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clawParticles: {fileID: 8534513822796787015, guid: 77b85bab368fda1478cb9fbba22a9ded, type: 3}
-  stompParticles: {fileID: 8832065540742811821, guid: 6d8166a3e7c5ead4983232da2d4534af, type: 3}
-  burrowParticles: {fileID: 8832065540742811821, guid: 6d8166a3e7c5ead4983232da2d4534af, type: 3}
-  claws:
-  - {fileID: 6367823017325712254}
-  - {fileID: 304244530608679627}
-  - {fileID: 3613544151546757113}
-  - {fileID: 2683904644641900573}
-  - {fileID: 8469517861748191169}
-  foot: {fileID: 7355783220527670975}
-  burrowParticleLocation: {fileID: 8233368808779712998}
+  clawParticles: {fileID: 0}
+  stompParticles: {fileID: 0}
+  burrowParticles: {fileID: 0}
+  claws: []
+  foot: {fileID: 0}
+  burrowParticleLocation: {fileID: 0}
 --- !u!114 &5145122568351621389
 MonoBehaviour:
   m_ObjectHideFlags: 0
