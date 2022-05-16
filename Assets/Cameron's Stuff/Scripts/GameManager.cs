@@ -15,7 +15,10 @@ public class GameManager : MonoBehaviour
     //Please ignore my horrendous placeholder audio bug fix code - Jordan
     private TutorialBottle[] tutorialBottlesForBreakSoundOnRestartFix;
     private ChainDoorScript[] chainDoorScriptsForBreakSoundOnRestartFix;
-    [SerializeField]
+    //Just a bug fix - Angus
+    public string ItIsAPeriodOfCivilWarRebelSpaceshipsStrikingFromAHiddenBaseHaveWonTheirFirstVictoryAgainstTheEvilGalacticEmpireDuringTheBattleRebelSpiesManagedToStealSecretPlansToTheEmpiresUltimateWeaponTheDEATHSTARAnArmouredSpacestationWithEnoughPowerToDestroyAnEntirePlanet;
+
+   [SerializeField]
     private AK.Wwise.Event bossMusic;
     [SerializeField]
     private GameObject bossMusicTrigger;
