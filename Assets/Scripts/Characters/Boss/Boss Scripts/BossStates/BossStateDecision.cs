@@ -121,8 +121,8 @@ public class BossStateDecision : BossState
         }//End if
 
         return Boss.State.Idle;        
-    }//End ChooseState
-
+    }//End ChooseState 
+    
     private void SetAttackPool()
     {        
         availableAttackPool.Clear();
@@ -154,8 +154,12 @@ public class BossStateDecision : BossState
             }//End if
         }//End for
 
+        //return if there are available attacks in the pool
+        if (availableAttackPool.Count > 0)
+            return;
+
         //If the previous attack is the only available attack, It's not idle, and it's condition is met re-add it to the pool
-        if ((previousAttack != Boss.State.Idle) && attackDictionary[previousAttack].Invoke()) {
+        if (previousAttack != Boss.State.Idle && attackDictionary[previousAttack].Invoke()) {
             print("Doing previous attack");
             availableAttackPool.Add(previousAttack);
         }//End if
@@ -189,20 +193,19 @@ public class BossStateDecision : BossState
 
         //Add all the attacks to the dictionary along with their activation condition
         if (allAttacks.Contains(Boss.State.Charging)) attackDictionary.Add(Boss.State.Charging, () => playerDistance < chargeInRange);
-
         if (allAttacks.Contains(Boss.State.Burrow)) attackDictionary.Add(Boss.State.Burrow, () => playerDistance < burrowInRange);
-
         if (allAttacks.Contains(Boss.State.LandsRoots)) attackDictionary.Add(Boss.State.LandsRoots, () => playerDistance < landsRootsInRange);
-
         if (allAttacks.Contains(Boss.State.Scream)) attackDictionary.Add(Boss.State.Scream, () => playerDistance < screamInRange);
-
         if (allAttacks.Contains(Boss.State.RadialUproot)) attackDictionary.Add(Boss.State.RadialUproot, () => playerDistance < radialUprootInRange);
 
-        if (allAttacks.Contains(Boss.State.Uproot)) attackDictionary.Add(Boss.State.Uproot, () => {
-            Bounds col = FindObjectOfType<Player>().GetComponent<CharacterController>().bounds;
-            return uprootBox.bounds.Intersects(col);
-            }
-        );//End if
+        if (allAttacks.Contains(Boss.State.Uproot))
+        {
+            attackDictionary.Add(Boss.State.Uproot, () =>
+            {
+                Bounds col = FindObjectOfType<Player>().GetComponent<CharacterController>().bounds;
+                return uprootBox.bounds.Intersects(col);
+            });
+        }//End if
     }//End InitAttacks
 
 
